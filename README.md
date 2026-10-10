@@ -92,6 +92,13 @@ flutter run --dart-define=API_BASE_URL=https://api.example.com
 ```
 
 Debug builds allow plain HTTP to a local server; release builds need HTTPS.
+
+To preview the charts on a phone without a server, build with the template
+gallery enabled:
+
+```sh
+flutter build apk --release --split-per-abi --target-platform android-arm64 --dart-define=SHOW_GALLERY=true
+```
 In debug builds the home screen has a **template gallery** button (top
 right), which previews every template with mock data, with replay and
 reduced-motion toggles.

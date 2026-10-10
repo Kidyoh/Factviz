@@ -1,9 +1,9 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
 
+import '../app/router.dart';
 import '../app/theme.dart';
 import '../templates/common/motion.dart';
 import '../ui/editorial.dart';
@@ -68,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         style: TextStyle(fontFamily: sans, fontSize: 12, fontWeight: FontWeight.w700, letterSpacing: 2.2, color: Palette.ink),
                       ),
                     ),
-                    if (kDebugMode)
+                    if (showGallery)
                       IconButton(
                         tooltip: 'Template gallery',
                         icon: const Icon(Icons.grid_view_outlined, size: 20),

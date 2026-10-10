@@ -7,6 +7,10 @@ import '../screens/home_screen.dart';
 import '../screens/result_screen.dart';
 import '../state/visualize_controller.dart';
 
+/// The template gallery: always in debug builds, and in other builds made
+/// with `--dart-define=SHOW_GALLERY=true` (for previewing without a server).
+const bool showGallery = kDebugMode || bool.fromEnvironment('SHOW_GALLERY');
+
 GoRouter buildRouter({String initialLocation = '/'}) => GoRouter(
       initialLocation: initialLocation,
       redirect: (context, state) {
@@ -31,7 +35,7 @@ GoRouter buildRouter({String initialLocation = '/'}) => GoRouter(
           path: '/v/:payload',
           builder: (context, state) => ResultScreen(request: SharedRequest(state.pathParameters['payload']!)),
         ),
-        if (kDebugMode) ...[
+        if (showGallery) ...[
           GoRoute(path: '/dev', builder: (context, state) => const DevGalleryScreen()),
           GoRoute(
             path: '/dev/:index',
