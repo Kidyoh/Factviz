@@ -58,7 +58,8 @@ void main() {
 
     test('formatSi picks a readable unit', () {
       expect(formatSi(3.844e8, Dimension.length), '384,400 km');
-      expect(formatSi(1e-4, Dimension.length), '0.1 mm');
+      expect(formatSi(1e-4, Dimension.length), '100 µm');
+      expect(formatSi(100, Dimension.length), '100 m');
       expect(formatSi(1.496e11, Dimension.length), '1 AU');
       expect(formatSi(150000, Dimension.mass), '150 t');
       expect(formatSi(7200, Dimension.duration), '2 h');

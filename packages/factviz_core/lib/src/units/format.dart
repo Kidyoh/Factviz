@@ -50,8 +50,8 @@ String formatQuantity(double value, Unit unit, {bool approximate = false}) {
 
 /// Picks the most readable unit for a base (SI) value, e.g. 3.84e8 m → km.
 ///
-/// Chooses the largest unit in which the value is still at least 0.1, so
-/// 1e-4 m reads as "0.1 mm" rather than "100 µm".
+/// Chooses the largest unit in which the value is at least 1, so 100 m
+/// reads as "100 m" rather than "0.1 km".
 Unit bestDisplayUnit(double si, Dimension dimension, {Unit? fallback}) {
   final ladder = displayLadders[dimension];
   if (ladder == null) return fallback ?? units.values.firstWhere((u) => u.dimension == dimension);
@@ -59,7 +59,7 @@ Unit bestDisplayUnit(double si, Dimension dimension, {Unit? fallback}) {
   var best = units[ladder.first]!;
   for (final code in ladder) {
     final u = units[code]!;
-    if (si.abs() / u.toSi >= 0.1) best = u;
+    if (si.abs() / u.toSi >= 1) best = u;
   }
   return best;
 }

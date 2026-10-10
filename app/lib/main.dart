@@ -7,14 +7,17 @@ import 'app/theme.dart';
 void main() => runApp(const ProviderScope(child: FactvizApp()));
 
 class FactvizApp extends StatefulWidget {
-  const FactvizApp({super.key});
+  const FactvizApp({super.key, this.initialLocation = '/'});
+
+  /// Starting route; tests use it to open share links directly.
+  final String initialLocation;
 
   @override
   State<FactvizApp> createState() => _FactvizAppState();
 }
 
 class _FactvizAppState extends State<FactvizApp> {
-  final _router = buildRouter();
+  late final _router = buildRouter(initialLocation: widget.initialLocation);
 
   @override
   void dispose() {
