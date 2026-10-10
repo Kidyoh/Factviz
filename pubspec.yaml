@@ -1,0 +1,10 @@
+name: factviz_workspace
+publish_to: none
+
+environment:
+  sdk: ^3.12.0
+
+workspace:
+  - packages/factviz_core
+  - server
+  - app

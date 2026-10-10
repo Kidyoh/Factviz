@@ -1,0 +1,23 @@
+{
+  "query": "How the water cycle works",
+  "expectedTemplate": "process_steps",
+  "facts": {
+    "query": "How the water cycle works",
+    "topic": "The water cycle",
+    "confidence": "high",
+    "explanation": "Water keeps moving between the ground, the oceans and the sky. The Sun heats water so it rises as vapor, the vapor cools into clouds, and the water falls back as rain or snow. Then it collects in rivers, lakes, oceans and underground, and the cycle starts again.",
+    "facts": [
+      {"kind": "step", "id": "evaporation", "label": "Evaporation", "order": 1, "title": "Evaporation", "description": "The Sun heats water in oceans, lakes and rivers, turning it into invisible water vapor that rises into the air. Plants also release vapor from their leaves.", "sourceNote": "USGS Water Science School"},
+      {"kind": "step", "id": "condensation", "label": "Condensation", "order": 2, "title": "Condensation", "description": "As the vapor rises it cools and turns into tiny droplets that gather to form clouds and fog.", "sourceNote": "USGS Water Science School"},
+      {"kind": "step", "id": "precipitation", "label": "Precipitation", "order": 3, "title": "Precipitation", "description": "When droplets grow heavy enough, they fall back to the ground as rain, snow, sleet or hail.", "sourceNote": "USGS Water Science School"},
+      {"kind": "step", "id": "collection", "label": "Collection", "order": 4, "title": "Collection", "description": "Water runs off into rivers, lakes and oceans or soaks into the ground as groundwater, ready to evaporate again.", "sourceNote": "USGS Water Science School"}
+    ]
+  },
+  "plan": {
+    "template": "process_steps",
+    "title": "How the water cycle works",
+    "stepFactIds": ["evaporation", "condensation", "precipitation", "collection"],
+    "autoplayMs": 3500,
+    "loop": true
+  }
+}

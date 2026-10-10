@@ -1,0 +1,26 @@
+{
+  "query": "Blue whale vs a school bus by weight",
+  "expectedTemplate": "comparison_bars",
+  "facts": {
+    "query": "Blue whale vs a school bus by weight",
+    "topic": "Blue whale vs school bus weight",
+    "confidence": "medium",
+    "explanation": "The blue whale is the heaviest animal known to have ever lived. An adult can weigh as much as many school buses put together, and even an elephant looks small next to it. Weights vary a lot between individuals, so these are typical values.",
+    "facts": [
+      {"kind": "quantity", "id": "blue_whale_mass", "label": "Adult blue whale mass", "value": 150, "unit": "t", "approximate": true, "sourceNote": "NOAA Fisheries; adults typically 100–150 t"},
+      {"kind": "quantity", "id": "school_bus_mass", "label": "Full-size school bus (empty)", "value": 11, "unit": "t", "approximate": true, "sourceNote": "Typical US Type C/D bus curb weight, about 10–13 t"},
+      {"kind": "quantity", "id": "elephant_mass", "label": "Adult male African elephant", "value": 6, "unit": "t", "approximate": true, "sourceNote": "Smithsonian National Zoo; up to about 6 t"}
+    ]
+  },
+  "plan": {
+    "template": "comparison_bars",
+    "title": "Blue whale vs a school bus",
+    "caption": "How their weights compare",
+    "bars": [
+      {"factId": "blue_whale_mass", "displayName": "Blue whale"},
+      {"factId": "school_bus_mass", "displayName": "School bus"},
+      {"factId": "elephant_mass", "displayName": "African elephant"}
+    ],
+    "orientation": "horizontal"
+  }
+}

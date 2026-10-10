@@ -1,0 +1,27 @@
+{
+  "query": "History of human spaceflight",
+  "expectedTemplate": "timeline",
+  "facts": {
+    "query": "History of human spaceflight",
+    "topic": "Human spaceflight milestones",
+    "confidence": "high",
+    "explanation": "Human spaceflight began with a small satellite and quickly moved to people orbiting Earth, walking in space and landing on the Moon. Later, reusable shuttles and a permanently crewed space station made living in orbit routine, and private companies began flying astronauts.",
+    "facts": [
+      {"kind": "event", "id": "sputnik_1", "label": "Sputnik 1 launched", "year": 1957, "month": 10, "day": 4, "description": "First artificial satellite to orbit Earth.", "sourceNote": "NASA history office"},
+      {"kind": "event", "id": "gagarin", "label": "Yuri Gagarin orbits Earth", "year": 1961, "month": 4, "day": 12, "description": "First human in space, aboard Vostok 1.", "sourceNote": "NASA history office"},
+      {"kind": "event", "id": "tereshkova", "label": "Valentina Tereshkova flies", "year": 1963, "month": 6, "day": 16, "description": "First woman in space, aboard Vostok 6.", "sourceNote": "ESA / NASA history"},
+      {"kind": "event", "id": "leonov_spacewalk", "label": "First spacewalk", "year": 1965, "month": 3, "day": 18, "description": "Alexei Leonov leaves Voskhod 2.", "sourceNote": "NASA history office"},
+      {"kind": "event", "id": "apollo_11", "label": "Apollo 11 lands on the Moon", "year": 1969, "month": 7, "day": 20, "description": "Neil Armstrong and Buzz Aldrin walk on the Moon.", "sourceNote": "NASA Apollo 11 mission records"},
+      {"kind": "event", "id": "sts_1", "label": "First Space Shuttle flight", "year": 1981, "month": 4, "day": 12, "description": "Columbia flies mission STS-1.", "sourceNote": "NASA Space Shuttle program records"},
+      {"kind": "event", "id": "iss_zarya", "label": "First ISS module launched", "year": 1998, "month": 11, "day": 20, "description": "The Zarya module starts the International Space Station.", "sourceNote": "NASA ISS program"},
+      {"kind": "event", "id": "iss_crewed", "label": "ISS continuously crewed", "year": 2000, "month": 11, "day": 2, "description": "Expedition 1 arrives; people have lived aboard ever since.", "sourceNote": "NASA ISS program"},
+      {"kind": "event", "id": "crew_dragon", "label": "First commercial crew launch", "year": 2020, "month": 5, "day": 30, "description": "SpaceX Crew Dragon Demo-2 carries NASA astronauts to the ISS.", "sourceNote": "NASA Commercial Crew program"}
+    ]
+  },
+  "plan": {
+    "template": "timeline",
+    "title": "Milestones of human spaceflight",
+    "eventFactIds": ["sputnik_1", "gagarin", "tereshkova", "leonov_spacewalk", "apollo_11", "sts_1", "iss_zarya", "iss_crewed", "crew_dragon"],
+    "axis": "linear"
+  }
+}

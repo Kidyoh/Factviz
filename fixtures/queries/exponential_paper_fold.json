@@ -1,0 +1,27 @@
+{
+  "query": "Fold a paper 42 times to reach the Moon",
+  "expectedTemplate": "exponential_growth",
+  "facts": {
+    "query": "Fold a paper 42 times to reach the Moon",
+    "topic": "Folding paper to the Moon",
+    "confidence": "high",
+    "explanation": "Each fold doubles the thickness of the paper. Doubling feels slow at first, but it grows explosively: after enough folds the stack would be taller than the distance from Earth to the Moon. In real life you can only fold paper about seven times, so this is a thought experiment.",
+    "facts": [
+      {"kind": "quantity", "id": "paper_thickness", "label": "Thickness of a sheet of paper", "value": 0.1, "unit": "mm", "approximate": true, "sourceNote": "Typical office paper, about 0.05–0.1 mm"},
+      {"kind": "quantity", "id": "fold_factor", "label": "Thickness multiplier per fold", "value": 2, "unit": "ratio", "approximate": false, "sourceNote": "Each fold doubles the layers (definition)"},
+      {"kind": "quantity", "id": "fold_count", "label": "Number of folds", "value": 42, "unit": "count", "approximate": false, "sourceNote": "From your question"},
+      {"kind": "quantity", "id": "moon_distance", "label": "Average Earth–Moon distance", "value": 384400, "unit": "km", "approximate": true, "sourceNote": "NASA mean Earth–Moon distance"}
+    ]
+  },
+  "plan": {
+    "template": "exponential_growth",
+    "title": "Folding paper to the Moon",
+    "caption": "Every fold doubles the thickness",
+    "initialFactId": "paper_thickness",
+    "factorFactId": "fold_factor",
+    "stepsFactId": "fold_count",
+    "targetFactId": "moon_distance",
+    "stepLabel": "fold",
+    "defaultScale": "log"
+  }
+}
