@@ -1,0 +1,13 @@
+{
+  "name": "factviz-viz-test",
+  "private": true,
+  "type": "module",
+  "description": "Tests and previews for the D3 renderer in app/assets/viz.",
+  "scripts": {
+    "test": "node --test",
+    "shots": "node shots.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "1.56.1"
+  }
+}

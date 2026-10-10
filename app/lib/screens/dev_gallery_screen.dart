@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../app/theme.dart';
 import '../templates/mock_data.dart';
-import '../ui/cosmic/starfield.dart';
 import '../ui/visualization_panel.dart';
 
 /// Debug-only list of every template rendered with mock data.
@@ -12,25 +12,19 @@ class DevGalleryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(title: const Text('Template gallery')),
-      body: CosmicBackground(
-        intensity: 0.7,
-        child: SafeArea(
-          child: ListView.separated(
-            itemCount: mockSamples.length,
-            separatorBuilder: (_, _) => const Divider(height: 1),
-            itemBuilder: (context, i) {
-              final sample = mockSamples[i];
-              return ListTile(
-                title: Text(sample.visualization.props.title),
-                subtitle: Text(sample.name),
-                trailing: const Icon(Icons.chevron_right_rounded),
-                onTap: () => context.push('/dev/$i'),
-              );
-            },
-          ),
-        ),
+      appBar: AppBar(title: const Text('TEMPLATE GALLERY')),
+      body: ListView.separated(
+        itemCount: mockSamples.length,
+        separatorBuilder: (_, _) => const Divider(),
+        itemBuilder: (context, i) {
+          final sample = mockSamples[i];
+          return ListTile(
+            title: Text(sample.visualization.props.title, style: const TextStyle(fontFamily: serif, fontSize: 17)),
+            subtitle: Text(sample.name, style: Txt.caption),
+            trailing: const Icon(Icons.arrow_forward, size: 18),
+            onTap: () => context.push('/dev/$i'),
+          );
+        },
       ),
     );
   }
@@ -65,26 +59,14 @@ class _DevPreviewScreenState extends State<DevPreviewScreen> {
               _replay++;
             }),
           ),
-          IconButton(
-            tooltip: 'Replay',
-            icon: const Icon(Icons.replay_rounded),
-            onPressed: () => setState(() => _replay++),
-          ),
+          IconButton(tooltip: 'Replay', icon: const Icon(Icons.replay), onPressed: () => setState(() => _replay++)),
         ],
       ),
-      extendBodyBehindAppBar: true,
       body: MediaQuery(
-        data: MediaQuery.of(
-          context,
-        ).copyWith(disableAnimations: _reduceMotion || MediaQuery.disableAnimationsOf(context)),
-        child: CosmicBackground(
-          intensity: 0.8,
-          child: SafeArea(
-            child: ListView(
-              padding: const EdgeInsets.fromLTRB(16, 8, 16, 32),
-              children: [VisualizationPanel(visualization: sample.visualization, replayKey: _replay)],
-            ),
-          ),
+        data: MediaQuery.of(context).copyWith(disableAnimations: _reduceMotion || MediaQuery.disableAnimationsOf(context)),
+        child: ListView(
+          padding: const EdgeInsets.fromLTRB(0, 16, 0, 32),
+          children: [VisualizationPanel(visualization: sample.visualization, replayKey: _replay)],
         ),
       ),
     );

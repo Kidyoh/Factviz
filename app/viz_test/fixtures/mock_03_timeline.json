@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "template": "timeline",
+  "title": "Life on Earth",
+  "annotations": [
+    {
+      "text": "Earth forms: 4.54 billion years ago",
+      "anchor": "event",
+      "index": 0
+    },
+    {
+      "text": "A 3.16 billion-year gap",
+      "anchor": "gap",
+      "index": 1,
+      "index2": 2
+    }
+  ],
+  "axis": "log_years_ago",
+  "referenceYear": 2026,
+  "events": [
+    {
+      "label": "Earth forms",
+      "date": "4.54 billion years ago",
+      "year": -4540000000.0,
+      "yearsAgo": 4540002026.0,
+      "source": "USGS radiometric dating"
+    },
+    {
+      "label": "Earliest evidence of life",
+      "date": "3.7 billion years ago",
+      "year": -3700000000.0,
+      "yearsAgo": 3700002026.0,
+      "source": "Geological record, approximate"
+    },
+    {
+      "label": "Cambrian explosion",
+      "date": "538 million years ago",
+      "year": -538000000.0,
+      "yearsAgo": 538002026.0,
+      "source": "International Commission on Stratigraphy"
+    },
+    {
+      "label": "Non-avian dinosaurs go extinct",
+      "date": "66 million years ago",
+      "year": -66000000.0,
+      "yearsAgo": 66002026.0,
+      "source": "K–Pg boundary dating"
+    },
+    {
+      "label": "Homo sapiens appears",
+      "date": "300,000 years ago",
+      "year": -300000.0,
+      "yearsAgo": 302026.0,
+      "source": "Jebel Irhoud fossils, approximate"
+    },
+    {
+      "label": "Earliest writing",
+      "date": "3200 BCE",
+      "year": -3200.0,
+      "yearsAgo": 5226.0,
+      "source": "Mesopotamian cuneiform, approximate"
+    }
+  ]
+}

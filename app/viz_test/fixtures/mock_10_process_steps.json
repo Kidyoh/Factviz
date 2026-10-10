@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "template": "process_steps",
+  "title": "How a bill becomes law",
+  "annotations": [],
+  "loop": false,
+  "autoplayMs": 3500,
+  "steps": [
+    {
+      "order": 1,
+      "title": "Introduction",
+      "description": "A member of Congress introduces the bill in the House or Senate.",
+      "source": "US House of Representatives"
+    },
+    {
+      "order": 2,
+      "title": "Committee",
+      "description": "A committee studies, amends and votes on the bill.",
+      "source": "US House of Representatives"
+    },
+    {
+      "order": 3,
+      "title": "Floor vote",
+      "description": "The full chamber debates and votes on the bill.",
+      "source": "US House of Representatives"
+    },
+    {
+      "order": 4,
+      "title": "Other chamber",
+      "description": "The other chamber repeats the process and must pass the same text.",
+      "source": "US Senate"
+    },
+    {
+      "order": 5,
+      "title": "President",
+      "description": "The President signs the bill into law or vetoes it.",
+      "source": "US House of Representatives"
+    }
+  ]
+}

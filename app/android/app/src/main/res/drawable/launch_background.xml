@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Launch screen (Android 11 and below): deep space with the orbit mark. -->
+<!-- Launch screen (Android 11 and below): paper with the logo. -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@color/space_void"/>
+    <item android:drawable="@color/paper"/>
     <item>
         <bitmap android:gravity="center" android:src="@drawable/splash_mark"/>
     </item>

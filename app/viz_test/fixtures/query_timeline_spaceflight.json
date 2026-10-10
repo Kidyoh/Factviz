@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "template": "timeline",
+  "title": "Milestones of human spaceflight",
+  "annotations": [
+    {
+      "text": "63 years from first to last",
+      "anchor": "event",
+      "index": 8
+    },
+    {
+      "text": "A 20-year gap",
+      "anchor": "gap",
+      "index": 7,
+      "index2": 8
+    }
+  ],
+  "axis": "linear",
+  "referenceYear": 2026,
+  "events": [
+    {
+      "label": "Sputnik 1 launched",
+      "date": "4 Oct 1957",
+      "year": 1957.7582191780823,
+      "yearsAgo": 68.2417808219177,
+      "description": "First artificial satellite to orbit Earth.",
+      "source": "NASA history office"
+    },
+    {
+      "label": "Yuri Gagarin orbits Earth",
+      "date": "12 Apr 1961",
+      "year": 1961.2801369863014,
+      "yearsAgo": 64.71986301369861,
+      "description": "First human in space, aboard Vostok 1.",
+      "source": "NASA history office"
+    },
+    {
+      "label": "Valentina Tereshkova flies",
+      "date": "16 Jun 1963",
+      "year": 1963.4577625570778,
+      "yearsAgo": 62.542237442922215,
+      "description": "First woman in space, aboard Vostok 6.",
+      "source": "ESA / NASA history"
+    },
+    {
+      "label": "First spacewalk",
+      "date": "18 Mar 1965",
+      "year": 1965.2132420091325,
+      "yearsAgo": 60.7867579908675,
+      "description": "Alexei Leonov leaves Voskhod 2.",
+      "source": "NASA history office"
+    },
+    {
+      "label": "Apollo 11 lands on the Moon",
+      "date": "20 Jul 1969",
+      "year": 1969.5520547945205,
+      "yearsAgo": 56.44794520547953,
+      "description": "Neil Armstrong and Buzz Aldrin walk on the Moon.",
+      "source": "NASA Apollo 11 mission records"
+    },
+    {
+      "label": "First Space Shuttle flight",
+      "date": "12 Apr 1981",
+      "year": 1981.2801369863014,
+      "yearsAgo": 44.719863013698614,
+      "description": "Columbia flies mission STS-1.",
+      "source": "NASA Space Shuttle program records"
+    },
+    {
+      "label": "First ISS module launched",
+      "date": "20 Nov 1998",
+      "year": 1998.8853881278537,
+      "yearsAgo": 27.11461187214627,
+      "description": "The Zarya module starts the International Space Station.",
+      "source": "NASA ISS program"
+    },
+    {
+      "label": "ISS continuously crewed",
+      "date": "2 Nov 2000",
+      "year": 2000.8360730593606,
+      "yearsAgo": 25.163926940639385,
+      "description": "Expedition 1 arrives; people have lived aboard ever since.",
+      "source": "NASA ISS program"
+    },
+    {
+      "label": "First commercial crew launch",
+      "date": "30 May 2020",
+      "year": 2020.4127853881278,
+      "yearsAgo": 5.587214611872241,
+      "description": "SpaceX Crew Dragon Demo-2 carries NASA astronauts to the ISS.",
+      "source": "NASA Commercial Crew program"
+    }
+  ]
+}

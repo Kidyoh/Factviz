@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "template": "comparison_bars",
+  "title": "Blue whale vs a school bus",
+  "annotations": [
+    {
+      "text": "Blue whale weighs 25× as much as African elephant",
+      "anchor": "item",
+      "index": 0
+    }
+  ],
+  "orientation": "horizontal",
+  "units": {
+    "dimension": "mass",
+    "ladder": [
+      {
+        "symbol": "mg",
+        "toSi": 0.000001
+      },
+      {
+        "symbol": "g",
+        "toSi": 0.001
+      },
+      {
+        "symbol": "kg",
+        "toSi": 1.0
+      },
+      {
+        "symbol": "t",
+        "toSi": 1000.0
+      }
+    ]
+  },
+  "bars": [
+    {
+      "name": "Blue whale",
+      "valueSi": 150000.0,
+      "display": "~150 t",
+      "source": "NOAA Fisheries; 100–150 t",
+      "image": {
+        "key": "blue_whale",
+        "kind": "silhouette",
+        "src": "blue_whale",
+        "aspect": 3.3,
+        "disc": 1.0,
+        "stretch": false
+      }
+    },
+    {
+      "name": "School bus",
+      "valueSi": 11000.0,
+      "display": "~11 t",
+      "source": "Typical US full-size bus",
+      "image": {
+        "key": "school_bus",
+        "kind": "silhouette",
+        "src": "school_bus",
+        "aspect": 3.86,
+        "disc": 1.0,
+        "stretch": false
+      }
+    },
+    {
+      "name": "African elephant",
+      "valueSi": 6000.0,
+      "display": "~6 t",
+      "source": "Smithsonian National Zoo",
+      "image": {
+        "key": "elephant",
+        "kind": "silhouette",
+        "src": "elephant",
+        "aspect": 1.55,
+        "disc": 1.0,
+        "stretch": false
+      }
+    }
+  ]
+}

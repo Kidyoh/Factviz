@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "template": "timeline",
+  "title": "Milestones in computing",
+  "annotations": [
+    {
+      "text": "61 years from first to last",
+      "anchor": "event",
+      "index": 4
+    },
+    {
+      "text": "A 34-year gap",
+      "anchor": "gap",
+      "index": 1,
+      "index2": 2
+    }
+  ],
+  "axis": "linear",
+  "referenceYear": 2026,
+  "events": [
+    {
+      "label": "ENIAC unveiled",
+      "date": "14 Feb 1946",
+      "year": 1946.1189497716894,
+      "yearsAgo": 79.88105022831064,
+      "source": "Smithsonian / University of Pennsylvania"
+    },
+    {
+      "label": "Transistor invented",
+      "date": "16 Dec 1947",
+      "year": 1947.9577625570778,
+      "yearsAgo": 78.04223744292221,
+      "source": "Bell Labs"
+    },
+    {
+      "label": "IBM PC released",
+      "date": "12 Aug 1981",
+      "year": 1981.6134703196346,
+      "yearsAgo": 44.386529680365356,
+      "source": "IBM archives"
+    },
+    {
+      "label": "World Wide Web goes public",
+      "date": "6 Aug 1991",
+      "year": 1991.5970319634703,
+      "yearsAgo": 34.40296803652973,
+      "source": "CERN"
+    },
+    {
+      "label": "iPhone announced",
+      "date": "9 Jan 2007",
+      "year": 2007.021917808219,
+      "yearsAgo": 18.978082191780913,
+      "source": "Apple press release"
+    }
+  ]
+}

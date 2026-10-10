@@ -1,3 +1,4 @@
+import '../images/image_catalog.dart';
 import '../plan/plan.dart';
 import '../units/units.dart';
 
@@ -66,6 +67,7 @@ final Map<String, Object?> planJsonSchema = {
           'factId': _str('Id of a quantity fact.'),
           'displayName': _str('Short name, max 40 chars.'),
           'shape': _enum(['circle', 'bar', 'tower'], 'circle for round objects, bar for lengths, tower for heights.'),
+          'image': _enum(imageCatalog.keys.toList(), 'Optional bundled picture of this object.'),
         },
         'required': ['factId', 'displayName'],
       },
@@ -93,6 +95,7 @@ final Map<String, Object?> planJsonSchema = {
         'properties': {
           'factId': _str('Id of a quantity fact.'),
           'displayName': _str('Short name, max 40 chars.'),
+          'image': _enum(imageCatalog.keys.toList(), 'Optional bundled picture of this object.'),
         },
         'required': ['factId', 'displayName'],
       },

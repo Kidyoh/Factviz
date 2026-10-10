@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 
+import '../images/image_catalog.dart';
 import '../plan/plan.dart';
 import '../units/format.dart';
 import '../units/units.dart';
@@ -41,11 +42,12 @@ class ResolvedQuantity {
 // scale_zoom
 
 class ScaleItem {
-  const ScaleItem({required this.displayName, required this.shape, required this.quantity});
+  const ScaleItem({required this.displayName, required this.shape, required this.quantity, this.image});
 
   final String displayName;
   final ItemShape shape;
   final ResolvedQuantity quantity;
+  final ImageAsset? image;
 
   double get valueSi => quantity.valueSi;
 }
@@ -190,10 +192,11 @@ final class ExponentialGrowthProps extends TemplateProps {
 // comparison_bars
 
 class BarItem {
-  const BarItem({required this.displayName, required this.quantity});
+  const BarItem({required this.displayName, required this.quantity, this.image});
 
   final String displayName;
   final ResolvedQuantity quantity;
+  final ImageAsset? image;
 
   double get valueSi => quantity.valueSi;
 }

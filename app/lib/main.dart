@@ -7,13 +7,13 @@ import 'app/theme.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  // Edge-to-edge: the starfield runs behind the status and navigation bars.
+  // Edge-to-edge paper, with dark system icons.
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
-    statusBarIconBrightness: Brightness.light,
+    statusBarIconBrightness: Brightness.dark,
     systemNavigationBarColor: Colors.transparent,
-    systemNavigationBarIconBrightness: Brightness.light,
+    systemNavigationBarIconBrightness: Brightness.dark,
   ));
   runApp(const ProviderScope(child: FactvizApp()));
 }
@@ -43,7 +43,6 @@ class _FactvizAppState extends State<FactvizApp> {
       title: 'Explain It Visually',
       debugShowCheckedModeBanner: false,
       theme: buildTheme(),
-      themeMode: ThemeMode.dark,
       routerConfig: _router,
     );
   }

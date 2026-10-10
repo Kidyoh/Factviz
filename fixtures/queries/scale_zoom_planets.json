@@ -7,14 +7,78 @@
     "confidence": "high",
     "explanation": "The eight planets range from tiny Mercury to giant Jupiter. Jupiter is so wide that more than eleven Earths could sit side by side across it. The four rocky inner planets are much smaller than the four gas and ice giants.",
     "facts": [
-      {"kind": "quantity", "id": "mercury_diameter", "label": "Mercury diameter", "value": 4879, "unit": "km", "approximate": false, "sourceNote": "NASA planetary fact sheet, mean diameter"},
-      {"kind": "quantity", "id": "venus_diameter", "label": "Venus diameter", "value": 12104, "unit": "km", "approximate": false, "sourceNote": "NASA planetary fact sheet, mean diameter"},
-      {"kind": "quantity", "id": "earth_diameter", "label": "Earth diameter", "value": 12756, "unit": "km", "approximate": false, "sourceNote": "NASA planetary fact sheet, equatorial diameter"},
-      {"kind": "quantity", "id": "mars_diameter", "label": "Mars diameter", "value": 6792, "unit": "km", "approximate": false, "sourceNote": "NASA planetary fact sheet, equatorial diameter"},
-      {"kind": "quantity", "id": "jupiter_diameter", "label": "Jupiter diameter", "value": 142984, "unit": "km", "approximate": false, "sourceNote": "NASA planetary fact sheet, equatorial diameter"},
-      {"kind": "quantity", "id": "saturn_diameter", "label": "Saturn diameter", "value": 120536, "unit": "km", "approximate": false, "sourceNote": "NASA planetary fact sheet, equatorial diameter"},
-      {"kind": "quantity", "id": "uranus_diameter", "label": "Uranus diameter", "value": 51118, "unit": "km", "approximate": false, "sourceNote": "NASA planetary fact sheet, equatorial diameter"},
-      {"kind": "quantity", "id": "neptune_diameter", "label": "Neptune diameter", "value": 49528, "unit": "km", "approximate": false, "sourceNote": "NASA planetary fact sheet, equatorial diameter"}
+      {
+        "kind": "quantity",
+        "id": "mercury_diameter",
+        "label": "Mercury diameter",
+        "value": 4879,
+        "unit": "km",
+        "approximate": false,
+        "sourceNote": "NASA planetary fact sheet, mean diameter"
+      },
+      {
+        "kind": "quantity",
+        "id": "venus_diameter",
+        "label": "Venus diameter",
+        "value": 12104,
+        "unit": "km",
+        "approximate": false,
+        "sourceNote": "NASA planetary fact sheet, mean diameter"
+      },
+      {
+        "kind": "quantity",
+        "id": "earth_diameter",
+        "label": "Earth diameter",
+        "value": 12756,
+        "unit": "km",
+        "approximate": false,
+        "sourceNote": "NASA planetary fact sheet, equatorial diameter"
+      },
+      {
+        "kind": "quantity",
+        "id": "mars_diameter",
+        "label": "Mars diameter",
+        "value": 6792,
+        "unit": "km",
+        "approximate": false,
+        "sourceNote": "NASA planetary fact sheet, equatorial diameter"
+      },
+      {
+        "kind": "quantity",
+        "id": "jupiter_diameter",
+        "label": "Jupiter diameter",
+        "value": 142984,
+        "unit": "km",
+        "approximate": false,
+        "sourceNote": "NASA planetary fact sheet, equatorial diameter"
+      },
+      {
+        "kind": "quantity",
+        "id": "saturn_diameter",
+        "label": "Saturn diameter",
+        "value": 120536,
+        "unit": "km",
+        "approximate": false,
+        "sourceNote": "NASA planetary fact sheet, equatorial diameter"
+      },
+      {
+        "kind": "quantity",
+        "id": "uranus_diameter",
+        "label": "Uranus diameter",
+        "value": 51118,
+        "unit": "km",
+        "approximate": false,
+        "sourceNote": "NASA planetary fact sheet, equatorial diameter"
+      },
+      {
+        "kind": "quantity",
+        "id": "neptune_diameter",
+        "label": "Neptune diameter",
+        "value": 49528,
+        "unit": "km",
+        "approximate": false,
+        "sourceNote": "NASA planetary fact sheet, equatorial diameter"
+      }
     ]
   },
   "plan": {
@@ -23,14 +87,54 @@
     "caption": "Zoom out from the smallest planet to the largest",
     "mode": "size",
     "items": [
-      {"factId": "mercury_diameter", "displayName": "Mercury", "shape": "circle"},
-      {"factId": "venus_diameter", "displayName": "Venus", "shape": "circle"},
-      {"factId": "earth_diameter", "displayName": "Earth", "shape": "circle"},
-      {"factId": "mars_diameter", "displayName": "Mars", "shape": "circle"},
-      {"factId": "jupiter_diameter", "displayName": "Jupiter", "shape": "circle"},
-      {"factId": "saturn_diameter", "displayName": "Saturn", "shape": "circle"},
-      {"factId": "uranus_diameter", "displayName": "Uranus", "shape": "circle"},
-      {"factId": "neptune_diameter", "displayName": "Neptune", "shape": "circle"}
+      {
+        "factId": "mercury_diameter",
+        "displayName": "Mercury",
+        "shape": "circle",
+        "image": "mercury"
+      },
+      {
+        "factId": "venus_diameter",
+        "displayName": "Venus",
+        "shape": "circle",
+        "image": "venus"
+      },
+      {
+        "factId": "earth_diameter",
+        "displayName": "Earth",
+        "shape": "circle",
+        "image": "earth"
+      },
+      {
+        "factId": "mars_diameter",
+        "displayName": "Mars",
+        "shape": "circle",
+        "image": "mars"
+      },
+      {
+        "factId": "jupiter_diameter",
+        "displayName": "Jupiter",
+        "shape": "circle",
+        "image": "jupiter"
+      },
+      {
+        "factId": "saturn_diameter",
+        "displayName": "Saturn",
+        "shape": "circle",
+        "image": "saturn"
+      },
+      {
+        "factId": "uranus_diameter",
+        "displayName": "Uranus",
+        "shape": "circle",
+        "image": "uranus"
+      },
+      {
+        "factId": "neptune_diameter",
+        "displayName": "Neptune",
+        "shape": "circle",
+        "image": "neptune"
+      }
     ]
   }
 }

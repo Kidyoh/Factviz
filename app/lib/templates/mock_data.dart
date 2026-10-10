@@ -44,9 +44,9 @@ final List<MockSample> mockSamples = [
       _q('human_height', 'Adult human height', 1.7, 'm', 'Typical adult height', approx: true),
     ]),
     const ScaleZoomPlan(title: 'Blue whale vs a school bus', mode: ScaleMode.size, items: [
-      ScaleItemRef(factId: 'human_height', displayName: 'Person', shape: ItemShape.tower),
-      ScaleItemRef(factId: 'bus_length', displayName: 'School bus', shape: ItemShape.bar),
-      ScaleItemRef(factId: 'whale_length', displayName: 'Blue whale', shape: ItemShape.bar),
+      ScaleItemRef(factId: 'human_height', displayName: 'Person', shape: ItemShape.tower, image: 'person'),
+      ScaleItemRef(factId: 'bus_length', displayName: 'School bus', shape: ItemShape.bar, image: 'school_bus'),
+      ScaleItemRef(factId: 'whale_length', displayName: 'Blue whale', shape: ItemShape.bar, image: 'blue_whale'),
     ]),
   ),
   _sample(
@@ -61,9 +61,9 @@ final List<MockSample> mockSamples = [
     const ScaleZoomPlan(title: 'From an atom to the Earth', mode: ScaleMode.size, items: [
       ScaleItemRef(factId: 'atom', displayName: 'Atom'),
       ScaleItemRef(factId: 'hair', displayName: 'Hair width'),
-      ScaleItemRef(factId: 'person', displayName: 'Person', shape: ItemShape.tower),
+      ScaleItemRef(factId: 'person', displayName: 'Person', shape: ItemShape.tower, image: 'person'),
       ScaleItemRef(factId: 'everest', displayName: 'Everest', shape: ItemShape.tower),
-      ScaleItemRef(factId: 'earth', displayName: 'Earth'),
+      ScaleItemRef(factId: 'earth', displayName: 'Earth', image: 'earth'),
     ]),
   ),
   _sample(
@@ -75,10 +75,10 @@ final List<MockSample> mockSamples = [
       _q('neptune', 'Neptune distance from Sun', 30.07, 'au', 'NASA mean orbital distance'),
     ]),
     const ScaleZoomPlan(title: 'Distances from the Sun', mode: ScaleMode.distance, items: [
-      ScaleItemRef(factId: 'mercury', displayName: 'Mercury'),
-      ScaleItemRef(factId: 'earth', displayName: 'Earth'),
-      ScaleItemRef(factId: 'jupiter', displayName: 'Jupiter'),
-      ScaleItemRef(factId: 'neptune', displayName: 'Neptune'),
+      ScaleItemRef(factId: 'mercury', displayName: 'Mercury', image: 'mercury'),
+      ScaleItemRef(factId: 'earth', displayName: 'Earth', image: 'earth'),
+      ScaleItemRef(factId: 'jupiter', displayName: 'Jupiter', image: 'jupiter'),
+      ScaleItemRef(factId: 'neptune', displayName: 'Neptune', image: 'neptune'),
     ]),
   ),
   _sample(
@@ -150,9 +150,9 @@ final List<MockSample> mockSamples = [
       _q('elephant', 'African elephant mass', 6, 't', 'Smithsonian National Zoo', approx: true),
     ], confidence: Confidence.low, note: 'Whale weights vary widely between individuals.'),
     const ComparisonBarsPlan(title: 'Blue whale vs a school bus', orientation: BarOrientation.horizontal, bars: [
-      BarRef(factId: 'whale', displayName: 'Blue whale'),
-      BarRef(factId: 'bus', displayName: 'School bus'),
-      BarRef(factId: 'elephant', displayName: 'African elephant'),
+      BarRef(factId: 'whale', displayName: 'Blue whale', image: 'blue_whale'),
+      BarRef(factId: 'bus', displayName: 'School bus', image: 'school_bus'),
+      BarRef(factId: 'elephant', displayName: 'African elephant', image: 'elephant'),
     ]),
   ),
   _sample(
@@ -166,7 +166,7 @@ final List<MockSample> mockSamples = [
     const ComparisonBarsPlan(title: 'How tall are they?', orientation: BarOrientation.vertical, bars: [
       BarRef(factId: 'burj', displayName: 'Burj Khalifa'),
       BarRef(factId: 'shanghai', displayName: 'Shanghai Tower'),
-      BarRef(factId: 'eiffel', displayName: 'Eiffel Tower'),
+      BarRef(factId: 'eiffel', displayName: 'Eiffel Tower', image: 'eiffel_tower'),
       BarRef(factId: 'liberty', displayName: 'Statue of Liberty'),
     ]),
   ),

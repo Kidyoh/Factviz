@@ -15,7 +15,7 @@ template**; hand-built Flutter widgets do all the drawing.
         ◀──────── FactsResult ──────     validate → retry once → 422
         ──POST /api/plan───────────▶  2. Planner layer (OpenRouter → Gemini)
         ◀──────── Plan ─────────────     validate + resolve → retry once → 422
- 3. Render layer: PlanResolver (on device again) → TemplateProps → template widget
+ 3. Render layer: PlanResolver (on device again) → render JSON → D3 in a WebView
 ```
 
 - **Facts layer**: strict JSON with values, units, and a short source note per
@@ -25,8 +25,12 @@ template**; hand-built Flutter widgets do all the drawing.
   `exponential_growth`, `comparison_bars`, `process_steps` or `none`, and
   **refers to facts only by id**. It cannot introduce numbers.
 - **Render layer**: `PlanResolver` turns plan + facts into typed props
-  (unit conversion, dimension checks, sorting). Every number on screen comes
-  from a fact.
+  (unit conversion, dimension checks, sorting), and `renderJson` turns
+  those into the JSON contract for the renderer, including display strings
+  and annotations. The five templates are hand-written **D3 v7** charts in
+  `app/assets/viz/`, bundled offline and hosted in a WebView. Every number
+  on screen comes from a fact; the JavaScript never formats or invents a
+  figure.
 
 Both LLM outputs are validated by `factviz_core`, a pure-Dart package shared
 by the server and the app. On a validation failure the server retries once,
@@ -39,9 +43,14 @@ feeding the errors back to the model. If that also fails, the app shows
 packages/factviz_core/   schemas, validation, units, PlanResolver, ShareCodec, JSON Schemas
 server/                  shelf API: OpenRouter client, prompts, validated calls, routes
 app/                     Flutter app (Android; iOS later)
-  lib/templates/         one folder per template + mock_data.dart (Dev Gallery only)
+  assets/viz/            D3 renderer: index.html, viz.js (5 templates), viz.css,
+                         silhouettes.js, img/ (NASA photos), vendor/ (d3, d3-annotation)
+  assets/lottie/         loader and logo animations (from tool/generate_lottie.py)
+  lib/viz/               WebView host for the renderer
+  lib/templates/         mock_data.dart (Dev Gallery only)
   lib/ui/                shared widgets (search, stages, key numbers, badges, errors)
   lib/screens/           home, result, dev gallery
+  viz_test/              renderer tests and screenshots (Node + headless Chromium)
 fixtures/queries/        the five fixed test queries (one per template)
 ```
 
@@ -101,8 +110,14 @@ clickable; https App Links can be added once there is a domain.
 ```sh
 (cd packages/factviz_core && dart test)   # schemas, resolver mapping, units, share codec
 (cd server && dart test)                  # prompts, retry loop, client, routes, 5 queries
-(cd app && flutter test)                  # templates, flows, 5 queries end to end
+(cd app && flutter test)                  # screens, flows, 5 queries end to end
+(cd app/viz_test && npm install && npm test)   # D3 renderer in headless Chromium
 ```
+
+`flutter test` uses a stand-in for the WebView. The renderer itself is tested
+in Chromium against render JSON exported from the app
+(`flutter test viz_test/export_fixtures_test.dart`). `node viz_test/shots.mjs`
+saves a screenshot of every fixture to `viz_test/out/`.
 
 The **five fixed queries** in `fixtures/queries/` (planets → `scale_zoom`,
 spaceflight → `timeline`, paper folding → `exponential_growth`, whale vs bus →
@@ -116,16 +131,29 @@ cd server && OPENROUTER_API_KEY=... dart test -t live --run-skipped
 
 ## Design
 
-The app has a dark-only "deep space" look: a drifting, twinkling starfield
-with nebula glow, frosted-glass cards, Space Grotesk headings and Inter body
-text (both bundled, SIL OFL; licenses in `app/assets/fonts`). The templates
-draw lit spheres, glowing bars and lines, light trails, and a spark burst when
-exponential growth reaches its target. Shared painting helpers live in
-`app/lib/templates/common/viz_paint.dart`; the cosmic widgets are in
-`app/lib/ui/cosmic/`.
+The look is borrowed from data journalism (The Pudding, NYT Upshot, Our World
+in Data): warm paper, ink, one warm accent, Source Serif 4 headlines and
+annotations, Libre Franklin labels (both SIL OFL, in `app/assets/fonts`, and
+shared by Flutter and the WebView).
 
-The launcher icon, adaptive-icon foreground and splash images are rendered
-from the same `OrbitMarkPainter` as the in-app logo:
+- **D3 templates** (`app/assets/viz/viz.js`): a log-space camera that zooms
+  out across sizes or distances; a scrollable timeline with lane-packed
+  labels; a growth curve that morphs between linear and log scales; bars that
+  grow and count up; a cycle diagram or step list that autoplays.
+- **Annotations**: `factviz_core` derives callouts from the facts ("Jupiter
+  is 29× as wide as Mercury", "Fold 36: still only 6,872 km") and the
+  renderer places them with
+  [d3-svg-annotation](https://d3-annotation.susielu.com), choosing a spot
+  that avoids labels and marks.
+- **Real imagery**: NASA photographs of the planets, Sun, Moon and Pluto, and
+  silhouettes from PhyloPic and Material Design Icons. The planner can only
+  pick from this fixed catalog (`imageCatalog`), and each picture declares
+  which shapes it may stand in for. Credits: `app/assets/viz/img/CREDITS.md`.
+- **Motion**: Lottie for the loader and logo (generated by
+  `app/tool/generate_lottie.py`), and `flutter_animate` for screen and list
+  transitions.
+
+The launcher icon and splash images are rendered from `LogoPainter`:
 
 ```sh
 cd app && flutter test tool/generate_icons_test.dart
@@ -133,9 +161,10 @@ cd app && flutter test tool/generate_icons_test.dart
 
 ## Accessibility and motion
 
-Templates read `MediaQuery.disableAnimations`. With reduced motion they show
-their final frame immediately, process steps don't autoplay, and the
-starfield and logo hold still. Charts expose
+The renderer is told about `MediaQuery.disableAnimations` and also honours
+`prefers-reduced-motion`. With reduced motion, charts open on their final
+frame and process steps don't autoplay. Every chart has an `aria-label`
+summary, and timeline events, cycle nodes and controls are labelled buttons. Charts expose
 semantic summaries, and labels scale with the system text size up to a limit.
 
 ## Adding iOS later

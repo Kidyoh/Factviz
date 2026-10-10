@@ -2,108 +2,99 @@ import 'dart:math' as math;
 
 import 'package:factviz_core/factviz_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 import '../app/theme.dart';
-import '../templates/template_view.dart';
+import '../viz/viz_view.dart';
 import 'confidence_badge.dart';
-import 'cosmic/glass.dart';
+import 'editorial.dart';
 import 'fact_card.dart';
 import 'key_numbers.dart';
 
 const _templateTags = {
-  TemplateId.scaleZoom: ('To scale', Icons.zoom_out_map_rounded),
-  TemplateId.timeline: ('Timeline', Icons.timeline_rounded),
-  TemplateId.exponentialGrowth: ('Growth', Icons.trending_up_rounded),
-  TemplateId.comparisonBars: ('Comparison', Icons.bar_chart_rounded),
-  TemplateId.processSteps: ('Process', Icons.autorenew_rounded),
-  TemplateId.none: ('Answer', Icons.lightbulb_outline_rounded),
+  TemplateId.scaleZoom: 'To scale',
+  TemplateId.timeline: 'Timeline',
+  TemplateId.exponentialGrowth: 'Growth',
+  TemplateId.comparisonBars: 'Comparison',
+  TemplateId.processSteps: 'How it works',
+  TemplateId.none: 'Answer',
 };
 
-/// A full result: tag, title, warning badge, the animated template (or a
-/// fact card), the plain-language explanation and the key numbers.
+/// A full result laid out like a newspaper graphic: kicker, headline, dek,
+/// the chart, a plain-language explanation and the numbers with sources.
 class VisualizationPanel extends StatelessWidget {
   const VisualizationPanel({super.key, required this.visualization, this.replayKey = 0});
 
   final Visualization visualization;
   final int replayKey;
 
+  /// Side margin for text; the chart itself runs edge to edge.
+  static const double gutter = 20;
+
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final viz = visualization;
     final props = viz.props;
-    final palette = context.viz;
-    final height = math.max(380.0, math.min(500.0, MediaQuery.sizeOf(context).height * 0.56));
-    final (tag, icon) = _templateTags[props.template]!;
+    final reduce = MediaQuery.disableAnimationsOf(context);
+    final chartHeight = math.max(400.0, math.min(540.0, MediaQuery.sizeOf(context).height * 0.62));
+
+    Widget reveal(Widget child, int i) => Padding(
+          padding: const EdgeInsets.symmetric(horizontal: gutter),
+          child: child.animate(target: reduce ? 1 : null).fadeIn(delay: (90 * i).ms, duration: 400.ms).slideY(begin: 0.06, end: 0),
+        );
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Row(
-          children: [
-            Icon(icon, size: 16, color: Cosmos.cyan),
-            const SizedBox(width: 6),
-            Text(
-              tag.toUpperCase(),
-              style: theme.textTheme.labelMedium?.copyWith(color: Cosmos.cyan, letterSpacing: 1.8, fontWeight: FontWeight.w700),
-            ),
-          ],
-        ),
+        reveal(Kicker(_templateTags[props.template]!), 0),
         const SizedBox(height: 8),
-        Text(props.title, style: theme.textTheme.headlineMedium),
+        reveal(Text(props.title, style: Txt.headline), 1),
         if (props.caption != null) ...[
-          const SizedBox(height: 6),
-          Text(props.caption!, style: theme.textTheme.bodyLarge?.copyWith(color: Cosmos.textMuted)),
+          const SizedBox(height: 8),
+          reveal(Text(props.caption!, style: Txt.dek), 2),
         ],
         const SizedBox(height: 16),
-        ConfidenceBadge(facts: viz.facts),
-        if (viz.facts.confidence == Confidence.low) const SizedBox(height: 14),
-        if (props is NoneProps)
-          FactCard(facts: viz.facts, reason: props.reason)
-        else ...[
-          DecoratedBox(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(28),
-              boxShadow: [BoxShadow(color: Cosmos.violet.withValues(alpha: 0.18), blurRadius: 40, spreadRadius: -10)],
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(28),
-              child: CustomPaint(
-                foregroundPainter: const GradientBorderPainter(radius: 28),
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    gradient: RadialGradient(
-                      center: const Alignment(0.6, -0.9),
-                      radius: 1.4,
-                      colors: [palette.surfaceTop, palette.surface],
-                    ),
-                  ),
-                  child: SizedBox(height: height, child: TemplateView(props: props, replayKey: replayKey)),
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(height: 18),
-          Glass(
-            padding: const EdgeInsets.fromLTRB(18, 16, 18, 18),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    const Icon(Icons.chat_bubble_outline_rounded, size: 16, color: Cosmos.violet),
-                    const SizedBox(width: 8),
-                    Text('In plain words', style: theme.textTheme.titleSmall?.copyWith(color: Cosmos.violet, fontWeight: FontWeight.w700)),
-                  ],
-                ),
-                const SizedBox(height: 10),
-                Text(viz.facts.explanation, style: theme.textTheme.bodyLarge?.copyWith(height: 1.55)),
-              ],
-            ),
-          ),
+        if (viz.facts.confidence == Confidence.low) ...[
+          reveal(ConfidenceBadge(facts: viz.facts), 2),
+          const SizedBox(height: 16),
         ],
-        const SizedBox(height: 26),
-        KeyNumbers(facts: viz.keyFacts),
+        if (props is NoneProps)
+          reveal(FactCard(facts: viz.facts, reason: props.reason), 3)
+        else ...[
+          // Full-bleed chart between hairlines.
+          Container(
+            decoration: const BoxDecoration(border: Border.symmetric(horizontal: BorderSide(color: Palette.rule))),
+            height: chartHeight,
+            child: VizView(props: props, replayKey: replayKey),
+          ),
+          const SizedBox(height: 22),
+          reveal(_Lede(text: viz.facts.explanation), 3),
+        ],
+        const SizedBox(height: 28),
+        reveal(KeyNumbers(facts: viz.keyFacts), 4),
       ],
+    );
+  }
+}
+
+/// Explanation paragraph with a drop cap.
+class _Lede extends StatelessWidget {
+  const _Lede({required this.text});
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    if (text.isEmpty) return const SizedBox.shrink();
+    return Text.rich(
+      TextSpan(children: [
+        TextSpan(
+          text: text.substring(0, 1),
+          style: const TextStyle(fontFamily: serif, fontSize: 40, height: 0.9, fontWeight: FontWeight.w600, color: Palette.accent),
+        ),
+        TextSpan(text: text.substring(1)),
+      ]),
+      style: Txt.body,
     );
   }
 }

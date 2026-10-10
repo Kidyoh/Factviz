@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 
 import '../facts/facts.dart';
+import '../images/image_catalog.dart';
 import '../plan/plan.dart';
 import '../templates/template_props.dart';
 import '../units/units.dart';
@@ -92,7 +93,12 @@ class _Resolution {
         continue;
       }
       refs.add((f, path));
-      items.add(ScaleItem(displayName: ref.displayName, shape: ref.shape, quantity: _quantity(f)));
+      items.add(ScaleItem(
+        displayName: ref.displayName,
+        shape: ref.shape,
+        quantity: _quantity(f),
+        image: ref.image == null ? null : imageCatalog[ref.image],
+      ));
     }
     final unit = _sameDimension(refs, 'items');
     if (unit == null || items.length != plan.items.length) return null;
@@ -223,7 +229,11 @@ class _Resolution {
       final f = _fact<QuantityFact>(ref.factId, path, 'quantity');
       if (f == null) continue;
       refs.add((f, path));
-      bars.add(BarItem(displayName: ref.displayName, quantity: _quantity(f)));
+      bars.add(BarItem(
+        displayName: ref.displayName,
+        quantity: _quantity(f),
+        image: ref.image == null ? null : imageCatalog[ref.image],
+      ));
     }
     final unit = _sameDimension(refs, 'bars');
     if (unit == null || bars.length != plan.bars.length) return null;

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 import '../app/theme.dart';
 import '../data/visualize_repository.dart';
-import 'cosmic/glass.dart';
-import 'cosmic/orbit_mark.dart';
+import '../templates/common/motion.dart';
 
-/// Orbital loader with the pipeline stages: "Finding facts" →
+/// Lottie chart animation with the pipeline stages: "Finding facts" →
 /// "Choosing visualization" → "Rendering".
 class StageLoader extends StatelessWidget {
   const StageLoader({super.key, required this.stage});
@@ -19,88 +19,81 @@ class StageLoader extends StatelessWidget {
   };
 
   static const hints = {
-    VisualizeStage.findingFacts: 'Looking up trusted figures and their sources',
-    VisualizeStage.choosingVisualization: 'Picking the best way to show it',
-    VisualizeStage.rendering: 'Drawing everything to scale',
+    VisualizeStage.findingFacts: 'Looking up reference figures and where they come from.',
+    VisualizeStage.choosingVisualization: 'Deciding how best to draw it.',
+    VisualizeStage.rendering: 'Putting everything to scale.',
   };
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final reduce = MediaQuery.disableAnimationsOf(context);
+    final animate = ambientMotionOf(context);
     return Semantics(
       liveRegion: true,
       label: '${labels[stage]}…',
       child: ExcludeSemantics(
         child: Column(
           mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const OrbitMark(size: 132, speed: 2),
-            const SizedBox(height: 28),
-            AnimatedSwitcher(
-              duration: reduce ? Duration.zero : const Duration(milliseconds: 300),
-              child: Column(
-                key: ValueKey(stage),
-                children: [
-                  GradientText(labels[stage]!, style: theme.textTheme.headlineSmall),
-                  const SizedBox(height: 6),
-                  Text(hints[stage]!, textAlign: TextAlign.center, style: theme.textTheme.bodyMedium?.copyWith(color: Cosmos.textMuted)),
-                ],
-              ),
+            SizedBox(
+              width: 240,
+              height: 150,
+              child: Lottie.asset('assets/lottie/loader.json', animate: animate, repeat: true, frameRate: FrameRate.max),
             ),
-            const SizedBox(height: 28),
-            Glass(
-              padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 8),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  for (final s in VisualizeStage.values)
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          SizedBox.square(
-                            dimension: 22,
-                            child: switch (s.index.compareTo(stage.index)) {
-                              < 0 => const DecoratedBox(
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    gradient: LinearGradient(colors: [Cosmos.cyan, Cosmos.violet]),
-                                  ),
-                                  child: Icon(Icons.check_rounded, size: 15, color: Cosmos.void0),
-                                ),
-                              0 => const Padding(
-                                  padding: EdgeInsets.all(2),
-                                  child: CircularProgressIndicator(strokeWidth: 2.5, color: Cosmos.cyan),
-                                ),
-                              _ => DecoratedBox(
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    border: Border.all(color: Colors.white.withValues(alpha: 0.2), width: 1.5),
-                                  ),
-                                ),
-                            },
-                          ),
-                          const SizedBox(width: 12),
-                          Flexible(
-                            child: Text(
-                              labels[s]!,
-                              style: theme.textTheme.bodyLarge?.copyWith(
-                                color: s.index > stage.index ? Cosmos.textFaint : Cosmos.text,
-                                fontWeight: s == stage ? FontWeight.w700 : FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                ],
-              ),
+            const SizedBox(height: 18),
+            for (final s in VisualizeStage.values) _StageRow(stage: s, current: stage),
+            const SizedBox(height: 10),
+            AnimatedSwitcher(
+              duration: reduceMotionOf(context) ? Duration.zero : const Duration(milliseconds: 250),
+              child: Text(hints[stage]!, key: ValueKey(stage), style: Txt.dek.copyWith(fontSize: 15)),
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _StageRow extends StatelessWidget {
+  const _StageRow({required this.stage, required this.current});
+
+  final VisualizeStage stage;
+  final VisualizeStage current;
+
+  @override
+  Widget build(BuildContext context) {
+    final order = stage.index.compareTo(current.index);
+    final color = order > 0 ? Palette.ink3 : Palette.ink;
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 5),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          SizedBox(
+            width: 22,
+            child: order < 0
+                ? const Icon(Icons.check, size: 16, color: Palette.ink)
+                : Text(
+                    '${stage.index + 1}',
+                    style: TextStyle(fontFamily: sans, fontSize: 13, fontWeight: FontWeight.w700, color: order == 0 ? Palette.accent : color),
+                  ),
+          ),
+          Flexible(
+            child: Text(
+              StageLoader.labels[stage]!,
+              style: TextStyle(
+                fontFamily: serif,
+                fontSize: 19,
+                fontWeight: order == 0 ? FontWeight.w600 : FontWeight.w400,
+                color: color,
+              ),
+            ),
+          ),
+          if (order == 0) ...[
+            const SizedBox(width: 6),
+            const Text('…', style: TextStyle(fontFamily: serif, fontSize: 19, color: Palette.accent)),
+          ],
+        ],
       ),
     );
   }

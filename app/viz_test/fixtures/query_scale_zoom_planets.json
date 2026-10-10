@@ -1,0 +1,181 @@
+{
+  "version": 1,
+  "template": "scale_zoom",
+  "title": "The planets to scale",
+  "caption": "Zoom out from the smallest planet to the largest",
+  "annotations": [
+    {
+      "text": "Jupiter is 29× as wide as Mercury",
+      "anchor": "item",
+      "index": 7
+    }
+  ],
+  "mode": "size",
+  "units": {
+    "dimension": "length",
+    "ladder": [
+      {
+        "symbol": "nm",
+        "toSi": 1e-9
+      },
+      {
+        "symbol": "µm",
+        "toSi": 0.000001
+      },
+      {
+        "symbol": "mm",
+        "toSi": 0.001
+      },
+      {
+        "symbol": "cm",
+        "toSi": 0.01
+      },
+      {
+        "symbol": "m",
+        "toSi": 1.0
+      },
+      {
+        "symbol": "km",
+        "toSi": 1000.0
+      },
+      {
+        "symbol": "AU",
+        "toSi": 149597870700.0
+      },
+      {
+        "symbol": "ly",
+        "toSi": 9460730472580800.0
+      }
+    ]
+  },
+  "items": [
+    {
+      "name": "Mercury",
+      "shape": "circle",
+      "valueSi": 4879000.0,
+      "linearSi": 4879000.0,
+      "display": "4,879 km",
+      "source": "NASA planetary fact sheet, mean diameter",
+      "image": {
+        "key": "mercury",
+        "kind": "photo",
+        "src": "img/mercury.webp",
+        "aspect": 1.0,
+        "disc": 1.0,
+        "stretch": false
+      }
+    },
+    {
+      "name": "Mars",
+      "shape": "circle",
+      "valueSi": 6792000.0,
+      "linearSi": 6792000.0,
+      "display": "6,792 km",
+      "source": "NASA planetary fact sheet, equatorial diameter",
+      "image": {
+        "key": "mars",
+        "kind": "photo",
+        "src": "img/mars.webp",
+        "aspect": 1.0,
+        "disc": 1.0,
+        "stretch": false
+      }
+    },
+    {
+      "name": "Venus",
+      "shape": "circle",
+      "valueSi": 12104000.0,
+      "linearSi": 12104000.0,
+      "display": "12,104 km",
+      "source": "NASA planetary fact sheet, mean diameter",
+      "image": {
+        "key": "venus",
+        "kind": "photo",
+        "src": "img/venus.webp",
+        "aspect": 1.0,
+        "disc": 1.0,
+        "stretch": false
+      }
+    },
+    {
+      "name": "Earth",
+      "shape": "circle",
+      "valueSi": 12756000.0,
+      "linearSi": 12756000.0,
+      "display": "12,756 km",
+      "source": "NASA planetary fact sheet, equatorial diameter",
+      "image": {
+        "key": "earth",
+        "kind": "photo",
+        "src": "img/earth.webp",
+        "aspect": 1.0,
+        "disc": 1.0,
+        "stretch": false
+      }
+    },
+    {
+      "name": "Neptune",
+      "shape": "circle",
+      "valueSi": 49528000.0,
+      "linearSi": 49528000.0,
+      "display": "49,528 km",
+      "source": "NASA planetary fact sheet, equatorial diameter",
+      "image": {
+        "key": "neptune",
+        "kind": "photo",
+        "src": "img/neptune.webp",
+        "aspect": 1.0,
+        "disc": 1.0,
+        "stretch": false
+      }
+    },
+    {
+      "name": "Uranus",
+      "shape": "circle",
+      "valueSi": 51118000.0,
+      "linearSi": 51118000.0,
+      "display": "51,118 km",
+      "source": "NASA planetary fact sheet, equatorial diameter",
+      "image": {
+        "key": "uranus",
+        "kind": "photo",
+        "src": "img/uranus.webp",
+        "aspect": 1.0,
+        "disc": 1.0,
+        "stretch": false
+      }
+    },
+    {
+      "name": "Saturn",
+      "shape": "circle",
+      "valueSi": 120536000.0,
+      "linearSi": 120536000.0,
+      "display": "120,536 km",
+      "source": "NASA planetary fact sheet, equatorial diameter",
+      "image": {
+        "key": "saturn",
+        "kind": "photo",
+        "src": "img/saturn.webp",
+        "aspect": 2.45,
+        "disc": 0.441,
+        "stretch": false
+      }
+    },
+    {
+      "name": "Jupiter",
+      "shape": "circle",
+      "valueSi": 142984000.0,
+      "linearSi": 142984000.0,
+      "display": "142,984 km",
+      "source": "NASA planetary fact sheet, equatorial diameter",
+      "image": {
+        "key": "jupiter",
+        "kind": "photo",
+        "src": "img/jupiter.webp",
+        "aspect": 1.0,
+        "disc": 1.0,
+        "stretch": false
+      }
+    }
+  ]
+}

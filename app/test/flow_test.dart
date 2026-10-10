@@ -2,11 +2,6 @@ import 'package:factviz/main.dart';
 import 'package:factviz/state/share.dart';
 import 'package:factviz/state/visualize_controller.dart';
 import 'package:factviz/templates/common/motion.dart';
-import 'package:factviz/templates/comparison_bars/comparison_bars_view.dart';
-import 'package:factviz/templates/exponential_growth/exponential_growth_view.dart';
-import 'package:factviz/templates/process_steps/process_steps_view.dart';
-import 'package:factviz/templates/scale_zoom/scale_zoom_view.dart';
-import 'package:factviz/templates/timeline/timeline_view.dart';
 import 'package:factviz/ui/example_prompts.dart';
 import 'package:factviz_core/factviz_core.dart';
 import 'package:flutter/material.dart';
@@ -15,15 +10,10 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 
 import 'support/fake_server.dart';
+import 'support/fake_viz.dart';
 import 'support/test_app.dart';
 
-const _templateWidgets = {
-  'scale_zoom': ScaleZoomView,
-  'timeline': TimelineView,
-  'exponential_growth': ExponentialGrowthView,
-  'comparison_bars': ComparisonBarsView,
-  'process_steps': ProcessStepsView,
-};
+Finder _viz(String template) => find.textContaining('viz:$template#');
 
 void main() {
   setUp(() {
@@ -41,6 +31,7 @@ void main() {
     await tester.pumpWidget(ProviderScope(
       overrides: [
         apiClientProvider.overrideWithValue(server.client()),
+        fakeVizOverride,
         shareTextProvider.overrideWithValue((text, {subject}) async => shared.add(text)),
       ],
       child: FactvizApp(initialLocation: initialLocation),
@@ -56,10 +47,11 @@ void main() {
 
   testWidgets('home shows one search box and six example prompts', (tester) async {
     await pumpApp(tester, FakeServer());
-    expect(find.bySemanticsLabel('Explain It Visually'), findsOneWidget);
+    expect(find.text('What would you like to see?'), findsOneWidget);
     expect(find.byType(TextField), findsOneWidget);
-    expect(find.byType(ExampleCard), findsNWidgets(6));
+    expect(find.byType(ExampleRow), findsNWidgets(6));
     expect(examplePrompts, hasLength(6));
+    await advance(tester, const Duration(seconds: 1));
   });
 
   testWidgets('shows each loading stage, then the visualization', (tester) async {
@@ -81,9 +73,9 @@ void main() {
 
     await tester.pump(const Duration(milliseconds: 320));
     expect(find.text('Folding paper to the Moon'), findsWidgets);
-    expect(find.byType(ExponentialGrowthView), findsOneWidget);
-    expect(find.text('In plain words'), findsOneWidget);
-    expect(find.text('NASA mean Earth–Moon distance'), findsOneWidget);
+    expect(_viz('exponential_growth'), findsOneWidget);
+    expect(find.text('THE NUMBERS'), findsOneWidget);
+    expect(find.text('Source: NASA mean Earth–Moon distance'), findsOneWidget);
     expect(server.calls, ['/api/facts', '/api/plan']);
     await advance(tester, const Duration(seconds: 11));
     expect(tester.takeException(), isNull);
@@ -96,7 +88,7 @@ void main() {
         await pumpApp(tester, server);
         await ask(tester, f.query);
         await advance(tester, const Duration(milliseconds: 600), steps: 12);
-        expect(find.byType(_templateWidgets[f.expectedTemplate]!), findsOneWidget);
+        expect(_viz(f.expectedTemplate), findsOneWidget);
         expect(find.text(f.plan['title'] as String), findsWidgets);
         await advance(tester, const Duration(seconds: 12));
         expect(tester.takeException(), isNull);
@@ -113,7 +105,7 @@ void main() {
 
     await tester.tap(find.text('Rephrase'));
     await tester.pumpAndSettle();
-    expect(find.bySemanticsLabel('Explain It Visually'), findsOneWidget);
+    expect(find.text('What would you like to see?'), findsOneWidget);
     expect(find.widgetWithText(TextField, 'What is the meaning of life?'), findsOneWidget);
   });
 
@@ -128,7 +120,7 @@ void main() {
     server.facts = f.facts;
     await tester.tap(find.text('Try again'));
     await advance(tester, const Duration(milliseconds: 600), steps: 12);
-    expect(find.byType(ComparisonBarsView), findsOneWidget);
+    expect(_viz('comparison_bars'), findsOneWidget);
   });
 
   testWidgets('invalid data from the network never reaches a template', (tester) async {
@@ -140,7 +132,7 @@ void main() {
     await pumpApp(tester, FakeServer(facts: f.facts, plan: badPlan, latency: Duration.zero));
     await ask(tester, f.query);
     await advance(tester, const Duration(milliseconds: 600), steps: 12);
-    expect(find.byType(ScaleZoomView), findsNothing);
+    expect(_viz('scale_zoom'), findsNothing);
     expect(find.text("Couldn't visualize this one, try rephrasing."), findsOneWidget);
   });
 
@@ -159,7 +151,7 @@ void main() {
     await pumpApp(tester, FakeServer(facts: facts, plan: f.plan, latency: Duration.zero));
     await ask(tester, f.query);
     await advance(tester, const Duration(milliseconds: 600), steps: 12);
-    expect(find.textContaining('Low confidence.'), findsOneWidget);
+    expect(find.text('LOW CONFIDENCE'), findsOneWidget);
     expect(find.textContaining('Sources disagree on typical bus weights.'), findsOneWidget);
   });
 
@@ -182,7 +174,7 @@ void main() {
     await pumpApp(tester, fresh, initialLocation: link.toString());
     await advance(tester, const Duration(seconds: 1), steps: 4);
     expect(find.text('Shared visualization'), findsOneWidget);
-    expect(find.byType(TimelineView), findsOneWidget);
+    expect(_viz('timeline'), findsOneWidget);
     expect(find.text('Milestones of human spaceflight'), findsWidgets);
     expect(fresh.calls, isEmpty);
   });
@@ -195,20 +187,19 @@ void main() {
     expect(find.text('Try again'), findsNothing);
     await tester.tap(find.text('Rephrase'));
     await tester.pumpAndSettle();
-    expect(find.bySemanticsLabel('Explain It Visually'), findsOneWidget);
+    expect(find.text('What would you like to see?'), findsOneWidget);
     expect(server.calls, isEmpty);
   });
 
-  testWidgets('replay restarts the animation', (tester) async {
+  testWidgets('replay restarts the chart', (tester) async {
     final f = fixture('exponential_paper_fold');
     await pumpApp(tester, FakeServer(facts: f.facts, plan: f.plan, latency: Duration.zero));
     await ask(tester, f.query);
-    await advance(tester, const Duration(seconds: 12), steps: 30);
-    expect(find.text('Fold 42 of 42'), findsOneWidget);
+    await advance(tester, const Duration(milliseconds: 800), steps: 12);
+    expect(find.text('viz:exponential_growth#0'), findsOneWidget);
     await tester.tap(find.byTooltip('Replay'));
     await tester.pump();
-    await tester.pump();
-    expect(find.text('Fold 0 of 42'), findsOneWidget);
+    expect(find.text('viz:exponential_growth#1'), findsOneWidget);
   });
 
   test('share message carries the title and a factviz link', () {

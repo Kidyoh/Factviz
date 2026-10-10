@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "template": "comparison_bars",
+  "title": "How tall are they?",
+  "annotations": [
+    {
+      "text": "Burj Khalifa is 8.9× as tall as Statue of Liberty",
+      "anchor": "item",
+      "index": 0
+    }
+  ],
+  "orientation": "vertical",
+  "units": {
+    "dimension": "length",
+    "ladder": [
+      {
+        "symbol": "nm",
+        "toSi": 1e-9
+      },
+      {
+        "symbol": "µm",
+        "toSi": 0.000001
+      },
+      {
+        "symbol": "mm",
+        "toSi": 0.001
+      },
+      {
+        "symbol": "cm",
+        "toSi": 0.01
+      },
+      {
+        "symbol": "m",
+        "toSi": 1.0
+      },
+      {
+        "symbol": "km",
+        "toSi": 1000.0
+      },
+      {
+        "symbol": "AU",
+        "toSi": 149597870700.0
+      },
+      {
+        "symbol": "ly",
+        "toSi": 9460730472580800.0
+      }
+    ]
+  },
+  "bars": [
+    {
+      "name": "Burj Khalifa",
+      "valueSi": 828.0,
+      "display": "828 m",
+      "source": "Council on Tall Buildings and Urban Habitat"
+    },
+    {
+      "name": "Shanghai Tower",
+      "valueSi": 632.0,
+      "display": "632 m",
+      "source": "Council on Tall Buildings and Urban Habitat"
+    },
+    {
+      "name": "Eiffel Tower",
+      "valueSi": 330.0,
+      "display": "330 m",
+      "source": "Société d'Exploitation de la Tour Eiffel",
+      "image": {
+        "key": "eiffel_tower",
+        "kind": "silhouette",
+        "src": "eiffel_tower",
+        "aspect": 0.38,
+        "disc": 1.0,
+        "stretch": true
+      }
+    },
+    {
+      "name": "Statue of Liberty",
+      "valueSi": 93.0,
+      "display": "93 m",
+      "source": "US National Park Service"
+    }
+  ]
+}

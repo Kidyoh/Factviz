@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "template": "scale_zoom",
+  "title": "Distances from the Sun",
+  "annotations": [
+    {
+      "text": "Neptune is 78× as far away as Mercury",
+      "anchor": "item",
+      "index": 3
+    }
+  ],
+  "mode": "distance",
+  "units": {
+    "dimension": "length",
+    "ladder": [
+      {
+        "symbol": "nm",
+        "toSi": 1e-9
+      },
+      {
+        "symbol": "µm",
+        "toSi": 0.000001
+      },
+      {
+        "symbol": "mm",
+        "toSi": 0.001
+      },
+      {
+        "symbol": "cm",
+        "toSi": 0.01
+      },
+      {
+        "symbol": "m",
+        "toSi": 1.0
+      },
+      {
+        "symbol": "km",
+        "toSi": 1000.0
+      },
+      {
+        "symbol": "AU",
+        "toSi": 149597870700.0
+      },
+      {
+        "symbol": "ly",
+        "toSi": 9460730472580800.0
+      }
+    ]
+  },
+  "items": [
+    {
+      "name": "Mercury",
+      "shape": "circle",
+      "valueSi": 57894375960.9,
+      "linearSi": 57894375960.9,
+      "display": "0.387 AU",
+      "source": "NASA mean orbital distance",
+      "image": {
+        "key": "mercury",
+        "kind": "photo",
+        "src": "img/mercury.webp",
+        "aspect": 1.0,
+        "disc": 1.0,
+        "stretch": false
+      }
+    },
+    {
+      "name": "Earth",
+      "shape": "circle",
+      "valueSi": 149597870700.0,
+      "linearSi": 149597870700.0,
+      "display": "1 AU",
+      "source": "Definition of the astronomical unit",
+      "image": {
+        "key": "earth",
+        "kind": "photo",
+        "src": "img/earth.webp",
+        "aspect": 1.0,
+        "disc": 1.0,
+        "stretch": false
+      }
+    },
+    {
+      "name": "Jupiter",
+      "shape": "circle",
+      "valueSi": 777908927640.0,
+      "linearSi": 777908927640.0,
+      "display": "5.2 AU",
+      "source": "NASA mean orbital distance",
+      "image": {
+        "key": "jupiter",
+        "kind": "photo",
+        "src": "img/jupiter.webp",
+        "aspect": 1.0,
+        "disc": 1.0,
+        "stretch": false
+      }
+    },
+    {
+      "name": "Neptune",
+      "shape": "circle",
+      "valueSi": 4498407971949.0,
+      "linearSi": 4498407971949.0,
+      "display": "30.1 AU",
+      "source": "NASA mean orbital distance",
+      "image": {
+        "key": "neptune",
+        "kind": "photo",
+        "src": "img/neptune.webp",
+        "aspect": 1.0,
+        "disc": 1.0,
+        "stretch": false
+      }
+    }
+  ]
+}

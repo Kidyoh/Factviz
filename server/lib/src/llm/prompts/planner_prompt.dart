@@ -15,6 +15,10 @@ LlmRequest buildPlannerRequest({required String model, required FactsResult fact
       maxTokens: 2000,
     );
 
+final String _imageList = imageCatalog.values
+    .map((a) => '"${a.key}" (${a.label}; shape: ${a.shapes.map((s) => s.name).join('/')})')
+    .join(', ');
+
 String plannerUserPrompt(FactsResult facts) => 'Facts JSON:\n${jsonEncode(facts.toJson())}';
 
 final String plannerSystemPrompt = '''
@@ -37,6 +41,8 @@ Rules:
 4. title: short, no numbers. caption: optional, one short line. displayName: 1–3 words.
 5. Prefer the template that shows the surprising part of the question. Example: "fold a paper to reach the Moon" → exponential_growth with the Earth–Moon distance as the target.
 6. Only include the fields of the template you choose, plus template, title and optional caption.
+7. Pictures: for scale_zoom items and comparison_bars bars you may set "image" to one of the bundled pictures below when it shows exactly that object. Never use a picture of a different object. Planet and Moon/Sun photos need shape "circle"; animal and vehicle silhouettes measured lengthwise need "bar"; people and buildings measured in height need "tower".
+Available pictures: $_imageList
 
 JSON Schema:
 ${jsonEncode(planJsonSchema)}

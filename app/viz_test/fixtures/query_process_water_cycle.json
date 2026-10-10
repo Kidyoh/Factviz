@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "template": "process_steps",
+  "title": "How the water cycle works",
+  "annotations": [],
+  "loop": true,
+  "autoplayMs": 3500,
+  "steps": [
+    {
+      "order": 1,
+      "title": "Evaporation",
+      "description": "The Sun heats water in oceans, lakes and rivers, turning it into invisible water vapor that rises into the air. Plants also release vapor from their leaves.",
+      "source": "USGS Water Science School"
+    },
+    {
+      "order": 2,
+      "title": "Condensation",
+      "description": "As the vapor rises it cools and turns into tiny droplets that gather to form clouds and fog.",
+      "source": "USGS Water Science School"
+    },
+    {
+      "order": 3,
+      "title": "Precipitation",
+      "description": "When droplets grow heavy enough, they fall back to the ground as rain, snow, sleet or hail.",
+      "source": "USGS Water Science School"
+    },
+    {
+      "order": 4,
+      "title": "Collection",
+      "description": "Water runs off into rivers, lakes and oceans or soaks into the ground as groundwater, ready to evaporate again.",
+      "source": "USGS Water Science School"
+    }
+  ]
+}

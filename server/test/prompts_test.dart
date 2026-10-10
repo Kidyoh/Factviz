@@ -36,6 +36,9 @@ void main() {
       }
       expect(plannerSystemPrompt, contains(jsonEncode(planJsonSchema)));
       expect(plannerSystemPrompt, contains('Never write factual numbers'));
+      for (final key in imageCatalog.keys) {
+        expect(plannerSystemPrompt, contains('"$key"'));
+      }
     });
 
     test('includes the facts JSON', () {

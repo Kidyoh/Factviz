@@ -47,3 +47,5 @@ app.*.map.json
 # Widget Preview related
 .widget_preview/
 test_screens/
+viz_test/out/
+viz_test/node_modules/

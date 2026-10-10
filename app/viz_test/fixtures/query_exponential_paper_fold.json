@@ -1,0 +1,287 @@
+{
+  "version": 1,
+  "template": "exponential_growth",
+  "title": "Folding paper to the Moon",
+  "caption": "Every fold doubles the thickness",
+  "annotations": [
+    {
+      "text": "Fold 36: still only 6,872 km",
+      "anchor": "step",
+      "index": 36
+    },
+    {
+      "text": "Fold 42: Average Earth–Moon distance reached",
+      "anchor": "step",
+      "index": 42
+    }
+  ],
+  "stepLabel": "fold",
+  "factor": 2.0,
+  "steps": 42,
+  "defaultScale": "log",
+  "units": {
+    "dimension": "length",
+    "ladder": [
+      {
+        "symbol": "nm",
+        "toSi": 1e-9
+      },
+      {
+        "symbol": "µm",
+        "toSi": 0.000001
+      },
+      {
+        "symbol": "mm",
+        "toSi": 0.001
+      },
+      {
+        "symbol": "cm",
+        "toSi": 0.01
+      },
+      {
+        "symbol": "m",
+        "toSi": 1.0
+      },
+      {
+        "symbol": "km",
+        "toSi": 1000.0
+      },
+      {
+        "symbol": "AU",
+        "toSi": 149597870700.0
+      },
+      {
+        "symbol": "ly",
+        "toSi": 9460730472580800.0
+      }
+    ]
+  },
+  "initial": {
+    "label": "Thickness of a sheet of paper",
+    "display": "~0.1 mm",
+    "valueSi": 0.0001
+  },
+  "target": {
+    "label": "Average Earth–Moon distance",
+    "display": "~384,400 km",
+    "valueSi": 384400000.0
+  },
+  "targetStep": 42,
+  "series": [
+    {
+      "step": 0,
+      "valueSi": 0.0001,
+      "display": "100 µm"
+    },
+    {
+      "step": 1,
+      "valueSi": 0.0002,
+      "display": "200 µm"
+    },
+    {
+      "step": 2,
+      "valueSi": 0.0004,
+      "display": "400 µm"
+    },
+    {
+      "step": 3,
+      "valueSi": 0.0008,
+      "display": "800 µm"
+    },
+    {
+      "step": 4,
+      "valueSi": 0.0016,
+      "display": "1.6 mm"
+    },
+    {
+      "step": 5,
+      "valueSi": 0.0032,
+      "display": "3.2 mm"
+    },
+    {
+      "step": 6,
+      "valueSi": 0.0064,
+      "display": "6.4 mm"
+    },
+    {
+      "step": 7,
+      "valueSi": 0.0128,
+      "display": "1.28 cm"
+    },
+    {
+      "step": 8,
+      "valueSi": 0.0256,
+      "display": "2.56 cm"
+    },
+    {
+      "step": 9,
+      "valueSi": 0.0512,
+      "display": "5.12 cm"
+    },
+    {
+      "step": 10,
+      "valueSi": 0.1024,
+      "display": "10.2 cm"
+    },
+    {
+      "step": 11,
+      "valueSi": 0.2048,
+      "display": "20.5 cm"
+    },
+    {
+      "step": 12,
+      "valueSi": 0.4096,
+      "display": "41 cm"
+    },
+    {
+      "step": 13,
+      "valueSi": 0.8192,
+      "display": "81.9 cm"
+    },
+    {
+      "step": 14,
+      "valueSi": 1.6384,
+      "display": "1.64 m"
+    },
+    {
+      "step": 15,
+      "valueSi": 3.2768,
+      "display": "3.28 m"
+    },
+    {
+      "step": 16,
+      "valueSi": 6.5536,
+      "display": "6.55 m"
+    },
+    {
+      "step": 17,
+      "valueSi": 13.1072,
+      "display": "13.1 m"
+    },
+    {
+      "step": 18,
+      "valueSi": 26.2144,
+      "display": "26.2 m"
+    },
+    {
+      "step": 19,
+      "valueSi": 52.4288,
+      "display": "52.4 m"
+    },
+    {
+      "step": 20,
+      "valueSi": 104.8576,
+      "display": "105 m"
+    },
+    {
+      "step": 21,
+      "valueSi": 209.7152,
+      "display": "210 m"
+    },
+    {
+      "step": 22,
+      "valueSi": 419.4304,
+      "display": "419 m"
+    },
+    {
+      "step": 23,
+      "valueSi": 838.8608,
+      "display": "839 m"
+    },
+    {
+      "step": 24,
+      "valueSi": 1677.7216,
+      "display": "1.68 km"
+    },
+    {
+      "step": 25,
+      "valueSi": 3355.4432,
+      "display": "3.36 km"
+    },
+    {
+      "step": 26,
+      "valueSi": 6710.8864,
+      "display": "6.71 km"
+    },
+    {
+      "step": 27,
+      "valueSi": 13421.7728,
+      "display": "13.4 km"
+    },
+    {
+      "step": 28,
+      "valueSi": 26843.5456,
+      "display": "26.8 km"
+    },
+    {
+      "step": 29,
+      "valueSi": 53687.0912,
+      "display": "53.7 km"
+    },
+    {
+      "step": 30,
+      "valueSi": 107374.1824,
+      "display": "107 km"
+    },
+    {
+      "step": 31,
+      "valueSi": 214748.3648,
+      "display": "215 km"
+    },
+    {
+      "step": 32,
+      "valueSi": 429496.7296,
+      "display": "429 km"
+    },
+    {
+      "step": 33,
+      "valueSi": 858993.4592,
+      "display": "859 km"
+    },
+    {
+      "step": 34,
+      "valueSi": 1717986.9184,
+      "display": "1,718 km"
+    },
+    {
+      "step": 35,
+      "valueSi": 3435973.8368,
+      "display": "3,436 km"
+    },
+    {
+      "step": 36,
+      "valueSi": 6871947.6736,
+      "display": "6,872 km"
+    },
+    {
+      "step": 37,
+      "valueSi": 13743895.3472,
+      "display": "13,744 km"
+    },
+    {
+      "step": 38,
+      "valueSi": 27487790.6944,
+      "display": "27,488 km"
+    },
+    {
+      "step": 39,
+      "valueSi": 54975581.3888,
+      "display": "54,976 km"
+    },
+    {
+      "step": 40,
+      "valueSi": 109951162.7776,
+      "display": "109,951 km"
+    },
+    {
+      "step": 41,
+      "valueSi": 219902325.5552,
+      "display": "219,902 km"
+    },
+    {
+      "step": 42,
+      "valueSi": 439804651.1104,
+      "display": "439,805 km"
+    }
+  ]
+}

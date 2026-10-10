@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "template": "scale_zoom",
+  "title": "Blue whale vs a school bus",
+  "annotations": [
+    {
+      "text": "Blue whale is 15× as long as Person",
+      "anchor": "item",
+      "index": 2
+    }
+  ],
+  "mode": "size",
+  "units": {
+    "dimension": "length",
+    "ladder": [
+      {
+        "symbol": "nm",
+        "toSi": 1e-9
+      },
+      {
+        "symbol": "µm",
+        "toSi": 0.000001
+      },
+      {
+        "symbol": "mm",
+        "toSi": 0.001
+      },
+      {
+        "symbol": "cm",
+        "toSi": 0.01
+      },
+      {
+        "symbol": "m",
+        "toSi": 1.0
+      },
+      {
+        "symbol": "km",
+        "toSi": 1000.0
+      },
+      {
+        "symbol": "AU",
+        "toSi": 149597870700.0
+      },
+      {
+        "symbol": "ly",
+        "toSi": 9460730472580800.0
+      }
+    ]
+  },
+  "items": [
+    {
+      "name": "Person",
+      "shape": "tower",
+      "valueSi": 1.7,
+      "linearSi": 1.7,
+      "display": "~1.7 m",
+      "source": "Typical adult height",
+      "image": {
+        "key": "person",
+        "kind": "silhouette",
+        "src": "person",
+        "aspect": 0.36,
+        "disc": 1.0,
+        "stretch": false
+      }
+    },
+    {
+      "name": "School bus",
+      "shape": "bar",
+      "valueSi": 12.0,
+      "linearSi": 12.0,
+      "display": "~12 m",
+      "source": "Typical full-size US school bus",
+      "image": {
+        "key": "school_bus",
+        "kind": "silhouette",
+        "src": "school_bus",
+        "aspect": 3.86,
+        "disc": 1.0,
+        "stretch": false
+      }
+    },
+    {
+      "name": "Blue whale",
+      "shape": "bar",
+      "valueSi": 25.0,
+      "linearSi": 25.0,
+      "display": "~25 m",
+      "source": "NOAA Fisheries; typically 24–30 m",
+      "image": {
+        "key": "blue_whale",
+        "kind": "silhouette",
+        "src": "blue_whale",
+        "aspect": 3.3,
+        "disc": 1.0,
+        "stretch": false
+      }
+    }
+  ]
+}

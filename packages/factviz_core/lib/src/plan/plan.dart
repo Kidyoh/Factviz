@@ -1,3 +1,4 @@
+import '../images/image_catalog.dart';
 import '../validation/json_reader.dart';
 import '../validation/validation.dart';
 
@@ -125,23 +126,41 @@ List<String>? _factIds(JsonReader r, String key, int min, int max) {
   return ids;
 }
 
+/// Optional picture key; must be in the bundled image catalog.
+String? _image(JsonReader r) {
+  final key = r.string('image', optional: true, maxLength: 30);
+  if (key != null && !imageCatalog.containsKey(key)) {
+    r.issue('unknown image "$key"; allowed: ${imageCatalog.keys.join(', ')}', key: 'image');
+    return null;
+  }
+  return key;
+}
+
 class ScaleItemRef {
-  const ScaleItemRef({required this.factId, required this.displayName, this.shape = ItemShape.circle});
+  const ScaleItemRef({required this.factId, required this.displayName, this.shape = ItemShape.circle, this.image});
 
   final String factId;
   final String displayName;
   final ItemShape shape;
 
+  /// Optional picture from [imageCatalog].
+  final String? image;
+
   static ScaleItemRef? _read(JsonReader r) {
     final factId = _factId(r, 'factId');
     final displayName = r.string('displayName', maxLength: 40);
     final shape = r.choice('shape', ItemShape.byWire, optional: true) ?? ItemShape.circle;
+    final image = _image(r);
+    if (image != null && !imageCatalog[image]!.shapes.contains(shape)) {
+      r.issue('image "$image" can only be drawn as: ${imageCatalog[image]!.shapes.map((s) => s.name).join(', ')}',
+          key: 'shape');
+    }
     if (factId == null || displayName == null) return null;
-    return ScaleItemRef(factId: factId, displayName: displayName, shape: shape);
+    return ScaleItemRef(factId: factId, displayName: displayName, shape: shape, image: image);
   }
 
   Map<String, Object?> toJson() =>
-      {'factId': factId, 'displayName': displayName, 'shape': shape.name};
+      {'factId': factId, 'displayName': displayName, 'shape': shape.name, 'image': ?image};
 }
 
 final class ScaleZoomPlan extends Plan {
@@ -254,19 +273,23 @@ final class ExponentialGrowthPlan extends Plan {
 }
 
 class BarRef {
-  const BarRef({required this.factId, required this.displayName});
+  const BarRef({required this.factId, required this.displayName, this.image});
 
   final String factId;
   final String displayName;
 
+  /// Optional picture from [imageCatalog], shown beside the label.
+  final String? image;
+
   static BarRef? _read(JsonReader r) {
     final factId = _factId(r, 'factId');
     final displayName = r.string('displayName', maxLength: 40);
+    final image = _image(r);
     if (factId == null || displayName == null) return null;
-    return BarRef(factId: factId, displayName: displayName);
+    return BarRef(factId: factId, displayName: displayName, image: image);
   }
 
-  Map<String, Object?> toJson() => {'factId': factId, 'displayName': displayName};
+  Map<String, Object?> toJson() => {'factId': factId, 'displayName': displayName, 'image': ?image};
 }
 
 final class ComparisonBarsPlan extends Plan {

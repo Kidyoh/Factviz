@@ -16,6 +16,9 @@ dependencies:
   go_router: ^18.0.2
   http: ^1.6.0
   share_plus: ^13.3.1
+  webview_flutter: ^4.14.1
+  lottie: ^3.6.1
+  flutter_animate: ^4.5.2
 
 dev_dependencies:
   flutter_test:
@@ -24,19 +27,28 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/viz/
+    - assets/viz/vendor/
+    - assets/viz/img/
+    - assets/fonts/
+    - assets/lottie/
   fonts:
-    - family: Inter
+    - family: SourceSerif
       fonts:
-        - asset: assets/fonts/Inter-Regular.ttf
-        - asset: assets/fonts/Inter-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/Inter-SemiBold.ttf
+        - asset: assets/fonts/SourceSerif4-Regular.ttf
+        - asset: assets/fonts/SourceSerif4-RegularItalic.ttf
+          style: italic
+        - asset: assets/fonts/SourceSerif4-SemiBold.ttf
           weight: 600
-        - asset: assets/fonts/Inter-Bold.ttf
+        - asset: assets/fonts/SourceSerif4-Bold.ttf
           weight: 700
-    - family: SpaceGrotesk
+    - family: LibreFranklin
       fonts:
-        - asset: assets/fonts/SpaceGrotesk-Medium.ttf
+        - asset: assets/fonts/LibreFranklin-Regular.ttf
+        - asset: assets/fonts/LibreFranklin-Medium.ttf
           weight: 500
-        - asset: assets/fonts/SpaceGrotesk-Bold.ttf
+        - asset: assets/fonts/LibreFranklin-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/LibreFranklin-Bold.ttf
           weight: 700

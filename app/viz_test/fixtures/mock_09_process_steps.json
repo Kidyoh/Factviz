@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "template": "process_steps",
+  "title": "The water cycle",
+  "annotations": [],
+  "loop": true,
+  "autoplayMs": 3000,
+  "steps": [
+    {
+      "order": 1,
+      "title": "Evaporation",
+      "description": "The Sun heats water, turning it into vapor that rises.",
+      "source": "USGS Water Science School"
+    },
+    {
+      "order": 2,
+      "title": "Condensation",
+      "description": "Vapor cools into droplets that form clouds.",
+      "source": "USGS Water Science School"
+    },
+    {
+      "order": 3,
+      "title": "Precipitation",
+      "description": "Droplets fall as rain, snow, sleet or hail.",
+      "source": "USGS Water Science School"
+    },
+    {
+      "order": 4,
+      "title": "Collection",
+      "description": "Water gathers in rivers, lakes, oceans and underground.",
+      "source": "USGS Water Science School"
+    }
+  ]
+}

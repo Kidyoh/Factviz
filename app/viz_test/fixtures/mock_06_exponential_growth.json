@@ -1,0 +1,181 @@
+{
+  "version": 1,
+  "template": "exponential_growth",
+  "title": "Compound interest",
+  "annotations": [],
+  "stepLabel": "year",
+  "factor": 1.07,
+  "steps": 30,
+  "defaultScale": "linear",
+  "units": {
+    "dimension": "money",
+    "ladder": [
+      {
+        "symbol": "USD",
+        "toSi": 1.0
+      }
+    ]
+  },
+  "initial": {
+    "label": "Starting amount",
+    "display": "1,000 USD",
+    "valueSi": 1000.0
+  },
+  "series": [
+    {
+      "step": 0,
+      "valueSi": 1000.0,
+      "display": "1,000 USD"
+    },
+    {
+      "step": 1,
+      "valueSi": 1070.0,
+      "display": "1,070 USD"
+    },
+    {
+      "step": 2,
+      "valueSi": 1144.9,
+      "display": "1,145 USD"
+    },
+    {
+      "step": 3,
+      "valueSi": 1225.0430000000001,
+      "display": "1,225 USD"
+    },
+    {
+      "step": 4,
+      "valueSi": 1310.7960100000003,
+      "display": "1,311 USD"
+    },
+    {
+      "step": 5,
+      "valueSi": 1402.5517307000005,
+      "display": "1,403 USD"
+    },
+    {
+      "step": 6,
+      "valueSi": 1500.7303518490005,
+      "display": "1,501 USD"
+    },
+    {
+      "step": 7,
+      "valueSi": 1605.7814764784307,
+      "display": "1,606 USD"
+    },
+    {
+      "step": 8,
+      "valueSi": 1718.186179831921,
+      "display": "1,718 USD"
+    },
+    {
+      "step": 9,
+      "valueSi": 1838.4592124201556,
+      "display": "1,838 USD"
+    },
+    {
+      "step": 10,
+      "valueSi": 1967.1513572895665,
+      "display": "1,967 USD"
+    },
+    {
+      "step": 11,
+      "valueSi": 2104.8519522998363,
+      "display": "2,105 USD"
+    },
+    {
+      "step": 12,
+      "valueSi": 2252.191588960825,
+      "display": "2,252 USD"
+    },
+    {
+      "step": 13,
+      "valueSi": 2409.845000188083,
+      "display": "2,410 USD"
+    },
+    {
+      "step": 14,
+      "valueSi": 2578.534150201249,
+      "display": "2,579 USD"
+    },
+    {
+      "step": 15,
+      "valueSi": 2759.031540715336,
+      "display": "2,759 USD"
+    },
+    {
+      "step": 16,
+      "valueSi": 2952.16374856541,
+      "display": "2,952 USD"
+    },
+    {
+      "step": 17,
+      "valueSi": 3158.8152109649886,
+      "display": "3,159 USD"
+    },
+    {
+      "step": 18,
+      "valueSi": 3379.932275732538,
+      "display": "3,380 USD"
+    },
+    {
+      "step": 19,
+      "valueSi": 3616.5275350338165,
+      "display": "3,617 USD"
+    },
+    {
+      "step": 20,
+      "valueSi": 3869.6844624861833,
+      "display": "3,870 USD"
+    },
+    {
+      "step": 21,
+      "valueSi": 4140.562374860217,
+      "display": "4,141 USD"
+    },
+    {
+      "step": 22,
+      "valueSi": 4430.401741100432,
+      "display": "4,430 USD"
+    },
+    {
+      "step": 23,
+      "valueSi": 4740.5298629774625,
+      "display": "4,741 USD"
+    },
+    {
+      "step": 24,
+      "valueSi": 5072.366953385886,
+      "display": "5,072 USD"
+    },
+    {
+      "step": 25,
+      "valueSi": 5427.432640122897,
+      "display": "5,427 USD"
+    },
+    {
+      "step": 26,
+      "valueSi": 5807.352924931501,
+      "display": "5,807 USD"
+    },
+    {
+      "step": 27,
+      "valueSi": 6213.867629676706,
+      "display": "6,214 USD"
+    },
+    {
+      "step": 28,
+      "valueSi": 6648.838363754076,
+      "display": "6,649 USD"
+    },
+    {
+      "step": 29,
+      "valueSi": 7114.257049216862,
+      "display": "7,114 USD"
+    },
+    {
+      "step": 30,
+      "valueSi": 7612.255042662042,
+      "display": "7,612 USD"
+    }
+  ]
+}
