@@ -1,0 +1,4 @@
+tags:
+  live:
+    skip: "Calls the real LLM. Run with: OPENROUTER_API_KEY=... dart test -t live --run-skipped"
+    timeout: 3x
