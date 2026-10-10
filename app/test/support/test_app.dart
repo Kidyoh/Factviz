@@ -9,7 +9,6 @@ Future<void> pumpPhone(
   Widget child, {
   Size size = const Size(390, 844),
   bool reduceMotion = false,
-  Brightness brightness = Brightness.light,
 }) async {
   tester.view.physicalSize = size * 3;
   tester.view.devicePixelRatio = 3;
@@ -19,7 +18,7 @@ Future<void> pumpPhone(
       data: MediaQueryData(size: size, devicePixelRatio: 3, disableAnimations: reduceMotion),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: buildTheme(brightness),
+        theme: buildTheme(),
         home: Scaffold(body: child),
       ),
     ),

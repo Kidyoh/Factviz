@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/theme.dart';
 import '../common/motion.dart';
+import '../common/viz_paint.dart';
 
 /// Animated side-by-side quantities with units, plus how many times the
 /// largest is bigger than each of the others.
@@ -28,6 +29,14 @@ class _ComparisonBarsViewState extends State<ComparisonBarsView>
     final start = n <= 1 ? 0.0 : 0.35 * i / (n - 1);
     final t = ((entrance.value - start) / 0.65).clamp(0.0, 1.0);
     return Curves.easeOutCubic.transform(t);
+  }
+
+  /// The value counting up as its bar grows; exact once fully grown.
+  String _countUp(ResolvedQuantity q, double t) {
+    if (t >= 1) return q.displayValue;
+    final v = q.value * t;
+    final shown = q.value == q.value.roundToDouble() ? v.roundToDouble() : v;
+    return formatQuantity(shown, q.unit, approximate: q.approximate);
   }
 
   String? _ratioText(BarItem bar) {
@@ -90,7 +99,14 @@ class _ComparisonBarsViewState extends State<ComparisonBarsView>
               ),
               Opacity(
                 opacity: _grow(i),
-                child: Text(bar.quantity.displayValue, style: theme.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w800)),
+                child: Text(
+                  _countUp(bar.quantity, _grow(i)),
+                  style: theme.textTheme.titleMedium?.copyWith(
+                    fontWeight: FontWeight.w700,
+                    color: palette.seriesAt(i),
+                    fontFeatures: const [FontFeature.tabularFigures()],
+                  ),
+                ),
               ),
             ],
           ),
@@ -101,6 +117,7 @@ class _ComparisonBarsViewState extends State<ComparisonBarsView>
             track: palette.grid,
             thickness: thickness,
             axis: Axis.horizontal,
+            shimmer: _grow(i),
           ),
           if (ratio != null) ...[
             const SizedBox(height: 4),
@@ -135,7 +152,7 @@ class _ComparisonBarsViewState extends State<ComparisonBarsView>
                       Opacity(
                         opacity: _grow(i),
                         child: Text(
-                          props.bars[i].quantity.displayValue,
+                          _countUp(props.bars[i].quantity, _grow(i)),
                           textAlign: TextAlign.center,
                           maxLines: 2,
                           style: theme.textTheme.labelMedium?.copyWith(fontWeight: FontWeight.w800),
@@ -149,6 +166,7 @@ class _ComparisonBarsViewState extends State<ComparisonBarsView>
                           track: palette.grid,
                           thickness: math.min(56, 220 / props.bars.length),
                           axis: Axis.vertical,
+                          shimmer: _grow(i),
                         ),
                       ),
                       const SizedBox(height: 6),
@@ -177,6 +195,7 @@ class _Bar extends StatelessWidget {
     required this.track,
     required this.thickness,
     required this.axis,
+    this.shimmer = 1,
   });
 
   final double fraction;
@@ -185,22 +204,76 @@ class _Bar extends StatelessWidget {
   final double thickness;
   final Axis axis;
 
+  /// Growth progress 0..1; a light band sweeps along the bar while < 1.
+  final double shimmer;
+
   @override
   Widget build(BuildContext context) {
-    final radius = BorderRadius.circular(thickness / 3);
-    // Non-zero values never vanish completely, even next to huge ones.
-    final visible = fraction > 0 ? math.max(fraction, 0.004) : 0.0;
     final horizontal = axis == Axis.horizontal;
-    return Container(
+    return SizedBox(
       width: horizontal ? double.infinity : thickness,
       height: horizontal ? thickness : double.infinity,
-      decoration: BoxDecoration(color: track, borderRadius: radius),
-      alignment: horizontal ? Alignment.centerLeft : Alignment.bottomCenter,
-      child: FractionallySizedBox(
-        widthFactor: horizontal ? visible : 1,
-        heightFactor: horizontal ? 1 : visible,
-        child: DecoratedBox(decoration: BoxDecoration(color: color, borderRadius: radius)),
+      child: CustomPaint(
+        painter: _BarPainter(
+          // Non-zero values never vanish completely, even next to huge ones.
+          fraction: fraction > 0 ? math.max(fraction, 0.004) : 0.0,
+          color: color,
+          track: track,
+          horizontal: horizontal,
+          shimmer: shimmer,
+        ),
       ),
     );
   }
+}
+
+class _BarPainter extends CustomPainter {
+  _BarPainter({
+    required this.fraction,
+    required this.color,
+    required this.track,
+    required this.horizontal,
+    required this.shimmer,
+  });
+
+  final double fraction;
+  final Color color;
+  final Color track;
+  final bool horizontal;
+  final double shimmer;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final radius = Radius.circular((horizontal ? size.height : size.width) / 2.6);
+    final full = Offset.zero & size;
+    canvas.drawRRect(RRect.fromRectAndRadius(full, radius), Paint()..color = track);
+    if (fraction <= 0) return;
+    final bar = horizontal
+        ? Rect.fromLTWH(0, 0, size.width * fraction, size.height)
+        : Rect.fromLTWH(0, size.height * (1 - fraction), size.width, size.height * fraction);
+    final rrect = RRect.fromRectAndRadius(bar, radius);
+    paintGlowBar(canvas, rrect, color, vertical: !horizontal);
+    if (shimmer < 1) {
+      canvas.save();
+      canvas.clipRRect(rrect);
+      final band = horizontal ? bar.width * 0.35 : bar.height * 0.35;
+      final pos = horizontal
+          ? Rect.fromLTWH(bar.left - band + (bar.width + band) * shimmer, bar.top, band, bar.height)
+          : Rect.fromLTWH(bar.left, bar.bottom - (bar.height + band) * shimmer, bar.width, band);
+      canvas.drawRect(
+        pos,
+        Paint()
+          ..shader = LinearGradient(
+            begin: horizontal ? Alignment.centerLeft : Alignment.bottomCenter,
+            end: horizontal ? Alignment.centerRight : Alignment.topCenter,
+            colors: [Colors.white.withValues(alpha: 0), Colors.white.withValues(alpha: 0.35), Colors.white.withValues(alpha: 0)],
+          ).createShader(pos),
+      );
+      canvas.restore();
+    }
+  }
+
+  @override
+  bool shouldRepaint(_BarPainter old) =>
+      old.fraction != fraction || old.shimmer != shimmer || old.color != color || old.horizontal != horizontal;
 }

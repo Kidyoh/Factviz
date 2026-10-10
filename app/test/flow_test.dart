@@ -1,6 +1,7 @@
 import 'package:factviz/main.dart';
 import 'package:factviz/state/share.dart';
 import 'package:factviz/state/visualize_controller.dart';
+import 'package:factviz/templates/common/motion.dart';
 import 'package:factviz/templates/comparison_bars/comparison_bars_view.dart';
 import 'package:factviz/templates/exponential_growth/exponential_growth_view.dart';
 import 'package:factviz/templates/process_steps/process_steps_view.dart';
@@ -25,7 +26,10 @@ const _templateWidgets = {
 };
 
 void main() {
-  setUp(() => VisualizeController.renderHold = const Duration(milliseconds: 300));
+  setUp(() {
+    VisualizeController.renderHold = const Duration(milliseconds: 300);
+    ambientMotionEnabled = false;
+  });
 
   late List<String> shared;
 
@@ -52,9 +56,9 @@ void main() {
 
   testWidgets('home shows one search box and six example prompts', (tester) async {
     await pumpApp(tester, FakeServer());
-    expect(find.text('Explain It Visually'), findsOneWidget);
+    expect(find.bySemanticsLabel('Explain It Visually'), findsOneWidget);
     expect(find.byType(TextField), findsOneWidget);
-    expect(find.byType(ActionChip), findsNWidgets(6));
+    expect(find.byType(ExampleCard), findsNWidgets(6));
     expect(examplePrompts, hasLength(6));
   });
 
@@ -66,7 +70,7 @@ void main() {
     await tester.tap(find.text('Fold a paper 42 times to reach the Moon'));
     await tester.pump();
     await tester.pump();
-    expect(find.text('Finding facts'), findsOneWidget);
+    expect(find.text('Finding facts'), findsWidgets);
     expect(find.bySemanticsLabel('Finding facts…'), findsOneWidget);
 
     await tester.pump(const Duration(milliseconds: 520));
@@ -109,7 +113,7 @@ void main() {
 
     await tester.tap(find.text('Rephrase'));
     await tester.pumpAndSettle();
-    expect(find.text('Explain It Visually'), findsOneWidget);
+    expect(find.bySemanticsLabel('Explain It Visually'), findsOneWidget);
     expect(find.widgetWithText(TextField, 'What is the meaning of life?'), findsOneWidget);
   });
 
@@ -191,7 +195,7 @@ void main() {
     expect(find.text('Try again'), findsNothing);
     await tester.tap(find.text('Rephrase'));
     await tester.pumpAndSettle();
-    expect(find.text('Explain It Visually'), findsOneWidget);
+    expect(find.bySemanticsLabel('Explain It Visually'), findsOneWidget);
     expect(server.calls, isEmpty);
   });
 

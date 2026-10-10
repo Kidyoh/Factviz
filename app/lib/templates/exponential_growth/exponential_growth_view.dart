@@ -2,8 +2,10 @@ import 'dart:math' as math;
 
 import 'package:factviz_core/factviz_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../app/theme.dart';
+import '../../ui/cosmic/glass.dart';
 import '../common/motion.dart';
 import '../common/playback_controls.dart';
 import 'growth_chart_painter.dart';
@@ -20,8 +22,35 @@ class ExponentialGrowthView extends StatefulWidget {
 }
 
 class _ExponentialGrowthViewState extends State<ExponentialGrowthView>
-    with SingleTickerProviderStateMixin, EntranceAnimation {
+    with TickerProviderStateMixin, EntranceAnimation {
   late AxisScale _scale = widget.props.defaultScale;
+  late final AnimationController _burst =
+      AnimationController(vsync: this, duration: const Duration(milliseconds: 1100));
+  bool _celebrated = false;
+
+  @override
+  void initState() {
+    super.initState();
+    entrance.addListener(_maybeCelebrate);
+  }
+
+  /// One spark burst (and a tap of haptics) the first time the target is
+  /// reached during playback.
+  void _maybeCelebrate() {
+    final target = widget.props.targetStep;
+    if (_celebrated || target == null || !entrance.isAnimating) return;
+    if (_step.floor() >= target) {
+      _celebrated = true;
+      HapticFeedback.mediumImpact();
+      if (!reduceMotion) _burst.forward(from: 0);
+    }
+  }
+
+  @override
+  void dispose() {
+    _burst.dispose();
+    super.dispose();
+  }
 
   int get _steps => widget.props.steps;
 
@@ -55,7 +84,7 @@ class _ExponentialGrowthViewState extends State<ExponentialGrowthView>
     final theme = Theme.of(context);
     final palette = context.viz;
     return AnimatedBuilder(
-      animation: entrance,
+      animation: Listenable.merge([entrance, _burst]),
       builder: (context, _) {
         final whole = _step.floor();
         final value = props.valueAtStepSi(whole);
@@ -83,10 +112,12 @@ class _ExponentialGrowthViewState extends State<ExponentialGrowthView>
                           child: FittedBox(
                             fit: BoxFit.scaleDown,
                             alignment: Alignment.centerLeft,
-                            child: Text(
+                            child: GradientText(
                               props.formatValueSi(value),
-                              maxLines: 1,
-                              style: theme.textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.w800),
+                              gradient: const LinearGradient(colors: [Colors.white, Cosmos.cyan]),
+                              style: theme.textTheme.headlineMedium?.copyWith(
+                                fontFeatures: const [FontFeature.tabularFigures()],
+                              ),
                             ),
                           ),
                         ),
@@ -140,6 +171,7 @@ class _ExponentialGrowthViewState extends State<ExponentialGrowthView>
                     props: props,
                     step: _step,
                     scale: _scale,
+                    burst: _burst.value,
                     palette: palette,
                     textScaler: MediaQuery.textScalerOf(context).clamp(maxScaleFactor: 1.3),
                     baseStyle: Theme.of(context).textTheme.bodySmall!,

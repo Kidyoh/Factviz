@@ -7,6 +7,8 @@ import 'package:flutter/rendering.dart';
 import '../../app/theme.dart';
 import '../common/motion.dart';
 import '../common/playback_controls.dart';
+import '../common/viz_paint.dart';
+import '../../ui/cosmic/glass.dart';
 
 /// Sequential stages that auto-play, with play/pause/step controls. Cyclic
 /// processes are drawn as a ring; linear ones as a row of numbered stops.
@@ -110,51 +112,55 @@ class _ProcessStepsViewState extends State<ProcessStepsView> with SingleTickerPr
       return Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Expanded(child: _Stepper(steps: props.steps, index: _index, onTap: _goTo, reduceMotion: reduce)),
+          Expanded(
+            child: _Stepper(steps: props.steps, index: _index, onTap: _goTo, reduceMotion: reduce),
+          ),
           progressBar,
           controls,
         ],
       );
     }
-    return LayoutBuilder(builder: (context, constraints) {
-      final diagramHeight = math.min(constraints.maxHeight * 0.48, constraints.maxWidth * 0.7);
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          SizedBox(
-            height: diagramHeight,
-            child: AnimatedBuilder(
-              animation: _timer,
-              builder: (context, _) =>
-                  _Ring(steps: props.steps, index: _index, progress: _playing ? _timer.value : 0, onTap: _goTo),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final diagramHeight = math.min(constraints.maxHeight * 0.48, constraints.maxWidth * 0.7);
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            SizedBox(
+              height: diagramHeight,
+              child: AnimatedBuilder(
+                animation: _timer,
+                builder: (context, _) =>
+                    _Ring(steps: props.steps, index: _index, progress: _playing ? _timer.value : 0, onTap: _goTo),
+              ),
             ),
-          ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
-              child: AnimatedSwitcher(
-                duration: reduce ? Duration.zero : const Duration(milliseconds: 350),
-                transitionBuilder: (child, animation) => FadeTransition(
-                  opacity: animation,
-                  child: SlideTransition(
-                    position: Tween(begin: const Offset(0.06, 0), end: Offset.zero).animate(animation),
-                    child: child,
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+                child: AnimatedSwitcher(
+                  duration: reduce ? Duration.zero : const Duration(milliseconds: 350),
+                  transitionBuilder: (child, animation) => FadeTransition(
+                    opacity: animation,
+                    child: SlideTransition(
+                      position: Tween(begin: const Offset(0.06, 0), end: Offset.zero).animate(animation),
+                      child: child,
+                    ),
                   ),
-                ),
-                child: _StepCard(
-                  key: ValueKey(_index),
-                  step: props.steps[_index],
-                  total: props.steps.length,
-                  color: context.viz.seriesAt(_index),
+                  child: _StepCard(
+                    key: ValueKey(_index),
+                    step: props.steps[_index],
+                    total: props.steps.length,
+                    color: context.viz.seriesAt(_index),
+                  ),
                 ),
               ),
             ),
-          ),
-          progressBar,
-          controls,
-        ],
-      );
-    });
+            progressBar,
+            controls,
+          ],
+        );
+      },
+    );
   }
 }
 
@@ -171,16 +177,23 @@ class _StepCard extends StatelessWidget {
     return Semantics(
       liveRegion: true,
       child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Step ${step.order} of $total',
-                style: theme.textTheme.labelLarge?.copyWith(color: color, fontWeight: FontWeight.w700)),
-            const SizedBox(height: 4),
-            Text(step.title, style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w800)),
-            const SizedBox(height: 8),
-            Text(step.description, style: theme.textTheme.bodyLarge),
-          ],
+        child: Glass(
+          tint: color,
+          radius: 20,
+          padding: const EdgeInsets.fromLTRB(16, 14, 16, 16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Step ${step.order} of $total',
+                style: theme.textTheme.labelLarge?.copyWith(color: color, fontWeight: FontWeight.w700),
+              ),
+              const SizedBox(height: 4),
+              Text(step.title, style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w800)),
+              const SizedBox(height: 8),
+              Text(step.description, style: theme.textTheme.bodyLarge?.copyWith(height: 1.45)),
+            ],
+          ),
         ),
       ),
     );
@@ -215,14 +228,23 @@ class _Node extends StatelessWidget {
           alignment: Alignment.center,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: state <= 0 ? color : theme.colorScheme.surface,
-            border: Border.all(color: color, width: 2),
-            boxShadow: current ? [BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: 12)] : null,
+            gradient: state <= 0
+                ? RadialGradient(
+                    center: const Alignment(-0.35, -0.4),
+                    colors: [lighten(color, 0.22), color, darken(color, 0.3)],
+                  )
+                : null,
+            color: state <= 0 ? null : const Color(0xFF0B1030),
+            border: Border.all(color: color.withValues(alpha: state <= 0 ? 0.9 : 0.6), width: 1.6),
+            boxShadow: [
+              if (current) BoxShadow(color: color.withValues(alpha: 0.65), blurRadius: 22, spreadRadius: 1),
+              if (state < 0) BoxShadow(color: color.withValues(alpha: 0.25), blurRadius: 10),
+            ],
           ),
           child: Text(
             '${step.order}',
             style: theme.textTheme.labelLarge?.copyWith(
-              color: state <= 0 ? Colors.white : color,
+              color: state <= 0 ? Cosmos.void0 : color,
               fontWeight: FontWeight.w800,
             ),
           ),
@@ -244,60 +266,62 @@ class _Ring extends StatelessWidget {
   Widget build(BuildContext context) {
     final palette = context.viz;
     final theme = Theme.of(context);
-    return LayoutBuilder(builder: (context, c) {
-      final center = Offset(c.maxWidth / 2, c.maxHeight / 2);
-      final radius = math.max(10.0, math.min(c.maxWidth, c.maxHeight) / 2 - 26);
-      Offset at(int i) {
-        final a = -math.pi / 2 + 2 * math.pi * i / steps.length;
-        return center + Offset(math.cos(a), math.sin(a)) * radius;
-      }
+    return LayoutBuilder(
+      builder: (context, c) {
+        final center = Offset(c.maxWidth / 2, c.maxHeight / 2);
+        final radius = math.max(10.0, math.min(c.maxWidth, c.maxHeight) / 2 - 26);
+        Offset at(int i) {
+          final a = -math.pi / 2 + 2 * math.pi * i / steps.length;
+          return center + Offset(math.cos(a), math.sin(a)) * radius;
+        }
 
-      return Stack(
-        children: [
-          Positioned.fill(
-            child: CustomPaint(
-              painter: _RingPainter(
-                count: steps.length,
-                index: index,
-                progress: progress,
-                center: center,
-                radius: radius,
-                track: palette.grid,
-                active: palette.seriesAt(index),
-              ),
-            ),
-          ),
-          Positioned.fill(
-            child: Center(
-              child: SizedBox(
-                width: radius * 1.2,
-                child: Text(
-                  steps[index].title,
-                  textAlign: TextAlign.center,
-                  maxLines: 2,
-                  style: theme.textTheme.titleSmall?.copyWith(color: palette.mutedLabel),
+        return Stack(
+          children: [
+            Positioned.fill(
+              child: CustomPaint(
+                painter: _RingPainter(
+                  count: steps.length,
+                  index: index,
+                  progress: progress,
+                  center: center,
+                  radius: radius,
+                  track: Colors.white.withValues(alpha: 0.08),
+                  active: palette.seriesAt(index),
                 ),
               ),
             ),
-          ),
-          for (var i = 0; i < steps.length; i++)
-            Positioned(
-              left: at(i).dx - 20,
-              top: at(i).dy - 20,
-              width: 40,
-              height: 40,
+            Positioned.fill(
               child: Center(
-                child: _Node(
-                  step: steps[i],
-                  state: i < index ? -1 : (i == index ? 0 : 1),
-                  color: palette.seriesAt(i),
-                  onTap: () => onTap(i),
+                child: SizedBox(
+                  width: radius * 1.2,
+                  child: Text(
+                    steps[index].title,
+                    textAlign: TextAlign.center,
+                    maxLines: 2,
+                    style: theme.textTheme.titleSmall?.copyWith(color: palette.mutedLabel),
+                  ),
                 ),
               ),
             ),
-        ],
-      );
-    });
+            for (var i = 0; i < steps.length; i++)
+              Positioned(
+                left: at(i).dx - 20,
+                top: at(i).dy - 20,
+                width: 40,
+                height: 40,
+                child: Center(
+                  child: _Node(
+                    step: steps[i],
+                    state: i < index ? -1 : (i == index ? 0 : 1),
+                    color: palette.seriesAt(i),
+                    onTap: () => onTap(i),
+                  ),
+                ),
+              ),
+          ],
+        );
+      },
+    );
   }
 }
 
@@ -320,28 +344,58 @@ class _RingPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final rect = Rect.fromCircle(center: center, radius: radius);
-    canvas.drawCircle(center, radius, Paint()
-      ..color = track
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 4);
+    canvas.drawCircle(
+      center,
+      radius,
+      Paint()
+        ..color = track
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 3,
+    );
     final seg = 2 * math.pi / count;
-    final start = -math.pi / 2 + seg * index;
-    canvas.drawArc(rect, start, seg * progress, false, Paint()
-      ..color = active
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 4
-      ..strokeCap = StrokeCap.round);
+    // Completed part of the cycle so far, plus the live segment.
+    final sweep = seg * (index + progress);
+    if (sweep > 0) {
+      final shader = SweepGradient(
+        transform: const GradientRotation(-math.pi / 2),
+        colors: const [Cosmos.violet, Cosmos.cyan, Cosmos.pink, Cosmos.violet],
+      ).createShader(rect);
+      canvas.drawArc(
+        rect,
+        -math.pi / 2,
+        sweep,
+        false,
+        Paint()
+          ..shader = shader
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 9
+          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 7),
+      );
+      canvas.drawArc(
+        rect,
+        -math.pi / 2,
+        sweep,
+        false,
+        Paint()
+          ..shader = shader
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 3.5
+          ..strokeCap = StrokeCap.round,
+      );
+      final a = -math.pi / 2 + sweep;
+      paintComet(canvas, center + Offset(math.cos(a), math.sin(a)) * radius, active, radius: 3.5);
+    }
     // Direction arrows midway between nodes.
-    final arrow = Paint()..color = track.withValues(alpha: 1);
+    final arrow = Paint()..color = Colors.white.withValues(alpha: 0.35);
     for (var i = 0; i < count; i++) {
       final a = -math.pi / 2 + seg * (i + 0.5);
       final p = center + Offset(math.cos(a), math.sin(a)) * radius;
       final dir = Offset(-math.sin(a), math.cos(a));
       final normal = Offset(math.cos(a), math.sin(a));
       final path = Path()
-        ..moveTo((p + dir * 6).dx, (p + dir * 6).dy)
-        ..lineTo((p - dir * 4 + normal * 5).dx, (p - dir * 4 + normal * 5).dy)
-        ..lineTo((p - dir * 4 - normal * 5).dx, (p - dir * 4 - normal * 5).dy)
+        ..moveTo((p + dir * 5).dx, (p + dir * 5).dy)
+        ..lineTo((p - dir * 3 + normal * 4).dx, (p - dir * 3 + normal * 4).dy)
+        ..lineTo((p - dir * 3 - normal * 4).dx, (p - dir * 3 - normal * 4).dy)
         ..close();
       canvas.drawPath(path, arrow);
     }
@@ -384,10 +438,9 @@ class _StepperState extends State<_Stepper> {
       // Scroll only this list (Scrollable.ensureVisible would also scroll the page).
       final box = _keys[widget.index].currentContext?.findRenderObject();
       if (box == null || !mounted || !_scroll.hasClients) return;
-      final target = RenderAbstractViewport.of(box)
-          .getOffsetToReveal(box, 0.2)
-          .offset
-          .clamp(0.0, _scroll.position.maxScrollExtent);
+      final target = RenderAbstractViewport.of(
+        box,
+      ).getOffsetToReveal(box, 0.2).offset.clamp(0.0, _scroll.position.maxScrollExtent);
       if (widget.reduceMotion) {
         _scroll.jumpTo(target);
       } else {
@@ -427,7 +480,20 @@ class _StepperState extends State<_Stepper> {
                             child: Container(
                               width: 3,
                               margin: const EdgeInsets.symmetric(vertical: 2),
-                              color: i < widget.index ? palette.seriesAt(i) : palette.grid,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(2),
+                                gradient: i < widget.index
+                                    ? LinearGradient(
+                                        begin: Alignment.topCenter,
+                                        end: Alignment.bottomCenter,
+                                        colors: [palette.seriesAt(i), palette.seriesAt(i + 1)],
+                                      )
+                                    : null,
+                                color: i < widget.index ? null : palette.grid,
+                                boxShadow: i < widget.index
+                                    ? [BoxShadow(color: palette.seriesAt(i).withValues(alpha: 0.5), blurRadius: 6)]
+                                    : null,
+                              ),
                             ),
                           ),
                       ],

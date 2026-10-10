@@ -114,10 +114,28 @@ model:
 cd server && OPENROUTER_API_KEY=... dart test -t live --run-skipped
 ```
 
+## Design
+
+The app has a dark-only "deep space" look: a drifting, twinkling starfield
+with nebula glow, frosted-glass cards, Space Grotesk headings and Inter body
+text (both bundled, SIL OFL; licenses in `app/assets/fonts`). The templates
+draw lit spheres, glowing bars and lines, light trails, and a spark burst when
+exponential growth reaches its target. Shared painting helpers live in
+`app/lib/templates/common/viz_paint.dart`; the cosmic widgets are in
+`app/lib/ui/cosmic/`.
+
+The launcher icon, adaptive-icon foreground and splash images are rendered
+from the same `OrbitMarkPainter` as the in-app logo:
+
+```sh
+cd app && flutter test tool/generate_icons_test.dart
+```
+
 ## Accessibility and motion
 
 Templates read `MediaQuery.disableAnimations`. With reduced motion they show
-their final frame immediately, and process steps don't autoplay. Charts expose
+their final frame immediately, process steps don't autoplay, and the
+starfield and logo hold still. Charts expose
 semantic summaries, and labels scale with the system text size up to a limit.
 
 ## Adding iOS later

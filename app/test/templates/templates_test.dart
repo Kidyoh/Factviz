@@ -40,9 +40,9 @@ void main() {
     }
   }
 
-  testWidgets('dark theme renders every template', (tester) async {
+  testWidgets('every template renders standalone', (tester) async {
     for (final sample in mockSamples) {
-      await pumpPhone(tester, TemplateView(props: sample.visualization.props), brightness: Brightness.dark);
+      await pumpPhone(tester, TemplateView(props: sample.visualization.props));
       await advance(tester, const Duration(seconds: 3), steps: 6);
       expect(tester.takeException(), isNull, reason: sample.name);
     }

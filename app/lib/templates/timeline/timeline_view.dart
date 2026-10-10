@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../app/theme.dart';
 import '../common/canvas_text.dart';
 import '../common/motion.dart';
+import '../common/viz_paint.dart';
 import 'timeline_layout.dart';
 
 /// Events on an animated, horizontally scrollable time axis.
@@ -180,34 +181,43 @@ class _EventCard extends StatelessWidget {
       button: true,
       label: '${event.displayDate}: ${event.label}',
       excludeSemantics: true,
-      child: Material(
-        color: theme.colorScheme.surfaceContainerHigh,
-        borderRadius: BorderRadius.circular(12),
-        clipBehavior: Clip.antiAlias,
-        child: InkWell(
-          onTap: onTap,
-          child: Container(
-            decoration: BoxDecoration(border: Border(left: BorderSide(color: color, width: 4))),
-            padding: const EdgeInsets.fromLTRB(8, 6, 6, 6),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  event.displayDate,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: theme.textTheme.labelSmall?.copyWith(color: color, fontWeight: FontWeight.w700),
-                ),
-                const SizedBox(height: 2),
-                Flexible(
-                  child: Text(
-                    event.label,
-                    maxLines: 3,
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(14),
+          boxShadow: [BoxShadow(color: color.withValues(alpha: 0.18), blurRadius: 18, spreadRadius: -4)],
+        ),
+        child: Material(
+          color: const Color(0xD90C1230),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(14),
+            side: BorderSide(color: color.withValues(alpha: 0.45)),
+          ),
+          clipBehavior: Clip.antiAlias,
+          child: InkWell(
+            onTap: onTap,
+            splashColor: color.withValues(alpha: 0.2),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(10, 7, 8, 7),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    event.displayDate,
+                    maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: theme.textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w600, height: 1.2),
+                    style: theme.textTheme.labelSmall?.copyWith(color: color, fontWeight: FontWeight.w700, letterSpacing: 0.3),
                   ),
-                ),
-              ],
+                  const SizedBox(height: 3),
+                  Flexible(
+                    child: Text(
+                      event.label,
+                      maxLines: 3,
+                      overflow: TextOverflow.ellipsis,
+                      style: theme.textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w600, height: 1.25, color: Cosmos.text),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -243,36 +253,53 @@ class _AxisPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final axis = Paint()
-      ..color = palette.axis
-      ..strokeWidth = 2
-      ..strokeCap = StrokeCap.round;
-    canvas.drawLine(Offset(TimelineLayout.pad / 2, axisY), Offset(math.min(head, size.width - TimelineLayout.pad / 2), axisY), axis);
+    final start = Offset(TimelineLayout.pad / 2, axisY);
+    final endX = math.min(head, size.width - TimelineLayout.pad / 2);
+    final end = Offset(endX, axisY);
 
     final tickPaint = Paint()
       ..color = palette.grid
       ..strokeWidth = 1;
-    final style = baseStyle.copyWith(fontSize: textScaler.scale(10), color: palette.mutedLabel);
+    final style = baseStyle.copyWith(fontSize: textScaler.scale(10), color: palette.mutedLabel, fontWeight: FontWeight.w500);
     for (final t in ticks) {
       if (t.x > head) continue;
-      canvas.drawLine(Offset(t.x, 0), Offset(t.x, size.height), tickPaint);
+      for (var y = 0.0; y < size.height; y += 8) {
+        canvas.drawLine(Offset(t.x, y), Offset(t.x, y + 3), tickPaint);
+      }
       final label = layoutText(t.label, style);
-      label.paint(canvas, Offset(t.x - label.width / 2, axisY + 4));
+      label.paint(canvas, Offset(t.x - label.width / 2, axisY + 6));
+    }
+
+    if (endX > start.dx) {
+      final rect = Rect.fromPoints(start, end).inflate(4);
+      canvas.drawLine(
+        start,
+        end,
+        Paint()
+          ..shader = const LinearGradient(colors: [Cosmos.violet, Cosmos.cyan]).createShader(rect)
+          ..strokeWidth = 8
+          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 6),
+      );
+      canvas.drawLine(
+        start,
+        end,
+        Paint()
+          ..shader = const LinearGradient(colors: [Cosmos.violet, Cosmos.cyan]).createShader(rect)
+          ..strokeWidth = 2.5
+          ..strokeCap = StrokeCap.round,
+      );
     }
 
     for (var i = 0; i < xs.length; i++) {
       final (edgeY, opacity) = connectors[i];
       if (opacity <= 0) continue;
-      final color = palette.seriesAt(i).withValues(alpha: opacity);
-      canvas.drawLine(
-        Offset(xs[i], axisY),
-        Offset(xs[i], edgeY),
-        Paint()
-          ..color = color.withValues(alpha: opacity * 0.6)
-          ..strokeWidth = 1.5,
-      );
-      canvas.drawCircle(Offset(xs[i], axisY), 6 * opacity.clamp(0.5, 1.0), Paint()..color = color);
+      final color = palette.seriesAt(i);
+      paintGlowLine(canvas, Offset(xs[i], axisY), Offset(xs[i], edgeY), color, width: 1.2, opacity: opacity * 0.7);
+      paintSphere(canvas, Offset(xs[i], axisY), 6.5 * opacity.clamp(0.5, 1.0), color, opacity: opacity);
     }
+
+    // The drawing head travels along the axis like a comet.
+    if (head < size.width - TimelineLayout.pad / 2) paintComet(canvas, end, Cosmos.cyan, radius: 4.5);
   }
 
   @override

@@ -1,10 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'app/router.dart';
 import 'app/theme.dart';
 
-void main() => runApp(const ProviderScope(child: FactvizApp()));
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  // Edge-to-edge: the starfield runs behind the status and navigation bars.
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+    statusBarIconBrightness: Brightness.light,
+    systemNavigationBarColor: Colors.transparent,
+    systemNavigationBarIconBrightness: Brightness.light,
+  ));
+  runApp(const ProviderScope(child: FactvizApp()));
+}
 
 class FactvizApp extends StatefulWidget {
   const FactvizApp({super.key, this.initialLocation = '/'});
@@ -30,8 +42,8 @@ class _FactvizAppState extends State<FactvizApp> {
     return MaterialApp.router(
       title: 'Explain It Visually',
       debugShowCheckedModeBanner: false,
-      theme: buildTheme(Brightness.light),
-      darkTheme: buildTheme(Brightness.dark),
+      theme: buildTheme(),
+      themeMode: ThemeMode.dark,
       routerConfig: _router,
     );
   }

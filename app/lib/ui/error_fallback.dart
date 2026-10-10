@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../app/theme.dart';
+import 'cosmic/orbit_mark.dart';
+
 /// Friendly failure state with retry and rephrase actions.
 class ErrorFallback extends StatelessWidget {
   const ErrorFallback({super.key, required this.message, this.onRetry, required this.onRephrase});
@@ -14,13 +17,19 @@ class ErrorFallback extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Icon(Icons.auto_awesome_outlined, size: 48, color: theme.colorScheme.outline),
-        const SizedBox(height: 16),
-        Text(message, textAlign: TextAlign.center, style: theme.textTheme.titleMedium),
-        const SizedBox(height: 24),
+        const Opacity(opacity: 0.55, child: OrbitMark(size: 96, animate: false)),
+        const SizedBox(height: 22),
+        Text(message, textAlign: TextAlign.center, style: theme.textTheme.titleLarge),
+        const SizedBox(height: 8),
+        Text(
+          'Try a question about sizes, distances, history, growth or how something works.',
+          textAlign: TextAlign.center,
+          style: theme.textTheme.bodyMedium?.copyWith(color: Cosmos.textMuted),
+        ),
+        const SizedBox(height: 26),
         Wrap(
           spacing: 12,
-          runSpacing: 8,
+          runSpacing: 10,
           alignment: WrapAlignment.center,
           children: [
             if (onRetry != null)

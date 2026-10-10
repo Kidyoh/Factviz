@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/theme.dart';
 import '../common/canvas_text.dart';
+import '../common/viz_paint.dart';
 
 /// Value-vs-step chart for exponential growth on a linear or log y axis.
 class GrowthChartPainter extends CustomPainter {
@@ -15,6 +16,7 @@ class GrowthChartPainter extends CustomPainter {
     required this.palette,
     required this.textScaler,
     required this.baseStyle,
+    this.burst = 0,
   });
 
   final ExponentialGrowthProps props;
@@ -27,6 +29,9 @@ class GrowthChartPainter extends CustomPainter {
 
   /// Theme text style, so canvas labels use the app font.
   final TextStyle baseStyle;
+
+  /// 0..1 progress of the celebration burst when the target is reached.
+  final double burst;
 
   static const double _left = 72, _right = 16, _top = 16, _bottom = 28;
 
@@ -50,27 +55,51 @@ class GrowthChartPainter extends CustomPainter {
     _paintXAxis(canvas, plot, xAt);
     if (target != null) _paintTarget(canvas, plot, yAt(target));
 
-    // Curve up to the current step.
+    // Curve up to the current step, with a glowing stroke and area fill.
     final samples = math.max(2, (step * 6).ceil());
     final path = Path();
+    final area = Path()..moveTo(xAt(0), plot.bottom);
     for (var i = 0; i <= samples; i++) {
       final s = step * i / samples;
       final o = Offset(xAt(s), yAt(props.valueAtStepSi(s)).clamp(plot.top, plot.bottom));
       i == 0 ? path.moveTo(o.dx, o.dy) : path.lineTo(o.dx, o.dy);
+      area.lineTo(o.dx, o.dy);
     }
+    area
+      ..lineTo(xAt(step), plot.bottom)
+      ..close();
     final color = palette.seriesAt(0);
+    canvas.drawPath(
+      area,
+      Paint()
+        ..shader = LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [color.withValues(alpha: 0.35), Cosmos.violet.withValues(alpha: 0.06)],
+        ).createShader(plot),
+    );
     canvas.drawPath(
       path,
       Paint()
-        ..color = color
+        ..color = color.withValues(alpha: 0.5)
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 8
+        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 6),
+    );
+    canvas.drawPath(
+      path,
+      Paint()
+        ..shader = const LinearGradient(colors: [Cosmos.violet, Cosmos.cyan]).createShader(plot)
         ..style = PaintingStyle.stroke
         ..strokeWidth = 3
         ..strokeJoin = StrokeJoin.round
         ..strokeCap = StrokeCap.round,
     );
     final head = Offset(xAt(step), yAt(props.valueAtStepSi(step)).clamp(plot.top, plot.bottom));
-    canvas.drawCircle(head, 7, Paint()..color = color.withValues(alpha: 0.25));
-    canvas.drawCircle(head, 4.5, Paint()..color = color);
+    paintComet(canvas, head, color, radius: 5);
+    if (target != null && burst > 0) {
+      paintBurst(canvas, head, burst, const [Cosmos.amber, Cosmos.pink, Cosmos.cyan, Colors.white]);
+    }
   }
 
   void _paintGrid(Canvas canvas, Rect plot, _YMapper mapper, double Function(double) yAt) {
@@ -101,6 +130,14 @@ class GrowthChartPainter extends CustomPainter {
 
   void _paintTarget(Canvas canvas, Rect plot, double y) {
     if (y < plot.top - 1 || y > plot.bottom + 1) return;
+    canvas.drawLine(
+      Offset(plot.left, y),
+      Offset(plot.right, y),
+      Paint()
+        ..color = palette.target.withValues(alpha: 0.35)
+        ..strokeWidth = 5
+        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 5),
+    );
     final paint = Paint()
       ..color = palette.target
       ..strokeWidth = 1.5;
@@ -109,13 +146,18 @@ class GrowthChartPainter extends CustomPainter {
       canvas.drawLine(Offset(x, y), Offset(math.min(x + dash, plot.right), y), paint);
     }
     final label = layoutText(props.target!.label, _style(11, palette.target, FontWeight.w700), maxWidth: plot.width * 0.7);
-    final above = y - label.height - 4 > plot.top;
-    label.paint(canvas, Offset(plot.left + 8, above ? y - label.height - 4 : y + 4));
+    final above = y - label.height - 14 > plot.top;
+    paintPill(
+      canvas,
+      label,
+      Offset(plot.left + 14 + label.width / 2, above ? y - label.height / 2 - 10 : y + label.height / 2 + 10),
+      border: palette.target.withValues(alpha: 0.5),
+    );
   }
 
   @override
   bool shouldRepaint(GrowthChartPainter old) =>
-      old.step != step || old.scale != scale || old.props != props || old.palette != palette;
+      old.step != step || old.burst != burst || old.scale != scale || old.props != props || old.palette != palette;
 }
 
 abstract class _YMapper {
