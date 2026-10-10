@@ -23,11 +23,15 @@ enum ScaleMode {
   static const byWire = {'size': size, 'distance': distance};
 }
 
+/// How a scale_zoom item is drawn: a circle (planets, balls), a horizontal
+/// bar (lengths: whales, buses) or a vertical tower (heights: people,
+/// mountains, buildings).
 enum ItemShape {
   circle,
-  bar;
+  bar,
+  tower;
 
-  static const byWire = {'circle': circle, 'bar': bar};
+  static const byWire = {'circle': circle, 'bar': bar, 'tower': tower};
 }
 
 enum TimeAxis {

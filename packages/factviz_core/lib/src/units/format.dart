@@ -55,6 +55,7 @@ String formatQuantity(double value, Unit unit, {bool approximate = false}) {
 Unit bestDisplayUnit(double si, Dimension dimension, {Unit? fallback}) {
   final ladder = displayLadders[dimension];
   if (ladder == null) return fallback ?? units.values.firstWhere((u) => u.dimension == dimension);
+  if (si == 0) return fallback ?? units.values.firstWhere((u) => u.dimension == dimension && u.toSi == 1);
   var best = units[ladder.first]!;
   for (final code in ladder) {
     final u = units[code]!;

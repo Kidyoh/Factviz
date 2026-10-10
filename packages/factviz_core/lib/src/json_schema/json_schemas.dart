@@ -65,7 +65,7 @@ final Map<String, Object?> planJsonSchema = {
         'properties': {
           'factId': _str('Id of a quantity fact.'),
           'displayName': _str('Short name, max 40 chars.'),
-          'shape': _enum(['circle', 'bar'], 'circle for round objects, bar otherwise.'),
+          'shape': _enum(['circle', 'bar', 'tower'], 'circle for round objects, bar for lengths, tower for heights.'),
         },
         'required': ['factId', 'displayName'],
       },

@@ -62,6 +62,8 @@ void main() {
       expect(formatSi(1.496e11, Dimension.length), '1 AU');
       expect(formatSi(150000, Dimension.mass), '150 t');
       expect(formatSi(7200, Dimension.duration), '2 h');
+      expect(formatSi(0, Dimension.length), '0 m');
+      expect(formatSi(0, Dimension.length, fallback: units['km']), '0 km');
     });
   });
 }
