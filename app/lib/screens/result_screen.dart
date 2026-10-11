@@ -75,7 +75,7 @@ class _ResultScreenState extends ConsumerState<ResultScreen> {
                 key: const ValueKey('loading'),
                 child: SingleChildScrollView(padding: const EdgeInsets.all(28), child: StageLoader(stage: stage)),
               ),
-            VisualizeFailure(:final message, :final canRetry) => Align(
+            VisualizeFailure(:final message, :final canRetry, :final needsKey) => Align(
                 key: const ValueKey('failure'),
                 alignment: const Alignment(0, -0.3),
                 child: SingleChildScrollView(
@@ -84,6 +84,14 @@ class _ResultScreenState extends ConsumerState<ResultScreen> {
                     message: message,
                     onRetry: canRetry && _query != null ? () => ref.read(provider.notifier).retry() : null,
                     onRephrase: _rephrase,
+                    onOpenSettings: needsKey
+                        ? () async {
+                            await context.push('/settings');
+                            if (mounted && await ref.read(apiKeyStoreProvider).readKey() != null) {
+                              ref.read(provider.notifier).retry();
+                            }
+                          }
+                        : null,
                   ),
                 ),
               ),

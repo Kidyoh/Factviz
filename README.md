@@ -85,6 +85,18 @@ docker run -p 8080:8080 -e OPENROUTER_API_KEY=... factviz-server
 
 ### 2. App
 
+By default the app runs the facts → planner pipeline **on the phone** with the
+user's own OpenRouter key: tap the key icon on the home screen, paste a key
+from openrouter.ai/keys, and it is stored in Android's encrypted storage and
+sent only to OpenRouter. The on-device mode runs the same `ExplainPipeline`
+code as the server (`package:factviz_server/pipeline.dart`), so prompts,
+validation and the retry policy are identical.
+
+To use a shared server instead (keys stay off phones), build with
+`--dart-define=API_BASE_URL=https://your-server`; the key screen then
+disappears.
+
+
 ```sh
 cd app
 flutter run                                              # emulator → http://10.0.2.2:8080

@@ -4,9 +4,7 @@ import 'package:factviz_core/factviz_core.dart';
 import 'package:shelf/shelf.dart';
 
 import '../llm/llm_client.dart';
-import '../llm/prompts/facts_prompt.dart';
-import '../llm/prompts/planner_prompt.dart';
-import '../pipeline/validated_call.dart';
+import '../pipeline/explain_pipeline.dart';
 
 typedef Logger = void Function(String message);
 
@@ -27,9 +25,6 @@ class FactvizApi {
   final Logger _log;
 
   static const int maxBodyBytes = 64 * 1024;
-  static const int minQueryLength = 3;
-  static const int maxQueryLength = 300;
-  static const String unvisualizableMessage = "Couldn't visualize this one, try rephrasing.";
 
   Handler get handler => (Request request) async {
         try {
@@ -56,67 +51,33 @@ class FactvizApi {
     return path == 'api/facts' ? _facts(body) : _plan(body);
   }
 
+  late final ExplainPipeline _pipeline = ExplainPipeline(
+    llm: llm,
+    factsModel: factsModel,
+    plannerModel: plannerModel,
+    resolver: resolver,
+    log: _log,
+  );
+
   Future<Response> _facts(Map<String, Object?> body) async {
     final raw = body['query'];
-    final query = raw is String ? raw.trim().replaceAll(RegExp(r'\s+'), ' ') : null;
-    if (query == null || query.length < minQueryLength || query.length > maxQueryLength) {
-      return _error(400, 'bad_request', 'Type a question between $minQueryLength and $maxQueryLength characters.');
-    }
-
-    final outcome = await validatedCall(
-      llm: llm,
-      request: buildFactsRequest(model: factsModel, query: query),
-      validate: (json) {
-        // The echoed query is always the user's own text.
-        if (json is Map<String, dynamic>) json['query'] = query;
-        return FactsResult.fromJson(json);
-      },
-    );
-    switch (outcome) {
-      case CallSucceeded(:final value, :final attempts):
-        _log('facts ok attempts=$attempts facts=${value.facts.length} confidence=${value.confidence.name}');
-        return _json(200, {'facts': value.toJson(), 'meta': {'attempts': attempts}});
-      case CallFailedValidation(:final issues, :final attempts):
-        _log('facts invalid after $attempts attempts:\n${formatIssues(issues)}');
-        return _error(422, 'unvisualizable', unvisualizableMessage, issues: issues);
-    }
+    return _respond('facts', await _pipeline.facts(raw is String ? raw : ''), (f) => f.toJson());
   }
 
   Future<Response> _plan(Map<String, Object?> body) async {
-    final factsResult = FactsResult.fromJson(body['facts']);
-    final FactsResult facts;
-    switch (factsResult) {
+    switch (FactsResult.fromJson(body['facts'])) {
       case Invalid(:final issues):
         return _error(400, 'bad_request', 'The facts sent were not valid.', issues: issues);
-      case Valid(:final value):
-        facts = value;
-    }
-
-    if (facts.facts.isEmpty) {
-      final plan = NonePlan(title: facts.topic, reason: 'There are not enough reliable facts to draw this.');
-      return _json(200, {'plan': plan.toJson(), 'meta': {'attempts': 0}});
-    }
-
-    final outcome = await validatedCall<Plan>(
-      llm: llm,
-      request: buildPlannerRequest(model: plannerModel, facts: facts),
-      validate: (json) => switch (Plan.fromJson(json)) {
-        Invalid(:final issues) => Invalid(issues),
-        Valid(value: final plan) => switch (resolver.resolve(plan, facts)) {
-            Invalid(:final issues) => Invalid(issues),
-            Valid() => Valid(plan),
-          },
-      },
-    );
-    switch (outcome) {
-      case CallSucceeded(:final value, :final attempts):
-        _log('plan ok attempts=$attempts template=${value.template.wire}');
-        return _json(200, {'plan': value.toJson(), 'meta': {'attempts': attempts}});
-      case CallFailedValidation(:final issues, :final attempts):
-        _log('plan invalid after $attempts attempts:\n${formatIssues(issues)}');
-        return _error(422, 'unvisualizable', unvisualizableMessage, issues: issues);
+      case Valid(value: final facts):
+        return _respond('plan', await _pipeline.plan(facts), (p) => p.toJson());
     }
   }
+
+  Response _respond<T>(String key, PipelineResult<T> result, Object Function(T) toJson) => switch (result) {
+        PipelineOk(:final value, :final attempts) => _json(200, {key: toJson(value), 'meta': {'attempts': attempts}}),
+        PipelineRejected(kind: RejectionKind.badRequest, :final message) => _error(400, 'bad_request', message),
+        PipelineRejected(:final message, :final issues) => _error(422, 'unvisualizable', message, issues: issues),
+      };
 
   Future<Map<String, Object?>?> _readJson(Request request) async {
     final length = request.contentLength;

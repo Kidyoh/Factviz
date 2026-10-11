@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import '../screens/dev_gallery_screen.dart';
 import '../screens/home_screen.dart';
 import '../screens/result_screen.dart';
+import '../screens/settings_screen.dart';
 import '../state/visualize_controller.dart';
 
 /// The template gallery: always in debug builds, and in other builds made
@@ -31,6 +32,7 @@ GoRouter buildRouter({String initialLocation = '/'}) => GoRouter(
           redirect: (context, state) => (state.uri.queryParameters['q']?.trim() ?? '').isEmpty ? '/' : null,
           builder: (context, state) => ResultScreen(request: QueryRequest(state.uri.queryParameters['q']!.trim())),
         ),
+        GoRoute(path: '/settings', builder: (context, state) => const SettingsScreen()),
         GoRoute(
           path: '/v/:payload',
           builder: (context, state) => ResultScreen(request: SharedRequest(state.pathParameters['payload']!)),

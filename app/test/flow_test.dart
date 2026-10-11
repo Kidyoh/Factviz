@@ -1,3 +1,4 @@
+import 'package:factviz/data/api_key_store.dart';
 import 'package:factviz/main.dart';
 import 'package:factviz/state/share.dart';
 import 'package:factviz/state/visualize_controller.dart';
@@ -30,7 +31,8 @@ void main() {
     addTearDown(tester.view.reset);
     await tester.pumpWidget(ProviderScope(
       overrides: [
-        apiClientProvider.overrideWithValue(server.client()),
+        explainBackendProvider.overrideWithValue(server.client()),
+        apiKeyStoreProvider.overrideWithValue(MemoryApiKeyStore(key: 'sk-test')),
         fakeVizOverride,
         shareTextProvider.overrideWithValue((text, {subject}) async => shared.add(text)),
       ],

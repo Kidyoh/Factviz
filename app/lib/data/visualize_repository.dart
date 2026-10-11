@@ -1,6 +1,7 @@
 import 'package:factviz_core/factviz_core.dart';
 
 import 'api_client.dart';
+import 'explain_backend.dart';
 
 enum VisualizeStage { findingFacts, choosingVisualization, rendering }
 
@@ -8,7 +9,7 @@ enum VisualizeStage { findingFacts, choosingVisualization, rendering }
 class VisualizeRepository {
   const VisualizeRepository(this._api, {this.resolver = const PlanResolver()});
 
-  final FactvizApiClient _api;
+  final ExplainBackend _api;
   final PlanResolver resolver;
 
   Future<Visualization> visualize(String query, {void Function(VisualizeStage stage)? onStage}) async {
@@ -17,8 +18,8 @@ class VisualizeRepository {
     onStage?.call(VisualizeStage.choosingVisualization);
     final plan = await _api.fetchPlan(facts);
     onStage?.call(VisualizeStage.rendering);
-    // The server already resolved this plan; resolving again on the device
-    // means the renderer never trusts the network.
+    // The backend already resolved this plan; resolving again here means
+    // the renderer never trusts anything it did not check itself.
     return switch (Visualization.build(facts, plan, resolver: resolver)) {
       Valid(:final value) => value,
       Invalid() => throw ApiException.unvisualizable,

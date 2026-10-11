@@ -5,12 +5,15 @@ import 'dart:io';
 import 'package:factviz_core/factviz_core.dart';
 import 'package:http/http.dart' as http;
 
-/// API server address, set at build time:
-/// `flutter run --dart-define=API_BASE_URL=https://api.example.com`.
-/// Defaults to the host machine as seen from the Android emulator.
-const String apiBaseUrl = String.fromEnvironment('API_BASE_URL', defaultValue: 'http://10.0.2.2:8080');
+import 'explain_backend.dart';
 
-enum ApiErrorKind { network, unvisualizable, rateLimited, badRequest, server }
+/// Optional API server address, set at build time:
+/// `flutter run --dart-define=API_BASE_URL=https://api.example.com`.
+/// When empty (the default) the app runs the pipeline on the device with the
+/// user's own OpenRouter key.
+const String apiBaseUrl = String.fromEnvironment('API_BASE_URL');
+
+enum ApiErrorKind { network, unvisualizable, rateLimited, badRequest, server, needsKey }
 
 class ApiException implements Exception {
   const ApiException(this.kind, this.message);
@@ -20,7 +23,7 @@ class ApiException implements Exception {
   /// Friendly, user-facing message.
   final String message;
 
-  bool get canRetry => kind != ApiErrorKind.badRequest;
+  bool get canRetry => kind != ApiErrorKind.badRequest && kind != ApiErrorKind.needsKey;
 
   static const unvisualizable =
       ApiException(ApiErrorKind.unvisualizable, "Couldn't visualize this one, try rephrasing.");
@@ -31,7 +34,7 @@ class ApiException implements Exception {
 
 /// Talks to the Explain It Visually server. Holds no secrets: the LLM key
 /// lives on the server.
-class FactvizApiClient {
+class FactvizApiClient implements ExplainBackend {
   FactvizApiClient({String baseUrl = apiBaseUrl, http.Client? httpClient, this.timeout = const Duration(seconds: 130)})
       : _base = baseUrl.endsWith('/') ? baseUrl.substring(0, baseUrl.length - 1) : baseUrl,
         _http = httpClient ?? http.Client();
@@ -41,6 +44,7 @@ class FactvizApiClient {
   final Duration timeout;
 
   /// Step 1: facts for [query], validated again on the device.
+  @override
   Future<FactsResult> fetchFacts(String query) async {
     final json = await _post('/api/facts', {'query': query});
     return switch (FactsResult.fromJson(json['facts'])) {
@@ -50,6 +54,7 @@ class FactvizApiClient {
   }
 
   /// Step 2: a template plan for [facts].
+  @override
   Future<Plan> fetchPlan(FactsResult facts) async {
     final json = await _post('/api/plan', {'facts': facts.toJson()});
     return switch (Plan.fromJson(json['plan'])) {
@@ -98,5 +103,6 @@ class FactvizApiClient {
   static const _offline =
       ApiException(ApiErrorKind.network, "Can't reach the server. Check your connection and try again.");
 
+  @override
   void close() => _http.close();
 }
