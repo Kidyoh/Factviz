@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "template": "line_series",
+  "title": "Planets found around other stars",
+  "caption": "Cumulative number of confirmed exoplanets, by year of discovery.",
+  "annotations": [
+    {
+      "text": "1,500× since 1995",
+      "anchor": "item",
+      "index": 0,
+      "index2": 7
+    }
+  ],
+  "scale": "log",
+  "units": {
+    "dimension": "count",
+    "preferred": {
+      "symbol": "",
+      "toSi": 1.0
+    },
+    "ladder": [
+      {
+        "symbol": "",
+        "toSi": 1.0
+      }
+    ]
+  },
+  "series": [
+    {
+      "name": "Confirmed exoplanets",
+      "points": [
+        {
+          "valueSi": 4.0,
+          "display": "4",
+          "source": "NASA Exoplanet Archive: confirmed planets, cumulative by discovery year (2026 query)",
+          "year": 1995
+        },
+        {
+          "valueSi": 46.0,
+          "display": "46",
+          "source": "NASA Exoplanet Archive: confirmed planets, cumulative by discovery year (2026 query)",
+          "year": 2000
+        },
+        {
+          "valueSi": 172.0,
+          "display": "172",
+          "source": "NASA Exoplanet Archive: confirmed planets, cumulative by discovery year (2026 query)",
+          "year": 2005
+        },
+        {
+          "valueSi": 498.0,
+          "display": "498",
+          "source": "NASA Exoplanet Archive: confirmed planets, cumulative by discovery year (2026 query)",
+          "year": 2010
+        },
+        {
+          "valueSi": 1783.0,
+          "display": "1,783",
+          "source": "NASA Exoplanet Archive: confirmed planets, cumulative by discovery year (2026 query)",
+          "year": 2014
+        },
+        {
+          "valueSi": 3442.0,
+          "display": "3,442",
+          "source": "NASA Exoplanet Archive: confirmed planets, cumulative by discovery year (2026 query)",
+          "year": 2016
+        },
+        {
+          "valueSi": 4330.0,
+          "display": "4,330",
+          "source": "NASA Exoplanet Archive: confirmed planets, cumulative by discovery year (2026 query)",
+          "year": 2020
+        },
+        {
+          "valueSi": 6090.0,
+          "display": "6,090",
+          "source": "NASA Exoplanet Archive: confirmed planets, cumulative by discovery year (2026 query)",
+          "year": 2025
+        }
+      ]
+    }
+  ]
+}

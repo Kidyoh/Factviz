@@ -128,7 +128,7 @@ void main() {
         child: const FactvizApp(),
       ));
       await advance(tester, const Duration(milliseconds: 600), steps: 6);
-      expect(find.textContaining('add your OpenRouter key'), findsOneWidget);
+      expect(find.textContaining('OpenRouter key so the app'), findsOneWidget);
 
       await tester.ensureVisible(find.text('Fold a paper 42 times to reach the Moon'));
       await tester.pump();

@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "template": "range_bars",
+  "title": "How long animal pregnancies last",
+  "caption": "Typical range of gestation for each species.",
+  "annotations": [],
+  "units": {
+    "dimension": "duration",
+    "preferred": {
+      "symbol": "days",
+      "toSi": 86400.0
+    },
+    "ladder": [
+      {
+        "symbol": "s",
+        "toSi": 1.0
+      },
+      {
+        "symbol": "min",
+        "toSi": 60.0
+      },
+      {
+        "symbol": "h",
+        "toSi": 3600.0
+      },
+      {
+        "symbol": "days",
+        "toSi": 86400.0
+      },
+      {
+        "symbol": "years",
+        "toSi": 31557600.0
+      }
+    ]
+  },
+  "rows": [
+    {
+      "label": "Dog",
+      "a": {
+        "valueSi": 4924800.0,
+        "display": "~57 days",
+        "source": "Veterinary reference range from ovulation (AKC: about 63 days)"
+      },
+      "b": {
+        "valueSi": 5616000.0,
+        "display": "~65 days",
+        "source": "Veterinary reference range from ovulation (AKC: about 63 days)"
+      }
+    },
+    {
+      "label": "Human",
+      "a": {
+        "valueSi": 22377600.0,
+        "display": "~259 days",
+        "source": "ACOG term definitions (37 weeks)"
+      },
+      "b": {
+        "valueSi": 25401600.0,
+        "display": "~294 days",
+        "source": "ACOG term definitions (42 weeks)"
+      }
+    },
+    {
+      "label": "Blue whale",
+      "a": {
+        "valueSi": 26265600.0,
+        "display": "~304 days",
+        "source": "NOAA Fisheries (about 10 to 12 months)"
+      },
+      "b": {
+        "valueSi": 31536000.0,
+        "display": "~365 days",
+        "source": "NOAA Fisheries (about 10 to 12 months)"
+      }
+    },
+    {
+      "label": "Horse",
+      "a": {
+        "valueSi": 27648000.0,
+        "display": "~320 days",
+        "source": "University of Nebraska–Lincoln Extension, G1874"
+      },
+      "b": {
+        "valueSi": 31968000.0,
+        "display": "~370 days",
+        "source": "University of Nebraska–Lincoln Extension, G1874"
+      }
+    },
+    {
+      "label": "Sperm whale",
+      "a": {
+        "valueSi": 36806400.0,
+        "display": "~426 days",
+        "source": "NOAA Fisheries (14 to 16 months)"
+      },
+      "b": {
+        "valueSi": 42076800.0,
+        "display": "~487 days",
+        "source": "NOAA Fisheries (14 to 16 months)"
+      }
+    },
+    {
+      "label": "Asian elephant",
+      "a": {
+        "valueSi": 56505600.0,
+        "display": "~654 days",
+        "source": "Smithsonian's National Zoo (21.5 to 22 months)"
+      },
+      "b": {
+        "valueSi": 57888000.0,
+        "display": "~670 days",
+        "source": "Smithsonian's National Zoo (21.5 to 22 months)"
+      }
+    }
+  ]
+}

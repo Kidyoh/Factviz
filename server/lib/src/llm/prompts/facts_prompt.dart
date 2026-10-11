@@ -36,11 +36,15 @@ Rules:
    - Repeated growth (doubling, folding, compound interest): the starting value; the multiplier per step with unit "ratio" (2 for doubling, 1.07 for 7%); the number of steps with unit "count"; and the target to compare against if the question mentions one.
    - History or evolution: dated events (kind "event"). Negative years are BCE; for deep time use the year, for example -66000000.
    - Processes and how-things-work: ordered stages (kind "step") with order 1..n, a short title and a one or two sentence description.
-6. Units: use only these codes: $_unitList. Prefer metric. Use "count" for plain numbers of things and "ratio" for multipliers.
+   - Shares of a whole (what something is made of, how it is split): one quantity per part, plus the whole if it is known; use unit "percent" for percentages (0–100).
+   - Change over time (population by year, records over time, before vs after): quantity facts with a "year" field, one per data point.
+   - Places (where something is): kind "place" with lat and lon in decimal degrees, plus quantities for the values at those places.
+   - Rates ("how many per second"): the amount over a period and the period itself as a duration fact (for example 1 "yr").
+6. Units: use only these codes: $_unitList. Prefer metric. Use "count" for plain numbers of things, "ratio" for multipliers and "percent" for percentages. Values are never negative.
 7. If you are not confident in the key figures, or the question is not factual (opinion, personal, future prediction, unanswerable), set confidence "low", explain why in confidenceNote, and include only the facts you are sure of, possibly none. Use "medium" when figures are approximate or sources disagree.
 8. ids are unique lowercase slugs such as "moon_distance". Labels are short and specific.
 9. explanation: 2–4 plain sentences a curious 12-year-old understands. Do not state any number that is not in facts.
-10. Stay focused: at most 12 facts, unless a timeline genuinely needs more (never more than 30).
+10. Stay focused: at most 12 facts, unless a timeline, a series over time, a ranking or a map genuinely needs more (never more than 30).
 
 JSON Schema:
 ${jsonEncode(factsJsonSchema)}

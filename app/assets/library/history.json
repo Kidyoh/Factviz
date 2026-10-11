@@ -1,0 +1,1185 @@
+{
+  "category": "history",
+  "title": "History",
+  "entries": [
+    {
+      "id": "monument_heights",
+      "facts": {
+        "query": "How tall are the Great Pyramid and other famous monuments?",
+        "topic": "Heights of famous monuments",
+        "confidence": "high",
+        "explanation": "The Great Pyramid of Giza was the tallest human-made structure on Earth for thousands of years. Roman builders achieved remarkable heights with concrete and arches, and medieval cathedrals finally overtook the pyramid. The Eiffel Tower, built of iron, more than doubled them all.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "person",
+            "label": "Average adult",
+            "value": 1.7,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Typical adult height, rounded (NCD Risk Factor Collaboration global height estimates)"
+          },
+          {
+            "kind": "quantity",
+            "id": "pantheon",
+            "label": "Pantheon, Rome (dome height)",
+            "value": 43.3,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Encyclopaedia Britannica: Pantheon dome height equals its diameter"
+          },
+          {
+            "kind": "quantity",
+            "id": "colosseum",
+            "label": "Colosseum, Rome",
+            "value": 48,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Encyclopaedia Britannica: Colosseum outer wall height"
+          },
+          {
+            "kind": "quantity",
+            "id": "great_pyramid",
+            "label": "Great Pyramid of Giza (original height)",
+            "value": 146.6,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Encyclopaedia Britannica: Pyramids of Giza, original height of Khufu's pyramid"
+          },
+          {
+            "kind": "quantity",
+            "id": "cologne_cathedral",
+            "label": "Cologne Cathedral",
+            "value": 157,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Encyclopaedia Britannica: Cologne Cathedral spire height"
+          },
+          {
+            "kind": "quantity",
+            "id": "eiffel_tower",
+            "label": "Eiffel Tower (with antennas)",
+            "value": 330,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Société d'Exploitation de la Tour Eiffel (official site), height since 2022",
+            "year": 2022
+          }
+        ]
+      },
+      "plan": {
+        "template": "scale_zoom",
+        "title": "Famous monuments to scale",
+        "mode": "size",
+        "caption": "From a person to the Eiffel Tower, all drawn to the same scale.",
+        "items": [
+          {
+            "factId": "person",
+            "displayName": "Person",
+            "shape": "tower",
+            "image": "person"
+          },
+          {
+            "factId": "pantheon",
+            "displayName": "Pantheon",
+            "shape": "tower"
+          },
+          {
+            "factId": "colosseum",
+            "displayName": "Colosseum",
+            "shape": "tower"
+          },
+          {
+            "factId": "great_pyramid",
+            "displayName": "Great Pyramid",
+            "shape": "tower"
+          },
+          {
+            "factId": "cologne_cathedral",
+            "displayName": "Cologne Cathedral",
+            "shape": "tower"
+          },
+          {
+            "factId": "eiffel_tower",
+            "displayName": "Eiffel Tower",
+            "shape": "tower",
+            "image": "eiffel_tower"
+          }
+        ]
+      }
+    },
+    {
+      "id": "pyramid_people",
+      "facts": {
+        "query": "How many people stacked up would be as tall as the Great Pyramid?",
+        "topic": "Great Pyramid in people",
+        "confidence": "high",
+        "explanation": "When it was finished, the Great Pyramid of Khufu rose higher than any building would for thousands of years. Stacking adults head to toe gives a feel for how enormous it was. Erosion and the loss of its casing stones have since made it a little shorter.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "adult_height",
+            "label": "Average adult height",
+            "value": 1.7,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Typical adult height, rounded (NCD Risk Factor Collaboration global height estimates)"
+          },
+          {
+            "kind": "quantity",
+            "id": "pyramid_height",
+            "label": "Great Pyramid of Giza, original height",
+            "value": 146.6,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Encyclopaedia Britannica: Pyramids of Giza, original height of Khufu's pyramid"
+          }
+        ]
+      },
+      "plan": {
+        "template": "pictogram",
+        "title": "The Great Pyramid, measured in people",
+        "unitFactId": "adult_height",
+        "totalFactId": "pyramid_height",
+        "unitName": "people",
+        "totalName": "Great Pyramid",
+        "image": "person"
+      }
+    },
+    {
+      "id": "communication_milestones",
+      "facts": {
+        "query": "When were the big breakthroughs in communication?",
+        "topic": "Communication milestones",
+        "confidence": "high",
+        "explanation": "For most of history, messages moved only as fast as a person could carry them. Paper and printing made writing cheap to copy, the telegraph made messages travel by wire, and radio, television and the internet followed in a rapid burst.",
+        "facts": [
+          {
+            "kind": "event",
+            "id": "paper",
+            "label": "Paper making reported to the Chinese court",
+            "year": 105,
+            "description": "Cai Lun, an official of the Han court, is credited with presenting a method of making paper.",
+            "sourceNote": "Encyclopaedia Britannica: paper, history"
+          },
+          {
+            "kind": "event",
+            "id": "movable_type",
+            "label": "Movable type in China",
+            "year": 1041,
+            "description": "Bi Sheng invents movable type made of baked clay, sometime between 1041 and 1048.",
+            "sourceNote": "Encyclopaedia Britannica: Bi Sheng; printing, history"
+          },
+          {
+            "kind": "event",
+            "id": "gutenberg_bible",
+            "label": "Gutenberg Bible printed",
+            "year": 1455,
+            "description": "Johannes Gutenberg's press in Mainz completes the Gutenberg Bible, around 1455.",
+            "sourceNote": "Encyclopaedia Britannica: Gutenberg Bible"
+          },
+          {
+            "kind": "event",
+            "id": "first_newspaper",
+            "label": "First printed newspaper",
+            "year": 1605,
+            "description": "Johann Carolus publishes the Relation in Strasbourg, widely recognised as the first newspaper.",
+            "sourceNote": "World Association of News Publishers (WAN-IFRA)"
+          },
+          {
+            "kind": "event",
+            "id": "telegraph",
+            "label": "First long-distance telegraph message",
+            "year": 1844,
+            "description": "Samuel Morse sends \"What hath God wrought\" from Washington to Baltimore.",
+            "sourceNote": "Library of Congress: Samuel F. B. Morse Papers",
+            "month": 5,
+            "day": 24
+          },
+          {
+            "kind": "event",
+            "id": "telephone",
+            "label": "Telephone patented",
+            "year": 1876,
+            "description": "Alexander Graham Bell is granted his US patent for the telephone.",
+            "sourceNote": "Library of Congress; US Patent 174,465",
+            "month": 3,
+            "day": 7
+          },
+          {
+            "kind": "event",
+            "id": "transatlantic_radio",
+            "label": "Radio signal crosses the Atlantic",
+            "year": 1901,
+            "description": "Guglielmo Marconi receives a wireless signal in Newfoundland sent from Cornwall.",
+            "sourceNote": "Encyclopaedia Britannica: Guglielmo Marconi",
+            "month": 12,
+            "day": 12
+          },
+          {
+            "kind": "event",
+            "id": "television",
+            "label": "Television demonstrated",
+            "year": 1926,
+            "description": "John Logie Baird gives the first public demonstration of television in London.",
+            "sourceNote": "Encyclopaedia Britannica: John Logie Baird",
+            "month": 1,
+            "day": 26
+          },
+          {
+            "kind": "event",
+            "id": "arpanet",
+            "label": "First message over ARPANET",
+            "year": 1969,
+            "description": "The first message is sent between computers at UCLA and Stanford Research Institute.",
+            "sourceNote": "Computer History Museum: internet history timeline",
+            "month": 10,
+            "day": 29
+          },
+          {
+            "kind": "event",
+            "id": "www",
+            "label": "World Wide Web opens to the public",
+            "year": 1991,
+            "description": "Tim Berners-Lee announces the World Wide Web project publicly on the internet.",
+            "sourceNote": "CERN: the birth of the Web",
+            "month": 8,
+            "day": 6
+          },
+          {
+            "kind": "event",
+            "id": "sms",
+            "label": "First text message",
+            "year": 1992,
+            "description": "The first SMS, \"Merry Christmas\", is sent over the Vodafone network in the UK.",
+            "sourceNote": "Vodafone UK; Guinness World Records",
+            "month": 12,
+            "day": 3
+          }
+        ]
+      },
+      "plan": {
+        "template": "timeline",
+        "title": "How communication sped up",
+        "axis": "linear",
+        "eventFactIds": [
+          "paper",
+          "movable_type",
+          "gutenberg_bible",
+          "first_newspaper",
+          "telegraph",
+          "telephone",
+          "transatlantic_radio",
+          "television",
+          "arpanet",
+          "www",
+          "sms"
+        ]
+      }
+    },
+    {
+      "id": "human_history_day",
+      "facts": {
+        "query": "If all of human history were squeezed into one day, when did things happen?",
+        "topic": "Human history in a day",
+        "confidence": "medium",
+        "explanation": "Our species has existed for a very long time, but almost everything we think of as history happened at the very end. Squeeze it all into a single day and farming arrives in the last hour, writing in the last minutes, and the modern world in the final seconds.",
+        "facts": [
+          {
+            "kind": "event",
+            "id": "homo_sapiens",
+            "label": "Earliest known Homo sapiens",
+            "year": -300000,
+            "description": "Fossils from Jebel Irhoud, Morocco, are the oldest known remains of our species, about 300,000 years old.",
+            "sourceNote": "Hublin et al., Nature (2017); Smithsonian Human Origins Program"
+          },
+          {
+            "kind": "event",
+            "id": "lascaux",
+            "label": "Lascaux cave paintings",
+            "year": -15000,
+            "description": "Painters decorate the Lascaux cave in France, roughly 17,000 years ago.",
+            "sourceNote": "UNESCO World Heritage: Decorated Caves of the Vézère Valley"
+          },
+          {
+            "kind": "event",
+            "id": "farming",
+            "label": "Farming begins",
+            "year": -9500,
+            "description": "People in the Fertile Crescent begin cultivating crops, around 11,500 years ago.",
+            "sourceNote": "Encyclopaedia Britannica: origins of agriculture"
+          },
+          {
+            "kind": "event",
+            "id": "writing",
+            "label": "Writing invented",
+            "year": -3200,
+            "description": "Cuneiform writing appears in Mesopotamia, around 3200 BCE.",
+            "sourceNote": "Encyclopaedia Britannica: cuneiform"
+          },
+          {
+            "kind": "event",
+            "id": "pyramid_built",
+            "label": "Great Pyramid completed",
+            "year": -2560,
+            "description": "The Great Pyramid of Khufu is completed at Giza, around 2560 BCE.",
+            "sourceNote": "Encyclopaedia Britannica: Pyramids of Giza"
+          },
+          {
+            "kind": "event",
+            "id": "roman_empire",
+            "label": "Roman Empire begins",
+            "year": -27,
+            "description": "Octavian receives the title Augustus, conventionally marking the start of the Roman Empire.",
+            "sourceNote": "Encyclopaedia Britannica: Augustus",
+            "month": 1,
+            "day": 16
+          },
+          {
+            "kind": "event",
+            "id": "circumnavigation",
+            "label": "First voyage around the world",
+            "year": 1522,
+            "description": "The Victoria, of the Magellan–Elcano expedition, returns to Spain after sailing around the globe.",
+            "sourceNote": "Encyclopaedia Britannica: Ferdinand Magellan",
+            "month": 9,
+            "day": 6
+          },
+          {
+            "kind": "event",
+            "id": "industrial_revolution",
+            "label": "Industrial Revolution begins",
+            "year": 1760,
+            "description": "Mechanised industry begins to spread in Britain, around 1760.",
+            "sourceNote": "Encyclopaedia Britannica: Industrial Revolution"
+          },
+          {
+            "kind": "event",
+            "id": "moon_landing",
+            "label": "First Moon landing",
+            "year": 1969,
+            "description": "Apollo 11 lands on the Moon.",
+            "sourceNote": "NASA: Apollo 11 mission overview",
+            "month": 7,
+            "day": 20
+          }
+        ]
+      },
+      "plan": {
+        "template": "cosmic_clock",
+        "title": "Human history in one day",
+        "caption": "Our species' story squeezed into a day, with now at midnight.",
+        "eventFactIds": [
+          "homo_sapiens",
+          "lascaux",
+          "farming",
+          "writing",
+          "pyramid_built",
+          "roman_empire",
+          "circumnavigation",
+          "industrial_revolution",
+          "moon_landing"
+        ]
+      }
+    },
+    {
+      "id": "empire_lifespans",
+      "facts": {
+        "query": "How long did the great empires last?",
+        "topic": "Lifespans of great empires",
+        "confidence": "medium",
+        "explanation": "Some empires lasted for many centuries, while others rose and fell within a few lifetimes. Historians argue about exact start and end dates, so these lengths use common conventional dates and are best read as rough comparisons.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "byzantine",
+            "label": "Byzantine Empire (330–1453)",
+            "value": 1123,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "Encyclopaedia Britannica: Byzantine Empire; conventional dates"
+          },
+          {
+            "kind": "quantity",
+            "id": "ottoman",
+            "label": "Ottoman Empire (c. 1299–1922)",
+            "value": 623,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "Encyclopaedia Britannica: Ottoman Empire; conventional dates"
+          },
+          {
+            "kind": "quantity",
+            "id": "abbasid",
+            "label": "Abbasid Caliphate (750–1258)",
+            "value": 508,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "Encyclopaedia Britannica: Abbasid caliphate; conventional dates"
+          },
+          {
+            "kind": "quantity",
+            "id": "roman",
+            "label": "Roman Empire in the West (27 BCE–476 CE)",
+            "value": 502,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "Encyclopaedia Britannica: ancient Rome; conventional dates"
+          },
+          {
+            "kind": "quantity",
+            "id": "han",
+            "label": "Han dynasty (206 BCE–220 CE)",
+            "value": 425,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "Encyclopaedia Britannica: Han dynasty; conventional dates"
+          },
+          {
+            "kind": "quantity",
+            "id": "mughal",
+            "label": "Mughal Empire (1526–1857)",
+            "value": 331,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "Encyclopaedia Britannica: Mughal dynasty; conventional dates"
+          },
+          {
+            "kind": "quantity",
+            "id": "tang",
+            "label": "Tang dynasty (618–907)",
+            "value": 289,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "Encyclopaedia Britannica: Tang dynasty; conventional dates"
+          },
+          {
+            "kind": "quantity",
+            "id": "ming",
+            "label": "Ming dynasty (1368–1644)",
+            "value": 276,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "Encyclopaedia Britannica: Ming dynasty; conventional dates"
+          },
+          {
+            "kind": "quantity",
+            "id": "achaemenid",
+            "label": "Achaemenid Persian Empire (550–330 BCE)",
+            "value": 220,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "Encyclopaedia Britannica: Achaemenian dynasty; conventional dates"
+          },
+          {
+            "kind": "quantity",
+            "id": "inca",
+            "label": "Inca Empire (1438–1533)",
+            "value": 95,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "Encyclopaedia Britannica: Inca; conventional dates"
+          }
+        ]
+      },
+      "plan": {
+        "template": "lollipop",
+        "title": "How long great empires lasted",
+        "caption": "Lengths based on conventional start and end dates.",
+        "items": [
+          {
+            "factId": "byzantine",
+            "displayName": "Byzantine"
+          },
+          {
+            "factId": "ottoman",
+            "displayName": "Ottoman"
+          },
+          {
+            "factId": "abbasid",
+            "displayName": "Abbasid"
+          },
+          {
+            "factId": "roman",
+            "displayName": "Roman (West)"
+          },
+          {
+            "factId": "han",
+            "displayName": "Han"
+          },
+          {
+            "factId": "mughal",
+            "displayName": "Mughal"
+          },
+          {
+            "factId": "tang",
+            "displayName": "Tang"
+          },
+          {
+            "factId": "ming",
+            "displayName": "Ming"
+          },
+          {
+            "factId": "achaemenid",
+            "displayName": "Achaemenid Persia"
+          },
+          {
+            "factId": "inca",
+            "displayName": "Inca"
+          }
+        ]
+      }
+    },
+    {
+      "id": "construction_times",
+      "facts": {
+        "query": "How long did famous buildings take to build?",
+        "topic": "Construction times of famous buildings",
+        "confidence": "medium",
+        "explanation": "Some landmarks went up astonishingly fast, while great cathedrals took generations and outlived the people who started them. Long pauses for war, money troubles or changing plans explain most of the slowest projects.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "empire_state_time",
+            "label": "Empire State Building",
+            "value": 410,
+            "unit": "day",
+            "approximate": false,
+            "sourceNote": "Empire State Realty Trust: building history (construction began March 1930, opened May 1931)"
+          },
+          {
+            "kind": "quantity",
+            "id": "eiffel_time",
+            "label": "Eiffel Tower",
+            "value": 2.2,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "Société d'Exploitation de la Tour Eiffel: built January 1887 to March 1889"
+          },
+          {
+            "kind": "quantity",
+            "id": "golden_gate_time",
+            "label": "Golden Gate Bridge",
+            "value": 4.4,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "Golden Gate Bridge Highway and Transportation District: built 1933–1937"
+          },
+          {
+            "kind": "quantity",
+            "id": "hagia_sophia_time",
+            "label": "Hagia Sophia",
+            "value": 5.8,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "Encyclopaedia Britannica: Hagia Sophia, built 532–537"
+          },
+          {
+            "kind": "quantity",
+            "id": "colosseum_time",
+            "label": "Colosseum",
+            "value": 8,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "Encyclopaedia Britannica: Colosseum, begun c. 72 CE and dedicated 80 CE"
+          },
+          {
+            "kind": "quantity",
+            "id": "pyramid_time",
+            "label": "Great Pyramid of Giza",
+            "value": 20,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "Encyclopaedia Britannica: Pyramids of Giza; Herodotus' account of about 20 years"
+          },
+          {
+            "kind": "quantity",
+            "id": "taj_mahal_time",
+            "label": "Taj Mahal complex",
+            "value": 21,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "Encyclopaedia Britannica: Taj Mahal, built c. 1632–1653"
+          },
+          {
+            "kind": "quantity",
+            "id": "st_peters_time",
+            "label": "St Peter's Basilica",
+            "value": 120,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "Encyclopaedia Britannica: St. Peter's Basilica, built 1506–1626"
+          },
+          {
+            "kind": "quantity",
+            "id": "notre_dame_time",
+            "label": "Notre-Dame de Paris",
+            "value": 182,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "Encyclopaedia Britannica: Notre-Dame de Paris, built 1163–1345"
+          },
+          {
+            "kind": "quantity",
+            "id": "cologne_time",
+            "label": "Cologne Cathedral",
+            "value": 632,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "Encyclopaedia Britannica: Cologne Cathedral, begun 1248 and completed 1880"
+          }
+        ]
+      },
+      "plan": {
+        "template": "number_line",
+        "title": "How long famous buildings took to build",
+        "scale": "log",
+        "caption": "Log scale: each step to the right is ten times longer.",
+        "items": [
+          {
+            "factId": "empire_state_time",
+            "displayName": "Empire State Building"
+          },
+          {
+            "factId": "eiffel_time",
+            "displayName": "Eiffel Tower"
+          },
+          {
+            "factId": "golden_gate_time",
+            "displayName": "Golden Gate Bridge"
+          },
+          {
+            "factId": "hagia_sophia_time",
+            "displayName": "Hagia Sophia"
+          },
+          {
+            "factId": "colosseum_time",
+            "displayName": "Colosseum"
+          },
+          {
+            "factId": "pyramid_time",
+            "displayName": "Great Pyramid"
+          },
+          {
+            "factId": "taj_mahal_time",
+            "displayName": "Taj Mahal"
+          },
+          {
+            "factId": "st_peters_time",
+            "displayName": "St Peter's Basilica"
+          },
+          {
+            "factId": "notre_dame_time",
+            "displayName": "Notre-Dame"
+          },
+          {
+            "factId": "cologne_time",
+            "displayName": "Cologne Cathedral"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mummification",
+      "facts": {
+        "query": "How did the ancient Egyptians make mummies?",
+        "topic": "Ancient Egyptian mummification",
+        "confidence": "high",
+        "explanation": "Egyptians believed the body had to be preserved for the soul to live on in the afterlife. Embalmers removed the parts that would decay first, dried the body with natron salt, then wrapped it carefully in linen. Priests performed rituals at every stage.",
+        "facts": [
+          {
+            "kind": "step",
+            "id": "mummy_wash",
+            "label": "Purify the body",
+            "order": 1,
+            "title": "Purify the body",
+            "description": "The body is washed with palm wine and rinsed with water from the Nile.",
+            "sourceNote": "British Museum; Smithsonian National Museum of Natural History: Egyptian mummies"
+          },
+          {
+            "kind": "step",
+            "id": "mummy_brain",
+            "label": "Remove the brain",
+            "order": 2,
+            "title": "Remove the brain",
+            "description": "A long hook is pushed through the nose to break up and draw out the brain, which was thought to be unimportant.",
+            "sourceNote": "British Museum; Smithsonian National Museum of Natural History: Egyptian mummies"
+          },
+          {
+            "kind": "step",
+            "id": "mummy_organs",
+            "label": "Remove the organs",
+            "order": 3,
+            "title": "Remove the organs",
+            "description": "A cut in the left side lets embalmers take out the liver, lungs, stomach and intestines. The heart is left in place.",
+            "sourceNote": "British Museum; Smithsonian National Museum of Natural History: Egyptian mummies"
+          },
+          {
+            "kind": "step",
+            "id": "mummy_jars",
+            "label": "Store the organs",
+            "order": 4,
+            "title": "Store the organs",
+            "description": "The organs are dried and placed in canopic jars, each guarded by one of the four sons of Horus.",
+            "sourceNote": "British Museum; Smithsonian National Museum of Natural History: Egyptian mummies"
+          },
+          {
+            "kind": "step",
+            "id": "mummy_natron",
+            "label": "Dry the body",
+            "order": 5,
+            "title": "Dry the body",
+            "description": "The body is packed and covered with natron salt for about 40 days until all moisture is gone.",
+            "sourceNote": "British Museum; Smithsonian National Museum of Natural History: Egyptian mummies"
+          },
+          {
+            "kind": "step",
+            "id": "mummy_stuff",
+            "label": "Stuff and anoint",
+            "order": 6,
+            "title": "Stuff and anoint",
+            "description": "The dried body is filled with linen and sawdust and rubbed with oils and resins to keep the skin supple.",
+            "sourceNote": "British Museum; Smithsonian National Museum of Natural History: Egyptian mummies"
+          },
+          {
+            "kind": "step",
+            "id": "mummy_wrap",
+            "label": "Wrap in linen",
+            "order": 7,
+            "title": "Wrap in linen",
+            "description": "Hundreds of metres of linen strips are wound around the body, with protective amulets tucked between layers.",
+            "sourceNote": "British Museum; Smithsonian National Museum of Natural History: Egyptian mummies"
+          },
+          {
+            "kind": "step",
+            "id": "mummy_burial",
+            "label": "Opening of the Mouth and burial",
+            "order": 8,
+            "title": "Burial",
+            "description": "Priests perform the Opening of the Mouth ritual, and the mummy is placed in its coffin and tomb.",
+            "sourceNote": "British Museum; Smithsonian National Museum of Natural History: Egyptian mummies"
+          }
+        ]
+      },
+      "plan": {
+        "template": "process_steps",
+        "title": "How a mummy was made",
+        "autoplayMs": 4500,
+        "loop": false,
+        "stepFactIds": [
+          "mummy_wash",
+          "mummy_brain",
+          "mummy_organs",
+          "mummy_jars",
+          "mummy_natron",
+          "mummy_stuff",
+          "mummy_wrap",
+          "mummy_burial"
+        ]
+      }
+    },
+    {
+      "id": "titanic_vs_icon",
+      "facts": {
+        "query": "How does the Titanic compare with today's biggest cruise ship?",
+        "topic": "Titanic versus Icon of the Seas",
+        "confidence": "high",
+        "explanation": "The Titanic was the largest ship afloat when it sailed. Today's biggest cruise ships are far longer and carry many more passengers and crew, yet they cruise at nearly the same speed.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "titanic_length",
+            "label": "Titanic length overall",
+            "value": 269.1,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Royal Museums Greenwich: RMS Titanic fact sheet (882 ft 9 in)",
+            "year": 1912
+          },
+          {
+            "kind": "quantity",
+            "id": "icon_length",
+            "label": "Icon of the Seas length",
+            "value": 365,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Royal Caribbean International: Icon of the Seas ship facts",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "titanic_passengers",
+            "label": "Titanic passenger capacity",
+            "value": 2435,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "Royal Museums Greenwich: RMS Titanic fact sheet (all three classes)",
+            "year": 1912
+          },
+          {
+            "kind": "quantity",
+            "id": "icon_passengers",
+            "label": "Icon of the Seas maximum guests",
+            "value": 7600,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "Royal Caribbean International: Icon of the Seas ship facts",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "titanic_crew",
+            "label": "Titanic crew capacity",
+            "value": 885,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "Royal Museums Greenwich: RMS Titanic fact sheet",
+            "year": 1912
+          },
+          {
+            "kind": "quantity",
+            "id": "icon_crew",
+            "label": "Icon of the Seas crew",
+            "value": 2350,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "Royal Caribbean International: Icon of the Seas ship facts",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "titanic_speed",
+            "label": "Titanic service speed",
+            "value": 38.9,
+            "unit": "km/h",
+            "approximate": true,
+            "sourceNote": "Royal Museums Greenwich: RMS Titanic fact sheet (21 knots)",
+            "year": 1912
+          },
+          {
+            "kind": "quantity",
+            "id": "icon_speed",
+            "label": "Icon of the Seas speed",
+            "value": 40.7,
+            "unit": "km/h",
+            "approximate": true,
+            "sourceNote": "Royal Caribbean International: Icon of the Seas ship facts (22 knots)",
+            "year": 2024
+          }
+        ]
+      },
+      "plan": {
+        "template": "versus",
+        "title": "Titanic versus a modern giant",
+        "aName": "Titanic",
+        "bName": "Icon of the Seas",
+        "rows": [
+          {
+            "label": "Length",
+            "aFactId": "titanic_length",
+            "bFactId": "icon_length"
+          },
+          {
+            "label": "Passengers",
+            "aFactId": "titanic_passengers",
+            "bFactId": "icon_passengers"
+          },
+          {
+            "label": "Crew",
+            "aFactId": "titanic_crew",
+            "bFactId": "icon_crew"
+          },
+          {
+            "label": "Cruising speed",
+            "aFactId": "titanic_speed",
+            "bFactId": "icon_speed"
+          }
+        ]
+      }
+    },
+    {
+      "id": "olympics_then_now",
+      "facts": {
+        "query": "How have the Olympic Games grown since the first modern Games?",
+        "topic": "First modern Olympics versus Paris",
+        "confidence": "high",
+        "explanation": "The first modern Olympic Games in Athens were a small, all-male event. More than a century later the Summer Games had grown into the world's largest sporting event, and Paris became the first Games with an equal number of places for women and men.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "athens_athletes",
+            "label": "Athletes at Athens 1896",
+            "value": 241,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "International Olympic Committee (olympics.com): Athens 1896",
+            "year": 1896
+          },
+          {
+            "kind": "quantity",
+            "id": "paris_athletes",
+            "label": "Athletes at Paris 2024",
+            "value": 10500,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "International Olympic Committee (olympics.com): Paris 2024",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "athens_events",
+            "label": "Events at Athens 1896",
+            "value": 43,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "International Olympic Committee (olympics.com): Athens 1896",
+            "year": 1896
+          },
+          {
+            "kind": "quantity",
+            "id": "paris_events",
+            "label": "Events at Paris 2024",
+            "value": 329,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "International Olympic Committee (olympics.com): Paris 2024",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "athens_women",
+            "label": "Women athletes at Athens 1896",
+            "value": 0,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "International Olympic Committee: women first competed at Paris 1900",
+            "year": 1896
+          },
+          {
+            "kind": "quantity",
+            "id": "paris_women",
+            "label": "Women athletes at Paris 2024",
+            "value": 5250,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "International Olympic Committee: full gender parity of athlete quota places at Paris 2024",
+            "year": 2024
+          }
+        ]
+      },
+      "plan": {
+        "template": "versus",
+        "title": "The Olympics then and now",
+        "aName": "Athens",
+        "bName": "Paris",
+        "caption": "The first modern Games compared with the most recent Summer Games.",
+        "rows": [
+          {
+            "label": "Athletes",
+            "aFactId": "athens_athletes",
+            "bFactId": "paris_athletes"
+          },
+          {
+            "label": "Events",
+            "aFactId": "athens_events",
+            "bFactId": "paris_events"
+          },
+          {
+            "label": "Women athletes",
+            "aFactId": "athens_women",
+            "bFactId": "paris_women"
+          }
+        ]
+      }
+    },
+    {
+      "id": "atlantic_crossings",
+      "facts": {
+        "query": "How long did it take to cross the Atlantic through history?",
+        "topic": "Crossing the Atlantic",
+        "confidence": "high",
+        "explanation": "Crossing the Atlantic once meant weeks at sea at the mercy of the wind. Steam engines cut that to days, and aircraft cut it to hours. The supersonic Concorde made the crossing in less time than a long film.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "mayflower",
+            "label": "Mayflower, England to Cape Cod",
+            "value": 66,
+            "unit": "day",
+            "approximate": true,
+            "sourceNote": "Plimoth Patuxet Museums: the Mayflower voyage",
+            "year": 1620
+          },
+          {
+            "kind": "quantity",
+            "id": "great_western",
+            "label": "SS Great Western, Bristol to New York",
+            "value": 15,
+            "unit": "day",
+            "approximate": true,
+            "sourceNote": "Encyclopaedia Britannica: Great Western (steamship), maiden voyage",
+            "year": 1838
+          },
+          {
+            "kind": "quantity",
+            "id": "ss_united_states",
+            "label": "SS United States, record crossing",
+            "value": 82.7,
+            "unit": "h",
+            "approximate": true,
+            "sourceNote": "Blue Riband record, eastbound: 3 days 10 hours 40 minutes (SS United States Conservancy)",
+            "year": 1952
+          },
+          {
+            "kind": "quantity",
+            "id": "lindbergh",
+            "label": "Charles Lindbergh, New York to Paris",
+            "value": 33.5,
+            "unit": "h",
+            "approximate": true,
+            "sourceNote": "Smithsonian National Air and Space Museum: Spirit of St. Louis",
+            "year": 1927
+          },
+          {
+            "kind": "quantity",
+            "id": "concorde",
+            "label": "Concorde, New York to London record",
+            "value": 2.88,
+            "unit": "h",
+            "approximate": true,
+            "sourceNote": "Guinness World Records: fastest transatlantic flight by a commercial airliner",
+            "year": 1996
+          }
+        ]
+      },
+      "plan": {
+        "template": "comparison_bars",
+        "title": "Crossing the Atlantic through the ages",
+        "orientation": "horizontal",
+        "bars": [
+          {
+            "factId": "mayflower",
+            "displayName": "Mayflower"
+          },
+          {
+            "factId": "great_western",
+            "displayName": "Great Western (steam)"
+          },
+          {
+            "factId": "ss_united_states",
+            "displayName": "SS United States"
+          },
+          {
+            "factId": "lindbergh",
+            "displayName": "Lindbergh's flight"
+          },
+          {
+            "factId": "concorde",
+            "displayName": "Concorde"
+          }
+        ]
+      }
+    },
+    {
+      "id": "seven_wonders",
+      "facts": {
+        "query": "Where were the Seven Wonders of the Ancient World?",
+        "topic": "Seven Wonders of the Ancient World",
+        "confidence": "high",
+        "explanation": "The classic list of Seven Wonders was compiled by Greek writers, so every wonder lies around the eastern Mediterranean and the Middle East. Only the Great Pyramid of Giza still stands; the exact site of the Hanging Gardens of Babylon has never been found.",
+        "facts": [
+          {
+            "kind": "place",
+            "id": "giza",
+            "label": "Great Pyramid of Giza, Egypt",
+            "lat": 29.9792,
+            "lon": 31.1342,
+            "sourceNote": "Encyclopaedia Britannica: Seven Wonders of the World; site coordinates"
+          },
+          {
+            "kind": "place",
+            "id": "babylon",
+            "label": "Hanging Gardens of Babylon, Iraq (location unconfirmed)",
+            "lat": 32.5422,
+            "lon": 44.4211,
+            "sourceNote": "Encyclopaedia Britannica: Hanging Gardens of Babylon; site of ancient Babylon"
+          },
+          {
+            "kind": "place",
+            "id": "olympia",
+            "label": "Statue of Zeus at Olympia, Greece",
+            "lat": 37.6379,
+            "lon": 21.63,
+            "sourceNote": "Encyclopaedia Britannica: Statue of Zeus; site of Olympia"
+          },
+          {
+            "kind": "place",
+            "id": "ephesus",
+            "label": "Temple of Artemis at Ephesus, Turkey",
+            "lat": 37.9497,
+            "lon": 27.3639,
+            "sourceNote": "Encyclopaedia Britannica: Temple of Artemis; site coordinates"
+          },
+          {
+            "kind": "place",
+            "id": "halicarnassus",
+            "label": "Mausoleum at Halicarnassus, Turkey",
+            "lat": 37.0379,
+            "lon": 27.4241,
+            "sourceNote": "Encyclopaedia Britannica: Mausoleum of Halicarnassus; modern Bodrum"
+          },
+          {
+            "kind": "place",
+            "id": "rhodes",
+            "label": "Colossus of Rhodes, Greece",
+            "lat": 36.451,
+            "lon": 28.2258,
+            "sourceNote": "Encyclopaedia Britannica: Colossus of Rhodes; Rhodes harbour"
+          },
+          {
+            "kind": "place",
+            "id": "alexandria",
+            "label": "Lighthouse of Alexandria, Egypt",
+            "lat": 31.2139,
+            "lon": 29.8856,
+            "sourceNote": "Encyclopaedia Britannica: Pharos of Alexandria; site coordinates"
+          }
+        ]
+      },
+      "plan": {
+        "template": "map_points",
+        "title": "The Seven Wonders of the Ancient World",
+        "points": [
+          {
+            "placeFactId": "giza",
+            "displayName": "Great Pyramid"
+          },
+          {
+            "placeFactId": "babylon",
+            "displayName": "Hanging Gardens"
+          },
+          {
+            "placeFactId": "olympia",
+            "displayName": "Statue of Zeus"
+          },
+          {
+            "placeFactId": "ephesus",
+            "displayName": "Temple of Artemis"
+          },
+          {
+            "placeFactId": "halicarnassus",
+            "displayName": "Mausoleum"
+          },
+          {
+            "placeFactId": "rhodes",
+            "displayName": "Colossus of Rhodes"
+          },
+          {
+            "placeFactId": "alexandria",
+            "displayName": "Lighthouse of Alexandria"
+          }
+        ]
+      }
+    }
+  ]
+}

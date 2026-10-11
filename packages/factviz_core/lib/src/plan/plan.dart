@@ -2,6 +2,8 @@ import '../images/image_catalog.dart';
 import '../validation/json_reader.dart';
 import '../validation/validation.dart';
 
+part 'plan_extra.dart';
+
 /// The fixed set of templates the planner may choose from.
 enum TemplateId {
   scaleZoom('scale_zoom'),
@@ -9,6 +11,21 @@ enum TemplateId {
   exponentialGrowth('exponential_growth'),
   comparisonBars('comparison_bars'),
   processSteps('process_steps'),
+  pictogram('pictogram'),
+  donut('donut'),
+  stackedBar('stacked_bar'),
+  waffle('waffle'),
+  treemap('treemap'),
+  bubblePack('bubble_pack'),
+  lollipop('lollipop'),
+  numberLine('number_line'),
+  slope('slope'),
+  rangeBars('range_bars'),
+  versus('versus'),
+  rateCounter('rate_counter'),
+  lineSeries('line_series'),
+  cosmicClock('cosmic_clock'),
+  mapPoints('map_points'),
   none('none');
 
   const TemplateId(this.wire);
@@ -100,6 +117,23 @@ sealed class Plan {
           TemplateId.comparisonBars => ComparisonBarsPlan._read(r, title, caption),
           TemplateId.processSteps => ProcessStepsPlan._read(r, title, caption),
           TemplateId.none => NonePlan._read(r, title, caption),
+          TemplateId.pictogram => PictogramPlan._read(r, title, caption),
+          TemplateId.donut ||
+          TemplateId.stackedBar ||
+          TemplateId.waffle ||
+          TemplateId.treemap ||
+          TemplateId.bubblePack ||
+          TemplateId.lollipop ||
+          TemplateId.numberLine =>
+            ItemsPlan._read(template, r, title, caption),
+          TemplateId.slope ||
+          TemplateId.rangeBars ||
+          TemplateId.versus ||
+          TemplateId.rateCounter =>
+            PairsPlan._read(template, r, title, caption),
+          TemplateId.lineSeries => SeriesPlan._read(r, title, caption),
+          TemplateId.cosmicClock => ClockPlan._read(r, title, caption),
+          TemplateId.mapPoints => MapPlan._read(r, title, caption),
         };
         if (plan != null) _checkDuplicateRefs(r, plan);
         return plan;
@@ -107,8 +141,12 @@ sealed class Plan {
 
   static void _checkDuplicateRefs(JsonReader r, Plan plan) {
     if (plan is ExponentialGrowthPlan) return; // roles are distinct by design
+    // Rate rows may share one period ("per 1 yr"); only the amounts must differ.
+    final ids = plan is PairsPlan && plan.template == TemplateId.rateCounter
+        ? [for (final r in plan.rows) r.aFactId]
+        : plan.factIds;
     final seen = <String>{};
-    for (final id in plan.factIds) {
+    for (final id in ids) {
       if (!seen.add(id)) r.issue('fact "$id" is referenced more than once');
     }
   }

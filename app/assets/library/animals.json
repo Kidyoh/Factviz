@@ -1,0 +1,1097 @@
+{
+  "category": "animals",
+  "title": "Animals",
+  "entries": [
+    {
+      "id": "longest_animals",
+      "facts": {
+        "query": "How long are the biggest animals?",
+        "topic": "Lengths of giant animals",
+        "confidence": "high",
+        "explanation": "The blue whale is the largest animal that has ever lived, longer than any dinosaur skeleton yet found. The whale shark, the biggest fish, and the sperm whale, the biggest predator with teeth, come next, and even a famous Tyrannosaurus rex falls well short of them.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "blue_whale",
+            "label": "Blue whale (maximum length)",
+            "value": 33.5,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "NOAA Fisheries species profile (Antarctic blue whales up to 110 ft)"
+          },
+          {
+            "kind": "quantity",
+            "id": "whale_shark",
+            "label": "Whale shark (largest measured)",
+            "value": 18.8,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Guinness World Records, largest fish"
+          },
+          {
+            "kind": "quantity",
+            "id": "sperm_whale",
+            "label": "Sperm whale (adult male)",
+            "value": 15.8,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "NOAA Fisheries species profile (males up to 52 ft)"
+          },
+          {
+            "kind": "quantity",
+            "id": "t_rex",
+            "label": "Tyrannosaurus rex 'Sue'",
+            "value": 12.3,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Field Museum of Natural History (40.5 ft skeleton)"
+          },
+          {
+            "kind": "quantity",
+            "id": "crocodile",
+            "label": "Saltwater crocodile 'Lolong'",
+            "value": 6.17,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Guinness World Records, longest crocodile in captivity"
+          },
+          {
+            "kind": "quantity",
+            "id": "human",
+            "label": "Adult person (height)",
+            "value": 1.7,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Rounded typical adult height, NCD Risk Factor Collaboration data"
+          }
+        ]
+      },
+      "plan": {
+        "template": "comparison_bars",
+        "title": "The longest animals, side by side",
+        "orientation": "horizontal",
+        "bars": [
+          {
+            "factId": "blue_whale",
+            "displayName": "Blue whale",
+            "image": "blue_whale"
+          },
+          {
+            "factId": "whale_shark",
+            "displayName": "Whale shark"
+          },
+          {
+            "factId": "sperm_whale",
+            "displayName": "Sperm whale",
+            "image": "sperm_whale"
+          },
+          {
+            "factId": "t_rex",
+            "displayName": "T. rex (Sue)",
+            "image": "t_rex"
+          },
+          {
+            "factId": "crocodile",
+            "displayName": "Saltwater crocodile"
+          },
+          {
+            "factId": "human",
+            "displayName": "You (standing)",
+            "image": "person"
+          }
+        ]
+      }
+    },
+    {
+      "id": "locust_swarm_growth",
+      "facts": {
+        "query": "How do locust swarms get so big so fast?",
+        "topic": "Desert locust population growth",
+        "confidence": "high",
+        "explanation": "After good rains, desert locusts breed in damp sand and each generation can be many times larger than the last. Within a few generations a modest outbreak can become a swarm dense enough to blanket a square kilometre and strip crops as it travels.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "start",
+            "label": "Starting outbreak (illustrative)",
+            "value": 10000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "Illustrative starting number for the example"
+          },
+          {
+            "kind": "quantity",
+            "id": "factor",
+            "label": "Growth per generation (up to)",
+            "value": 20,
+            "unit": "ratio",
+            "approximate": false,
+            "sourceNote": "FAO Desert Locust Information Service (up to 20× per generation)"
+          },
+          {
+            "kind": "quantity",
+            "id": "generations",
+            "label": "Generations shown",
+            "value": 3,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "Illustrative: three successive breeding generations"
+          },
+          {
+            "kind": "quantity",
+            "id": "swarm_km2",
+            "label": "Locusts in a swarm covering one km² (at least)",
+            "value": 40000000,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "FAO Commission for Controlling the Desert Locust, FAQ"
+          }
+        ]
+      },
+      "plan": {
+        "template": "exponential_growth",
+        "title": "How a locust outbreak becomes a swarm",
+        "initialFactId": "start",
+        "factorFactId": "factor",
+        "stepsFactId": "generations",
+        "targetFactId": "swarm_km2",
+        "stepLabel": "generation",
+        "defaultScale": "linear"
+      }
+    },
+    {
+      "id": "monarch_metamorphosis",
+      "facts": {
+        "query": "How does a caterpillar turn into a butterfly?",
+        "topic": "Monarch butterfly metamorphosis",
+        "confidence": "high",
+        "explanation": "Monarch butterflies go through complete metamorphosis. A tiny egg hatches into a caterpillar that does nothing but eat milkweed and grow, then it forms a chrysalis in which its body is rebuilt into a winged adult that starts the cycle again.",
+        "facts": [
+          {
+            "kind": "step",
+            "id": "egg",
+            "label": "Egg",
+            "order": 1,
+            "title": "Egg",
+            "description": "A female lays single eggs on the underside of milkweed leaves; each hatches after a few days.",
+            "sourceNote": "US Forest Service, Monarch butterfly life cycle"
+          },
+          {
+            "kind": "step",
+            "id": "larva",
+            "label": "Caterpillar",
+            "order": 2,
+            "title": "Caterpillar (larva)",
+            "description": "The caterpillar eats milkweed almost nonstop, molting its skin several times as it grows over about two weeks.",
+            "sourceNote": "US Forest Service, Monarch butterfly life cycle"
+          },
+          {
+            "kind": "step",
+            "id": "pupa",
+            "label": "Chrysalis",
+            "order": 3,
+            "title": "Chrysalis (pupa)",
+            "description": "It hangs upside down and forms a green chrysalis, inside which its body is broken down and rebuilt.",
+            "sourceNote": "US Forest Service, Monarch butterfly life cycle"
+          },
+          {
+            "kind": "step",
+            "id": "adult",
+            "label": "Butterfly",
+            "order": 4,
+            "title": "Adult butterfly",
+            "description": "The butterfly emerges, dries its wings, feeds on nectar, mates and lays eggs; the late-summer generation migrates south.",
+            "sourceNote": "US Forest Service, Monarch butterfly life cycle"
+          }
+        ]
+      },
+      "plan": {
+        "template": "process_steps",
+        "title": "From egg to monarch butterfly",
+        "autoplayMs": 3500,
+        "loop": true,
+        "stepFactIds": [
+          "egg",
+          "larva",
+          "pupa",
+          "adult"
+        ]
+      }
+    },
+    {
+      "id": "dogs_per_elephant",
+      "facts": {
+        "query": "How many dogs weigh as much as an elephant?",
+        "topic": "Elephant weight in dogs",
+        "confidence": "high",
+        "explanation": "An adult elephant is one of the heaviest land animals alive. It would take a whole crowd of Labrador retrievers to balance it on a giant seesaw.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "labrador",
+            "label": "Labrador retriever (typical adult)",
+            "value": 30,
+            "unit": "kg",
+            "approximate": true,
+            "sourceNote": "American Kennel Club breed standard (males about 29–36 kg)"
+          },
+          {
+            "kind": "quantity",
+            "id": "elephant",
+            "label": "Asian elephant (large adult)",
+            "value": 5420,
+            "unit": "kg",
+            "approximate": true,
+            "sourceNote": "Smithsonian's National Zoo (adults about 2,750–5,420 kg)"
+          }
+        ]
+      },
+      "plan": {
+        "template": "pictogram",
+        "title": "Labradors needed to match an elephant",
+        "unitFactId": "labrador",
+        "totalFactId": "elephant",
+        "unitName": "Labradors",
+        "totalName": "Asian elephant",
+        "image": "dog"
+      }
+    },
+    {
+      "id": "animal_species_counts",
+      "facts": {
+        "query": "Which animal groups have the most species?",
+        "topic": "Described animal species by group",
+        "confidence": "high",
+        "explanation": "Insects dwarf every other group: there are more named species of beetles alone than of all vertebrates combined. Mammals, the group we belong to, are among the smallest. These are only the species scientists have described, and many more remain undiscovered.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "insects",
+            "label": "Insects: described species",
+            "value": 1003469,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "IUCN Red List Summary Statistics Table 1a, described species 2025",
+            "year": 2025
+          },
+          {
+            "kind": "quantity",
+            "id": "arachnids",
+            "label": "Arachnids: described species",
+            "value": 97085,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "IUCN Red List Summary Statistics Table 1a, described species 2025",
+            "year": 2025
+          },
+          {
+            "kind": "quantity",
+            "id": "molluscs",
+            "label": "Molluscs: described species",
+            "value": 88244,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "IUCN Red List Summary Statistics Table 1a, described species 2025",
+            "year": 2025
+          },
+          {
+            "kind": "quantity",
+            "id": "crustaceans",
+            "label": "Crustaceans: described species",
+            "value": 83263,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "IUCN Red List Summary Statistics Table 1a, described species 2025",
+            "year": 2025
+          },
+          {
+            "kind": "quantity",
+            "id": "fishes",
+            "label": "Fishes: described species",
+            "value": 37288,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "IUCN Red List Summary Statistics Table 1a, described species 2025",
+            "year": 2025
+          },
+          {
+            "kind": "quantity",
+            "id": "reptiles",
+            "label": "Reptiles: described species",
+            "value": 12502,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "IUCN Red List Summary Statistics Table 1a, described species 2025",
+            "year": 2025
+          },
+          {
+            "kind": "quantity",
+            "id": "birds",
+            "label": "Birds: described species",
+            "value": 11185,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "IUCN Red List Summary Statistics Table 1a, described species 2025",
+            "year": 2025
+          },
+          {
+            "kind": "quantity",
+            "id": "amphibians",
+            "label": "Amphibians: described species",
+            "value": 8918,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "IUCN Red List Summary Statistics Table 1a, described species 2025",
+            "year": 2025
+          },
+          {
+            "kind": "quantity",
+            "id": "mammals",
+            "label": "Mammals: described species",
+            "value": 6815,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "IUCN Red List Summary Statistics Table 1a, described species 2025",
+            "year": 2025
+          },
+          {
+            "kind": "quantity",
+            "id": "corals",
+            "label": "Corals: described species",
+            "value": 5672,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "IUCN Red List Summary Statistics Table 1a, described species 2025",
+            "year": 2025
+          }
+        ]
+      },
+      "plan": {
+        "template": "bubble_pack",
+        "title": "The animal kingdom by number of species",
+        "items": [
+          {
+            "factId": "insects",
+            "displayName": "Insects"
+          },
+          {
+            "factId": "arachnids",
+            "displayName": "Arachnids"
+          },
+          {
+            "factId": "molluscs",
+            "displayName": "Molluscs"
+          },
+          {
+            "factId": "crustaceans",
+            "displayName": "Crustaceans"
+          },
+          {
+            "factId": "fishes",
+            "displayName": "Fishes"
+          },
+          {
+            "factId": "reptiles",
+            "displayName": "Reptiles"
+          },
+          {
+            "factId": "birds",
+            "displayName": "Birds"
+          },
+          {
+            "factId": "amphibians",
+            "displayName": "Amphibians"
+          },
+          {
+            "factId": "mammals",
+            "displayName": "Mammals"
+          },
+          {
+            "factId": "corals",
+            "displayName": "Corals"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fastest_land_animals",
+      "facts": {
+        "query": "How fast do animals run?",
+        "topic": "Top running speeds",
+        "confidence": "medium",
+        "explanation": "The cheetah is the fastest land animal, but only in short sprints. The pronghorn of North America is almost as quick and can keep going far longer. Racing greyhounds and thoroughbreds are close to each other, while the fastest human sprinter and a charging elephant trail far behind.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "cheetah",
+            "label": "Cheetah",
+            "value": 112,
+            "unit": "km/h",
+            "approximate": true,
+            "sourceNote": "Smithsonian's National Zoo (top speed 96–112 km/h)"
+          },
+          {
+            "kind": "quantity",
+            "id": "pronghorn",
+            "label": "Pronghorn",
+            "value": 88,
+            "unit": "km/h",
+            "approximate": true,
+            "sourceNote": "US National Park Service (bursts up to 55 mph)"
+          },
+          {
+            "kind": "quantity",
+            "id": "greyhound",
+            "label": "Greyhound",
+            "value": 72,
+            "unit": "km/h",
+            "approximate": true,
+            "sourceNote": "American Kennel Club (about 45 mph)"
+          },
+          {
+            "kind": "quantity",
+            "id": "racehorse",
+            "label": "Thoroughbred racehorse (Winning Brew)",
+            "value": 70.76,
+            "unit": "km/h",
+            "approximate": false,
+            "sourceNote": "Guinness World Records, fastest racehorse, 2008",
+            "year": 2008
+          },
+          {
+            "kind": "quantity",
+            "id": "bolt",
+            "label": "Usain Bolt (peak sprint speed)",
+            "value": 44.72,
+            "unit": "km/h",
+            "approximate": false,
+            "sourceNote": "IAAF biomechanics analysis, 100 m world record, Berlin 2009",
+            "year": 2009
+          },
+          {
+            "kind": "quantity",
+            "id": "asian_elephant",
+            "label": "Asian elephant",
+            "value": 25,
+            "unit": "km/h",
+            "approximate": true,
+            "sourceNote": "Hutchinson et al., Nature 2003 (measured top speed)"
+          }
+        ]
+      },
+      "plan": {
+        "template": "lollipop",
+        "title": "Top speeds of fast runners",
+        "items": [
+          {
+            "factId": "cheetah",
+            "displayName": "Cheetah"
+          },
+          {
+            "factId": "pronghorn",
+            "displayName": "Pronghorn"
+          },
+          {
+            "factId": "greyhound",
+            "displayName": "Greyhound"
+          },
+          {
+            "factId": "racehorse",
+            "displayName": "Racehorse"
+          },
+          {
+            "factId": "bolt",
+            "displayName": "Usain Bolt"
+          },
+          {
+            "factId": "asian_elephant",
+            "displayName": "Asian elephant"
+          }
+        ]
+      }
+    },
+    {
+      "id": "longest_lived_animals",
+      "facts": {
+        "query": "Which animals live the longest?",
+        "topic": "Record animal lifespans",
+        "confidence": "medium",
+        "explanation": "Small, fast-living animals such as mice burn out quickly, while some cold-water animals live for centuries. A Greenland shark may outlive many generations of people, and the record holder of all is a clam from the North Atlantic. The oldest ages are estimates from growth bands, eye lenses or body chemistry.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "mouse",
+            "label": "House mouse (maximum recorded)",
+            "value": 4,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "AnAge database of animal ageing and longevity"
+          },
+          {
+            "kind": "quantity",
+            "id": "dog",
+            "label": "Bluey, Australian cattle dog",
+            "value": 29.4,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "Guinness World Records, oldest dog ever (29 years 5 months)"
+          },
+          {
+            "kind": "quantity",
+            "id": "human",
+            "label": "Jeanne Calment, oldest person",
+            "value": 122.45,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "Guinness World Records (122 years 164 days)"
+          },
+          {
+            "kind": "quantity",
+            "id": "tortoise",
+            "label": "Jonathan, Seychelles giant tortoise",
+            "value": 194,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "Guinness World Records, oldest living land animal (hatched about 1832)",
+            "year": 2026
+          },
+          {
+            "kind": "quantity",
+            "id": "bowhead",
+            "label": "Bowhead whale (oldest estimate)",
+            "value": 211,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "George et al., Canadian Journal of Zoology 1999 (eye-lens dating)"
+          },
+          {
+            "kind": "quantity",
+            "id": "greenland_shark",
+            "label": "Greenland shark (oldest estimate)",
+            "value": 392,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "Nielsen et al., Science 2016 (eye-lens radiocarbon, ±120 years)"
+          },
+          {
+            "kind": "quantity",
+            "id": "quahog",
+            "label": "Ocean quahog clam 'Ming'",
+            "value": 507,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "Butler et al., Palaeogeography, Palaeoclimatology, Palaeoecology 2013"
+          }
+        ]
+      },
+      "plan": {
+        "template": "number_line",
+        "title": "How long the longest-lived animals live",
+        "scale": "log",
+        "items": [
+          {
+            "factId": "mouse",
+            "displayName": "House mouse"
+          },
+          {
+            "factId": "dog",
+            "displayName": "Oldest dog"
+          },
+          {
+            "factId": "human",
+            "displayName": "Oldest person"
+          },
+          {
+            "factId": "tortoise",
+            "displayName": "Jonathan the tortoise"
+          },
+          {
+            "factId": "bowhead",
+            "displayName": "Bowhead whale"
+          },
+          {
+            "factId": "greenland_shark",
+            "displayName": "Greenland shark"
+          },
+          {
+            "factId": "quahog",
+            "displayName": "Ocean quahog"
+          }
+        ]
+      }
+    },
+    {
+      "id": "conservation_comebacks",
+      "facts": {
+        "query": "Have any endangered animals made a comeback?",
+        "topic": "Wildlife recoveries",
+        "confidence": "high",
+        "explanation": "Protection works. Habitat reserves, anti-poaching patrols and breeding programmes have brought several famous species back from the brink. The Iberian lynx and the mountain gorilla were both moved to a less threatened category on the IUCN Red List after their numbers rose.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "panda_a",
+            "label": "Wild giant pandas, national survey",
+            "value": 1596,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "WWF / China State Forestry Administration, third national survey",
+            "year": 2003
+          },
+          {
+            "kind": "quantity",
+            "id": "panda_b",
+            "label": "Wild giant pandas, national survey",
+            "value": 1864,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "WWF / China State Forestry Administration, fourth national survey",
+            "year": 2014
+          },
+          {
+            "kind": "quantity",
+            "id": "tiger_a",
+            "label": "Wild tigers in India",
+            "value": 1411,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "National Tiger Conservation Authority, India tiger estimate 2006",
+            "year": 2006
+          },
+          {
+            "kind": "quantity",
+            "id": "tiger_b",
+            "label": "Wild tigers in India",
+            "value": 3682,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "National Tiger Conservation Authority, India tiger estimate 2022",
+            "year": 2022
+          },
+          {
+            "kind": "quantity",
+            "id": "gorilla_a",
+            "label": "Mountain gorillas",
+            "value": 680,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "Census estimate reported by Smithsonian Magazine",
+            "year": 2008
+          },
+          {
+            "kind": "quantity",
+            "id": "gorilla_b",
+            "label": "Mountain gorillas",
+            "value": 1063,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "Virunga (2016) and Bwindi-Sarambwe (2018) censuses, IUCN",
+            "year": 2018
+          },
+          {
+            "kind": "quantity",
+            "id": "lynx_a",
+            "label": "Mature Iberian lynx",
+            "value": 62,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "IUCN Red List update, June 2024",
+            "year": 2001
+          },
+          {
+            "kind": "quantity",
+            "id": "lynx_b",
+            "label": "Mature Iberian lynx",
+            "value": 648,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "IUCN Red List update, June 2024",
+            "year": 2022
+          }
+        ]
+      },
+      "plan": {
+        "template": "slope",
+        "title": "Endangered animals bouncing back",
+        "aName": "Earlier count",
+        "bName": "Later count",
+        "rows": [
+          {
+            "label": "Giant panda",
+            "aFactId": "panda_a",
+            "bFactId": "panda_b"
+          },
+          {
+            "label": "Tigers in India",
+            "aFactId": "tiger_a",
+            "bFactId": "tiger_b"
+          },
+          {
+            "label": "Mountain gorilla",
+            "aFactId": "gorilla_a",
+            "bFactId": "gorilla_b"
+          },
+          {
+            "label": "Iberian lynx (adults)",
+            "aFactId": "lynx_a",
+            "bFactId": "lynx_b"
+          }
+        ]
+      }
+    },
+    {
+      "id": "animal_pregnancy_lengths",
+      "facts": {
+        "query": "How long are animals pregnant?",
+        "topic": "Gestation periods",
+        "confidence": "high",
+        "explanation": "Bigger mammals generally carry their young for longer. A dog's pregnancy is over quickly, a human's takes most of a year, and an elephant's is the longest of any animal, lasting well over a year. Large whales fall in between.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "dog_lo",
+            "label": "Dog gestation, shortest normal",
+            "value": 57,
+            "unit": "day",
+            "approximate": true,
+            "sourceNote": "Veterinary reference range from ovulation (AKC: about 63 days)"
+          },
+          {
+            "kind": "quantity",
+            "id": "dog_hi",
+            "label": "Dog gestation, longest normal",
+            "value": 65,
+            "unit": "day",
+            "approximate": true,
+            "sourceNote": "Veterinary reference range from ovulation (AKC: about 63 days)"
+          },
+          {
+            "kind": "quantity",
+            "id": "human_lo",
+            "label": "Human pregnancy, early term",
+            "value": 259,
+            "unit": "day",
+            "approximate": true,
+            "sourceNote": "ACOG term definitions (37 weeks)"
+          },
+          {
+            "kind": "quantity",
+            "id": "human_hi",
+            "label": "Human pregnancy, late term",
+            "value": 294,
+            "unit": "day",
+            "approximate": true,
+            "sourceNote": "ACOG term definitions (42 weeks)"
+          },
+          {
+            "kind": "quantity",
+            "id": "blue_lo",
+            "label": "Blue whale gestation, low",
+            "value": 304,
+            "unit": "day",
+            "approximate": true,
+            "sourceNote": "NOAA Fisheries (about 10 to 12 months)"
+          },
+          {
+            "kind": "quantity",
+            "id": "blue_hi",
+            "label": "Blue whale gestation, high",
+            "value": 365,
+            "unit": "day",
+            "approximate": true,
+            "sourceNote": "NOAA Fisheries (about 10 to 12 months)"
+          },
+          {
+            "kind": "quantity",
+            "id": "horse_lo",
+            "label": "Horse gestation, low",
+            "value": 320,
+            "unit": "day",
+            "approximate": true,
+            "sourceNote": "University of Nebraska–Lincoln Extension, G1874"
+          },
+          {
+            "kind": "quantity",
+            "id": "horse_hi",
+            "label": "Horse gestation, high",
+            "value": 370,
+            "unit": "day",
+            "approximate": true,
+            "sourceNote": "University of Nebraska–Lincoln Extension, G1874"
+          },
+          {
+            "kind": "quantity",
+            "id": "sperm_lo",
+            "label": "Sperm whale gestation, low",
+            "value": 426,
+            "unit": "day",
+            "approximate": true,
+            "sourceNote": "NOAA Fisheries (14 to 16 months)"
+          },
+          {
+            "kind": "quantity",
+            "id": "sperm_hi",
+            "label": "Sperm whale gestation, high",
+            "value": 487,
+            "unit": "day",
+            "approximate": true,
+            "sourceNote": "NOAA Fisheries (14 to 16 months)"
+          },
+          {
+            "kind": "quantity",
+            "id": "elephant_lo",
+            "label": "Asian elephant gestation, low",
+            "value": 654,
+            "unit": "day",
+            "approximate": true,
+            "sourceNote": "Smithsonian's National Zoo (21.5 to 22 months)"
+          },
+          {
+            "kind": "quantity",
+            "id": "elephant_hi",
+            "label": "Asian elephant gestation, high",
+            "value": 670,
+            "unit": "day",
+            "approximate": true,
+            "sourceNote": "Smithsonian's National Zoo (21.5 to 22 months)"
+          }
+        ]
+      },
+      "plan": {
+        "template": "range_bars",
+        "title": "How long animal pregnancies last",
+        "caption": "Typical range of gestation for each species.",
+        "rows": [
+          {
+            "label": "Dog",
+            "aFactId": "dog_lo",
+            "bFactId": "dog_hi"
+          },
+          {
+            "label": "Human",
+            "aFactId": "human_lo",
+            "bFactId": "human_hi"
+          },
+          {
+            "label": "Blue whale",
+            "aFactId": "blue_lo",
+            "bFactId": "blue_hi"
+          },
+          {
+            "label": "Horse",
+            "aFactId": "horse_lo",
+            "bFactId": "horse_hi"
+          },
+          {
+            "label": "Sperm whale",
+            "aFactId": "sperm_lo",
+            "bFactId": "sperm_hi"
+          },
+          {
+            "label": "Asian elephant",
+            "aFactId": "elephant_lo",
+            "bFactId": "elephant_hi"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheetah_vs_greyhound",
+      "facts": {
+        "query": "Cheetah vs greyhound: which is faster?",
+        "topic": "Cheetah vs greyhound",
+        "confidence": "high",
+        "explanation": "Both are built for sprinting, with long legs, deep chests and flexible spines. The cheetah is much faster over a short dash and heavier, while the greyhound is the fastest dog breed and can hold its pace over longer distances.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "cheetah_speed",
+            "label": "Cheetah top speed",
+            "value": 112,
+            "unit": "km/h",
+            "approximate": true,
+            "sourceNote": "Smithsonian's National Zoo (96–112 km/h)"
+          },
+          {
+            "kind": "quantity",
+            "id": "greyhound_speed",
+            "label": "Greyhound top speed",
+            "value": 72,
+            "unit": "km/h",
+            "approximate": true,
+            "sourceNote": "American Kennel Club (about 45 mph)"
+          },
+          {
+            "kind": "quantity",
+            "id": "cheetah_weight",
+            "label": "Cheetah adult weight (upper end)",
+            "value": 64,
+            "unit": "kg",
+            "approximate": true,
+            "sourceNote": "Smithsonian's National Zoo (34–64 kg)"
+          },
+          {
+            "kind": "quantity",
+            "id": "greyhound_weight",
+            "label": "Greyhound male weight (upper end)",
+            "value": 32,
+            "unit": "kg",
+            "approximate": true,
+            "sourceNote": "American Kennel Club breed standard (65–70 lb males)"
+          },
+          {
+            "kind": "quantity",
+            "id": "cheetah_life",
+            "label": "Cheetah lifespan in human care (upper end)",
+            "value": 15,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "Smithsonian's National Zoo (12–15 years)"
+          },
+          {
+            "kind": "quantity",
+            "id": "greyhound_life",
+            "label": "Greyhound life expectancy (upper end)",
+            "value": 13,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "American Kennel Club (10–13 years)"
+          }
+        ]
+      },
+      "plan": {
+        "template": "versus",
+        "title": "Cheetah against greyhound",
+        "aName": "Cheetah",
+        "bName": "Greyhound",
+        "bImage": "dog",
+        "rows": [
+          {
+            "label": "Top speed",
+            "aFactId": "cheetah_speed",
+            "bFactId": "greyhound_speed"
+          },
+          {
+            "label": "Weight",
+            "aFactId": "cheetah_weight",
+            "bFactId": "greyhound_weight"
+          },
+          {
+            "label": "Lifespan",
+            "aFactId": "cheetah_life",
+            "bFactId": "greyhound_life"
+          }
+        ]
+      }
+    },
+    {
+      "id": "animal_heartbeats",
+      "facts": {
+        "query": "How fast do animals' hearts beat?",
+        "topic": "Heart rates of animals",
+        "confidence": "medium",
+        "explanation": "Small animals have fast hearts and big animals slow ones. A hovering hummingbird's heart races, a resting person's beats at a steady pace, and a diving blue whale slows its heart to just a few beats a minute to save oxygen.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "hummingbird",
+            "label": "Blue-throated hummingbird heartbeats per minute (active)",
+            "value": 1260,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "Widely cited ornithology figure for an active blue-throated hummingbird; estimate"
+          },
+          {
+            "kind": "quantity",
+            "id": "hummingbird_min",
+            "label": "One minute (hummingbird)",
+            "value": 1,
+            "unit": "min",
+            "approximate": false,
+            "sourceNote": "Measurement period"
+          },
+          {
+            "kind": "quantity",
+            "id": "human",
+            "label": "Human resting heartbeats per minute",
+            "value": 70,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "American Heart Association (normal resting range 60–100)"
+          },
+          {
+            "kind": "quantity",
+            "id": "human_min",
+            "label": "One minute (human)",
+            "value": 1,
+            "unit": "min",
+            "approximate": false,
+            "sourceNote": "Measurement period"
+          },
+          {
+            "kind": "quantity",
+            "id": "elephant",
+            "label": "Asian elephant resting heartbeats per minute",
+            "value": 30,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "Benedict & Lee, Carnegie Institution study of elephant physiology, 1938"
+          },
+          {
+            "kind": "quantity",
+            "id": "elephant_min",
+            "label": "One minute (elephant)",
+            "value": 1,
+            "unit": "min",
+            "approximate": false,
+            "sourceNote": "Measurement period"
+          },
+          {
+            "kind": "quantity",
+            "id": "blue_whale",
+            "label": "Blue whale heartbeats per minute (deep dive minimum)",
+            "value": 2,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "Goldbogen et al., PNAS 2019 (ECG-tagged blue whale)"
+          },
+          {
+            "kind": "quantity",
+            "id": "blue_whale_min",
+            "label": "One minute (blue whale)",
+            "value": 1,
+            "unit": "min",
+            "approximate": false,
+            "sourceNote": "Measurement period"
+          }
+        ]
+      },
+      "plan": {
+        "template": "rate_counter",
+        "title": "Heartbeats since you opened this page",
+        "rows": [
+          {
+            "label": "Hummingbird (flying)",
+            "aFactId": "hummingbird",
+            "bFactId": "hummingbird_min"
+          },
+          {
+            "label": "Human (resting)",
+            "aFactId": "human",
+            "bFactId": "human_min"
+          },
+          {
+            "label": "Elephant (resting)",
+            "aFactId": "elephant",
+            "bFactId": "elephant_min"
+          },
+          {
+            "label": "Blue whale (diving)",
+            "aFactId": "blue_whale",
+            "bFactId": "blue_whale_min"
+          }
+        ]
+      }
+    }
+  ]
+}

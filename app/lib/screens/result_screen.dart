@@ -24,12 +24,14 @@ class _ResultScreenState extends ConsumerState<ResultScreen> {
 
   String? get _query => switch (widget.request) {
         QueryRequest(:final query) => query,
-        SharedRequest() => null,
+        SharedRequest() || LibraryRequest() => null,
       };
 
   void _rephrase() {
     if (context.canPop()) {
       context.pop();
+    } else if (widget.request is LibraryRequest) {
+      context.go('/library');
     } else {
       context.go(Uri(path: '/', queryParameters: {'q': ?_query}).toString());
     }
@@ -46,7 +48,15 @@ class _ResultScreenState extends ConsumerState<ResultScreen> {
         leading: context.canPop()
             ? IconButton(icon: const Icon(Icons.arrow_back), tooltip: 'Back', onPressed: () => context.pop())
             : IconButton(icon: const Icon(Icons.home_outlined), tooltip: 'Home', onPressed: () => context.go('/')),
-        title: Text(_query ?? 'Shared visualization', maxLines: 1, overflow: TextOverflow.ellipsis),
+        title: Text(
+          _query ??
+              switch (widget.request) {
+                LibraryRequest() => success?.visualization.facts.query ?? 'Library',
+                _ => 'Shared visualization',
+              },
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+        ),
         actions: [
           if (success != null) ...[
             IconButton(
@@ -106,7 +116,9 @@ class _ResultScreenState extends ConsumerState<ResultScreen> {
                       const SizedBox(height: 32),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: VisualizationPanel.gutter),
-                        child: OutlinedButton(onPressed: _rephrase, child: const Text('Ask another question')),
+                        child: widget.request is LibraryRequest
+                            ? OutlinedButton(onPressed: _rephrase, child: const Text('Back to the library'))
+                            : OutlinedButton(onPressed: _rephrase, child: const Text('Ask another question')),
                       ),
                       const SizedBox(height: 16),
                       const Center(

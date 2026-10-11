@@ -6,6 +6,8 @@ import 'package:lottie/lottie.dart';
 
 import '../app/router.dart';
 import '../app/theme.dart';
+import '../data/library_repository.dart';
+import '../state/library.dart';
 import '../state/visualize_controller.dart';
 import '../templates/common/motion.dart';
 import '../ui/editorial.dart';
@@ -111,8 +113,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   const SizedBox(height: 18),
                   _KeyNudge(onTap: () => context.push('/settings')),
                 ],
-                const SizedBox(height: 44),
-                const SectionRule('Try one of these'),
+                const SizedBox(height: 40),
+                const _LibraryTeaser(),
+                const SizedBox(height: 40),
+                const SectionRule('Or ask one of these'),
                 const SizedBox(height: 2),
                 ExamplePrompts(onSelected: _explain),
               ],
@@ -146,7 +150,7 @@ class _KeyNudge extends StatelessWidget {
             children: [
               Expanded(
                 child: Text(
-                  'First, add your OpenRouter key so the app can look up facts.',
+                  'Add your OpenRouter key so the app can look up new facts. The library below works without one.',
                   style: TextStyle(fontFamily: serif, fontSize: 15, height: 1.35, color: Palette.ink),
                 ),
               ),
@@ -157,6 +161,87 @@ class _KeyNudge extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+/// Entry point to the bundled library: one card per category.
+class _LibraryTeaser extends ConsumerWidget {
+  const _LibraryTeaser();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final categories = ref.watch(libraryProvider).value;
+    if (categories == null || categories.isEmpty) return const SizedBox.shrink();
+    final total = categories.entries.length;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        const SectionRule('From the library'),
+        const SizedBox(height: 12),
+        SizedBox(
+          height: 104,
+          child: ListView.separated(
+            scrollDirection: Axis.horizontal,
+            itemCount: categories.length,
+            separatorBuilder: (_, _) => const SizedBox(width: 10),
+            itemBuilder: (context, i) {
+              final c = categories[i];
+              return Semantics(
+                button: true,
+                label: '${c.title}, ${c.entries.length} visualizations',
+                excludeSemantics: true,
+                child: InkWell(
+                  onTap: () => context.push(Uri(path: '/library', queryParameters: {'c': c.id}).toString()),
+                  child: Container(
+                    width: 138,
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: Palette.paperDeep,
+                      border: Border(top: BorderSide(color: i == 0 ? Palette.accent : Palette.ink, width: 2)),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('${c.entries.length} VISUALS', style: Txt.kicker.copyWith(fontSize: 9.5, color: Palette.ink3)),
+                        const Spacer(),
+                        Text(
+                          c.title,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(fontFamily: serif, fontSize: 18, height: 1.15, fontWeight: FontWeight.w600, color: Palette.ink),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              );
+            },
+          ),
+        ),
+        const SizedBox(height: 6),
+        Semantics(
+          button: true,
+          child: InkWell(
+            onTap: () => context.push('/library'),
+            child: Container(
+              decoration: const BoxDecoration(border: Border(bottom: BorderSide(color: Palette.rule))),
+              padding: const EdgeInsets.symmetric(vertical: 14),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      'Browse all $total visualizations',
+                      style: const TextStyle(fontFamily: serif, fontSize: 18, color: Palette.ink),
+                    ),
+                  ),
+                  const Icon(Icons.arrow_forward, size: 18, color: Palette.ink2),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

@@ -1,0 +1,185 @@
+{
+  "version": 1,
+  "template": "scale_zoom",
+  "title": "The Sun and its worlds, to scale",
+  "caption": "Diameters drawn to scale, from Pluto up to the Sun.",
+  "annotations": [
+    {
+      "text": "Sun is 590× as wide as Pluto",
+      "anchor": "item",
+      "index": 7
+    }
+  ],
+  "mode": "size",
+  "units": {
+    "dimension": "length",
+    "preferred": {
+      "symbol": "km",
+      "toSi": 1000.0
+    },
+    "ladder": [
+      {
+        "symbol": "nm",
+        "toSi": 1e-9
+      },
+      {
+        "symbol": "µm",
+        "toSi": 0.000001
+      },
+      {
+        "symbol": "mm",
+        "toSi": 0.001
+      },
+      {
+        "symbol": "cm",
+        "toSi": 0.01
+      },
+      {
+        "symbol": "m",
+        "toSi": 1.0
+      },
+      {
+        "symbol": "km",
+        "toSi": 1000.0
+      },
+      {
+        "symbol": "AU",
+        "toSi": 149597870700.0
+      },
+      {
+        "symbol": "ly",
+        "toSi": 9460730472580800.0
+      }
+    ]
+  },
+  "items": [
+    {
+      "name": "Pluto",
+      "shape": "circle",
+      "valueSi": 2376000.0,
+      "linearSi": 2376000.0,
+      "display": "2,376 km",
+      "source": "NASA Planetary Fact Sheet, diameter from New Horizons",
+      "image": {
+        "key": "pluto",
+        "kind": "photo",
+        "src": "img/pluto.webp",
+        "aspect": 1.0,
+        "disc": 1.0,
+        "stretch": false
+      }
+    },
+    {
+      "name": "Moon",
+      "shape": "circle",
+      "valueSi": 3475000.0,
+      "linearSi": 3475000.0,
+      "display": "3,475 km",
+      "source": "NASA Planetary Fact Sheet, equatorial diameter",
+      "image": {
+        "key": "moon",
+        "kind": "photo",
+        "src": "img/moon.webp",
+        "aspect": 1.0,
+        "disc": 1.0,
+        "stretch": false
+      }
+    },
+    {
+      "name": "Mars",
+      "shape": "circle",
+      "valueSi": 6792000.0,
+      "linearSi": 6792000.0,
+      "display": "6,792 km",
+      "source": "NASA Planetary Fact Sheet, equatorial diameter",
+      "image": {
+        "key": "mars",
+        "kind": "photo",
+        "src": "img/mars.webp",
+        "aspect": 1.0,
+        "disc": 1.0,
+        "stretch": false
+      }
+    },
+    {
+      "name": "Earth",
+      "shape": "circle",
+      "valueSi": 12756000.0,
+      "linearSi": 12756000.0,
+      "display": "12,756 km",
+      "source": "NASA Planetary Fact Sheet, equatorial diameter",
+      "image": {
+        "key": "earth",
+        "kind": "photo",
+        "src": "img/earth.webp",
+        "aspect": 1.0,
+        "disc": 1.0,
+        "stretch": false
+      }
+    },
+    {
+      "name": "Neptune",
+      "shape": "circle",
+      "valueSi": 49528000.0,
+      "linearSi": 49528000.0,
+      "display": "49,528 km",
+      "source": "NASA Planetary Fact Sheet, equatorial diameter",
+      "image": {
+        "key": "neptune",
+        "kind": "photo",
+        "src": "img/neptune.webp",
+        "aspect": 1.0,
+        "disc": 1.0,
+        "stretch": false
+      }
+    },
+    {
+      "name": "Saturn",
+      "shape": "circle",
+      "valueSi": 120536000.0,
+      "linearSi": 120536000.0,
+      "display": "120,536 km",
+      "source": "NASA Planetary Fact Sheet, equatorial diameter",
+      "image": {
+        "key": "saturn",
+        "kind": "photo",
+        "src": "img/saturn.webp",
+        "aspect": 2.45,
+        "disc": 0.441,
+        "stretch": false
+      }
+    },
+    {
+      "name": "Jupiter",
+      "shape": "circle",
+      "valueSi": 142984000.0,
+      "linearSi": 142984000.0,
+      "display": "142,984 km",
+      "source": "NASA Planetary Fact Sheet, equatorial diameter",
+      "image": {
+        "key": "jupiter",
+        "kind": "photo",
+        "src": "img/jupiter.webp",
+        "aspect": 1.0,
+        "disc": 1.0,
+        "stretch": false
+      }
+    },
+    {
+      "name": "Sun",
+      "shape": "circle",
+      "valueSi": 1391400000.0,
+      "linearSi": 1391400000.0,
+      "display": "1.39 million km",
+      "source": "IAU 2015 nominal solar radius (695,700 km) doubled; NASA Sun Fact Sheet",
+      "image": {
+        "key": "sun",
+        "kind": "photo",
+        "src": "img/sun.webp",
+        "aspect": 1.0,
+        "disc": 1.0,
+        "stretch": false
+      }
+    }
+  ]
+}

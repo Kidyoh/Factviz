@@ -1,0 +1,1216 @@
+{
+  "category": "earth",
+  "title": "Earth & climate",
+  "entries": [
+    {
+      "id": "earth_giants_to_scale",
+      "facts": {
+        "query": "How big is Earth compared with its biggest features?",
+        "topic": "Earth's giants to scale",
+        "confidence": "high",
+        "explanation": "A person, the largest tree, the highest mountain and one of the great canyons all look tiny next to the planet itself. Even Mount Everest is a barely visible bump on a globe: Earth's surface is remarkably smooth for its size.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "person",
+            "label": "Adult person (height)",
+            "value": 1.7,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Rounded typical adult height, NCD Risk Factor Collaboration height data"
+          },
+          {
+            "kind": "quantity",
+            "id": "general_sherman",
+            "label": "General Sherman giant sequoia (height)",
+            "value": 83.8,
+            "unit": "m",
+            "approximate": false,
+            "sourceNote": "US National Park Service, Sequoia & Kings Canyon NP"
+          },
+          {
+            "kind": "quantity",
+            "id": "everest",
+            "label": "Mount Everest (height above sea level)",
+            "value": 8849,
+            "unit": "m",
+            "approximate": false,
+            "sourceNote": "China–Nepal joint survey, 2020",
+            "year": 2020
+          },
+          {
+            "kind": "quantity",
+            "id": "grand_canyon",
+            "label": "Grand Canyon (length along the river)",
+            "value": 446,
+            "unit": "km",
+            "approximate": true,
+            "sourceNote": "US National Park Service, Grand Canyon NP (277 river miles)"
+          },
+          {
+            "kind": "quantity",
+            "id": "earth_diameter",
+            "label": "Earth (mean diameter)",
+            "value": 12742,
+            "unit": "km",
+            "approximate": false,
+            "sourceNote": "NASA Earth fact sheet (mean radius 6,371 km)"
+          }
+        ]
+      },
+      "plan": {
+        "template": "scale_zoom",
+        "title": "From a person to the whole planet",
+        "mode": "size",
+        "caption": "Heights, a canyon's length and Earth's diameter, all drawn to scale.",
+        "items": [
+          {
+            "factId": "person",
+            "displayName": "Person",
+            "shape": "tower",
+            "image": "person"
+          },
+          {
+            "factId": "general_sherman",
+            "displayName": "Largest tree",
+            "shape": "tower"
+          },
+          {
+            "factId": "everest",
+            "displayName": "Mount Everest",
+            "shape": "tower"
+          },
+          {
+            "factId": "grand_canyon",
+            "displayName": "Grand Canyon",
+            "shape": "bar"
+          },
+          {
+            "factId": "earth_diameter",
+            "displayName": "Earth",
+            "shape": "circle",
+            "image": "earth"
+          }
+        ]
+      }
+    },
+    {
+      "id": "great_volcanic_eruptions",
+      "facts": {
+        "query": "What were the biggest volcanic eruptions in history?",
+        "topic": "Great volcanic eruptions",
+        "confidence": "high",
+        "explanation": "A handful of eruptions changed history: they buried cities, cooled the global climate and caused famines far from the volcano. Tambora was the largest eruption in recorded history, and its ash led to the 'Year Without a Summer' that followed.",
+        "facts": [
+          {
+            "kind": "event",
+            "id": "vesuvius",
+            "label": "Vesuvius buries Pompeii",
+            "year": 79,
+            "description": "Mount Vesuvius erupts and buries the Roman towns of Pompeii and Herculaneum.",
+            "sourceNote": "Smithsonian Global Volcanism Program"
+          },
+          {
+            "kind": "event",
+            "id": "laki",
+            "label": "Laki fissure eruption",
+            "year": 1783,
+            "description": "Iceland's Laki fissure begins an eight-month eruption; its toxic gases cause crop failure and famine.",
+            "sourceNote": "Smithsonian Global Volcanism Program",
+            "month": 6,
+            "day": 8
+          },
+          {
+            "kind": "event",
+            "id": "tambora",
+            "label": "Tambora",
+            "year": 1815,
+            "description": "Mount Tambora, Indonesia, reaches its climax: the largest eruption in recorded history.",
+            "sourceNote": "Smithsonian Global Volcanism Program",
+            "month": 4,
+            "day": 10
+          },
+          {
+            "kind": "event",
+            "id": "krakatau",
+            "label": "Krakatau",
+            "year": 1883,
+            "description": "Krakatau's explosions are heard thousands of kilometres away and trigger deadly tsunamis.",
+            "sourceNote": "Smithsonian Global Volcanism Program",
+            "month": 8,
+            "day": 27
+          },
+          {
+            "kind": "event",
+            "id": "novarupta",
+            "label": "Novarupta",
+            "year": 1912,
+            "description": "Alaska's Novarupta produces the largest eruption of the 20th century.",
+            "sourceNote": "USGS Alaska Volcano Observatory",
+            "month": 6,
+            "day": 6
+          },
+          {
+            "kind": "event",
+            "id": "st_helens",
+            "label": "Mount St. Helens",
+            "year": 1980,
+            "description": "A landslide uncorks Mount St. Helens in Washington State in a huge lateral blast.",
+            "sourceNote": "USGS Cascades Volcano Observatory",
+            "month": 5,
+            "day": 18
+          },
+          {
+            "kind": "event",
+            "id": "pinatubo",
+            "label": "Pinatubo",
+            "year": 1991,
+            "description": "Pinatubo, Philippines, injects so much sulfur into the stratosphere that global temperatures dip for about two years.",
+            "sourceNote": "USGS / PHIVOLCS",
+            "month": 6,
+            "day": 15
+          },
+          {
+            "kind": "event",
+            "id": "hunga_tonga",
+            "label": "Hunga Tonga–Hunga Ha'apai",
+            "year": 2022,
+            "description": "An undersea volcano in Tonga sends a plume into the mesosphere and a pressure wave around the globe.",
+            "sourceNote": "Smithsonian Global Volcanism Program",
+            "month": 1,
+            "day": 15
+          }
+        ]
+      },
+      "plan": {
+        "template": "timeline",
+        "title": "Eruptions that shook the world",
+        "axis": "linear",
+        "eventFactIds": [
+          "vesuvius",
+          "laki",
+          "tambora",
+          "krakatau",
+          "novarupta",
+          "st_helens",
+          "pinatubo",
+          "hunga_tonga"
+        ]
+      }
+    },
+    {
+      "id": "earth_history_clock",
+      "facts": {
+        "query": "If Earth's history were squeezed into one day, when did life appear?",
+        "topic": "Earth's history in a day",
+        "confidence": "medium",
+        "explanation": "Squeeze Earth's whole history into a single day and most of it belongs to microbes. Animals with skeletons arrive only in the late evening, dinosaurs vanish shortly before midnight, and our own species shows up in the final seconds.",
+        "facts": [
+          {
+            "kind": "event",
+            "id": "earth_forms",
+            "label": "Earth forms",
+            "year": -4540000000,
+            "description": "Earth forms from the disk of gas and dust around the young Sun.",
+            "sourceNote": "USGS, age of the Earth (4.54 ± 0.05 billion years)"
+          },
+          {
+            "kind": "event",
+            "id": "oldest_minerals",
+            "label": "Oldest known minerals",
+            "year": -4400000000,
+            "description": "Zircon crystals from Jack Hills, Australia, show that a solid crust and liquid water existed.",
+            "sourceNote": "Wilde et al., Nature 2001 (Jack Hills zircons)"
+          },
+          {
+            "kind": "event",
+            "id": "first_life",
+            "label": "Oldest widely accepted fossils",
+            "year": -3480000000,
+            "description": "Microbial mats leave stromatolites in Western Australia's Pilbara region.",
+            "sourceNote": "Geological Survey of Western Australia / Smithsonian NMNH (Dresser Formation)"
+          },
+          {
+            "kind": "event",
+            "id": "oxygen",
+            "label": "Great Oxidation Event",
+            "year": -2400000000,
+            "description": "Photosynthesizing microbes start filling the atmosphere with oxygen.",
+            "sourceNote": "NASA Astrobiology / peer-reviewed estimates (about 2.4 billion years ago)"
+          },
+          {
+            "kind": "event",
+            "id": "cambrian",
+            "label": "Cambrian explosion begins",
+            "year": -538800000,
+            "description": "Animals with shells and skeletons diversify rapidly at the start of the Cambrian Period.",
+            "sourceNote": "International Commission on Stratigraphy, Geologic Time Scale (base of the Cambrian)"
+          },
+          {
+            "kind": "event",
+            "id": "land_plants",
+            "label": "First land plants",
+            "year": -470000000,
+            "description": "Simple plants related to liverworts begin to colonize land.",
+            "sourceNote": "Smithsonian NMNH, fossil spore evidence (about 470 million years ago)"
+          },
+          {
+            "kind": "event",
+            "id": "first_dinosaurs",
+            "label": "First dinosaurs",
+            "year": -233000000,
+            "description": "The earliest known dinosaurs appear in the Late Triassic.",
+            "sourceNote": "Smithsonian NMNH, Late Triassic fossils (about 233 million years ago)"
+          },
+          {
+            "kind": "event",
+            "id": "dino_extinction",
+            "label": "Dinosaurs wiped out",
+            "year": -66000000,
+            "description": "An asteroid impact at Chicxulub ends the age of non-avian dinosaurs.",
+            "sourceNote": "International Commission on Stratigraphy, Geologic Time Scale (end of the Cretaceous)"
+          },
+          {
+            "kind": "event",
+            "id": "homo_sapiens",
+            "label": "Homo sapiens appears",
+            "year": -300000,
+            "description": "The oldest known fossils of our species, from Jebel Irhoud, Morocco.",
+            "sourceNote": "Hublin et al., Nature 2017; Smithsonian Human Origins"
+          },
+          {
+            "kind": "event",
+            "id": "holocene",
+            "label": "Last ice age ends",
+            "year": -9700,
+            "description": "The Holocene epoch begins as the last glacial period ends.",
+            "sourceNote": "International Commission on Stratigraphy, Geologic Time Scale (base of the Holocene, 11,700 years before 2000)"
+          }
+        ]
+      },
+      "plan": {
+        "template": "cosmic_clock",
+        "title": "Earth's history on a clock",
+        "caption": "Earth forms at midnight; the present is the next midnight.",
+        "eventFactIds": [
+          "earth_forms",
+          "oldest_minerals",
+          "first_life",
+          "oxygen",
+          "cambrian",
+          "land_plants",
+          "first_dinosaurs",
+          "dino_extinction",
+          "homo_sapiens",
+          "holocene"
+        ]
+      }
+    },
+    {
+      "id": "where_is_earths_water",
+      "facts": {
+        "query": "Where is Earth's water?",
+        "topic": "Where Earth's water is",
+        "confidence": "high",
+        "explanation": "Almost all of Earth's water is salty ocean water. Most of the fresh water is locked up in ice caps and glaciers or hidden underground, and lakes and rivers hold only a sliver of the total.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "oceans",
+            "label": "Oceans, seas and bays",
+            "value": 96.54,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "USGS Water Science School, Where is Earth's water (Gleick 1996)"
+          },
+          {
+            "kind": "quantity",
+            "id": "ice",
+            "label": "Ice caps, glaciers and permanent snow",
+            "value": 1.74,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "USGS Water Science School, Where is Earth's water (Gleick 1996)"
+          },
+          {
+            "kind": "quantity",
+            "id": "groundwater",
+            "label": "Groundwater",
+            "value": 1.69,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "USGS Water Science School, Where is Earth's water (Gleick 1996)"
+          },
+          {
+            "kind": "quantity",
+            "id": "lakes",
+            "label": "Lakes (fresh and saline)",
+            "value": 0.013,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "USGS Water Science School, Where is Earth's water (Gleick 1996)"
+          }
+        ]
+      },
+      "plan": {
+        "template": "donut",
+        "title": "Where all of Earth's water is",
+        "caption": "Shares of total water; rivers, soil moisture, the atmosphere and living things make up the rest.",
+        "items": [
+          {
+            "factId": "oceans",
+            "displayName": "Oceans"
+          },
+          {
+            "factId": "ice",
+            "displayName": "Ice and snow"
+          },
+          {
+            "factId": "groundwater",
+            "displayName": "Groundwater"
+          },
+          {
+            "factId": "lakes",
+            "displayName": "Lakes"
+          }
+        ]
+      }
+    },
+    {
+      "id": "what_is_air_made_of",
+      "facts": {
+        "query": "What is the air made of?",
+        "topic": "Composition of dry air",
+        "confidence": "high",
+        "explanation": "Dry air is mostly nitrogen, with oxygen a distant second and argon a small third. Carbon dioxide is only a trace gas, yet it has a large effect on climate, and its share keeps rising.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "nitrogen",
+            "label": "Nitrogen",
+            "value": 78.08,
+            "unit": "percent",
+            "approximate": false,
+            "sourceNote": "NASA Earth fact sheet (dry air by volume)"
+          },
+          {
+            "kind": "quantity",
+            "id": "oxygen",
+            "label": "Oxygen",
+            "value": 20.95,
+            "unit": "percent",
+            "approximate": false,
+            "sourceNote": "NASA Earth fact sheet (dry air by volume)"
+          },
+          {
+            "kind": "quantity",
+            "id": "argon",
+            "label": "Argon",
+            "value": 0.93,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "NASA Earth fact sheet (dry air by volume)"
+          },
+          {
+            "kind": "quantity",
+            "id": "co2",
+            "label": "Carbon dioxide",
+            "value": 0.0427,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "NOAA GML, Mauna Loa annual mean 2025 (427 ppm)",
+            "year": 2025
+          }
+        ]
+      },
+      "plan": {
+        "template": "stacked_bar",
+        "title": "What's in a breath of air",
+        "caption": "Dry air by volume; neon, helium, methane and other trace gases make up the rest.",
+        "items": [
+          {
+            "factId": "nitrogen",
+            "displayName": "Nitrogen"
+          },
+          {
+            "factId": "oxygen",
+            "displayName": "Oxygen"
+          },
+          {
+            "factId": "argon",
+            "displayName": "Argon"
+          },
+          {
+            "factId": "co2",
+            "displayName": "Carbon dioxide"
+          }
+        ]
+      }
+    },
+    {
+      "id": "earth_cover_shares",
+      "facts": {
+        "query": "How much of Earth is covered by ocean, forest and ice?",
+        "topic": "Ocean, forest and ice cover",
+        "confidence": "high",
+        "explanation": "Ocean covers most of Earth's surface. On land, forests cover close to a third of the area, while glaciers and ice sheets, mostly in Antarctica and Greenland, cover about a tenth.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "ocean_share",
+            "label": "Ocean (share of Earth's surface)",
+            "value": 71,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "NOAA National Ocean Service"
+          },
+          {
+            "kind": "quantity",
+            "id": "forest_share",
+            "label": "Forest (share of land area)",
+            "value": 32,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "FAO Global Forest Resources Assessment 2025",
+            "year": 2025
+          },
+          {
+            "kind": "quantity",
+            "id": "ice_share",
+            "label": "Glaciers and ice sheets (share of land area)",
+            "value": 10,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "US National Snow and Ice Data Center (NSIDC)"
+          }
+        ]
+      },
+      "plan": {
+        "template": "waffle",
+        "title": "How much of Earth is ocean, forest and ice",
+        "caption": "Ocean is a share of the whole surface; forest and ice are shares of land.",
+        "items": [
+          {
+            "factId": "ocean_share",
+            "displayName": "Ocean (of surface)"
+          },
+          {
+            "factId": "forest_share",
+            "displayName": "Forest (of land)"
+          },
+          {
+            "factId": "ice_share",
+            "displayName": "Ice (of land)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ocean_areas",
+      "facts": {
+        "query": "How big are the world's oceans?",
+        "topic": "Ocean areas",
+        "confidence": "high",
+        "explanation": "The Pacific is by far the largest ocean, bigger than all of Earth's land put together. The Atlantic and Indian Oceans follow, while the Southern and Arctic Oceans around the poles are much smaller.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "pacific",
+            "label": "Pacific Ocean",
+            "value": 161760000,
+            "unit": "km2",
+            "approximate": true,
+            "sourceNote": "NOAA NGDC, Eakins & Sharman 2010 (ETOPO1 ocean volumes)"
+          },
+          {
+            "kind": "quantity",
+            "id": "atlantic",
+            "label": "Atlantic Ocean",
+            "value": 85133000,
+            "unit": "km2",
+            "approximate": true,
+            "sourceNote": "NOAA NGDC, Eakins & Sharman 2010 (ETOPO1 ocean volumes)"
+          },
+          {
+            "kind": "quantity",
+            "id": "indian",
+            "label": "Indian Ocean",
+            "value": 70560000,
+            "unit": "km2",
+            "approximate": true,
+            "sourceNote": "NOAA NGDC, Eakins & Sharman 2010 (ETOPO1 ocean volumes)"
+          },
+          {
+            "kind": "quantity",
+            "id": "southern",
+            "label": "Southern Ocean",
+            "value": 21960000,
+            "unit": "km2",
+            "approximate": true,
+            "sourceNote": "NOAA NGDC, Eakins & Sharman 2010 (ETOPO1 ocean volumes)"
+          },
+          {
+            "kind": "quantity",
+            "id": "arctic",
+            "label": "Arctic Ocean",
+            "value": 15558000,
+            "unit": "km2",
+            "approximate": true,
+            "sourceNote": "NOAA NGDC, Eakins & Sharman 2010 (ETOPO1 ocean volumes)"
+          }
+        ]
+      },
+      "plan": {
+        "template": "treemap",
+        "title": "The world's oceans by area",
+        "items": [
+          {
+            "factId": "pacific",
+            "displayName": "Pacific"
+          },
+          {
+            "factId": "atlantic",
+            "displayName": "Atlantic"
+          },
+          {
+            "factId": "indian",
+            "displayName": "Indian"
+          },
+          {
+            "factId": "southern",
+            "displayName": "Southern"
+          },
+          {
+            "factId": "arctic",
+            "displayName": "Arctic"
+          }
+        ]
+      }
+    },
+    {
+      "id": "arctic_sea_ice_decline",
+      "facts": {
+        "query": "Is Arctic sea ice shrinking?",
+        "topic": "Arctic sea ice in September",
+        "confidence": "high",
+        "explanation": "Every September, at the end of the summer melt, Arctic sea ice reaches its smallest extent of the year. Satellites show that this minimum has shrunk markedly since the start of the record, with large swings from year to year, as the Arctic warms faster than the rest of the planet.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "sept_ice_1980",
+            "label": "September Arctic sea ice extent, 1980",
+            "value": 7670000,
+            "unit": "km2",
+            "approximate": true,
+            "sourceNote": "NSIDC Sea Ice Index v4, September monthly average",
+            "year": 1980
+          },
+          {
+            "kind": "quantity",
+            "id": "sept_ice_1982",
+            "label": "September Arctic sea ice extent, 1982",
+            "value": 7300000,
+            "unit": "km2",
+            "approximate": true,
+            "sourceNote": "NSIDC Sea Ice Index v4, September monthly average",
+            "year": 1982
+          },
+          {
+            "kind": "quantity",
+            "id": "sept_ice_1984",
+            "label": "September Arctic sea ice extent, 1984",
+            "value": 6810000,
+            "unit": "km2",
+            "approximate": true,
+            "sourceNote": "NSIDC Sea Ice Index v4, September monthly average",
+            "year": 1984
+          },
+          {
+            "kind": "quantity",
+            "id": "sept_ice_1986",
+            "label": "September Arctic sea ice extent, 1986",
+            "value": 7410000,
+            "unit": "km2",
+            "approximate": true,
+            "sourceNote": "NSIDC Sea Ice Index v4, September monthly average",
+            "year": 1986
+          },
+          {
+            "kind": "quantity",
+            "id": "sept_ice_1988",
+            "label": "September Arctic sea ice extent, 1988",
+            "value": 7370000,
+            "unit": "km2",
+            "approximate": true,
+            "sourceNote": "NSIDC Sea Ice Index v4, September monthly average",
+            "year": 1988
+          },
+          {
+            "kind": "quantity",
+            "id": "sept_ice_1990",
+            "label": "September Arctic sea ice extent, 1990",
+            "value": 6140000,
+            "unit": "km2",
+            "approximate": true,
+            "sourceNote": "NSIDC Sea Ice Index v4, September monthly average",
+            "year": 1990
+          },
+          {
+            "kind": "quantity",
+            "id": "sept_ice_1992",
+            "label": "September Arctic sea ice extent, 1992",
+            "value": 7470000,
+            "unit": "km2",
+            "approximate": true,
+            "sourceNote": "NSIDC Sea Ice Index v4, September monthly average",
+            "year": 1992
+          },
+          {
+            "kind": "quantity",
+            "id": "sept_ice_1994",
+            "label": "September Arctic sea ice extent, 1994",
+            "value": 7140000,
+            "unit": "km2",
+            "approximate": true,
+            "sourceNote": "NSIDC Sea Ice Index v4, September monthly average",
+            "year": 1994
+          },
+          {
+            "kind": "quantity",
+            "id": "sept_ice_1996",
+            "label": "September Arctic sea ice extent, 1996",
+            "value": 7580000,
+            "unit": "km2",
+            "approximate": true,
+            "sourceNote": "NSIDC Sea Ice Index v4, September monthly average",
+            "year": 1996
+          },
+          {
+            "kind": "quantity",
+            "id": "sept_ice_1998",
+            "label": "September Arctic sea ice extent, 1998",
+            "value": 6540000,
+            "unit": "km2",
+            "approximate": true,
+            "sourceNote": "NSIDC Sea Ice Index v4, September monthly average",
+            "year": 1998
+          },
+          {
+            "kind": "quantity",
+            "id": "sept_ice_2000",
+            "label": "September Arctic sea ice extent, 2000",
+            "value": 6250000,
+            "unit": "km2",
+            "approximate": true,
+            "sourceNote": "NSIDC Sea Ice Index v4, September monthly average",
+            "year": 2000
+          },
+          {
+            "kind": "quantity",
+            "id": "sept_ice_2002",
+            "label": "September Arctic sea ice extent, 2002",
+            "value": 5830000,
+            "unit": "km2",
+            "approximate": true,
+            "sourceNote": "NSIDC Sea Ice Index v4, September monthly average",
+            "year": 2002
+          },
+          {
+            "kind": "quantity",
+            "id": "sept_ice_2004",
+            "label": "September Arctic sea ice extent, 2004",
+            "value": 5980000,
+            "unit": "km2",
+            "approximate": true,
+            "sourceNote": "NSIDC Sea Ice Index v4, September monthly average",
+            "year": 2004
+          },
+          {
+            "kind": "quantity",
+            "id": "sept_ice_2006",
+            "label": "September Arctic sea ice extent, 2006",
+            "value": 5860000,
+            "unit": "km2",
+            "approximate": true,
+            "sourceNote": "NSIDC Sea Ice Index v4, September monthly average",
+            "year": 2006
+          },
+          {
+            "kind": "quantity",
+            "id": "sept_ice_2008",
+            "label": "September Arctic sea ice extent, 2008",
+            "value": 4690000,
+            "unit": "km2",
+            "approximate": true,
+            "sourceNote": "NSIDC Sea Ice Index v4, September monthly average",
+            "year": 2008
+          },
+          {
+            "kind": "quantity",
+            "id": "sept_ice_2010",
+            "label": "September Arctic sea ice extent, 2010",
+            "value": 4870000,
+            "unit": "km2",
+            "approximate": true,
+            "sourceNote": "NSIDC Sea Ice Index v4, September monthly average",
+            "year": 2010
+          },
+          {
+            "kind": "quantity",
+            "id": "sept_ice_2012",
+            "label": "September Arctic sea ice extent, 2012",
+            "value": 3570000,
+            "unit": "km2",
+            "approximate": true,
+            "sourceNote": "NSIDC Sea Ice Index v4, September monthly average",
+            "year": 2012
+          },
+          {
+            "kind": "quantity",
+            "id": "sept_ice_2014",
+            "label": "September Arctic sea ice extent, 2014",
+            "value": 5220000,
+            "unit": "km2",
+            "approximate": true,
+            "sourceNote": "NSIDC Sea Ice Index v4, September monthly average",
+            "year": 2014
+          },
+          {
+            "kind": "quantity",
+            "id": "sept_ice_2016",
+            "label": "September Arctic sea ice extent, 2016",
+            "value": 4530000,
+            "unit": "km2",
+            "approximate": true,
+            "sourceNote": "NSIDC Sea Ice Index v4, September monthly average",
+            "year": 2016
+          },
+          {
+            "kind": "quantity",
+            "id": "sept_ice_2018",
+            "label": "September Arctic sea ice extent, 2018",
+            "value": 4790000,
+            "unit": "km2",
+            "approximate": true,
+            "sourceNote": "NSIDC Sea Ice Index v4, September monthly average",
+            "year": 2018
+          },
+          {
+            "kind": "quantity",
+            "id": "sept_ice_2020",
+            "label": "September Arctic sea ice extent, 2020",
+            "value": 4000000,
+            "unit": "km2",
+            "approximate": true,
+            "sourceNote": "NSIDC Sea Ice Index v4, September monthly average",
+            "year": 2020
+          },
+          {
+            "kind": "quantity",
+            "id": "sept_ice_2022",
+            "label": "September Arctic sea ice extent, 2022",
+            "value": 4900000,
+            "unit": "km2",
+            "approximate": true,
+            "sourceNote": "NSIDC Sea Ice Index v4, September monthly average",
+            "year": 2022
+          },
+          {
+            "kind": "quantity",
+            "id": "sept_ice_2024",
+            "label": "September Arctic sea ice extent, 2024",
+            "value": 4350000,
+            "unit": "km2",
+            "approximate": true,
+            "sourceNote": "NSIDC Sea Ice Index v4, September monthly average",
+            "year": 2024
+          }
+        ]
+      },
+      "plan": {
+        "template": "line_series",
+        "title": "Arctic sea ice at its summer low",
+        "caption": "September average extent, every other year, from satellite records.",
+        "series": [
+          {
+            "displayName": "September extent",
+            "factIds": [
+              "sept_ice_1980",
+              "sept_ice_1982",
+              "sept_ice_1984",
+              "sept_ice_1986",
+              "sept_ice_1988",
+              "sept_ice_1990",
+              "sept_ice_1992",
+              "sept_ice_1994",
+              "sept_ice_1996",
+              "sept_ice_1998",
+              "sept_ice_2000",
+              "sept_ice_2002",
+              "sept_ice_2004",
+              "sept_ice_2006",
+              "sept_ice_2008",
+              "sept_ice_2010",
+              "sept_ice_2012",
+              "sept_ice_2014",
+              "sept_ice_2016",
+              "sept_ice_2018",
+              "sept_ice_2020",
+              "sept_ice_2022",
+              "sept_ice_2024"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "highest_peak_each_continent",
+      "facts": {
+        "query": "What is the highest mountain on each continent?",
+        "topic": "Highest peak on each continent",
+        "confidence": "high",
+        "explanation": "Each continent's high point is a famous climbing goal. Everest in the Himalayas towers over the rest, the Andes hold the highest peak outside Asia, and Australia's mainland summit is a gentle walk by comparison. Oceania's list often uses Puncak Jaya on New Guinea instead.",
+        "facts": [
+          {
+            "kind": "place",
+            "id": "everest_place",
+            "label": "Mount Everest (Asia)",
+            "lat": 27.9881,
+            "lon": 86.925,
+            "sourceNote": "Peak coordinates, USGS / national mapping agencies"
+          },
+          {
+            "kind": "quantity",
+            "id": "everest_height",
+            "label": "Mount Everest (Asia) height",
+            "value": 8849,
+            "unit": "m",
+            "approximate": false,
+            "sourceNote": "China–Nepal joint survey, 2020",
+            "year": 2020
+          },
+          {
+            "kind": "place",
+            "id": "aconcagua_place",
+            "label": "Aconcagua (South America)",
+            "lat": -32.6532,
+            "lon": -70.0109,
+            "sourceNote": "Peak coordinates, USGS / national mapping agencies"
+          },
+          {
+            "kind": "quantity",
+            "id": "aconcagua_height",
+            "label": "Aconcagua (South America) height",
+            "value": 6961,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Instituto Geográfico Nacional (Argentina)"
+          },
+          {
+            "kind": "place",
+            "id": "denali_place",
+            "label": "Denali (North America)",
+            "lat": 63.0692,
+            "lon": -151.007,
+            "sourceNote": "Peak coordinates, USGS / national mapping agencies"
+          },
+          {
+            "kind": "quantity",
+            "id": "denali_height",
+            "label": "Denali (North America) height",
+            "value": 6190,
+            "unit": "m",
+            "approximate": false,
+            "sourceNote": "USGS / NOAA survey, 2015",
+            "year": 2015
+          },
+          {
+            "kind": "place",
+            "id": "kilimanjaro_place",
+            "label": "Kilimanjaro (Africa)",
+            "lat": -3.0674,
+            "lon": 37.3556,
+            "sourceNote": "Peak coordinates, USGS / national mapping agencies"
+          },
+          {
+            "kind": "quantity",
+            "id": "kilimanjaro_height",
+            "label": "Kilimanjaro (Africa) height",
+            "value": 5895,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Tanzania National Parks"
+          },
+          {
+            "kind": "place",
+            "id": "elbrus_place",
+            "label": "Mount Elbrus (Europe)",
+            "lat": 43.355,
+            "lon": 42.4392,
+            "sourceNote": "Peak coordinates, USGS / national mapping agencies"
+          },
+          {
+            "kind": "quantity",
+            "id": "elbrus_height",
+            "label": "Mount Elbrus (Europe) height",
+            "value": 5642,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Encyclopaedia Britannica"
+          },
+          {
+            "kind": "place",
+            "id": "vinson_place",
+            "label": "Mount Vinson (Antarctica)",
+            "lat": -78.5254,
+            "lon": -85.6171,
+            "sourceNote": "Peak coordinates, USGS / national mapping agencies"
+          },
+          {
+            "kind": "quantity",
+            "id": "vinson_height",
+            "label": "Mount Vinson (Antarctica) height",
+            "value": 4892,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Omega Foundation GPS survey, 2004"
+          },
+          {
+            "kind": "place",
+            "id": "puncak_jaya_place",
+            "label": "Puncak Jaya (Oceania)",
+            "lat": -4.0784,
+            "lon": 137.158,
+            "sourceNote": "Peak coordinates, USGS / national mapping agencies"
+          },
+          {
+            "kind": "quantity",
+            "id": "puncak_jaya_height",
+            "label": "Puncak Jaya (Oceania) height",
+            "value": 4884,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Encyclopaedia Britannica"
+          },
+          {
+            "kind": "place",
+            "id": "kosciuszko_place",
+            "label": "Mount Kosciuszko (mainland Australia)",
+            "lat": -36.4559,
+            "lon": 148.2636,
+            "sourceNote": "Peak coordinates, USGS / national mapping agencies"
+          },
+          {
+            "kind": "quantity",
+            "id": "kosciuszko_height",
+            "label": "Mount Kosciuszko (mainland Australia) height",
+            "value": 2228,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Geoscience Australia"
+          }
+        ]
+      },
+      "plan": {
+        "template": "map_points",
+        "title": "The roof of every continent",
+        "caption": "Dots sized by height above sea level.",
+        "points": [
+          {
+            "placeFactId": "everest_place",
+            "displayName": "Mount Everest",
+            "valueFactId": "everest_height"
+          },
+          {
+            "placeFactId": "aconcagua_place",
+            "displayName": "Aconcagua",
+            "valueFactId": "aconcagua_height"
+          },
+          {
+            "placeFactId": "denali_place",
+            "displayName": "Denali",
+            "valueFactId": "denali_height"
+          },
+          {
+            "placeFactId": "kilimanjaro_place",
+            "displayName": "Kilimanjaro",
+            "valueFactId": "kilimanjaro_height"
+          },
+          {
+            "placeFactId": "elbrus_place",
+            "displayName": "Mount Elbrus",
+            "valueFactId": "elbrus_height"
+          },
+          {
+            "placeFactId": "vinson_place",
+            "displayName": "Mount Vinson",
+            "valueFactId": "vinson_height"
+          },
+          {
+            "placeFactId": "puncak_jaya_place",
+            "displayName": "Puncak Jaya",
+            "valueFactId": "puncak_jaya_height"
+          },
+          {
+            "placeFactId": "kosciuszko_place",
+            "displayName": "Mount Kosciuszko",
+            "valueFactId": "kosciuszko_height"
+          }
+        ]
+      }
+    },
+    {
+      "id": "eiffel_towers_to_challenger_deep",
+      "facts": {
+        "query": "How many Eiffel Towers would it take to reach the bottom of the Mariana Trench?",
+        "topic": "Depth of the Challenger Deep",
+        "confidence": "high",
+        "explanation": "The Challenger Deep, at the southern end of the Mariana Trench in the western Pacific, is the deepest known point in the ocean. Stacking Eiffel Towers tip to base, it would take a whole column of them to reach the seafloor from the surface.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "eiffel",
+            "label": "Eiffel Tower height (with antennas)",
+            "value": 330,
+            "unit": "m",
+            "approximate": false,
+            "sourceNote": "Société d'Exploitation de la Tour Eiffel (official site)",
+            "year": 2022
+          },
+          {
+            "kind": "quantity",
+            "id": "challenger_deep",
+            "label": "Challenger Deep depth below sea level",
+            "value": 10935,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "NOAA, 2021 study of 2020 submersible dives (±6 m)"
+          }
+        ]
+      },
+      "plan": {
+        "template": "pictogram",
+        "title": "Eiffel Towers stacked to the deepest seafloor",
+        "unitFactId": "eiffel",
+        "totalFactId": "challenger_deep",
+        "unitName": "Eiffel Towers",
+        "totalName": "Challenger Deep",
+        "image": "eiffel_tower"
+      }
+    },
+    {
+      "id": "planet_changing_every_second",
+      "facts": {
+        "query": "How fast are the ice sheets melting and forests disappearing?",
+        "topic": "Ice loss, emissions and deforestation",
+        "confidence": "high",
+        "explanation": "Satellites that weigh the ice show Greenland and Antarctica losing ice year after year, adding to sea level rise. Meanwhile fossil fuels release carbon dioxide and forests are cleared at a pace you can watch tick by while reading this page.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "greenland_loss",
+            "label": "Greenland ice sheet mass loss per year",
+            "value": 264000000000,
+            "unit": "t",
+            "approximate": true,
+            "sourceNote": "NASA GRACE and GRACE-FO, average 2002–2025",
+            "year": 2025
+          },
+          {
+            "kind": "quantity",
+            "id": "greenland_period",
+            "label": "One year (Greenland)",
+            "value": 1,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "Period of the NASA average"
+          },
+          {
+            "kind": "quantity",
+            "id": "antarctica_loss",
+            "label": "Antarctic ice sheet mass loss per year",
+            "value": 135000000000,
+            "unit": "t",
+            "approximate": true,
+            "sourceNote": "NASA GRACE and GRACE-FO, average 2002–2025",
+            "year": 2025
+          },
+          {
+            "kind": "quantity",
+            "id": "antarctica_period",
+            "label": "One year (Antarctica)",
+            "value": 1,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "Period of the NASA average"
+          },
+          {
+            "kind": "quantity",
+            "id": "fossil_co2",
+            "label": "Fossil CO₂ emitted per year",
+            "value": 38100000000,
+            "unit": "t",
+            "approximate": true,
+            "sourceNote": "Global Carbon Budget 2025, projection for 2025",
+            "year": 2025
+          },
+          {
+            "kind": "quantity",
+            "id": "co2_period",
+            "label": "One year (emissions)",
+            "value": 1,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "Period of the Global Carbon Budget figure"
+          },
+          {
+            "kind": "quantity",
+            "id": "deforestation",
+            "label": "Forest cleared per year (gross deforestation)",
+            "value": 109000,
+            "unit": "km2",
+            "approximate": true,
+            "sourceNote": "FAO Global Forest Resources Assessment 2025, average 2015–2025",
+            "year": 2025
+          },
+          {
+            "kind": "quantity",
+            "id": "forest_period",
+            "label": "One year (deforestation)",
+            "value": 1,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "Period of the FAO average"
+          }
+        ]
+      },
+      "plan": {
+        "template": "rate_counter",
+        "title": "What the planet loses while you watch",
+        "caption": "Counting up from the moment this page opened, at recent average rates.",
+        "rows": [
+          {
+            "label": "Greenland ice lost",
+            "aFactId": "greenland_loss",
+            "bFactId": "greenland_period"
+          },
+          {
+            "label": "Antarctic ice lost",
+            "aFactId": "antarctica_loss",
+            "bFactId": "antarctica_period"
+          },
+          {
+            "label": "Fossil CO₂ emitted",
+            "aFactId": "fossil_co2",
+            "bFactId": "co2_period"
+          },
+          {
+            "label": "Forest cleared",
+            "aFactId": "deforestation",
+            "bFactId": "forest_period"
+          }
+        ]
+      }
+    }
+  ]
+}

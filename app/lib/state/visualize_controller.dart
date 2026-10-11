@@ -6,8 +6,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../data/api_client.dart';
 import '../data/api_key_store.dart';
 import '../data/explain_backend.dart';
+import '../data/library_repository.dart';
 import '../data/on_device_backend.dart';
 import '../data/visualize_repository.dart';
+import 'library.dart';
 
 /// What a result screen is showing: a fresh question or a shared link.
 sealed class ResultRequest {
@@ -34,6 +36,19 @@ final class SharedRequest extends ResultRequest {
 
   @override
   int get hashCode => payload.hashCode;
+}
+
+/// A ready-made visualization from the bundled library.
+final class LibraryRequest extends ResultRequest {
+  const LibraryRequest(this.category, this.id);
+  final String category;
+  final String id;
+
+  @override
+  bool operator ==(Object other) => other is LibraryRequest && other.category == category && other.id == id;
+
+  @override
+  int get hashCode => Object.hash(category, id);
 }
 
 sealed class VisualizeState {
@@ -110,6 +125,21 @@ class VisualizeController extends Notifier<VisualizeState> {
       case QueryRequest(:final query):
         scheduleMicrotask(() => _explain(query));
         return const VisualizeLoading(VisualizeStage.findingFacts);
+      case LibraryRequest(:final category, :final id):
+        scheduleMicrotask(() => _openLibrary(category, id));
+        return const VisualizeLoading(VisualizeStage.rendering);
+    }
+  }
+
+  Future<void> _openLibrary(String category, String id) async {
+    try {
+      final entry = (await ref.read(libraryProvider.future)).find(category, id);
+      if (!ref.mounted) return;
+      state = entry == null
+          ? const VisualizeFailure("This library entry isn't available.", canRetry: false)
+          : VisualizeSuccess(entry.visualization);
+    } catch (_) {
+      if (ref.mounted) state = const VisualizeFailure("The library couldn't be loaded.", canRetry: false);
     }
   }
 

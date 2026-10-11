@@ -82,6 +82,59 @@
     };
   }
 
+  /**
+   * The unit an axis should count in: the facts' own unit when values read
+   * well in it (1 to 99,999), otherwise the best rung of the ladder.
+   */
+  function pickUnit(units, ref) {
+    const pref = units.preferred;
+    if (pref && ref / pref.toSi >= 1 && ref / pref.toSi < 1e5) return pref;
+    let best = units.ladder[0];
+    for (const u of units.ladder) if (Math.abs(ref) / u.toSi >= 1) best = u;
+    return best;
+  }
+
+  const unitFmt = (u) => (v) => {
+    const n = fmtNumber(v / u.toSi);
+    if (!u.symbol) return n;
+    if (u.symbol === '×') return n + '×';
+    if (u.symbol === '%') return n + '%';
+    return `${n} ${u.symbol}`;
+  };
+
+  /**
+   * A linear axis whose ticks are round numbers in the display unit. Starts
+   * at zero unless `fromZero` is false and the values sit far above it.
+   */
+  function unitAxis(units, lo, hi, count = 4, fromZero = true) {
+    const u = pickUnit(units, hi);
+    const a = fromZero || lo < hi * 0.4 ? 0 : lo / u.toSi, b = hi / u.toSi;
+    const t = d3.ticks(a, b, count);
+    const step = t.length > 1 ? t[1] - t[0] : (b - a) || b || 1;
+    const start = Math.floor(a / step + 1e-9) * step;
+    const end = Math.ceil(b / step - 1e-9) * step || step;
+    const ticks = d3.range(start, end + step / 2, step).map((v) => v * u.toSi);
+    return { min: start * u.toSi, max: end * u.toSi, ticks, fmt: unitFmt(u) };
+  }
+
+  /**
+   * Log-axis ticks. Metric ladders take powers of ten in the base unit, each
+   * shown in its best unit (1 cm, 10 km); other units (years, km/h) take
+   * powers of ten in one display unit, so ticks read 1, 10, 100 years.
+   */
+  function logAxis(units, lo, hi, max = 6) {
+    const metric = ['length', 'mass', 'area', 'volume'].includes(units.dimension);
+    const u = metric ? { symbol: '', toSi: 1 } : pickUnit(units, Math.sqrt(lo * hi));
+    const a = Math.floor(Math.log10(lo / u.toSi)), b = Math.ceil(Math.log10(hi / u.toSi));
+    const stepE = Math.max(1, Math.ceil((b - a) / max));
+    const ticks = [];
+    for (let e = a; e <= b; e += stepE) {
+      const v = Math.pow(10, e) * u.toSi;
+      if (v >= lo * 0.999 && v <= hi * 1.001) ticks.push(v);
+    }
+    return { ticks, fmt: metric ? (v) => fmtSi(v, units) : unitFmt(u) };
+  }
+
   /** 1, 2 or 5 × 10ⁿ near v. */
   function niceNum(v) {
     if (!(v > 0)) return 0;
@@ -756,8 +809,11 @@
     const { svg, w: W, h: H } = layout();
     svg.attr('aria-label', `${p.title}. ${bars.map((b) => `${b.name}: ${b.display}`).join('; ')}`);
     const max = d3.max(bars, (b) => b.valueSi);
-    const fmt = axisFormatter(p.units, max);
-    const horizontal = p.orientation === 'horizontal';
+    const axis = unitAxis(p.units, 0, max, 3);
+    const fmt = axis.fmt;
+    // Upright columns only when every label word fits under its column.
+    const longestWord = Math.max(...bars.flatMap((b) => b.name.split(/\s+/)).map((w) => textWidth(svg, w, 'label-name')));
+    const horizontal = p.orientation === 'horizontal' || longestWord > ((W - 32) / n) * 0.92;
     const hasIcons = bars.some((b) => b.image);
     const obstacles = [];
     let bounds;
@@ -768,11 +824,12 @@
       const rowH = Math.min(84, (H - m.t - m.b) / n);
       const top = m.t + Math.max(0, (H - m.t - m.b - rowH * n) / 2.4);
       const x = d3.scaleLinear().domain([0, max]).range([m.l, W - m.r]);
-      const ticks = x.ticks(3).filter((t) => t <= max);
+      const ticks = axis.ticks.filter((t) => t <= max);
       svg.append('g').attr('class', 'grid').selectAll('line').data(ticks).join('line')
         .attr('x1', x).attr('x2', x).attr('y1', top - 4).attr('y2', top + rowH * n - 6);
       svg.append('g').attr('class', 'axis').attr('transform', `translate(0,${top - 8})`)
-        .call(d3.axisTop(x).tickValues(ticks).tickSize(0).tickFormat(fmt));
+        .call(d3.axisTop(x).tickValues(ticks).tickSize(0).tickFormat(fmt))
+        .call((g) => { const t = g.selectAll('.tick text').nodes(); if (t.length) d3.select(t[0]).attr('text-anchor', 'start'); });
       const barH = Math.max(12, Math.min(24, rowH * 0.3));
       const iconW = hasIcons ? 38 : 0;
       svg.selectAll('g.row').data(bars).join('g').attr('class', 'row')
@@ -1015,6 +1072,16 @@
     resizeTimer = setTimeout(() => { if (state.payload) render(state.payload, Object.assign({}, state.options, { reduceMotion: true })); }, 150);
   });
 
-  window.FactvizViz = { render, replay, fmtNumber, fmtSi };
-  post({ type: 'ready' });
+  // Shared toolkit for the extended chart library (viz_extra.js).
+  const kit = {
+    root, state, PALETTE, INK, INK2, INK3, RULE, PAPER, ACCENT, ICONS,
+    post, fmtNumber, fmtSi, axisFormatter, niceNum, clamp, reduce, dur, track, button, layout,
+    textWidth, silhouette, placeSilhouette, annotate, wrapText, wrapCentered, icon, yearLabel,
+    pickUnit, unitFmt, unitAxis, logAxis,
+  };
+  const register = (name, fn) => { renderers[name] = fn; };
+
+  window.FactvizViz = { render, replay, fmtNumber, fmtSi, kit, register };
+  // Announce readiness after viz_extra.js has registered its charts.
+  window.addEventListener('load', () => post({ type: 'ready' }));
 })();

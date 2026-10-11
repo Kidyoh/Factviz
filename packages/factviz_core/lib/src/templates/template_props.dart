@@ -5,6 +5,8 @@ import '../plan/plan.dart';
 import '../units/format.dart';
 import '../units/units.dart';
 
+part 'template_props_extra.dart';
+
 /// Typed, validated input for one render template. Produced only by
 /// [PlanResolver]; every number here traces back to a fact.
 sealed class TemplateProps {
@@ -25,6 +27,7 @@ class ResolvedQuantity {
     required this.unit,
     required this.approximate,
     required this.sourceNote,
+    this.year,
   });
 
   final String factId;
@@ -33,6 +36,9 @@ class ResolvedQuantity {
   final Unit unit;
   final bool approximate;
   final String sourceNote;
+
+  /// When the value applies, if the fact says.
+  final int? year;
 
   double get valueSi => unit.toBase(value);
   String get displayValue => formatQuantity(value, unit, approximate: approximate);

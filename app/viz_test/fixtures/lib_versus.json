@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "template": "versus",
+  "title": "Earth and Mars, head to head",
+  "annotations": [],
+  "aName": "Earth",
+  "bName": "Mars",
+  "aImage": {
+    "key": "earth",
+    "kind": "photo",
+    "src": "img/earth.webp",
+    "aspect": 1.0,
+    "disc": 1.0,
+    "stretch": false
+  },
+  "bImage": {
+    "key": "mars",
+    "kind": "photo",
+    "src": "img/mars.webp",
+    "aspect": 1.0,
+    "disc": 1.0,
+    "stretch": false
+  },
+  "rows": [
+    {
+      "label": "Diameter",
+      "a": {
+        "valueSi": 12756000.0,
+        "display": "12,756 km",
+        "source": "NASA Planetary Fact Sheet (NSSDCA, 2025)"
+      },
+      "b": {
+        "valueSi": 6792000.0,
+        "display": "6,792 km",
+        "source": "NASA Planetary Fact Sheet (NSSDCA, 2025)"
+      },
+      "winner": "a",
+      "ratio": "1.9×"
+    },
+    {
+      "label": "Mass",
+      "a": {
+        "valueSi": 5.97e+24,
+        "display": "5.97 × 10²⁴ kg",
+        "source": "NASA Planetary Fact Sheet (NSSDCA, 2025)"
+      },
+      "b": {
+        "valueSi": 6.42e+23,
+        "display": "6.42 × 10²³ kg",
+        "source": "NASA Planetary Fact Sheet (NSSDCA, 2025)"
+      },
+      "winner": "a",
+      "ratio": "9.3×"
+    },
+    {
+      "label": "Length of a day",
+      "a": {
+        "valueSi": 86400.0,
+        "display": "24 h",
+        "source": "NASA Planetary Fact Sheet (NSSDCA, 2025)"
+      },
+      "b": {
+        "valueSi": 88920.0,
+        "display": "24.7 h",
+        "source": "NASA Planetary Fact Sheet (NSSDCA, 2025)"
+      },
+      "winner": "b"
+    },
+    {
+      "label": "Length of a year",
+      "a": {
+        "valueSi": 31553280.0,
+        "display": "365 days",
+        "source": "NASA Planetary Fact Sheet (NSSDCA, 2025)"
+      },
+      "b": {
+        "valueSi": 59356800.0,
+        "display": "687 days",
+        "source": "NASA Planetary Fact Sheet (NSSDCA, 2025)"
+      },
+      "winner": "b",
+      "ratio": "1.9×"
+    },
+    {
+      "label": "Distance from Sun",
+      "a": {
+        "valueSi": 149600000000.0,
+        "display": "150 million km",
+        "source": "NASA Planetary Fact Sheet (NSSDCA, 2025)"
+      },
+      "b": {
+        "valueSi": 228000000000.0,
+        "display": "228 million km",
+        "source": "NASA Planetary Fact Sheet (NSSDCA, 2025)"
+      },
+      "winner": "b",
+      "ratio": "1.5×"
+    },
+    {
+      "label": "Moons",
+      "a": {
+        "valueSi": 1.0,
+        "display": "1",
+        "source": "NASA Planetary Fact Sheet (NSSDCA, 2025)"
+      },
+      "b": {
+        "valueSi": 2.0,
+        "display": "2",
+        "source": "NASA Planetary Fact Sheet (NSSDCA, 2025)"
+      },
+      "winner": "b",
+      "ratio": "2×"
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "version": 1,
+  "template": "lollipop",
+  "title": "How long a year lasts on each planet",
+  "caption": "One trip around the Sun, in Earth days (log scale).",
+  "annotations": [
+    {
+      "text": "Mercury to Pluto (dwarf planet): 3 orders of magnitude",
+      "anchor": "item",
+      "index": 0
+    }
+  ],
+  "scale": "log",
+  "units": {
+    "dimension": "duration",
+    "preferred": {
+      "symbol": "days",
+      "toSi": 86400.0
+    },
+    "ladder": [
+      {
+        "symbol": "s",
+        "toSi": 1.0
+      },
+      {
+        "symbol": "min",
+        "toSi": 60.0
+      },
+      {
+        "symbol": "h",
+        "toSi": 3600.0
+      },
+      {
+        "symbol": "days",
+        "toSi": 86400.0
+      },
+      {
+        "symbol": "years",
+        "toSi": 31557600.0
+      }
+    ]
+  },
+  "items": [
+    {
+      "name": "Pluto (dwarf planet)",
+      "valueSi": 7824384000.0,
+      "display": "90,560 days",
+      "source": "NASA Planetary Fact Sheet, sidereal orbital period",
+      "share": 0.4587827565366157,
+      "shareDisplay": "46%",
+      "image": {
+        "key": "pluto",
+        "kind": "photo",
+        "src": "img/pluto.webp",
+        "aspect": 1.0,
+        "disc": 1.0,
+        "stretch": false
+      }
+    },
+    {
+      "name": "Neptune",
+      "valueSi": 5166720000.0,
+      "display": "59,800 days",
+      "source": "NASA Planetary Fact Sheet, sidereal orbital period",
+      "share": 0.30295062766000025,
+      "shareDisplay": "30%",
+      "image": {
+        "key": "neptune",
+        "kind": "photo",
+        "src": "img/neptune.webp",
+        "aspect": 1.0,
+        "disc": 1.0,
+        "stretch": false
+      }
+    },
+    {
+      "name": "Uranus",
+      "valueSi": 2642889600.0,
+      "display": "30,589 days",
+      "source": "NASA Planetary Fact Sheet, sidereal orbital period",
+      "share": 0.15496583193130012,
+      "shareDisplay": "15%",
+      "image": {
+        "key": "uranus",
+        "kind": "photo",
+        "src": "img/uranus.webp",
+        "aspect": 1.0,
+        "disc": 1.0,
+        "stretch": false
+      }
+    },
+    {
+      "name": "Saturn",
+      "valueSi": 928540800.0,
+      "display": "10,747 days",
+      "source": "NASA Planetary Fact Sheet, sidereal orbital period",
+      "share": 0.054444989890669274,
+      "shareDisplay": "5.4%",
+      "image": {
+        "key": "saturn",
+        "kind": "photo",
+        "src": "img/saturn.webp",
+        "aspect": 2.45,
+        "disc": 0.441,
+        "stretch": false
+      }
+    },
+    {
+      "name": "Jupiter",
+      "valueSi": 374198400.0,
+      "display": "4,331 days",
+      "source": "NASA Planetary Fact Sheet, sidereal orbital period",
+      "share": 0.0219411232173154,
+      "shareDisplay": "2.2%",
+      "image": {
+        "key": "jupiter",
+        "kind": "photo",
+        "src": "img/jupiter.webp",
+        "aspect": 1.0,
+        "disc": 1.0,
+        "stretch": false
+      }
+    },
+    {
+      "name": "Mars",
+      "valueSi": 59356800.0,
+      "display": "687 days",
+      "source": "NASA Planetary Fact Sheet, sidereal orbital period",
+      "share": 0.003480385973284618,
+      "shareDisplay": "0.3%",
+      "image": {
+        "key": "mars",
+        "kind": "photo",
+        "src": "img/mars.webp",
+        "aspect": 1.0,
+        "disc": 1.0,
+        "stretch": false
+      }
+    },
+    {
+      "name": "Earth",
+      "valueSi": 31553280.0,
+      "display": "365 days",
+      "source": "NASA Planetary Fact Sheet, sidereal orbital period",
+      "share": 0.0018501265756092323,
+      "shareDisplay": "0.2%",
+      "image": {
+        "key": "earth",
+        "kind": "photo",
+        "src": "img/earth.webp",
+        "aspect": 1.0,
+        "disc": 1.0,
+        "stretch": false
+      }
+    },
+    {
+      "name": "Venus",
+      "valueSi": 19414080.0,
+      "display": "225 days",
+      "source": "NASA Planetary Fact Sheet, sidereal orbital period",
+      "share": 0.0011383445825284624,
+      "shareDisplay": "0.1%",
+      "image": {
+        "key": "venus",
+        "kind": "photo",
+        "src": "img/venus.webp",
+        "aspect": 1.0,
+        "disc": 1.0,
+        "stretch": false
+      }
+    },
+    {
+      "name": "Mercury",
+      "valueSi": 7603200.0,
+      "display": "88 days",
+      "source": "NASA Planetary Fact Sheet, sidereal orbital period",
+      "share": 0.0004458136326769234,
+      "shareDisplay": "<0.1%",
+      "image": {
+        "key": "mercury",
+        "kind": "photo",
+        "src": "img/mercury.webp",
+        "aspect": 1.0,
+        "disc": 1.0,
+        "stretch": false
+      }
+    }
+  ]
+}

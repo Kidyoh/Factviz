@@ -9,6 +9,10 @@
   "defaultScale": "linear",
   "units": {
     "dimension": "money",
+    "preferred": {
+      "symbol": "USD",
+      "toSi": 1.0
+    },
     "ladder": [
       {
         "symbol": "USD",

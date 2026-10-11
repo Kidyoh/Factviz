@@ -1,0 +1,1197 @@
+{
+  "category": "technology",
+  "title": "Technology",
+  "entries": [
+    {
+      "id": "moores_law",
+      "facts": {
+        "query": "How fast has the number of transistors on a chip grown?",
+        "topic": "Moore's law",
+        "confidence": "high",
+        "explanation": "In the early days of microchips, Gordon Moore noticed that the number of transistors that fit on a chip kept doubling at a steady pace. Starting from Intel's first microprocessor and doubling every two years lands remarkably close to the biggest chips made decades later.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "intel_4004",
+            "label": "Transistors on the Intel 4004, the first commercial microprocessor",
+            "value": 2300,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "Intel Corporation, Intel 4004 product history",
+            "year": 1971
+          },
+          {
+            "kind": "quantity",
+            "id": "doubling_factor",
+            "label": "Growth per two-year period under Moore's law",
+            "value": 2,
+            "unit": "ratio",
+            "approximate": false,
+            "sourceNote": "Gordon Moore, IEEE International Electron Devices Meeting, 1975 (revised doubling period)"
+          },
+          {
+            "kind": "quantity",
+            "id": "doublings",
+            "label": "Two-year doublings from 1971 to 2021",
+            "value": 25,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "Derived: fifty years at one doubling every two years"
+          },
+          {
+            "kind": "quantity",
+            "id": "apple_m1_max",
+            "label": "Transistors on the Apple M1 Max chip",
+            "value": 57000000000,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "Apple Inc. press release, October 2021",
+            "year": 2021
+          }
+        ]
+      },
+      "plan": {
+        "template": "exponential_growth",
+        "title": "Moore's law: transistors keep doubling",
+        "caption": "Doubling the Intel 4004 every two years lands close to a top chip of fifty years later.",
+        "initialFactId": "intel_4004",
+        "factorFactId": "doubling_factor",
+        "stepsFactId": "doublings",
+        "targetFactId": "apple_m1_max",
+        "stepLabel": "doubling",
+        "defaultScale": "log"
+      }
+    },
+    {
+      "id": "internet_users_over_time",
+      "facts": {
+        "query": "How many people use the Internet, and how fast has that grown?",
+        "topic": "Internet users worldwide",
+        "confidence": "high",
+        "explanation": "The number of people online has climbed every single year in these estimates, as mobile phones and cheaper data brought the Internet to billions. Growth jumped during the pandemic years, when work, school and shopping moved online. Even so, a large share of humanity is still offline.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "users_2005",
+            "label": "People using the Internet worldwide, 2005",
+            "value": 1023600000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "ITU Key ICT indicators, world aggregates (November 2025 estimates)",
+            "year": 2005
+          },
+          {
+            "kind": "quantity",
+            "id": "users_2006",
+            "label": "People using the Internet worldwide, 2006",
+            "value": 1147100000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "ITU Key ICT indicators, world aggregates (November 2025 estimates)",
+            "year": 2006
+          },
+          {
+            "kind": "quantity",
+            "id": "users_2007",
+            "label": "People using the Internet worldwide, 2007",
+            "value": 1366100000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "ITU Key ICT indicators, world aggregates (November 2025 estimates)",
+            "year": 2007
+          },
+          {
+            "kind": "quantity",
+            "id": "users_2008",
+            "label": "People using the Internet worldwide, 2008",
+            "value": 1555300000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "ITU Key ICT indicators, world aggregates (November 2025 estimates)",
+            "year": 2008
+          },
+          {
+            "kind": "quantity",
+            "id": "users_2009",
+            "label": "People using the Internet worldwide, 2009",
+            "value": 1749600000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "ITU Key ICT indicators, world aggregates (November 2025 estimates)",
+            "year": 2009
+          },
+          {
+            "kind": "quantity",
+            "id": "users_2010",
+            "label": "People using the Internet worldwide, 2010",
+            "value": 1993300000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "ITU Key ICT indicators, world aggregates (November 2025 estimates)",
+            "year": 2010
+          },
+          {
+            "kind": "quantity",
+            "id": "users_2011",
+            "label": "People using the Internet worldwide, 2011",
+            "value": 2191600000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "ITU Key ICT indicators, world aggregates (November 2025 estimates)",
+            "year": 2011
+          },
+          {
+            "kind": "quantity",
+            "id": "users_2012",
+            "label": "People using the Internet worldwide, 2012",
+            "value": 2396500000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "ITU Key ICT indicators, world aggregates (November 2025 estimates)",
+            "year": 2012
+          },
+          {
+            "kind": "quantity",
+            "id": "users_2013",
+            "label": "People using the Internet worldwide, 2013",
+            "value": 2570200000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "ITU Key ICT indicators, world aggregates (November 2025 estimates)",
+            "year": 2013
+          },
+          {
+            "kind": "quantity",
+            "id": "users_2014",
+            "label": "People using the Internet worldwide, 2014",
+            "value": 2758500000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "ITU Key ICT indicators, world aggregates (November 2025 estimates)",
+            "year": 2014
+          },
+          {
+            "kind": "quantity",
+            "id": "users_2015",
+            "label": "People using the Internet worldwide, 2015",
+            "value": 2975000000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "ITU Key ICT indicators, world aggregates (November 2025 estimates)",
+            "year": 2015
+          },
+          {
+            "kind": "quantity",
+            "id": "users_2016",
+            "label": "People using the Internet worldwide, 2016",
+            "value": 3288700000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "ITU Key ICT indicators, world aggregates (November 2025 estimates)",
+            "year": 2016
+          },
+          {
+            "kind": "quantity",
+            "id": "users_2017",
+            "label": "People using the Internet worldwide, 2017",
+            "value": 3538600000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "ITU Key ICT indicators, world aggregates (November 2025 estimates)",
+            "year": 2017
+          },
+          {
+            "kind": "quantity",
+            "id": "users_2018",
+            "label": "People using the Internet worldwide, 2018",
+            "value": 3817000000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "ITU Key ICT indicators, world aggregates (November 2025 estimates)",
+            "year": 2018
+          },
+          {
+            "kind": "quantity",
+            "id": "users_2019",
+            "label": "People using the Internet worldwide, 2019",
+            "value": 4201300000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "ITU Key ICT indicators, world aggregates (November 2025 estimates)",
+            "year": 2019
+          },
+          {
+            "kind": "quantity",
+            "id": "users_2020",
+            "label": "People using the Internet worldwide, 2020",
+            "value": 4733300000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "ITU Key ICT indicators, world aggregates (November 2025 estimates)",
+            "year": 2020
+          },
+          {
+            "kind": "quantity",
+            "id": "users_2021",
+            "label": "People using the Internet worldwide, 2021",
+            "value": 5067000000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "ITU Key ICT indicators, world aggregates (November 2025 estimates)",
+            "year": 2021
+          },
+          {
+            "kind": "quantity",
+            "id": "users_2022",
+            "label": "People using the Internet worldwide, 2022",
+            "value": 5368700000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "ITU Key ICT indicators, world aggregates (November 2025 estimates)",
+            "year": 2022
+          },
+          {
+            "kind": "quantity",
+            "id": "users_2023",
+            "label": "People using the Internet worldwide, 2023",
+            "value": 5594000000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "ITU Key ICT indicators, world aggregates (November 2025 estimates)",
+            "year": 2023
+          },
+          {
+            "kind": "quantity",
+            "id": "users_2024",
+            "label": "People using the Internet worldwide, 2024",
+            "value": 5804800000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "ITU Key ICT indicators, world aggregates (November 2025 estimates)",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "users_2025",
+            "label": "People using the Internet worldwide, 2025",
+            "value": 6047400000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "ITU Key ICT indicators, world aggregates (November 2025 estimates)",
+            "year": 2025
+          }
+        ]
+      },
+      "plan": {
+        "template": "line_series",
+        "title": "People using the Internet worldwide",
+        "caption": "International Telecommunication Union estimates of individuals using the Internet.",
+        "series": [
+          {
+            "displayName": "Internet users",
+            "factIds": [
+              "users_2005",
+              "users_2006",
+              "users_2007",
+              "users_2008",
+              "users_2009",
+              "users_2010",
+              "users_2011",
+              "users_2012",
+              "users_2013",
+              "users_2014",
+              "users_2015",
+              "users_2016",
+              "users_2017",
+              "users_2018",
+              "users_2019",
+              "users_2020",
+              "users_2021",
+              "users_2022",
+              "users_2023",
+              "users_2024",
+              "users_2025"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "technology_in_one_day",
+      "facts": {
+        "query": "If the history of technology were squeezed into one day, when would computers appear?",
+        "topic": "History of technology in one day",
+        "confidence": "high",
+        "explanation": "Squeeze the whole story of human technology, from the first chipped stones to the smartphone, into a single day ending at midnight. Stone tools fill almost the entire day; writing and the wheel arrive only in the final minutes, and every electronic invention crowds into the last fraction of a second.",
+        "facts": [
+          {
+            "kind": "event",
+            "id": "stone_tools",
+            "label": "Oldest known stone tools",
+            "year": -3300000,
+            "description": "Hominins at Lomekwi, Kenya, knap the oldest stone tools yet found, about 3.3 million years ago.",
+            "sourceNote": "Harmand et al., Nature, 2015 (Lomekwi 3 site, Kenya)"
+          },
+          {
+            "kind": "event",
+            "id": "wheel",
+            "label": "The wheel",
+            "year": -3500,
+            "description": "Wheels appear in Mesopotamia, first for pottery and soon after for carts, around 3500 BCE.",
+            "sourceNote": "Encyclopaedia Britannica, history of technology"
+          },
+          {
+            "kind": "event",
+            "id": "writing",
+            "label": "Writing",
+            "year": -3200,
+            "description": "Sumerian scribes in Mesopotamia begin writing in cuneiform around 3200 BCE.",
+            "sourceNote": "Encyclopaedia Britannica, history of technology"
+          },
+          {
+            "kind": "event",
+            "id": "printing_press",
+            "label": "Gutenberg's printing press",
+            "year": 1440,
+            "description": "Johannes Gutenberg develops movable-type printing in Mainz around 1440.",
+            "sourceNote": "Encyclopaedia Britannica, history of technology"
+          },
+          {
+            "kind": "event",
+            "id": "steam_engine",
+            "label": "Newcomen steam engine",
+            "year": 1712,
+            "description": "Thomas Newcomen's atmospheric engine starts pumping water from a mine in England.",
+            "sourceNote": "Encyclopaedia Britannica, history of technology"
+          },
+          {
+            "kind": "event",
+            "id": "telephone",
+            "label": "Telephone patented",
+            "year": 1876,
+            "description": "Alexander Graham Bell is granted his telephone patent.",
+            "sourceNote": "US Patent 174,465; Library of Congress",
+            "month": 3,
+            "day": 7
+          },
+          {
+            "kind": "event",
+            "id": "eniac",
+            "label": "ENIAC unveiled",
+            "year": 1946,
+            "description": "ENIAC, the first general-purpose electronic computer, is shown to the public in Philadelphia.",
+            "sourceNote": "Smithsonian Institution; University of Pennsylvania",
+            "month": 2,
+            "day": 15
+          },
+          {
+            "kind": "event",
+            "id": "transistor",
+            "label": "Transistor invented",
+            "year": 1947,
+            "description": "Bardeen, Brattain and Shockley demonstrate the first transistor at Bell Labs.",
+            "sourceNote": "Nokia Bell Labs history; Nobel Prize in Physics 1956",
+            "month": 12,
+            "day": 23
+          },
+          {
+            "kind": "event",
+            "id": "microprocessor",
+            "label": "First microprocessor",
+            "year": 1971,
+            "description": "Intel announces the 4004, the first commercial single-chip microprocessor.",
+            "sourceNote": "Intel Corporation, Intel 4004 product history",
+            "month": 11,
+            "day": 15
+          },
+          {
+            "kind": "event",
+            "id": "www",
+            "label": "World Wide Web proposed",
+            "year": 1989,
+            "description": "Tim Berners-Lee proposes the World Wide Web at CERN.",
+            "sourceNote": "CERN, history of the Web",
+            "month": 3
+          },
+          {
+            "kind": "event",
+            "id": "iphone",
+            "label": "iPhone goes on sale",
+            "year": 2007,
+            "description": "Apple's first iPhone goes on sale in the United States.",
+            "sourceNote": "Apple Inc. press release, June 2007",
+            "month": 6,
+            "day": 29
+          }
+        ]
+      },
+      "plan": {
+        "template": "cosmic_clock",
+        "title": "The history of technology in one day",
+        "caption": "From the first stone tools to the smartphone; now is midnight.",
+        "eventFactIds": [
+          "stone_tools",
+          "wheel",
+          "writing",
+          "printing_press",
+          "steam_engine",
+          "telephone",
+          "eniac",
+          "transistor",
+          "microprocessor",
+          "www",
+          "iphone"
+        ]
+      }
+    },
+    {
+      "id": "rocket_to_orbit",
+      "facts": {
+        "query": "How does a rocket reach orbit?",
+        "topic": "How a rocket reaches orbit",
+        "confidence": "high",
+        "explanation": "Getting to orbit is less about going up than about going sideways fast enough to keep falling around the Earth instead of back onto it. A rocket climbs out of the thick lower atmosphere, then tips over and spends most of its fuel building horizontal speed, dropping empty stages along the way.",
+        "facts": [
+          {
+            "kind": "step",
+            "id": "liftoff",
+            "label": "Liftoff",
+            "order": 1,
+            "title": "Liftoff",
+            "description": "The engines burn propellant and push exhaust downward; once thrust exceeds the rocket's weight, it rises off the pad.",
+            "sourceNote": "NASA Glenn Research Center, Beginner's Guide to Rockets"
+          },
+          {
+            "kind": "step",
+            "id": "gravity_turn",
+            "label": "Gravity turn",
+            "order": 2,
+            "title": "Pitch over",
+            "description": "Shortly after clearing the tower, the rocket tilts and lets gravity gradually bend its path toward the horizontal.",
+            "sourceNote": "NASA, launch vehicle ascent trajectory guides"
+          },
+          {
+            "kind": "step",
+            "id": "max_q",
+            "label": "Maximum dynamic pressure",
+            "order": 3,
+            "title": "Max Q",
+            "description": "Air pressure on the speeding rocket peaks as it climbs through the lower atmosphere; engines are often throttled back to limit stress.",
+            "sourceNote": "NASA Space Shuttle mission ascent summaries"
+          },
+          {
+            "kind": "step",
+            "id": "staging",
+            "label": "Stage separation",
+            "order": 4,
+            "title": "Staging",
+            "description": "The first stage burns out and drops away so the rocket no longer carries its empty tanks; the upper stage ignites.",
+            "sourceNote": "NASA Glenn Research Center, Beginner's Guide to Rockets"
+          },
+          {
+            "kind": "step",
+            "id": "fairing",
+            "label": "Fairing jettison",
+            "order": 5,
+            "title": "Nose cone opens",
+            "description": "Once above most of the air, the protective fairing around the payload splits off to save weight.",
+            "sourceNote": "NASA Launch Services Program, mission overviews"
+          },
+          {
+            "kind": "step",
+            "id": "orbital_speed",
+            "label": "Building orbital speed",
+            "order": 6,
+            "title": "Go sideways, fast",
+            "description": "The upper stage burns almost horizontally until the vehicle is fast enough that the ground curves away as quickly as it falls.",
+            "sourceNote": "NASA, What is an orbit? (NASA Knows)"
+          },
+          {
+            "kind": "step",
+            "id": "cutoff",
+            "label": "Engine cutoff and payload release",
+            "order": 7,
+            "title": "Orbit",
+            "description": "The engine shuts down on the planned orbit and the satellite or spacecraft separates to begin its mission.",
+            "sourceNote": "NASA Launch Services Program, mission overviews"
+          }
+        ]
+      },
+      "plan": {
+        "template": "process_steps",
+        "title": "How a rocket reaches orbit",
+        "stepFactIds": [
+          "liftoff",
+          "gravity_turn",
+          "max_q",
+          "staging",
+          "fairing",
+          "orbital_speed",
+          "cutoff"
+        ],
+        "autoplayMs": 4000,
+        "loop": false
+      }
+    },
+    {
+      "id": "concorde_vs_747",
+      "facts": {
+        "query": "How did Concorde compare with a Boeing 747?",
+        "topic": "Concorde vs Boeing 747",
+        "confidence": "high",
+        "explanation": "Concorde and the jumbo jet entered service at almost the same time but took opposite bets. Concorde flew far faster than sound, high in the stratosphere, with a small cabin, while the jumbo jet carried several times as many people more slowly and far more cheaply.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "concorde_speed",
+            "label": "Concorde maximum cruising speed",
+            "value": 2179,
+            "unit": "km/h",
+            "approximate": false,
+            "sourceNote": "British Airways Concorde technical specifications; Airbus heritage"
+          },
+          {
+            "kind": "quantity",
+            "id": "b747_speed",
+            "label": "Boeing 747-400 typical cruising speed",
+            "value": 913,
+            "unit": "km/h",
+            "approximate": true,
+            "sourceNote": "Boeing 747-400 airport planning document"
+          },
+          {
+            "kind": "quantity",
+            "id": "concorde_pax",
+            "label": "Concorde passengers (British Airways layout)",
+            "value": 100,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "British Airways Concorde technical specifications; Airbus heritage"
+          },
+          {
+            "kind": "quantity",
+            "id": "b747_pax",
+            "label": "Boeing 747-400 passengers (typical three-class layout)",
+            "value": 416,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "Boeing 747-400 airport planning document"
+          },
+          {
+            "kind": "quantity",
+            "id": "concorde_length",
+            "label": "Concorde length",
+            "value": 61.66,
+            "unit": "m",
+            "approximate": false,
+            "sourceNote": "British Airways Concorde technical specifications; Airbus heritage"
+          },
+          {
+            "kind": "quantity",
+            "id": "b747_length",
+            "label": "Boeing 747-400 length",
+            "value": 70.66,
+            "unit": "m",
+            "approximate": false,
+            "sourceNote": "Boeing 747-400 airport planning document"
+          },
+          {
+            "kind": "quantity",
+            "id": "concorde_span",
+            "label": "Concorde wingspan",
+            "value": 25.6,
+            "unit": "m",
+            "approximate": false,
+            "sourceNote": "British Airways Concorde technical specifications; Airbus heritage"
+          },
+          {
+            "kind": "quantity",
+            "id": "b747_span",
+            "label": "Boeing 747-400 wingspan",
+            "value": 64.44,
+            "unit": "m",
+            "approximate": false,
+            "sourceNote": "Boeing 747-400 airport planning document"
+          },
+          {
+            "kind": "quantity",
+            "id": "concorde_alt",
+            "label": "Concorde maximum cruising altitude",
+            "value": 18300,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "British Airways Concorde technical specifications; Airbus heritage"
+          },
+          {
+            "kind": "quantity",
+            "id": "b747_alt",
+            "label": "Boeing 747-400 typical cruising altitude",
+            "value": 10700,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Boeing 747-400 airport planning document"
+          },
+          {
+            "kind": "quantity",
+            "id": "concorde_mtow",
+            "label": "Concorde maximum take-off weight",
+            "value": 185070,
+            "unit": "kg",
+            "approximate": false,
+            "sourceNote": "British Airways Concorde technical specifications; Airbus heritage"
+          },
+          {
+            "kind": "quantity",
+            "id": "b747_mtow",
+            "label": "Boeing 747-400 maximum take-off weight",
+            "value": 396890,
+            "unit": "kg",
+            "approximate": false,
+            "sourceNote": "Boeing 747-400 airport planning document"
+          }
+        ]
+      },
+      "plan": {
+        "template": "versus",
+        "title": "Concorde vs the jumbo jet",
+        "aName": "Concorde",
+        "bName": "Boeing 747-400",
+        "rows": [
+          {
+            "label": "Cruising speed",
+            "aFactId": "concorde_speed",
+            "bFactId": "b747_speed"
+          },
+          {
+            "label": "Passengers",
+            "aFactId": "concorde_pax",
+            "bFactId": "b747_pax"
+          },
+          {
+            "label": "Length",
+            "aFactId": "concorde_length",
+            "bFactId": "b747_length"
+          },
+          {
+            "label": "Wingspan",
+            "aFactId": "concorde_span",
+            "bFactId": "b747_span"
+          },
+          {
+            "label": "Cruising altitude",
+            "aFactId": "concorde_alt",
+            "bFactId": "b747_alt"
+          },
+          {
+            "label": "Max take-off weight",
+            "aFactId": "concorde_mtow",
+            "bFactId": "b747_mtow"
+          }
+        ]
+      }
+    },
+    {
+      "id": "internet_every_second",
+      "facts": {
+        "query": "How many emails are sent every second?",
+        "topic": "The Internet, second by second",
+        "confidence": "high",
+        "explanation": "Email is decades old, yet hundreds of billions of messages still fly around the world every day, most of them automated or business mail. Add Google searches and new smartphones leaving factories, and the counters climb surprisingly fast even in the few seconds it takes to read this.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "emails_day",
+            "label": "Emails sent and received worldwide per day",
+            "value": 361600000000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "Radicati Group, Email Statistics Report 2024-2028",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "one_day",
+            "label": "One day",
+            "value": 1,
+            "unit": "day",
+            "approximate": false,
+            "sourceNote": "Definition"
+          },
+          {
+            "kind": "quantity",
+            "id": "searches_year",
+            "label": "Google searches per year",
+            "value": 5000000000000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "Google, company blog announcement, March 2025 (more than five trillion)",
+            "year": 2025
+          },
+          {
+            "kind": "quantity",
+            "id": "one_year_a",
+            "label": "One year (searches)",
+            "value": 1,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "Definition"
+          },
+          {
+            "kind": "quantity",
+            "id": "phones_year",
+            "label": "Smartphones shipped worldwide per year",
+            "value": 1240000000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "IDC Worldwide Quarterly Mobile Phone Tracker, January 2025",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "one_year_b",
+            "label": "One year (smartphones)",
+            "value": 1,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "Definition"
+          }
+        ]
+      },
+      "plan": {
+        "template": "rate_counter",
+        "title": "The Internet, second by second",
+        "caption": "Counting since you opened this page, at yearly or daily average rates.",
+        "rows": [
+          {
+            "label": "Emails sent",
+            "aFactId": "emails_day",
+            "bFactId": "one_day"
+          },
+          {
+            "label": "Google searches",
+            "aFactId": "searches_year",
+            "bFactId": "one_year_a"
+          },
+          {
+            "label": "Smartphones shipped",
+            "aFactId": "phones_year",
+            "bFactId": "one_year_b"
+          }
+        ]
+      }
+    },
+    {
+      "id": "chip_scale",
+      "facts": {
+        "query": "How small are the features on a computer chip?",
+        "topic": "From a silicon crystal to a wafer",
+        "confidence": "high",
+        "explanation": "Modern chips are carved from discs of pure silicon using light. Chipmakers switched to extreme ultraviolet light, with a wavelength only a few dozen silicon crystal cells across, to print features far thinner than a human hair, across a wafer as wide as a dinner plate.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "si_lattice",
+            "label": "Silicon crystal unit cell (lattice constant)",
+            "value": 0.5431,
+            "unit": "nm",
+            "approximate": false,
+            "sourceNote": "NIST CODATA recommended values, silicon lattice parameter"
+          },
+          {
+            "kind": "quantity",
+            "id": "euv_light",
+            "label": "Wavelength of extreme ultraviolet light used in chipmaking",
+            "value": 13.5,
+            "unit": "nm",
+            "approximate": false,
+            "sourceNote": "ASML, EUV lithography system specifications"
+          },
+          {
+            "kind": "quantity",
+            "id": "duv_light",
+            "label": "Wavelength of deep ultraviolet (argon fluoride) chipmaking light",
+            "value": 193,
+            "unit": "nm",
+            "approximate": false,
+            "sourceNote": "ASML, DUV lithography system specifications"
+          },
+          {
+            "kind": "quantity",
+            "id": "human_hair",
+            "label": "Width of a typical human hair",
+            "value": 70,
+            "unit": "um",
+            "approximate": true,
+            "sourceNote": "Typical value from dermatology references; hair ranges widely in thickness"
+          },
+          {
+            "kind": "quantity",
+            "id": "wafer",
+            "label": "Diameter of a standard silicon wafer",
+            "value": 300,
+            "unit": "mm",
+            "approximate": false,
+            "sourceNote": "SEMI M1 standard for polished silicon wafers"
+          }
+        ]
+      },
+      "plan": {
+        "template": "scale_zoom",
+        "title": "From a silicon crystal to a wafer",
+        "mode": "size",
+        "items": [
+          {
+            "factId": "si_lattice",
+            "displayName": "Silicon crystal cell",
+            "shape": "circle"
+          },
+          {
+            "factId": "euv_light",
+            "displayName": "EUV light wave",
+            "shape": "circle"
+          },
+          {
+            "factId": "duv_light",
+            "displayName": "Deep UV light wave",
+            "shape": "circle"
+          },
+          {
+            "factId": "human_hair",
+            "displayName": "Human hair",
+            "shape": "circle"
+          },
+          {
+            "factId": "wafer",
+            "displayName": "Silicon wafer",
+            "shape": "circle"
+          }
+        ]
+      }
+    },
+    {
+      "id": "floppies_per_cd",
+      "facts": {
+        "query": "How many floppy disks would it take to fill one CD?",
+        "topic": "Floppy disks vs a CD",
+        "confidence": "high",
+        "explanation": "The high-density floppy disk was the everyday way to carry files for years, until the recordable CD arrived. One standard CD holds as much as a whole stack of floppies, and a single modern phone holds far more than that.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "floppy_bytes",
+            "label": "Data on a formatted 3.5-inch high-density floppy disk (bytes)",
+            "value": 1474560,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "IBM PC 3.5-inch high-density disk format (80 tracks, 18 sectors, 2 sides)"
+          },
+          {
+            "kind": "quantity",
+            "id": "cd_bytes",
+            "label": "Data on an 80-minute CD-ROM (bytes, Mode 1)",
+            "value": 737280000,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "ECMA-130 CD-ROM standard (360,000 sectors of 2,048 bytes)"
+          }
+        ]
+      },
+      "plan": {
+        "template": "pictogram",
+        "title": "How many floppy disks fit on one CD?",
+        "unitFactId": "floppy_bytes",
+        "totalFactId": "cd_bytes",
+        "unitName": "floppy disks",
+        "totalName": "one CD"
+      }
+    },
+    {
+      "id": "ewaste_materials",
+      "facts": {
+        "query": "What is the world's electronic waste made of?",
+        "topic": "What e-waste is made of",
+        "confidence": "high",
+        "explanation": "Discarded phones, laptops, fridges and cables add up to a mountain of electronic waste every year. About half of it by weight is metal, much of it valuable, with plastics and other materials such as glass and minerals making up the rest.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "ewaste_total",
+            "label": "Electronic waste generated worldwide",
+            "value": 62000000000,
+            "unit": "kg",
+            "approximate": true,
+            "sourceNote": "UN Global E-waste Monitor 2024 (ITU and UNITAR)",
+            "year": 2022
+          },
+          {
+            "kind": "quantity",
+            "id": "ewaste_metals",
+            "label": "Metals in e-waste",
+            "value": 31000000000,
+            "unit": "kg",
+            "approximate": true,
+            "sourceNote": "UN Global E-waste Monitor 2024 (ITU and UNITAR)",
+            "year": 2022
+          },
+          {
+            "kind": "quantity",
+            "id": "ewaste_plastics",
+            "label": "Plastics in e-waste",
+            "value": 17000000000,
+            "unit": "kg",
+            "approximate": true,
+            "sourceNote": "UN Global E-waste Monitor 2024 (ITU and UNITAR)",
+            "year": 2022
+          },
+          {
+            "kind": "quantity",
+            "id": "ewaste_other",
+            "label": "Other materials (minerals, glass, composites)",
+            "value": 14000000000,
+            "unit": "kg",
+            "approximate": true,
+            "sourceNote": "UN Global E-waste Monitor 2024 (ITU and UNITAR)",
+            "year": 2022
+          }
+        ]
+      },
+      "plan": {
+        "template": "stacked_bar",
+        "title": "What the world's e-waste is made of",
+        "items": [
+          {
+            "factId": "ewaste_metals",
+            "displayName": "Metals"
+          },
+          {
+            "factId": "ewaste_plastics",
+            "displayName": "Plastics"
+          },
+          {
+            "factId": "ewaste_other",
+            "displayName": "Minerals, glass and other"
+          }
+        ],
+        "totalFactId": "ewaste_total"
+      }
+    },
+    {
+      "id": "internet_use_by_region",
+      "facts": {
+        "query": "What share of people use the Internet in different parts of the world?",
+        "topic": "Internet use by region",
+        "confidence": "high",
+        "explanation": "Most people on Earth are now online, but the share varies enormously by region. In Europe and the Americas nearly everyone uses the Internet, while in Africa most people are still offline, mainly because of cost, coverage and electricity.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "world_pct",
+            "label": "Share of people using the Internet, world",
+            "value": 73.6,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "ITU Key ICT indicators, regional aggregates (November 2025 estimates)",
+            "year": 2025
+          },
+          {
+            "kind": "quantity",
+            "id": "europe_pct",
+            "label": "Share of people using the Internet, Europe",
+            "value": 92.2,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "ITU Key ICT indicators, regional aggregates (November 2025 estimates)",
+            "year": 2025
+          },
+          {
+            "kind": "quantity",
+            "id": "americas_pct",
+            "label": "Share of people using the Internet, Americas",
+            "value": 88.1,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "ITU Key ICT indicators, regional aggregates (November 2025 estimates)",
+            "year": 2025
+          },
+          {
+            "kind": "quantity",
+            "id": "africa_pct",
+            "label": "Share of people using the Internet, Africa",
+            "value": 35.7,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "ITU Key ICT indicators, regional aggregates (November 2025 estimates)",
+            "year": 2025
+          }
+        ]
+      },
+      "plan": {
+        "template": "waffle",
+        "title": "Who is online around the world",
+        "caption": "Each grid is one hundred people.",
+        "items": [
+          {
+            "factId": "world_pct",
+            "displayName": "World"
+          },
+          {
+            "factId": "europe_pct",
+            "displayName": "Europe"
+          },
+          {
+            "factId": "americas_pct",
+            "displayName": "Americas"
+          },
+          {
+            "factId": "africa_pct",
+            "displayName": "Africa"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tech_giant_revenues",
+      "facts": {
+        "query": "How much money do the biggest tech companies make?",
+        "topic": "Revenue of the biggest tech companies",
+        "confidence": "high",
+        "explanation": "A handful of technology companies now earn more each year than many national economies produce. Online shopping and cloud computing put Amazon on top, while the chip makers behind the boom in artificial intelligence have grown quickly.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "amazon_rev",
+            "label": "Amazon net sales, 2024",
+            "value": 638000000000,
+            "unit": "USD",
+            "approximate": true,
+            "sourceNote": "Amazon.com Inc. annual report (Form 10-K), 2024",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "apple_rev",
+            "label": "Apple net sales, fiscal 2024",
+            "value": 391000000000,
+            "unit": "USD",
+            "approximate": true,
+            "sourceNote": "Apple Inc. annual report (Form 10-K), fiscal year ended September 2024",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "alphabet_rev",
+            "label": "Alphabet revenue, 2024",
+            "value": 350000000000,
+            "unit": "USD",
+            "approximate": true,
+            "sourceNote": "Alphabet Inc. annual report (Form 10-K), 2024",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "microsoft_rev",
+            "label": "Microsoft revenue, fiscal 2024",
+            "value": 245100000000,
+            "unit": "USD",
+            "approximate": true,
+            "sourceNote": "Microsoft Corp. annual report (Form 10-K), fiscal year ended June 2024",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "meta_rev",
+            "label": "Meta revenue, 2024",
+            "value": 164500000000,
+            "unit": "USD",
+            "approximate": true,
+            "sourceNote": "Meta Platforms Inc. annual report (Form 10-K), 2024",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "nvidia_rev",
+            "label": "Nvidia revenue, fiscal 2025",
+            "value": 130500000000,
+            "unit": "USD",
+            "approximate": true,
+            "sourceNote": "Nvidia Corp. annual report (Form 10-K), fiscal year ended January 2025",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "tesla_rev",
+            "label": "Tesla revenue, 2024",
+            "value": 97700000000,
+            "unit": "USD",
+            "approximate": true,
+            "sourceNote": "Tesla Inc. annual report (Form 10-K), 2024",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "tsmc_rev",
+            "label": "TSMC revenue, 2024",
+            "value": 90100000000,
+            "unit": "USD",
+            "approximate": true,
+            "sourceNote": "TSMC fourth-quarter 2024 earnings release (US dollar figures)",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "intel_rev",
+            "label": "Intel revenue, 2024",
+            "value": 53100000000,
+            "unit": "USD",
+            "approximate": true,
+            "sourceNote": "Intel Corp. annual report (Form 10-K), 2024",
+            "year": 2024
+          }
+        ]
+      },
+      "plan": {
+        "template": "treemap",
+        "title": "How much the tech giants earn in a year",
+        "caption": "Annual revenue in US dollars, latest full fiscal year reported for 2024.",
+        "items": [
+          {
+            "factId": "amazon_rev",
+            "displayName": "Amazon"
+          },
+          {
+            "factId": "apple_rev",
+            "displayName": "Apple"
+          },
+          {
+            "factId": "alphabet_rev",
+            "displayName": "Alphabet (Google)"
+          },
+          {
+            "factId": "microsoft_rev",
+            "displayName": "Microsoft"
+          },
+          {
+            "factId": "meta_rev",
+            "displayName": "Meta"
+          },
+          {
+            "factId": "nvidia_rev",
+            "displayName": "Nvidia"
+          },
+          {
+            "factId": "tesla_rev",
+            "displayName": "Tesla"
+          },
+          {
+            "factId": "tsmc_rev",
+            "displayName": "TSMC"
+          },
+          {
+            "factId": "intel_rev",
+            "displayName": "Intel"
+          }
+        ]
+      }
+    }
+  ]
+}

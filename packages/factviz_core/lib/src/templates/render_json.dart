@@ -2,7 +2,11 @@ import 'dart:math' as math;
 
 import '../annotations/annotations.dart';
 import '../units/units.dart';
+import '../plan/plan.dart';
+import '../units/format.dart';
 import 'template_props.dart';
+
+part 'render_json_extra.dart';
 
 /// The JSON contract between the app and the D3 renderer.
 ///
@@ -22,6 +26,12 @@ Map<String, Object?> renderJson(TemplateProps props) => {
         ComparisonBarsProps p => _bars(p),
         ProcessStepsProps p => _steps(p),
         NoneProps p => {'reason': p.reason},
+        ItemsProps p => _items(p),
+        PairsProps p => _pairs(p),
+        PictogramProps p => _pictogram(p),
+        SeriesProps p => _series(p),
+        ClockProps p => _clock(p),
+        MapProps p => _map(p),
       },
     };
 
@@ -30,6 +40,8 @@ Map<String, Object?> _units(Dimension d, Unit fallback) {
   final ladder = displayLadders[d];
   return {
     'dimension': d.name,
+    // The facts' own unit, which axes prefer when it reads well.
+    'preferred': {'symbol': fallback.symbol, 'toSi': fallback.toSi},
     'ladder': [
       for (final code in ladder ?? [fallback.code]) {'symbol': units[code]!.symbol, 'toSi': units[code]!.toSi},
     ],

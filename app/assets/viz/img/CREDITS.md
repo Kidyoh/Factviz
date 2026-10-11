@@ -40,3 +40,11 @@ From [Material Design Icons](https://pictogrammers.com/library/mdi/) 7.4.47
 (car-side). These are stretched to the object's real proportions.
 
 `school_bus` was drawn for this project.
+
+## Map data
+
+The world map in `map_points` uses `land-110m` from
+[world-atlas](https://github.com/topojson/world-atlas) 2.0.2 (ISC), derived from
+Natural Earth (public domain), drawn with
+[topojson-client](https://github.com/topojson/topojson-client) 3.1.0 (ISC).
+Licenses: `vendor/LICENSE-world-atlas.txt`, `vendor/LICENSE-topojson-client.txt`.

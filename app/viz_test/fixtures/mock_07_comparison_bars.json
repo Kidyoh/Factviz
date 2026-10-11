@@ -12,6 +12,10 @@
   "orientation": "horizontal",
   "units": {
     "dimension": "mass",
+    "preferred": {
+      "symbol": "t",
+      "toSi": 1000.0
+    },
     "ladder": [
       {
         "symbol": "mg",

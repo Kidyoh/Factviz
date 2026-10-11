@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "template": "number_line",
+  "title": "How long the longest-lived animals live",
+  "annotations": [
+    {
+      "text": "Ocean quahog: 130× as long as House mouse",
+      "anchor": "item",
+      "index": 6
+    }
+  ],
+  "scale": "log",
+  "units": {
+    "dimension": "duration",
+    "preferred": {
+      "symbol": "years",
+      "toSi": 31557600.0
+    },
+    "ladder": [
+      {
+        "symbol": "s",
+        "toSi": 1.0
+      },
+      {
+        "symbol": "min",
+        "toSi": 60.0
+      },
+      {
+        "symbol": "h",
+        "toSi": 3600.0
+      },
+      {
+        "symbol": "days",
+        "toSi": 86400.0
+      },
+      {
+        "symbol": "years",
+        "toSi": 31557600.0
+      }
+    ]
+  },
+  "items": [
+    {
+      "name": "House mouse",
+      "valueSi": 126230400.0,
+      "display": "~4 years",
+      "source": "AnAge database of animal ageing and longevity",
+      "share": 0.0027400075350207213,
+      "shareDisplay": "0.3%"
+    },
+    {
+      "name": "Oldest dog",
+      "valueSi": 927793440.0,
+      "display": "~29.4 years",
+      "source": "Guinness World Records, oldest dog ever (29 years 5 months)",
+      "share": 0.0201390553824023,
+      "shareDisplay": "2%"
+    },
+    {
+      "name": "Oldest person",
+      "valueSi": 3864228120.0,
+      "display": "~122 years",
+      "source": "Guinness World Records (122 years 164 days)",
+      "share": 0.08387848066582183,
+      "shareDisplay": "8.4%"
+    },
+    {
+      "name": "Jonathan the tortoise",
+      "valueSi": 6122174400.0,
+      "display": "~194 years",
+      "source": "Guinness World Records, oldest living land animal (hatched about 1832)",
+      "year": 2026,
+      "share": 0.132890365448505,
+      "shareDisplay": "13%"
+    },
+    {
+      "name": "Bowhead whale",
+      "valueSi": 6658653600.0,
+      "display": "~211 years",
+      "source": "George et al., Canadian Journal of Zoology 1999 (eye-lens dating)",
+      "share": 0.14453539747234304,
+      "shareDisplay": "14%"
+    },
+    {
+      "name": "Greenland shark",
+      "valueSi": 12370579200.0,
+      "display": "~392 years",
+      "source": "Nielsen et al., Science 2016 (eye-lens radiocarbon, ±120 years)",
+      "share": 0.26852073843203067,
+      "shareDisplay": "27%"
+    },
+    {
+      "name": "Ocean quahog",
+      "valueSi": 15999703200.0,
+      "display": "~507 years",
+      "source": "Butler et al., Palaeogeography, Palaeoclimatology, Palaeoecology 2013",
+      "share": 0.34729595506387645,
+      "shareDisplay": "35%"
+    }
+  ]
+}

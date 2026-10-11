@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "template": "pictogram",
+  "title": "Eiffel Towers stacked to the deepest seafloor",
+  "annotations": [],
+  "unit": {
+    "name": "Eiffel Towers",
+    "label": "Eiffel Tower height (with antennas)",
+    "valueSi": 330.0,
+    "display": "330 m",
+    "source": "Société d'Exploitation de la Tour Eiffel (official site)",
+    "year": 2022
+  },
+  "total": {
+    "name": "Challenger Deep",
+    "label": "Challenger Deep depth below sea level",
+    "valueSi": 10935.0,
+    "display": "~10,935 m",
+    "source": "NOAA, 2021 study of 2020 submersible dives (±6 m)"
+  },
+  "count": 33.13636363636363,
+  "countDisplay": "33",
+  "totalPhrase": "1 Challenger Deep",
+  "headline": "33 Eiffel Towers = 1 Challenger Deep",
+  "image": {
+    "key": "eiffel_tower",
+    "kind": "silhouette",
+    "src": "eiffel_tower",
+    "aspect": 0.38,
+    "disc": 1.0,
+    "stretch": true
+  }
+}

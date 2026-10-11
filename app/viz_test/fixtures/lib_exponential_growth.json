@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "template": "exponential_growth",
+  "title": "How a locust outbreak becomes a swarm",
+  "annotations": [
+    {
+      "text": "Generation 3: Locusts in a swarm covering one km² (at least) reached",
+      "anchor": "step",
+      "index": 3
+    }
+  ],
+  "stepLabel": "generation",
+  "factor": 20.0,
+  "steps": 3,
+  "defaultScale": "linear",
+  "units": {
+    "dimension": "count",
+    "preferred": {
+      "symbol": "",
+      "toSi": 1.0
+    },
+    "ladder": [
+      {
+        "symbol": "",
+        "toSi": 1.0
+      }
+    ]
+  },
+  "initial": {
+    "label": "Starting outbreak (illustrative)",
+    "display": "~10,000",
+    "valueSi": 10000.0
+  },
+  "target": {
+    "label": "Locusts in a swarm covering one km² (at least)",
+    "display": "40 million",
+    "valueSi": 40000000.0
+  },
+  "targetStep": 3,
+  "series": [
+    {
+      "step": 0,
+      "valueSi": 10000.0,
+      "display": "10,000"
+    },
+    {
+      "step": 1,
+      "valueSi": 200000.0,
+      "display": "200,000"
+    },
+    {
+      "step": 2,
+      "valueSi": 4000000.0,
+      "display": "4 million"
+    },
+    {
+      "step": 3,
+      "valueSi": 80000000.0,
+      "display": "80 million"
+    }
+  ]
+}

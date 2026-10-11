@@ -5,6 +5,8 @@ import '../templates/template_props.dart';
 import '../units/format.dart';
 import '../units/units.dart';
 
+part 'annotations_extra.dart';
+
 /// What an annotation points at in a rendered chart.
 enum AnchorKind { item, event, step, gap }
 
@@ -49,6 +51,12 @@ List<Annotation> annotationsFor(TemplateProps props) => switch (props) {
       ComparisonBarsProps p => _bars(p),
       ProcessStepsProps() => const [],
       NoneProps() => const [],
+      ItemsProps p => _items(p),
+      PairsProps p => _pairs(p),
+      PictogramProps() => const [],
+      SeriesProps p => _series(p),
+      ClockProps p => _clock(p),
+      MapProps() => const [],
     };
 
 List<Annotation> _scale(ScaleZoomProps p) {
@@ -145,19 +153,30 @@ List<Annotation> _bars(ComparisonBarsProps p) {
   }
   final large = p.bars[li], small = p.bars[si];
   if (small.valueSi <= 0 || li == si) return const [];
-  final r = formatRatio(large.valueSi / small.valueSi);
-  final a = large.displayName, b = small.displayName;
-  final text = switch (p.dimension) {
-    Dimension.mass => '$a weighs $r as much as $b',
+  final text = compareText(p.dimension, large.displayName, small.displayName, large.valueSi / small.valueSi,
+      vertical: p.orientation == BarOrientation.vertical, physical: large.image != null);
+  return [Annotation(text, AnchorKind.item, li)];
+}
+
+/// "A weighs 3× as much as B", worded for the dimension.
+///
+/// Verbs about the thing itself ("weighs", "holds") are only safe when the
+/// item is the physical object, which [physical] says (it has a picture).
+/// Otherwise the figure may be an amount *of* something (caffeine in a
+/// drink, water to grow a crop), so the wording stays neutral.
+String compareText(Dimension dimension, String a, String b, double ratio, {bool vertical = false, bool physical = false}) {
+  final r = formatRatio(ratio);
+  return switch (dimension) {
+    Dimension.mass => physical ? '$a weighs $r as much as $b' : '$a: $r as much as $b',
     // Upright bars read as heights.
-    Dimension.length => p.orientation == BarOrientation.vertical ? '$a is $r as tall as $b' : '$a is $r as long as $b',
+    Dimension.length => vertical ? '$a is $r as tall as $b' : '$a is $r as long as $b',
     Dimension.speed => '$a is $r as fast as $b',
-    Dimension.duration => '$a lasts $r as long as $b',
-    Dimension.money => '$a costs $r as much as $b',
+    Dimension.duration => '$a: $r as long as $b',
+    Dimension.money => '$a: $r as much as $b',
     Dimension.area => '$a covers $r the area of $b',
-    Dimension.volume => '$a holds $r the volume of $b',
+    Dimension.volume => physical ? '$a holds $r the volume of $b' : '$a: $r as much as $b',
     Dimension.count => '$a: $r as many as $b',
     Dimension.ratio => '$a is $r $b',
+    Dimension.percent => '$a is $r $b',
   };
-  return [Annotation(text, AnchorKind.item, li)];
 }

@@ -1,0 +1,1449 @@
+{
+  "category": "society",
+  "title": "People & economy",
+  "entries": [
+    {
+      "id": "world_population_over_time",
+      "facts": {
+        "query": "How has the world population changed over time?",
+        "topic": "World population over time",
+        "confidence": "high",
+        "explanation": "The world's population has grown enormously since the middle of the last century, thanks mostly to longer lives and fewer children dying young. Growth is now slowing as families get smaller, and the UN expects the total to peak later this century and then dip slightly.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "pop_1950",
+            "label": "World population, 1950",
+            "value": 2490000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, estimates (mid-year)",
+            "year": 1950
+          },
+          {
+            "kind": "quantity",
+            "id": "pop_1960",
+            "label": "World population, 1960",
+            "value": 3020000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, estimates (mid-year)",
+            "year": 1960
+          },
+          {
+            "kind": "quantity",
+            "id": "pop_1970",
+            "label": "World population, 1970",
+            "value": 3690000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, estimates (mid-year)",
+            "year": 1970
+          },
+          {
+            "kind": "quantity",
+            "id": "pop_1980",
+            "label": "World population, 1980",
+            "value": 4450000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, estimates (mid-year)",
+            "year": 1980
+          },
+          {
+            "kind": "quantity",
+            "id": "pop_1990",
+            "label": "World population, 1990",
+            "value": 5330000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, estimates (mid-year)",
+            "year": 1990
+          },
+          {
+            "kind": "quantity",
+            "id": "pop_2000",
+            "label": "World population, 2000",
+            "value": 6170000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, estimates (mid-year)",
+            "year": 2000
+          },
+          {
+            "kind": "quantity",
+            "id": "pop_2010",
+            "label": "World population, 2010",
+            "value": 7020000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, estimates (mid-year)",
+            "year": 2010
+          },
+          {
+            "kind": "quantity",
+            "id": "pop_2020",
+            "label": "World population, 2020",
+            "value": 7890000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, estimates (mid-year)",
+            "year": 2020
+          },
+          {
+            "kind": "quantity",
+            "id": "pop_2023",
+            "label": "World population, 2023",
+            "value": 8090000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, estimates (mid-year)",
+            "year": 2023
+          },
+          {
+            "kind": "quantity",
+            "id": "proj_2030",
+            "label": "World population, 2030 (projected)",
+            "value": 8570000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, medium-variant projection",
+            "year": 2030
+          },
+          {
+            "kind": "quantity",
+            "id": "proj_2050",
+            "label": "World population, 2050 (projected)",
+            "value": 9660000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, medium-variant projection",
+            "year": 2050
+          },
+          {
+            "kind": "quantity",
+            "id": "proj_2080",
+            "label": "World population, 2080 (projected)",
+            "value": 10280000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, medium-variant projection",
+            "year": 2080
+          },
+          {
+            "kind": "quantity",
+            "id": "proj_2100",
+            "label": "World population, 2100 (projected)",
+            "value": 10180000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, medium-variant projection",
+            "year": 2100
+          }
+        ]
+      },
+      "plan": {
+        "template": "line_series",
+        "title": "World population over time",
+        "series": [
+          {
+            "displayName": "Estimates",
+            "factIds": [
+              "pop_1950",
+              "pop_1960",
+              "pop_1970",
+              "pop_1980",
+              "pop_1990",
+              "pop_2000",
+              "pop_2010",
+              "pop_2020",
+              "pop_2023"
+            ]
+          },
+          {
+            "displayName": "UN projection",
+            "factIds": [
+              "proj_2030",
+              "proj_2050",
+              "proj_2080",
+              "proj_2100"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "population_doublings",
+      "facts": {
+        "query": "How many times has the world population doubled since it reached a billion?",
+        "topic": "World population doublings",
+        "confidence": "high",
+        "explanation": "It took all of human history until the early nineteenth century for the world to reach one billion people. Since then the population has doubled again and again, each doubling coming faster than the last, until it reached eight billion.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "one_billion",
+            "label": "World population around 1804",
+            "value": 1000000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN Department of Economic and Social Affairs: world population reached one billion around 1804",
+            "year": 1804
+          },
+          {
+            "kind": "quantity",
+            "id": "doubling_factor",
+            "label": "Growth per doubling",
+            "value": 2,
+            "unit": "ratio",
+            "approximate": false,
+            "sourceNote": "By definition of a doubling"
+          },
+          {
+            "kind": "quantity",
+            "id": "doublings",
+            "label": "Number of doublings to reach eight billion",
+            "value": 3,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "Derived: one to two to four to eight billion"
+          },
+          {
+            "kind": "quantity",
+            "id": "eight_billion",
+            "label": "World population on 15 November 2022",
+            "value": 8000000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "United Nations: Day of Eight Billion, 15 November 2022",
+            "year": 2022
+          }
+        ]
+      },
+      "plan": {
+        "template": "exponential_growth",
+        "title": "How the world population kept doubling",
+        "initialFactId": "one_billion",
+        "factorFactId": "doubling_factor",
+        "stepsFactId": "doublings",
+        "targetFactId": "eight_billion",
+        "stepLabel": "doubling",
+        "defaultScale": "linear"
+      }
+    },
+    {
+      "id": "population_by_continent",
+      "facts": {
+        "query": "How is the world's population split by continent?",
+        "topic": "World population by continent",
+        "confidence": "high",
+        "explanation": "Asia is home to most of humanity, with China and India alone holding more people than any other continent. Africa is the fastest-growing region and already holds the second-largest share, while Oceania is home to only a sliver of the world's people.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "asia_pop",
+            "label": "Asia",
+            "value": 4780000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, UN geographic regions",
+            "year": 2023
+          },
+          {
+            "kind": "quantity",
+            "id": "africa_pop",
+            "label": "Africa",
+            "value": 1480000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, UN geographic regions",
+            "year": 2023
+          },
+          {
+            "kind": "quantity",
+            "id": "europe_pop",
+            "label": "Europe",
+            "value": 746000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, UN geographic regions",
+            "year": 2023
+          },
+          {
+            "kind": "quantity",
+            "id": "latam_pop",
+            "label": "Latin America and the Caribbean",
+            "value": 659000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, UN geographic regions",
+            "year": 2023
+          },
+          {
+            "kind": "quantity",
+            "id": "namerica_pop",
+            "label": "Northern America",
+            "value": 383000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, UN geographic regions",
+            "year": 2023
+          },
+          {
+            "kind": "quantity",
+            "id": "oceania_pop",
+            "label": "Oceania",
+            "value": 45600000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, UN geographic regions",
+            "year": 2023
+          }
+        ]
+      },
+      "plan": {
+        "template": "donut",
+        "title": "Where the world's people live",
+        "items": [
+          {
+            "factId": "asia_pop",
+            "displayName": "Asia"
+          },
+          {
+            "factId": "africa_pop",
+            "displayName": "Africa"
+          },
+          {
+            "factId": "europe_pop",
+            "displayName": "Europe"
+          },
+          {
+            "factId": "latam_pop",
+            "displayName": "Latin America & Caribbean"
+          },
+          {
+            "factId": "namerica_pop",
+            "displayName": "Northern America"
+          },
+          {
+            "factId": "oceania_pop",
+            "displayName": "Oceania"
+          }
+        ]
+      }
+    },
+    {
+      "id": "population_by_age",
+      "facts": {
+        "query": "How old is the world's population?",
+        "topic": "World population by age group",
+        "confidence": "high",
+        "explanation": "Working-age adults make up the biggest group of everyone alive, and children are still a large share. Older people are the smallest group but the fastest-growing one as lives get longer and families smaller.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "age_0_14",
+            "label": "Children under 15",
+            "value": 2025000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, estimates by broad age group",
+            "year": 2023
+          },
+          {
+            "kind": "quantity",
+            "id": "age_15_24",
+            "label": "Young people aged 15–24",
+            "value": 1258000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, estimates by broad age group",
+            "year": 2023
+          },
+          {
+            "kind": "quantity",
+            "id": "age_25_64",
+            "label": "Adults aged 25–64",
+            "value": 4000000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, estimates by broad age group",
+            "year": 2023
+          },
+          {
+            "kind": "quantity",
+            "id": "age_65_plus",
+            "label": "People aged 65 and over",
+            "value": 808000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, estimates by broad age group",
+            "year": 2023
+          }
+        ]
+      },
+      "plan": {
+        "template": "stacked_bar",
+        "title": "The world's population by age",
+        "items": [
+          {
+            "factId": "age_0_14",
+            "displayName": "Under 15"
+          },
+          {
+            "factId": "age_15_24",
+            "displayName": "Ages 15 to 24"
+          },
+          {
+            "factId": "age_25_64",
+            "displayName": "Ages 25 to 64"
+          },
+          {
+            "factId": "age_65_plus",
+            "displayName": "65 and over"
+          }
+        ]
+      }
+    },
+    {
+      "id": "largest_economies",
+      "facts": {
+        "query": "What are the world's largest economies?",
+        "topic": "Largest economies by GDP",
+        "confidence": "high",
+        "explanation": "Gross domestic product measures the value of everything a country produces in a year. The United States and China are far ahead of everyone else, and together they produce more than the next several economies combined.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "gdp_usa",
+            "label": "GDP of United States",
+            "value": 29300000000000.0,
+            "unit": "USD",
+            "approximate": true,
+            "sourceNote": "World Bank World Development Indicators: GDP (current US$)",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "gdp_china",
+            "label": "GDP of China",
+            "value": 18730000000000.0,
+            "unit": "USD",
+            "approximate": true,
+            "sourceNote": "World Bank World Development Indicators: GDP (current US$)",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "gdp_germany",
+            "label": "GDP of Germany",
+            "value": 4690000000000.0,
+            "unit": "USD",
+            "approximate": true,
+            "sourceNote": "World Bank World Development Indicators: GDP (current US$)",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "gdp_japan",
+            "label": "GDP of Japan",
+            "value": 4190000000000.0,
+            "unit": "USD",
+            "approximate": true,
+            "sourceNote": "World Bank World Development Indicators: GDP (current US$)",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "gdp_india",
+            "label": "GDP of India",
+            "value": 3760000000000.0,
+            "unit": "USD",
+            "approximate": true,
+            "sourceNote": "World Bank World Development Indicators: GDP (current US$)",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "gdp_uk",
+            "label": "GDP of United Kingdom",
+            "value": 3700000000000.0,
+            "unit": "USD",
+            "approximate": true,
+            "sourceNote": "World Bank World Development Indicators: GDP (current US$)",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "gdp_france",
+            "label": "GDP of France",
+            "value": 3160000000000.0,
+            "unit": "USD",
+            "approximate": true,
+            "sourceNote": "World Bank World Development Indicators: GDP (current US$)",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "gdp_italy",
+            "label": "GDP of Italy",
+            "value": 2380000000000.0,
+            "unit": "USD",
+            "approximate": true,
+            "sourceNote": "World Bank World Development Indicators: GDP (current US$)",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "gdp_canada",
+            "label": "GDP of Canada",
+            "value": 2270000000000.0,
+            "unit": "USD",
+            "approximate": true,
+            "sourceNote": "World Bank World Development Indicators: GDP (current US$)",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "gdp_russia",
+            "label": "GDP of Russia",
+            "value": 2190000000000.0,
+            "unit": "USD",
+            "approximate": true,
+            "sourceNote": "World Bank World Development Indicators: GDP (current US$)",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "gdp_brazil",
+            "label": "GDP of Brazil",
+            "value": 2190000000000.0,
+            "unit": "USD",
+            "approximate": true,
+            "sourceNote": "World Bank World Development Indicators: GDP (current US$)",
+            "year": 2024
+          }
+        ]
+      },
+      "plan": {
+        "template": "treemap",
+        "title": "The world's largest economies",
+        "caption": "Nominal GDP in US dollars at market exchange rates.",
+        "items": [
+          {
+            "factId": "gdp_usa",
+            "displayName": "United States"
+          },
+          {
+            "factId": "gdp_china",
+            "displayName": "China"
+          },
+          {
+            "factId": "gdp_germany",
+            "displayName": "Germany"
+          },
+          {
+            "factId": "gdp_japan",
+            "displayName": "Japan"
+          },
+          {
+            "factId": "gdp_india",
+            "displayName": "India"
+          },
+          {
+            "factId": "gdp_uk",
+            "displayName": "United Kingdom"
+          },
+          {
+            "factId": "gdp_france",
+            "displayName": "France"
+          },
+          {
+            "factId": "gdp_italy",
+            "displayName": "Italy"
+          },
+          {
+            "factId": "gdp_canada",
+            "displayName": "Canada"
+          },
+          {
+            "factId": "gdp_russia",
+            "displayName": "Russia"
+          },
+          {
+            "factId": "gdp_brazil",
+            "displayName": "Brazil"
+          }
+        ]
+      }
+    },
+    {
+      "id": "most_spoken_languages",
+      "facts": {
+        "query": "What are the most spoken languages in the world?",
+        "topic": "Most spoken languages",
+        "confidence": "medium",
+        "explanation": "Counting everyone who speaks a language, natively or as a second language, English comes out on top because so many people learn it. Mandarin Chinese has by far the most native speakers. Speaker counts are estimates and are revised with each edition.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "lang_english",
+            "label": "English",
+            "value": 1493000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "Ethnologue (2026 edition): total speakers, first and second language",
+            "year": 2026
+          },
+          {
+            "kind": "quantity",
+            "id": "lang_mandarin",
+            "label": "Mandarin Chinese",
+            "value": 1183000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "Ethnologue (2026 edition): total speakers, first and second language",
+            "year": 2026
+          },
+          {
+            "kind": "quantity",
+            "id": "lang_hindi",
+            "label": "Hindi",
+            "value": 611000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "Ethnologue (2026 edition): total speakers, first and second language",
+            "year": 2026
+          },
+          {
+            "kind": "quantity",
+            "id": "lang_spanish",
+            "label": "Spanish",
+            "value": 561000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "Ethnologue (2026 edition): total speakers, first and second language",
+            "year": 2026
+          },
+          {
+            "kind": "quantity",
+            "id": "lang_arabic",
+            "label": "Modern Standard Arabic",
+            "value": 335000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "Ethnologue (2026 edition): total speakers, first and second language",
+            "year": 2026
+          },
+          {
+            "kind": "quantity",
+            "id": "lang_french",
+            "label": "French",
+            "value": 334000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "Ethnologue (2026 edition): total speakers, first and second language",
+            "year": 2026
+          },
+          {
+            "kind": "quantity",
+            "id": "lang_bengali",
+            "label": "Bengali",
+            "value": 274000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "Ethnologue (2026 edition): total speakers, first and second language",
+            "year": 2026
+          },
+          {
+            "kind": "quantity",
+            "id": "lang_portuguese",
+            "label": "Portuguese",
+            "value": 269000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "Ethnologue (2026 edition): total speakers, first and second language",
+            "year": 2026
+          },
+          {
+            "kind": "quantity",
+            "id": "lang_indonesian",
+            "label": "Indonesian",
+            "value": 255000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "Ethnologue (2026 edition): total speakers, first and second language",
+            "year": 2026
+          },
+          {
+            "kind": "quantity",
+            "id": "lang_urdu",
+            "label": "Urdu",
+            "value": 246000000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "Ethnologue (2026 edition): total speakers, first and second language",
+            "year": 2026
+          }
+        ]
+      },
+      "plan": {
+        "template": "bubble_pack",
+        "title": "The most spoken languages",
+        "caption": "Total speakers, counting both native and second-language speakers.",
+        "items": [
+          {
+            "factId": "lang_english",
+            "displayName": "English"
+          },
+          {
+            "factId": "lang_mandarin",
+            "displayName": "Mandarin Chinese"
+          },
+          {
+            "factId": "lang_hindi",
+            "displayName": "Hindi"
+          },
+          {
+            "factId": "lang_spanish",
+            "displayName": "Spanish"
+          },
+          {
+            "factId": "lang_arabic",
+            "displayName": "Modern Standard Arabic"
+          },
+          {
+            "factId": "lang_french",
+            "displayName": "French"
+          },
+          {
+            "factId": "lang_bengali",
+            "displayName": "Bengali"
+          },
+          {
+            "factId": "lang_portuguese",
+            "displayName": "Portuguese"
+          },
+          {
+            "factId": "lang_indonesian",
+            "displayName": "Indonesian"
+          },
+          {
+            "factId": "lang_urdu",
+            "displayName": "Urdu"
+          }
+        ]
+      }
+    },
+    {
+      "id": "urban_share",
+      "facts": {
+        "query": "How much of the world lives in cities?",
+        "topic": "Share of people living in urban areas",
+        "confidence": "high",
+        "explanation": "In the middle of the last century most people lived in the countryside. Cities have grown so fast that more than half of humanity is now urban, and the UN expects the share to keep rising for decades.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "urban_1950",
+            "label": "Share of world population living in urban areas, 1950",
+            "value": 30,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "UN World Urbanization Prospects 2018",
+            "year": 1950
+          },
+          {
+            "kind": "quantity",
+            "id": "urban_2018",
+            "label": "Share of world population living in urban areas, 2018",
+            "value": 55,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "UN World Urbanization Prospects 2018",
+            "year": 2018
+          },
+          {
+            "kind": "quantity",
+            "id": "urban_2050",
+            "label": "Projected share living in urban areas, 2050",
+            "value": 68,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "UN World Urbanization Prospects 2018, projection",
+            "year": 2050
+          }
+        ]
+      },
+      "plan": {
+        "template": "waffle",
+        "title": "How much of the world lives in cities",
+        "caption": "Each square is one percent of the world's population.",
+        "items": [
+          {
+            "factId": "urban_1950",
+            "displayName": "1950"
+          },
+          {
+            "factId": "urban_2018",
+            "displayName": "2018"
+          },
+          {
+            "factId": "urban_2050",
+            "displayName": "2050 (projected)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "generation_ages",
+      "facts": {
+        "query": "How old is each generation?",
+        "topic": "Ages of each generation",
+        "confidence": "high",
+        "explanation": "Generations are groups of people born in the same span of years, named so researchers can compare how life experiences shape attitudes. The boundaries are conventions rather than hard rules; these follow the definitions used by the Pew Research Center.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "silent_young",
+            "label": "Silent Generation (born 1928–45): youngest age",
+            "value": 81,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "Pew Research Center generation definitions; ages reached during 2026",
+            "year": 2026
+          },
+          {
+            "kind": "quantity",
+            "id": "silent_old",
+            "label": "Silent Generation (born 1928–45): oldest age",
+            "value": 98,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "Pew Research Center generation definitions; ages reached during 2026",
+            "year": 2026
+          },
+          {
+            "kind": "quantity",
+            "id": "boomers_young",
+            "label": "Baby Boomers (born 1946–64): youngest age",
+            "value": 62,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "Pew Research Center generation definitions; ages reached during 2026",
+            "year": 2026
+          },
+          {
+            "kind": "quantity",
+            "id": "boomers_old",
+            "label": "Baby Boomers (born 1946–64): oldest age",
+            "value": 80,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "Pew Research Center generation definitions; ages reached during 2026",
+            "year": 2026
+          },
+          {
+            "kind": "quantity",
+            "id": "genx_young",
+            "label": "Generation X (born 1965–80): youngest age",
+            "value": 46,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "Pew Research Center generation definitions; ages reached during 2026",
+            "year": 2026
+          },
+          {
+            "kind": "quantity",
+            "id": "genx_old",
+            "label": "Generation X (born 1965–80): oldest age",
+            "value": 61,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "Pew Research Center generation definitions; ages reached during 2026",
+            "year": 2026
+          },
+          {
+            "kind": "quantity",
+            "id": "millennials_young",
+            "label": "Millennials (born 1981–96): youngest age",
+            "value": 30,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "Pew Research Center generation definitions; ages reached during 2026",
+            "year": 2026
+          },
+          {
+            "kind": "quantity",
+            "id": "millennials_old",
+            "label": "Millennials (born 1981–96): oldest age",
+            "value": 45,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "Pew Research Center generation definitions; ages reached during 2026",
+            "year": 2026
+          },
+          {
+            "kind": "quantity",
+            "id": "genz_young",
+            "label": "Generation Z (born 1997–2012): youngest age",
+            "value": 14,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "Pew Research Center generation definitions; ages reached during 2026",
+            "year": 2026
+          },
+          {
+            "kind": "quantity",
+            "id": "genz_old",
+            "label": "Generation Z (born 1997–2012): oldest age",
+            "value": 29,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "Pew Research Center generation definitions; ages reached during 2026",
+            "year": 2026
+          }
+        ]
+      },
+      "plan": {
+        "template": "range_bars",
+        "title": "How old each generation is this year",
+        "caption": "Ages reached during the year, using Pew Research Center birth-year ranges.",
+        "rows": [
+          {
+            "label": "Silent Generation",
+            "aFactId": "silent_young",
+            "bFactId": "silent_old"
+          },
+          {
+            "label": "Baby Boomers",
+            "aFactId": "boomers_young",
+            "bFactId": "boomers_old"
+          },
+          {
+            "label": "Generation X",
+            "aFactId": "genx_young",
+            "bFactId": "genx_old"
+          },
+          {
+            "label": "Millennials",
+            "aFactId": "millennials_young",
+            "bFactId": "millennials_old"
+          },
+          {
+            "label": "Generation Z",
+            "aFactId": "genz_young",
+            "bFactId": "genz_old"
+          }
+        ]
+      }
+    },
+    {
+      "id": "births_and_deaths",
+      "facts": {
+        "query": "How many people are born and die every second around the world?",
+        "topic": "World births and deaths",
+        "confidence": "high",
+        "explanation": "Around the world, babies are born much faster than people die, which is why the population is still growing. Watch the counters climb from the moment this page opened.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "births_year",
+            "label": "Births worldwide in a year",
+            "value": 132100000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, estimates for 2023",
+            "year": 2023
+          },
+          {
+            "kind": "quantity",
+            "id": "births_period",
+            "label": "One year",
+            "value": 1,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "Time period for the births estimate"
+          },
+          {
+            "kind": "quantity",
+            "id": "deaths_year",
+            "label": "Deaths worldwide in a year",
+            "value": 61700000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, estimates for 2023",
+            "year": 2023
+          },
+          {
+            "kind": "quantity",
+            "id": "deaths_period",
+            "label": "One year",
+            "value": 1,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "Time period for the deaths estimate"
+          }
+        ]
+      },
+      "plan": {
+        "template": "rate_counter",
+        "title": "Births and deaths since you opened this page",
+        "rows": [
+          {
+            "label": "Births",
+            "aFactId": "births_year",
+            "bFactId": "births_period"
+          },
+          {
+            "label": "Deaths",
+            "aFactId": "deaths_year",
+            "bFactId": "deaths_period"
+          }
+        ]
+      }
+    },
+    {
+      "id": "life_expectancy_change",
+      "facts": {
+        "query": "How much longer do people live now than in the past?",
+        "topic": "Life expectancy since the mid-twentieth century",
+        "confidence": "high",
+        "explanation": "Life expectancy has risen in every region since the middle of the last century, thanks to vaccines, clean water, better nutrition and medicine. The biggest gains came in Asia and Africa, narrowing the gap with richer regions.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "le_world_1950",
+            "label": "Life expectancy at birth, World, 1950",
+            "value": 46.4,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, life expectancy at birth",
+            "year": 1950
+          },
+          {
+            "kind": "quantity",
+            "id": "le_world_2023",
+            "label": "Life expectancy at birth, World, 2023",
+            "value": 73.2,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, life expectancy at birth",
+            "year": 2023
+          },
+          {
+            "kind": "quantity",
+            "id": "le_africa_1950",
+            "label": "Life expectancy at birth, Africa, 1950",
+            "value": 37.2,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, life expectancy at birth",
+            "year": 1950
+          },
+          {
+            "kind": "quantity",
+            "id": "le_africa_2023",
+            "label": "Life expectancy at birth, Africa, 2023",
+            "value": 63.8,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, life expectancy at birth",
+            "year": 2023
+          },
+          {
+            "kind": "quantity",
+            "id": "le_asia_1950",
+            "label": "Life expectancy at birth, Asia, 1950",
+            "value": 42.0,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, life expectancy at birth",
+            "year": 1950
+          },
+          {
+            "kind": "quantity",
+            "id": "le_asia_2023",
+            "label": "Life expectancy at birth, Asia, 2023",
+            "value": 74.6,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, life expectancy at birth",
+            "year": 2023
+          },
+          {
+            "kind": "quantity",
+            "id": "le_europe_1950",
+            "label": "Life expectancy at birth, Europe, 1950",
+            "value": 62.0,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, life expectancy at birth",
+            "year": 1950
+          },
+          {
+            "kind": "quantity",
+            "id": "le_europe_2023",
+            "label": "Life expectancy at birth, Europe, 2023",
+            "value": 79.1,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, life expectancy at birth",
+            "year": 2023
+          },
+          {
+            "kind": "quantity",
+            "id": "le_latam_1950",
+            "label": "Life expectancy at birth, Latin America & Caribbean, 1950",
+            "value": 48.7,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, life expectancy at birth",
+            "year": 1950
+          },
+          {
+            "kind": "quantity",
+            "id": "le_latam_2023",
+            "label": "Life expectancy at birth, Latin America & Caribbean, 2023",
+            "value": 75.7,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, life expectancy at birth",
+            "year": 2023
+          },
+          {
+            "kind": "quantity",
+            "id": "le_namerica_1950",
+            "label": "Life expectancy at birth, Northern America, 1950",
+            "value": 68.1,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, life expectancy at birth",
+            "year": 1950
+          },
+          {
+            "kind": "quantity",
+            "id": "le_namerica_2023",
+            "label": "Life expectancy at birth, Northern America, 2023",
+            "value": 79.6,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, life expectancy at birth",
+            "year": 2023
+          },
+          {
+            "kind": "quantity",
+            "id": "le_oceania_1950",
+            "label": "Life expectancy at birth, Oceania, 1950",
+            "value": 61.6,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, life expectancy at birth",
+            "year": 1950
+          },
+          {
+            "kind": "quantity",
+            "id": "le_oceania_2023",
+            "label": "Life expectancy at birth, Oceania, 2023",
+            "value": 79.1,
+            "unit": "yr",
+            "approximate": true,
+            "sourceNote": "UN World Population Prospects 2024, life expectancy at birth",
+            "year": 2023
+          }
+        ]
+      },
+      "plan": {
+        "template": "slope",
+        "title": "How life expectancy has risen",
+        "aName": "1950",
+        "bName": "2023",
+        "rows": [
+          {
+            "label": "World",
+            "aFactId": "le_world_1950",
+            "bFactId": "le_world_2023"
+          },
+          {
+            "label": "Africa",
+            "aFactId": "le_africa_1950",
+            "bFactId": "le_africa_2023"
+          },
+          {
+            "label": "Asia",
+            "aFactId": "le_asia_1950",
+            "bFactId": "le_asia_2023"
+          },
+          {
+            "label": "Europe",
+            "aFactId": "le_europe_1950",
+            "bFactId": "le_europe_2023"
+          },
+          {
+            "label": "Latin America & Caribbean",
+            "aFactId": "le_latam_1950",
+            "bFactId": "le_latam_2023"
+          },
+          {
+            "label": "Northern America",
+            "aFactId": "le_namerica_1950",
+            "bFactId": "le_namerica_2023"
+          },
+          {
+            "label": "Oceania",
+            "aFactId": "le_oceania_1950",
+            "bFactId": "le_oceania_2023"
+          }
+        ]
+      }
+    },
+    {
+      "id": "biggest_cities",
+      "facts": {
+        "query": "What are the biggest cities in the world?",
+        "topic": "World's largest cities",
+        "confidence": "medium",
+        "explanation": "Measured as whole urban areas, including suburbs that have grown into one continuous city, Tokyo has long been the largest. Most of the other giants are in fast-growing parts of Asia, Latin America and Africa. Rankings depend heavily on where each city's boundary is drawn.",
+        "facts": [
+          {
+            "kind": "place",
+            "id": "tokyo_place",
+            "label": "Tokyo",
+            "lat": 35.6895,
+            "lon": 139.6917,
+            "sourceNote": "City centre coordinates (Encyclopaedia Britannica)"
+          },
+          {
+            "kind": "quantity",
+            "id": "tokyo_pop",
+            "label": "Tokyo urban agglomeration population, 2018",
+            "value": 37468000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Urbanization Prospects 2018: The World's Cities in 2018",
+            "year": 2018
+          },
+          {
+            "kind": "place",
+            "id": "delhi_place",
+            "label": "Delhi",
+            "lat": 28.6139,
+            "lon": 77.209,
+            "sourceNote": "City centre coordinates (Encyclopaedia Britannica)"
+          },
+          {
+            "kind": "quantity",
+            "id": "delhi_pop",
+            "label": "Delhi urban agglomeration population, 2018",
+            "value": 28514000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Urbanization Prospects 2018: The World's Cities in 2018",
+            "year": 2018
+          },
+          {
+            "kind": "place",
+            "id": "shanghai_place",
+            "label": "Shanghai",
+            "lat": 31.2304,
+            "lon": 121.4737,
+            "sourceNote": "City centre coordinates (Encyclopaedia Britannica)"
+          },
+          {
+            "kind": "quantity",
+            "id": "shanghai_pop",
+            "label": "Shanghai urban agglomeration population, 2018",
+            "value": 25582000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Urbanization Prospects 2018: The World's Cities in 2018",
+            "year": 2018
+          },
+          {
+            "kind": "place",
+            "id": "sao_paulo_place",
+            "label": "São Paulo",
+            "lat": -23.5505,
+            "lon": -46.6333,
+            "sourceNote": "City centre coordinates (Encyclopaedia Britannica)"
+          },
+          {
+            "kind": "quantity",
+            "id": "sao_paulo_pop",
+            "label": "São Paulo urban agglomeration population, 2018",
+            "value": 21650000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Urbanization Prospects 2018: The World's Cities in 2018",
+            "year": 2018
+          },
+          {
+            "kind": "place",
+            "id": "mexico_city_place",
+            "label": "Mexico City",
+            "lat": 19.4326,
+            "lon": -99.1332,
+            "sourceNote": "City centre coordinates (Encyclopaedia Britannica)"
+          },
+          {
+            "kind": "quantity",
+            "id": "mexico_city_pop",
+            "label": "Mexico City urban agglomeration population, 2018",
+            "value": 21581000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Urbanization Prospects 2018: The World's Cities in 2018",
+            "year": 2018
+          },
+          {
+            "kind": "place",
+            "id": "cairo_place",
+            "label": "Cairo",
+            "lat": 30.0444,
+            "lon": 31.2357,
+            "sourceNote": "City centre coordinates (Encyclopaedia Britannica)"
+          },
+          {
+            "kind": "quantity",
+            "id": "cairo_pop",
+            "label": "Cairo urban agglomeration population, 2018",
+            "value": 20076000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Urbanization Prospects 2018: The World's Cities in 2018",
+            "year": 2018
+          },
+          {
+            "kind": "place",
+            "id": "mumbai_place",
+            "label": "Mumbai",
+            "lat": 19.076,
+            "lon": 72.8777,
+            "sourceNote": "City centre coordinates (Encyclopaedia Britannica)"
+          },
+          {
+            "kind": "quantity",
+            "id": "mumbai_pop",
+            "label": "Mumbai urban agglomeration population, 2018",
+            "value": 19980000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Urbanization Prospects 2018: The World's Cities in 2018",
+            "year": 2018
+          },
+          {
+            "kind": "place",
+            "id": "beijing_place",
+            "label": "Beijing",
+            "lat": 39.9042,
+            "lon": 116.4074,
+            "sourceNote": "City centre coordinates (Encyclopaedia Britannica)"
+          },
+          {
+            "kind": "quantity",
+            "id": "beijing_pop",
+            "label": "Beijing urban agglomeration population, 2018",
+            "value": 19618000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Urbanization Prospects 2018: The World's Cities in 2018",
+            "year": 2018
+          },
+          {
+            "kind": "place",
+            "id": "dhaka_place",
+            "label": "Dhaka",
+            "lat": 23.8103,
+            "lon": 90.4125,
+            "sourceNote": "City centre coordinates (Encyclopaedia Britannica)"
+          },
+          {
+            "kind": "quantity",
+            "id": "dhaka_pop",
+            "label": "Dhaka urban agglomeration population, 2018",
+            "value": 19578000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Urbanization Prospects 2018: The World's Cities in 2018",
+            "year": 2018
+          },
+          {
+            "kind": "place",
+            "id": "osaka_place",
+            "label": "Osaka",
+            "lat": 34.6937,
+            "lon": 135.5023,
+            "sourceNote": "City centre coordinates (Encyclopaedia Britannica)"
+          },
+          {
+            "kind": "quantity",
+            "id": "osaka_pop",
+            "label": "Osaka urban agglomeration population, 2018",
+            "value": 19281000.0,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "UN World Urbanization Prospects 2018: The World's Cities in 2018",
+            "year": 2018
+          }
+        ]
+      },
+      "plan": {
+        "template": "map_points",
+        "title": "The world's biggest cities",
+        "caption": "Urban agglomerations, sized by population.",
+        "points": [
+          {
+            "placeFactId": "tokyo_place",
+            "displayName": "Tokyo",
+            "valueFactId": "tokyo_pop"
+          },
+          {
+            "placeFactId": "delhi_place",
+            "displayName": "Delhi",
+            "valueFactId": "delhi_pop"
+          },
+          {
+            "placeFactId": "shanghai_place",
+            "displayName": "Shanghai",
+            "valueFactId": "shanghai_pop"
+          },
+          {
+            "placeFactId": "sao_paulo_place",
+            "displayName": "São Paulo",
+            "valueFactId": "sao_paulo_pop"
+          },
+          {
+            "placeFactId": "mexico_city_place",
+            "displayName": "Mexico City",
+            "valueFactId": "mexico_city_pop"
+          },
+          {
+            "placeFactId": "cairo_place",
+            "displayName": "Cairo",
+            "valueFactId": "cairo_pop"
+          },
+          {
+            "placeFactId": "mumbai_place",
+            "displayName": "Mumbai",
+            "valueFactId": "mumbai_pop"
+          },
+          {
+            "placeFactId": "beijing_place",
+            "displayName": "Beijing",
+            "valueFactId": "beijing_pop"
+          },
+          {
+            "placeFactId": "dhaka_place",
+            "displayName": "Dhaka",
+            "valueFactId": "dhaka_pop"
+          },
+          {
+            "placeFactId": "osaka_place",
+            "displayName": "Osaka",
+            "valueFactId": "osaka_pop"
+          }
+        ]
+      }
+    }
+  ]
+}

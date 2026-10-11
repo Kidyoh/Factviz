@@ -13,6 +13,10 @@
   "mode": "size",
   "units": {
     "dimension": "length",
+    "preferred": {
+      "symbol": "km",
+      "toSi": 1000.0
+    },
     "ladder": [
       {
         "symbol": "nm",

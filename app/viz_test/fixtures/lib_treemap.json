@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "template": "treemap",
+  "title": "The world's oceans by area",
+  "annotations": [
+    {
+      "text": "Pacific: 46% of the total",
+      "anchor": "item",
+      "index": 0
+    }
+  ],
+  "scale": "linear",
+  "units": {
+    "dimension": "area",
+    "preferred": {
+      "symbol": "km²",
+      "toSi": 1000000.0
+    },
+    "ladder": [
+      {
+        "symbol": "m²",
+        "toSi": 1.0
+      },
+      {
+        "symbol": "km²",
+        "toSi": 1000000.0
+      }
+    ]
+  },
+  "items": [
+    {
+      "name": "Pacific",
+      "valueSi": 161760000000000.0,
+      "display": "~162 million km²",
+      "source": "NOAA NGDC, Eakins & Sharman 2010 (ETOPO1 ocean volumes)",
+      "share": 0.45569919796265046,
+      "shareDisplay": "46%"
+    },
+    {
+      "name": "Atlantic",
+      "valueSi": 85133000000000.0,
+      "display": "~85.1 million km²",
+      "source": "NOAA NGDC, Eakins & Sharman 2010 (ETOPO1 ocean volumes)",
+      "share": 0.239830859422319,
+      "shareDisplay": "24%"
+    },
+    {
+      "name": "Indian",
+      "valueSi": 70560000000000.0,
+      "display": "~70.6 million km²",
+      "source": "NOAA NGDC, Eakins & Sharman 2010 (ETOPO1 ocean volumes)",
+      "share": 0.19877680148519175,
+      "shareDisplay": "20%"
+    },
+    {
+      "name": "Southern",
+      "valueSi": 21960000000000.0,
+      "display": "~22 million km²",
+      "source": "NOAA NGDC, Eakins & Sharman 2010 (ETOPO1 ocean volumes)",
+      "share": 0.06186420862549335,
+      "shareDisplay": "6.2%"
+    },
+    {
+      "name": "Arctic",
+      "valueSi": 15558000000000.0,
+      "display": "~15.6 million km²",
+      "source": "NOAA NGDC, Eakins & Sharman 2010 (ETOPO1 ocean volumes)",
+      "share": 0.04382893250434543,
+      "shareDisplay": "4.4%"
+    }
+  ]
+}

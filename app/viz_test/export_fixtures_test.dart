@@ -2,8 +2,8 @@
 //
 //   cd app && flutter test viz_test/export_fixtures_test.dart
 //
-// Writes viz_test/fixtures/*.json: the five fixed queries plus every mock
-// sample from the Dev Gallery.
+// Writes viz_test/fixtures/*.json: the five fixed queries, every mock
+// sample from the Dev Gallery, and the first library entry of each template.
 import 'dart:convert';
 import 'dart:io';
 
@@ -35,6 +35,19 @@ void main() {
       if (props is NoneProps) continue;
       File('${out.path}/mock_${i.toString().padLeft(2, '0')}_${props.template.wire}.json')
           .writeAsStringSync(encoder.convert(renderJson(props)));
+    }
+    final index = jsonDecode(File('assets/library/index.json').readAsStringSync()) as Map<String, dynamic>;
+    final seen = <TemplateId>{};
+    for (final id in (index['categories'] as List).cast<String>()) {
+      final category = LibraryCategory.fromJson(
+        jsonDecode(File('assets/library/$id.json').readAsStringSync()),
+        resolver: resolver,
+      ).valueOrThrow;
+      for (final e in category.entries) {
+        if (!seen.add(e.template)) continue;
+        File('${out.path}/lib_${e.template.wire}.json')
+            .writeAsStringSync(encoder.convert(renderJson(e.visualization.props)));
+      }
     }
   });
 }

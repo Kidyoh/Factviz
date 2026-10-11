@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "template": "map_points",
+  "title": "The world's spaceports",
+  "annotations": [],
+  "points": [
+    {
+      "name": "Kennedy Space Center",
+      "lat": 28.608,
+      "lon": -80.604,
+      "source": "Published launch-site coordinates (operator and space-agency data), rounded"
+    },
+    {
+      "name": "Vandenberg",
+      "lat": 34.742,
+      "lon": -120.572,
+      "source": "Published launch-site coordinates (operator and space-agency data), rounded"
+    },
+    {
+      "name": "Starbase",
+      "lat": 25.997,
+      "lon": -97.157,
+      "source": "Published launch-site coordinates (operator and space-agency data), rounded"
+    },
+    {
+      "name": "Guiana Space Centre",
+      "lat": 5.239,
+      "lon": -52.768,
+      "source": "Published launch-site coordinates (operator and space-agency data), rounded"
+    },
+    {
+      "name": "Baikonur",
+      "lat": 45.92,
+      "lon": 63.342,
+      "source": "Published launch-site coordinates (operator and space-agency data), rounded"
+    },
+    {
+      "name": "Plesetsk",
+      "lat": 62.925,
+      "lon": 40.577,
+      "source": "Published launch-site coordinates (operator and space-agency data), rounded"
+    },
+    {
+      "name": "Vostochny",
+      "lat": 51.884,
+      "lon": 128.333,
+      "source": "Published launch-site coordinates (operator and space-agency data), rounded"
+    },
+    {
+      "name": "Jiuquan",
+      "lat": 40.958,
+      "lon": 100.291,
+      "source": "Published launch-site coordinates (operator and space-agency data), rounded"
+    },
+    {
+      "name": "Wenchang",
+      "lat": 19.614,
+      "lon": 110.951,
+      "source": "Published launch-site coordinates (operator and space-agency data), rounded"
+    },
+    {
+      "name": "Sriharikota",
+      "lat": 13.72,
+      "lon": 80.23,
+      "source": "Published launch-site coordinates (operator and space-agency data), rounded"
+    },
+    {
+      "name": "Tanegashima",
+      "lat": 30.4,
+      "lon": 130.97,
+      "source": "Published launch-site coordinates (operator and space-agency data), rounded"
+    },
+    {
+      "name": "Naro",
+      "lat": 34.432,
+      "lon": 127.535,
+      "source": "Published launch-site coordinates (operator and space-agency data), rounded"
+    },
+    {
+      "name": "Mahia (Rocket Lab)",
+      "lat": -39.262,
+      "lon": 177.865,
+      "source": "Published launch-site coordinates (operator and space-agency data), rounded"
+    }
+  ]
+}

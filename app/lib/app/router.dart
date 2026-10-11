@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../screens/dev_gallery_screen.dart';
 import '../screens/home_screen.dart';
+import '../screens/library_screen.dart';
 import '../screens/result_screen.dart';
 import '../screens/settings_screen.dart';
 import '../state/visualize_controller.dart';
@@ -33,6 +34,15 @@ GoRouter buildRouter({String initialLocation = '/'}) => GoRouter(
           builder: (context, state) => ResultScreen(request: QueryRequest(state.uri.queryParameters['q']!.trim())),
         ),
         GoRoute(path: '/settings', builder: (context, state) => const SettingsScreen()),
+        GoRoute(
+          path: '/library',
+          builder: (context, state) => LibraryScreen(initialCategory: state.uri.queryParameters['c']),
+        ),
+        GoRoute(
+          path: '/library/:category/:id',
+          builder: (context, state) =>
+              ResultScreen(request: LibraryRequest(state.pathParameters['category']!, state.pathParameters['id']!)),
+        ),
         GoRoute(
           path: '/v/:payload',
           builder: (context, state) => ResultScreen(request: SharedRequest(state.pathParameters['payload']!)),

@@ -12,6 +12,10 @@
   "mode": "size",
   "units": {
     "dimension": "length",
+    "preferred": {
+      "symbol": "nm",
+      "toSi": 1e-9
+    },
     "ladder": [
       {
         "symbol": "nm",

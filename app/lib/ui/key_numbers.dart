@@ -39,9 +39,10 @@ class _FactRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final (String value, String label) = switch (fact) {
-      QuantityFact f => (f.displayValue, f.label),
+      QuantityFact f => (f.displayValue, f.year == null ? f.label : '${f.label} (${_year(f.year!)})'),
       EventFact f => (f.displayDate, f.label),
       StepFact f => ('Step ${f.order}', f.title),
+      PlaceFact f => (_coordinates(f.lat, f.lon), f.label),
     };
     return Container(
       decoration: const BoxDecoration(border: Border(bottom: BorderSide(color: Palette.rule))),
@@ -71,3 +72,9 @@ class _FactRow extends StatelessWidget {
     );
   }
 }
+
+String _year(int y) => y < 0 ? '${-y} BCE' : '$y';
+
+/// "27.99° N, 86.93° E".
+String _coordinates(double lat, double lon) =>
+    '${lat.abs().toStringAsFixed(2)}° ${lat >= 0 ? 'N' : 'S'}, ${lon.abs().toStringAsFixed(2)}° ${lon >= 0 ? 'E' : 'W'}';

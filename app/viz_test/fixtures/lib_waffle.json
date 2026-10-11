@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "template": "waffle",
+  "title": "How much of Earth is ocean, forest and ice",
+  "caption": "Ocean is a share of the whole surface; forest and ice are shares of land.",
+  "annotations": [
+    {
+      "text": "About 7 in every 10",
+      "anchor": "item",
+      "index": 0
+    }
+  ],
+  "scale": "linear",
+  "units": {
+    "dimension": "percent",
+    "preferred": {
+      "symbol": "%",
+      "toSi": 1.0
+    },
+    "ladder": [
+      {
+        "symbol": "%",
+        "toSi": 1.0
+      }
+    ]
+  },
+  "items": [
+    {
+      "name": "Ocean (of surface)",
+      "valueSi": 71.0,
+      "display": "~71%",
+      "source": "NOAA National Ocean Service",
+      "share": 0.71,
+      "shareDisplay": "71%"
+    },
+    {
+      "name": "Forest (of land)",
+      "valueSi": 32.0,
+      "display": "~32%",
+      "source": "FAO Global Forest Resources Assessment 2025",
+      "year": 2025,
+      "share": 0.32,
+      "shareDisplay": "32%"
+    },
+    {
+      "name": "Ice (of land)",
+      "valueSi": 10.0,
+      "display": "~10%",
+      "source": "US National Snow and Ice Data Center (NSIDC)",
+      "share": 0.1,
+      "shareDisplay": "10%"
+    }
+  ]
+}

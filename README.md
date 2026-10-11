@@ -21,13 +21,12 @@ template**; hand-built Flutter widgets do all the drawing.
 - **Facts layer**: strict JSON with values, units, and a short source note per
   number. When the model is unsure it returns `confidence: "low"` with a note,
   and the app shows a warning badge.
-- **Planner layer**: picks one of `scale_zoom`, `timeline`,
-  `exponential_growth`, `comparison_bars`, `process_steps` or `none`, and
+- **Planner layer**: picks one of 20 chart templates (or `none`) and
   **refers to facts only by id**. It cannot introduce numbers.
 - **Render layer**: `PlanResolver` turns plan + facts into typed props
   (unit conversion, dimension checks, sorting), and `renderJson` turns
   those into the JSON contract for the renderer, including display strings
-  and annotations. The five templates are hand-written **D3 v7** charts in
+  and annotations. The templates are hand-written **D3 v7** charts in
   `app/assets/viz/`, bundled offline and hosted in a WebView. Every number
   on screen comes from a fact; the JavaScript never formats or invents a
   figure.
@@ -37,19 +36,55 @@ by the server and the app. On a validation failure the server retries once,
 feeding the errors back to the model. If that also fails, the app shows
 *"Couldn't visualize this one, try rephrasing."*
 
+## Chart templates
+
+| Template | Shows | Template | Shows |
+|---|---|---|---|
+| `scale_zoom` | sizes or distances to scale, log camera | `lollipop` | a ranking |
+| `timeline` | dated events | `number_line` | values on one axis (linear or log) |
+| `exponential_growth` | repeated multiplication | `slope` | before → after |
+| `comparison_bars` | amounts side by side | `range_bars` | low–high spans |
+| `process_steps` | ordered stages or a cycle | `versus` | two subjects, attribute by attribute |
+| `pictogram` | how many of one thing make another | `rate_counter` | a live counter of what happens per second |
+| `donut` | shares of a whole | `line_series` | values over the years, with scrubbing |
+| `stacked_bar` | one bar split into parts | `cosmic_clock` | a long history squeezed into 24 hours |
+| `waffle` | percentages as 10×10 grids | `map_points` | places on a world map, sized by value |
+| `treemap` | parts by area | `bubble_pack` | many things as packed circles |
+
+Facts can be quantities (optionally with a `year`), dated events, process
+steps or places (`lat`/`lon`). The rules for each template (which facts,
+which dimensions, limits) live in `PlanResolver` and are listed in
+[`docs/library.md`](docs/library.md).
+
+## Library
+
+The app ships **110 ready-made visualizations** in ten categories
+(`app/assets/library/*.json`), browsable and searchable from the home screen
+without an API key. Each entry is a facts JSON plus a plan JSON, with a
+source note for every figure, and is loaded through exactly the same
+validators and resolver as a live answer; an invalid category is left out
+rather than shown. Check or add entries with:
+
+```sh
+cd packages/factviz_core
+dart run tool/check_library.dart ../../app/assets/library/*.json
+```
+
 ## Repository layout
 
 ```
 packages/factviz_core/   schemas, validation, units, PlanResolver, ShareCodec, JSON Schemas
 server/                  shelf API: OpenRouter client, prompts, validated calls, routes
 app/                     Flutter app (Android; iOS later)
-  assets/viz/            D3 renderer: index.html, viz.js (5 templates), viz.css,
-                         silhouettes.js, img/ (NASA photos), vendor/ (d3, d3-annotation)
+  assets/viz/            D3 renderer: index.html, viz.js (original 5 templates),
+                         viz_extra.js (15 more), viz.css, silhouettes.js, img/ (NASA photos),
+                         vendor/ (d3, d3-annotation, topojson-client, world-atlas land)
+  assets/library/        110 bundled visualizations (facts + plan JSON) and index.json
   assets/lottie/         loader and logo animations (from tool/generate_lottie.py)
   lib/viz/               WebView host for the renderer
   lib/templates/         mock_data.dart (Dev Gallery only)
   lib/ui/                shared widgets (search, stages, key numbers, badges, errors)
-  lib/screens/           home, result, dev gallery
+  lib/screens/           home, result, library, settings, dev gallery
   viz_test/              renderer tests and screenshots (Node + headless Chromium)
 fixtures/queries/        the five fixed test queries (one per template)
 ```
@@ -136,7 +171,9 @@ clickable; https App Links can be added once there is a domain.
 `flutter test` uses a stand-in for the WebView. The renderer itself is tested
 in Chromium against render JSON exported from the app
 (`flutter test viz_test/export_fixtures_test.dart`). `node viz_test/shots.mjs`
-saves a screenshot of every fixture to `viz_test/out/`.
+saves a screenshot of every fixture to `viz_test/out/`, and
+`node viz_test/shots_dir.mjs <dir> <out>` does the same for any folder of render
+JSON (for example the library, exported with `check_library.dart --export=<dir>`).
 
 The **five fixed queries** in `fixtures/queries/` (planets → `scale_zoom`,
 spaceflight → `timeline`, paper folding → `exponential_growth`, whale vs bus →
@@ -155,10 +192,14 @@ in Data): warm paper, ink, one warm accent, Source Serif 4 headlines and
 annotations, Libre Franklin labels (both SIL OFL, in `app/assets/fonts`, and
 shared by Flutter and the WebView).
 
-- **D3 templates** (`app/assets/viz/viz.js`): a log-space camera that zooms
-  out across sizes or distances; a scrollable timeline with lane-packed
-  labels; a growth curve that morphs between linear and log scales; bars that
-  grow and count up; a cycle diagram or step list that autoplays.
+- **D3 templates** (`app/assets/viz/viz.js`, `viz_extra.js`): a log-space
+  camera that zooms out across sizes or distances; a scrollable timeline with
+  lane-packed labels; a growth curve that morphs between linear and log
+  scales; bars that grow and count up; a cycle diagram or step list that
+  autoplays; donuts, waffles, treemaps and packed bubbles you can tap for
+  detail; a 24-hour clock whose hand sweeps through history; a Natural Earth
+  map (world-atlas, Natural Earth data) that frames regional points; line
+  charts you can scrub; and a counter that ticks while you watch.
 - **Annotations**: `factviz_core` derives callouts from the facts ("Jupiter
   is 29× as wide as Mercury", "Fold 36: still only 6,872 km") and the
   renderer places them with

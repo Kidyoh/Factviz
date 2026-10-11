@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "template": "bubble_pack",
+  "title": "The animal kingdom by number of species",
+  "annotations": [
+    {
+      "text": "Insects: 74% of the total",
+      "anchor": "item",
+      "index": 0
+    }
+  ],
+  "scale": "linear",
+  "units": {
+    "dimension": "count",
+    "preferred": {
+      "symbol": "",
+      "toSi": 1.0
+    },
+    "ladder": [
+      {
+        "symbol": "",
+        "toSi": 1.0
+      }
+    ]
+  },
+  "items": [
+    {
+      "name": "Insects",
+      "valueSi": 1003469.0,
+      "display": "~1 million",
+      "source": "IUCN Red List Summary Statistics Table 1a, described species 2025",
+      "year": 2025,
+      "share": 0.7408731720318567,
+      "shareDisplay": "74%"
+    },
+    {
+      "name": "Arachnids",
+      "valueSi": 97085.0,
+      "display": "~97,085",
+      "source": "IUCN Red List Summary Statistics Table 1a, described species 2025",
+      "year": 2025,
+      "share": 0.07167901739536828,
+      "shareDisplay": "7.2%"
+    },
+    {
+      "name": "Molluscs",
+      "valueSi": 88244.0,
+      "display": "~88,244",
+      "source": "IUCN Red List Summary Statistics Table 1a, described species 2025",
+      "year": 2025,
+      "share": 0.06515160128791139,
+      "shareDisplay": "6.5%"
+    },
+    {
+      "name": "Crustaceans",
+      "valueSi": 83263.0,
+      "display": "~83,263",
+      "source": "IUCN Red List Summary Statistics Table 1a, described species 2025",
+      "year": 2025,
+      "share": 0.061474069376222365,
+      "shareDisplay": "6.1%"
+    },
+    {
+      "name": "Fishes",
+      "valueSi": 37288.0,
+      "display": "~37,288",
+      "source": "IUCN Red List Summary Statistics Table 1a, described species 2025",
+      "year": 2025,
+      "share": 0.02753017665590454,
+      "shareDisplay": "2.8%"
+    },
+    {
+      "name": "Reptiles",
+      "valueSi": 12502.0,
+      "display": "~12,502",
+      "source": "IUCN Red List Summary Statistics Table 1a, described species 2025",
+      "year": 2025,
+      "share": 0.009230376221629439,
+      "shareDisplay": "0.9%"
+    },
+    {
+      "name": "Birds",
+      "valueSi": 11185.0,
+      "display": "~11,185",
+      "source": "IUCN Red List Summary Statistics Table 1a, described species 2025",
+      "year": 2025,
+      "share": 0.00825801936001642,
+      "shareDisplay": "0.8%"
+    },
+    {
+      "name": "Amphibians",
+      "valueSi": 8918.0,
+      "display": "~8,918",
+      "source": "IUCN Red List Summary Statistics Table 1a, described species 2025",
+      "year": 2025,
+      "share": 0.006584266128978671,
+      "shareDisplay": "0.7%"
+    },
+    {
+      "name": "Mammals",
+      "valueSi": 6815.0,
+      "display": "~6,815",
+      "source": "IUCN Red List Summary Statistics Table 1a, described species 2025",
+      "year": 2025,
+      "share": 0.005031596060662664,
+      "shareDisplay": "0.5%"
+    },
+    {
+      "name": "Corals",
+      "valueSi": 5672.0,
+      "display": "~5,672",
+      "source": "IUCN Red List Summary Statistics Table 1a, described species 2025",
+      "year": 2025,
+      "share": 0.0041877054814495425,
+      "shareDisplay": "0.4%"
+    }
+  ]
+}

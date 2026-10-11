@@ -6,6 +6,7 @@ export 'src/annotations/annotations.dart';
 export 'src/facts/facts.dart';
 export 'src/images/image_catalog.dart';
 export 'src/json_schema/json_schemas.dart';
+export 'src/library/library.dart';
 export 'src/mapping/plan_resolver.dart';
 export 'src/plan/plan.dart';
 export 'src/share/share_codec.dart';

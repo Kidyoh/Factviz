@@ -21,6 +21,10 @@
   "defaultScale": "log",
   "units": {
     "dimension": "length",
+    "preferred": {
+      "symbol": "mm",
+      "toSi": 0.001
+    },
     "ladder": [
       {
         "symbol": "nm",

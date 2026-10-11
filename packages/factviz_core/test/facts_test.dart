@@ -99,7 +99,7 @@ void main() {
     test('rejects unknown fact kinds', () {
       final json = _validFacts();
       (json['facts'] as List)[0]['kind'] = 'opinion';
-      expect(_issues(json).single, 'facts[0].kind: must be one of: quantity, event, step');
+      expect(_issues(json).single, 'facts[0].kind: must be one of: quantity, event, step, place');
     });
 
     test('validates event dates', () {

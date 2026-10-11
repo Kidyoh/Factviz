@@ -45,6 +45,7 @@ String formatQuantity(double value, Unit unit, {bool approximate = false}) {
   final prefix = approximate ? '~' : '';
   if (unit.symbol.isEmpty) return '$prefix$n';
   if (unit.code == 'ratio') return '$prefix$n×';
+  if (unit.code == 'percent') return '$prefix$n%';
   return '$prefix$n ${unit.symbol}';
 }
 

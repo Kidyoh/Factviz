@@ -1,15 +1,21 @@
+import 'package:factviz/data/library_repository.dart';
 import 'package:factviz/templates/mock_data.dart';
 import 'package:factviz/ui/visualization_panel.dart';
 import 'package:factviz_core/factviz_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../support/fake_viz.dart';
 import '../support/test_app.dart';
 
 void main() {
-  test('mock samples cover every template', () {
-    final templates = mockSamples.map((s) => s.visualization.props.template).toSet();
+  test('mock samples and the bundled library together cover every template', () async {
+    final library = await LibraryRepository(rootBundle).load();
+    final templates = {
+      ...mockSamples.map((s) => s.visualization.props.template),
+      ...library.entries.map((e) => e.template),
+    };
     expect(templates, TemplateId.values.toSet());
   });
 

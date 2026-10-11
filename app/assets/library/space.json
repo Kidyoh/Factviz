@@ -1,0 +1,1347 @@
+{
+  "category": "space",
+  "title": "Space",
+  "entries": [
+    {
+      "id": "sun_vs_planets_size",
+      "facts": {
+        "query": "How big is the Sun compared to the planets?",
+        "topic": "Sizes of the Sun, planets and Moon",
+        "confidence": "high",
+        "explanation": "The Sun is far bigger than anything orbiting it: even Jupiter, the largest planet, looks small beside it. Earth is a rocky world only a little larger than Mars, and our Moon and dwarf planet Pluto are smaller still.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "sun_d",
+            "label": "Diameter of the Sun",
+            "sourceNote": "IAU 2015 nominal solar radius (695,700 km) doubled; NASA Sun Fact Sheet",
+            "value": 1391400,
+            "unit": "km",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "jupiter_d",
+            "label": "Diameter of Jupiter",
+            "sourceNote": "NASA Planetary Fact Sheet, equatorial diameter",
+            "value": 142984,
+            "unit": "km",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "saturn_d",
+            "label": "Diameter of Saturn",
+            "sourceNote": "NASA Planetary Fact Sheet, equatorial diameter",
+            "value": 120536,
+            "unit": "km",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "neptune_d",
+            "label": "Diameter of Neptune",
+            "sourceNote": "NASA Planetary Fact Sheet, equatorial diameter",
+            "value": 49528,
+            "unit": "km",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "earth_d",
+            "label": "Diameter of Earth",
+            "sourceNote": "NASA Planetary Fact Sheet, equatorial diameter",
+            "value": 12756,
+            "unit": "km",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "mars_d",
+            "label": "Diameter of Mars",
+            "sourceNote": "NASA Planetary Fact Sheet, equatorial diameter",
+            "value": 6792,
+            "unit": "km",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "moon_d",
+            "label": "Diameter of the Moon",
+            "sourceNote": "NASA Planetary Fact Sheet, equatorial diameter",
+            "value": 3475,
+            "unit": "km",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "pluto_d",
+            "label": "Diameter of Pluto",
+            "sourceNote": "NASA Planetary Fact Sheet, diameter from New Horizons",
+            "value": 2376,
+            "unit": "km",
+            "approximate": false
+          }
+        ]
+      },
+      "plan": {
+        "template": "scale_zoom",
+        "title": "The Sun and its worlds, to scale",
+        "mode": "size",
+        "caption": "Diameters drawn to scale, from Pluto up to the Sun.",
+        "items": [
+          {
+            "factId": "sun_d",
+            "displayName": "Sun",
+            "shape": "circle",
+            "image": "sun"
+          },
+          {
+            "factId": "jupiter_d",
+            "displayName": "Jupiter",
+            "shape": "circle",
+            "image": "jupiter"
+          },
+          {
+            "factId": "saturn_d",
+            "displayName": "Saturn",
+            "shape": "circle",
+            "image": "saturn"
+          },
+          {
+            "factId": "neptune_d",
+            "displayName": "Neptune",
+            "shape": "circle",
+            "image": "neptune"
+          },
+          {
+            "factId": "earth_d",
+            "displayName": "Earth",
+            "shape": "circle",
+            "image": "earth"
+          },
+          {
+            "factId": "mars_d",
+            "displayName": "Mars",
+            "shape": "circle",
+            "image": "mars"
+          },
+          {
+            "factId": "moon_d",
+            "displayName": "Moon",
+            "shape": "circle",
+            "image": "moon"
+          },
+          {
+            "factId": "pluto_d",
+            "displayName": "Pluto",
+            "shape": "circle",
+            "image": "pluto"
+          }
+        ]
+      }
+    },
+    {
+      "id": "space_exploration_milestones",
+      "facts": {
+        "query": "What are the biggest milestones of space exploration?",
+        "topic": "Space exploration milestones",
+        "confidence": "high",
+        "explanation": "The space age began with a small beeping satellite and moved fast: humans reached orbit within a few years and walked on the Moon within a dozen. Robotic explorers then landed on Mars, flew past the outer planets and crossed into interstellar space, while ever larger telescopes were launched into orbit.",
+        "facts": [
+          {
+            "kind": "event",
+            "id": "sputnik",
+            "label": "Sputnik 1, first artificial satellite",
+            "sourceNote": "NASA History Office",
+            "year": 1957,
+            "month": 10,
+            "day": 4,
+            "description": "The Soviet Union launches Sputnik 1 into Earth orbit."
+          },
+          {
+            "kind": "event",
+            "id": "gagarin",
+            "label": "Yuri Gagarin, first human in space",
+            "sourceNote": "NASA History Office; Roscosmos",
+            "year": 1961,
+            "month": 4,
+            "day": 12,
+            "description": "Vostok 1 carries Yuri Gagarin once around Earth."
+          },
+          {
+            "kind": "event",
+            "id": "apollo11",
+            "label": "Apollo 11 Moon landing",
+            "sourceNote": "NASA Apollo 11 mission overview",
+            "year": 1969,
+            "month": 7,
+            "day": 20,
+            "description": "Neil Armstrong and Buzz Aldrin land on the Moon."
+          },
+          {
+            "kind": "event",
+            "id": "viking1",
+            "label": "Viking 1 lands on Mars",
+            "sourceNote": "NASA Viking mission overview",
+            "year": 1976,
+            "month": 7,
+            "day": 20,
+            "description": "First successful US landing on Mars, returning surface images."
+          },
+          {
+            "kind": "event",
+            "id": "voyager1_launch",
+            "label": "Voyager 1 launch",
+            "sourceNote": "NASA JPL Voyager mission",
+            "year": 1977,
+            "month": 9,
+            "day": 5,
+            "description": "Launched to fly past Jupiter and Saturn, then leave the Solar System."
+          },
+          {
+            "kind": "event",
+            "id": "sts1",
+            "label": "First Space Shuttle flight",
+            "sourceNote": "NASA Space Shuttle program history",
+            "year": 1981,
+            "month": 4,
+            "day": 12,
+            "description": "Columbia flies STS-1, the first reusable crewed spacecraft mission."
+          },
+          {
+            "kind": "event",
+            "id": "hubble",
+            "label": "Hubble Space Telescope launch",
+            "sourceNote": "NASA Hubble mission history",
+            "year": 1990,
+            "month": 4,
+            "day": 24,
+            "description": "Shuttle Discovery carries Hubble into orbit."
+          },
+          {
+            "kind": "event",
+            "id": "iss_zarya",
+            "label": "First ISS module (Zarya) launched",
+            "sourceNote": "NASA International Space Station history",
+            "year": 1998,
+            "month": 11,
+            "day": 20,
+            "description": "Assembly of the International Space Station begins."
+          },
+          {
+            "kind": "event",
+            "id": "curiosity",
+            "label": "Curiosity rover lands on Mars",
+            "sourceNote": "NASA JPL Mars Science Laboratory",
+            "year": 2012,
+            "month": 8,
+            "day": 6,
+            "description": "The car-sized rover lands in Gale Crater (UTC date)."
+          },
+          {
+            "kind": "event",
+            "id": "voyager1_is",
+            "label": "Voyager 1 reaches interstellar space",
+            "sourceNote": "NASA JPL Voyager mission",
+            "year": 2012,
+            "month": 8,
+            "day": 25,
+            "description": "Voyager 1 crosses the heliopause, leaving the Sun's bubble of solar wind."
+          },
+          {
+            "kind": "event",
+            "id": "jwst",
+            "label": "James Webb Space Telescope launch",
+            "sourceNote": "NASA/ESA/CSA Webb mission",
+            "year": 2021,
+            "month": 12,
+            "day": 25,
+            "description": "Webb launches on an Ariane 5 from French Guiana."
+          },
+          {
+            "kind": "event",
+            "id": "artemis1",
+            "label": "Artemis I launch",
+            "sourceNote": "NASA Artemis I mission overview",
+            "year": 2022,
+            "month": 11,
+            "day": 16,
+            "description": "Uncrewed Orion capsule flies around the Moon and back."
+          }
+        ]
+      },
+      "plan": {
+        "template": "timeline",
+        "title": "Milestones of the space age",
+        "axis": "linear",
+        "eventFactIds": [
+          "sputnik",
+          "gagarin",
+          "apollo11",
+          "viking1",
+          "voyager1_launch",
+          "sts1",
+          "hubble",
+          "iss_zarya",
+          "curiosity",
+          "voyager1_is",
+          "jwst",
+          "artemis1"
+        ]
+      }
+    },
+    {
+      "id": "universe_in_a_day",
+      "facts": {
+        "query": "If the history of the universe were one day, when did things happen?",
+        "topic": "History of the universe in one day",
+        "confidence": "medium",
+        "explanation": "Squeeze the whole history of the universe into a single day and the Sun does not appear until the afternoon. Complex animals arrive only in the final hour, the dinosaurs vanish minutes before midnight, and all of recorded history fits into the final fraction of a second.",
+        "facts": [
+          {
+            "kind": "event",
+            "id": "big_bang",
+            "label": "Big Bang",
+            "sourceNote": "Planck 2018 cosmological results (age 13.79 billion years)",
+            "year": -13800000000,
+            "description": "The universe begins hot and dense and starts expanding."
+          },
+          {
+            "kind": "event",
+            "id": "first_stars",
+            "label": "First stars and galaxies",
+            "sourceNote": "Estimate from JWST and Hubble deep-field observations (NASA); timing still debated",
+            "year": -13500000000,
+            "description": "The first stars ignite within a few hundred million years of the Big Bang."
+          },
+          {
+            "kind": "event",
+            "id": "solar_system",
+            "label": "Sun and Solar System form",
+            "sourceNote": "Meteorite (CAI) radiometric ages, e.g. Connelly et al. 2012, Science",
+            "year": -4568000000,
+            "description": "A collapsing gas cloud forms the Sun and its disk of planets."
+          },
+          {
+            "kind": "event",
+            "id": "earth_forms",
+            "label": "Earth forms",
+            "sourceNote": "US Geological Survey, age of the Earth",
+            "year": -4540000000,
+            "description": "Earth assembles from colliding rocky bodies."
+          },
+          {
+            "kind": "event",
+            "id": "first_life",
+            "label": "Earliest evidence of life",
+            "sourceNote": "Peer-reviewed fossil and isotope evidence (e.g. Nutman et al. 2016, Nature); still debated",
+            "year": -3700000000,
+            "description": "Earliest traces of microbial life in ancient rocks."
+          },
+          {
+            "kind": "event",
+            "id": "oxygen",
+            "label": "Great Oxidation Event",
+            "sourceNote": "Geological record of atmospheric oxygen (peer-reviewed estimate)",
+            "year": -2400000000,
+            "description": "Microbes start filling the atmosphere with oxygen."
+          },
+          {
+            "kind": "event",
+            "id": "cambrian",
+            "label": "Cambrian explosion of animal life",
+            "sourceNote": "International Commission on Stratigraphy, base of the Cambrian",
+            "year": -538800000,
+            "description": "Complex animals appear rapidly in the fossil record."
+          },
+          {
+            "kind": "event",
+            "id": "dino_extinction",
+            "label": "Non-bird dinosaurs die out",
+            "sourceNote": "International Commission on Stratigraphy, end of the Cretaceous",
+            "year": -66000000,
+            "description": "An asteroid impact ends the age of dinosaurs."
+          },
+          {
+            "kind": "event",
+            "id": "homo_sapiens",
+            "label": "First Homo sapiens",
+            "sourceNote": "Jebel Irhoud fossils, Hublin et al. 2017, Nature",
+            "year": -300000,
+            "description": "The oldest known fossils of our species."
+          },
+          {
+            "kind": "event",
+            "id": "writing",
+            "label": "Invention of writing",
+            "sourceNote": "Archaeological record of Mesopotamian cuneiform",
+            "year": -3200,
+            "description": "Recorded history begins."
+          }
+        ]
+      },
+      "plan": {
+        "template": "cosmic_clock",
+        "title": "The universe in a single day",
+        "caption": "The Big Bang at midnight, today at the next midnight.",
+        "eventFactIds": [
+          "big_bang",
+          "first_stars",
+          "solar_system",
+          "earth_forms",
+          "first_life",
+          "oxygen",
+          "cambrian",
+          "dino_extinction",
+          "homo_sapiens",
+          "writing"
+        ]
+      }
+    },
+    {
+      "id": "launch_sites",
+      "facts": {
+        "query": "Where do rockets launch from?",
+        "topic": "Major orbital launch sites",
+        "confidence": "high",
+        "explanation": "Rockets fly from a handful of spaceports around the world. Many sit near the coast so rockets climb over the sea, and sites close to the equator get an extra push from Earth's spin, which is why Europe launches from South America.",
+        "facts": [
+          {
+            "kind": "place",
+            "id": "ksc",
+            "label": "Kennedy Space Center LC-39A, Florida, USA",
+            "sourceNote": "Published launch-site coordinates (operator and space-agency data), rounded",
+            "lat": 28.608,
+            "lon": -80.604
+          },
+          {
+            "kind": "place",
+            "id": "vandenberg",
+            "label": "Vandenberg Space Force Base, California, USA",
+            "sourceNote": "Published launch-site coordinates (operator and space-agency data), rounded",
+            "lat": 34.742,
+            "lon": -120.572
+          },
+          {
+            "kind": "place",
+            "id": "starbase",
+            "label": "SpaceX Starbase, Boca Chica, Texas, USA",
+            "sourceNote": "Published launch-site coordinates (operator and space-agency data), rounded",
+            "lat": 25.997,
+            "lon": -97.157
+          },
+          {
+            "kind": "place",
+            "id": "kourou",
+            "label": "Guiana Space Centre, Kourou, French Guiana",
+            "sourceNote": "Published launch-site coordinates (operator and space-agency data), rounded",
+            "lat": 5.239,
+            "lon": -52.768
+          },
+          {
+            "kind": "place",
+            "id": "baikonur",
+            "label": "Baikonur Cosmodrome, Kazakhstan",
+            "sourceNote": "Published launch-site coordinates (operator and space-agency data), rounded",
+            "lat": 45.92,
+            "lon": 63.342
+          },
+          {
+            "kind": "place",
+            "id": "plesetsk",
+            "label": "Plesetsk Cosmodrome, Russia",
+            "sourceNote": "Published launch-site coordinates (operator and space-agency data), rounded",
+            "lat": 62.925,
+            "lon": 40.577
+          },
+          {
+            "kind": "place",
+            "id": "vostochny",
+            "label": "Vostochny Cosmodrome, Russia",
+            "sourceNote": "Published launch-site coordinates (operator and space-agency data), rounded",
+            "lat": 51.884,
+            "lon": 128.333
+          },
+          {
+            "kind": "place",
+            "id": "jiuquan",
+            "label": "Jiuquan Satellite Launch Center, China",
+            "sourceNote": "Published launch-site coordinates (operator and space-agency data), rounded",
+            "lat": 40.958,
+            "lon": 100.291
+          },
+          {
+            "kind": "place",
+            "id": "wenchang",
+            "label": "Wenchang Space Launch Site, Hainan, China",
+            "sourceNote": "Published launch-site coordinates (operator and space-agency data), rounded",
+            "lat": 19.614,
+            "lon": 110.951
+          },
+          {
+            "kind": "place",
+            "id": "sriharikota",
+            "label": "Satish Dhawan Space Centre, Sriharikota, India",
+            "sourceNote": "Published launch-site coordinates (operator and space-agency data), rounded",
+            "lat": 13.72,
+            "lon": 80.23
+          },
+          {
+            "kind": "place",
+            "id": "tanegashima",
+            "label": "Tanegashima Space Center, Japan",
+            "sourceNote": "Published launch-site coordinates (operator and space-agency data), rounded",
+            "lat": 30.4,
+            "lon": 130.97
+          },
+          {
+            "kind": "place",
+            "id": "naro",
+            "label": "Naro Space Center, South Korea",
+            "sourceNote": "Published launch-site coordinates (operator and space-agency data), rounded",
+            "lat": 34.432,
+            "lon": 127.535
+          },
+          {
+            "kind": "place",
+            "id": "mahia",
+            "label": "Rocket Lab Launch Complex 1, Mahia Peninsula, New Zealand",
+            "sourceNote": "Published launch-site coordinates (operator and space-agency data), rounded",
+            "lat": -39.262,
+            "lon": 177.865
+          }
+        ]
+      },
+      "plan": {
+        "template": "map_points",
+        "title": "The world's spaceports",
+        "points": [
+          {
+            "placeFactId": "ksc",
+            "displayName": "Kennedy Space Center"
+          },
+          {
+            "placeFactId": "vandenberg",
+            "displayName": "Vandenberg"
+          },
+          {
+            "placeFactId": "starbase",
+            "displayName": "Starbase"
+          },
+          {
+            "placeFactId": "kourou",
+            "displayName": "Guiana Space Centre"
+          },
+          {
+            "placeFactId": "baikonur",
+            "displayName": "Baikonur"
+          },
+          {
+            "placeFactId": "plesetsk",
+            "displayName": "Plesetsk"
+          },
+          {
+            "placeFactId": "vostochny",
+            "displayName": "Vostochny"
+          },
+          {
+            "placeFactId": "jiuquan",
+            "displayName": "Jiuquan"
+          },
+          {
+            "placeFactId": "wenchang",
+            "displayName": "Wenchang"
+          },
+          {
+            "placeFactId": "sriharikota",
+            "displayName": "Sriharikota"
+          },
+          {
+            "placeFactId": "tanegashima",
+            "displayName": "Tanegashima"
+          },
+          {
+            "placeFactId": "naro",
+            "displayName": "Naro"
+          },
+          {
+            "placeFactId": "mahia",
+            "displayName": "Mahia (Rocket Lab)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gravity_on_other_worlds",
+      "facts": {
+        "query": "How strong is gravity on other planets?",
+        "topic": "Surface gravity compared with Earth",
+        "confidence": "high",
+        "explanation": "Gravity depends on a world's mass and size. On the Moon or Pluto you would feel feather-light, on Mars a bit more than a third of your weight, and near Jupiter's cloud tops more than twice as heavy. Saturn is huge but so light for its size that its gravity is close to Earth's.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "g_pluto",
+            "label": "Surface gravity of Pluto, relative to Earth",
+            "sourceNote": "NASA Planetary Fact Sheet, values relative to Earth (NSSDCA, 2025)",
+            "value": 0.071,
+            "unit": "ratio",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "g_moon",
+            "label": "Surface gravity of the Moon, relative to Earth",
+            "sourceNote": "NASA Planetary Fact Sheet, values relative to Earth (NSSDCA, 2025)",
+            "value": 0.166,
+            "unit": "ratio",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "g_mars",
+            "label": "Surface gravity of Mars, relative to Earth",
+            "sourceNote": "NASA Planetary Fact Sheet, values relative to Earth (NSSDCA, 2025)",
+            "value": 0.377,
+            "unit": "ratio",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "g_venus",
+            "label": "Surface gravity of Venus, relative to Earth",
+            "sourceNote": "NASA Planetary Fact Sheet, values relative to Earth (NSSDCA, 2025)",
+            "value": 0.907,
+            "unit": "ratio",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "g_saturn",
+            "label": "Surface gravity of Saturn, relative to Earth",
+            "sourceNote": "NASA Planetary Fact Sheet, values relative to Earth (NSSDCA, 2025) (at the 1-bar cloud level)",
+            "value": 0.916,
+            "unit": "ratio",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "g_earth",
+            "label": "Surface gravity of Earth, relative to Earth",
+            "sourceNote": "NASA Planetary Fact Sheet, values relative to Earth (NSSDCA, 2025) (Earth = 1 by definition)",
+            "value": 1,
+            "unit": "ratio",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "g_neptune",
+            "label": "Surface gravity of Neptune, relative to Earth",
+            "sourceNote": "NASA Planetary Fact Sheet, values relative to Earth (NSSDCA, 2025) (at the 1-bar cloud level)",
+            "value": 1.12,
+            "unit": "ratio",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "g_jupiter",
+            "label": "Surface gravity of Jupiter, relative to Earth",
+            "sourceNote": "NASA Planetary Fact Sheet, values relative to Earth (NSSDCA, 2025) (at the 1-bar cloud level)",
+            "value": 2.36,
+            "unit": "ratio",
+            "approximate": false
+          }
+        ]
+      },
+      "plan": {
+        "template": "comparison_bars",
+        "title": "How heavy you would feel on other worlds",
+        "orientation": "horizontal",
+        "caption": "Surface gravity as a multiple of Earth's.",
+        "bars": [
+          {
+            "factId": "g_pluto",
+            "displayName": "Pluto",
+            "image": "pluto"
+          },
+          {
+            "factId": "g_moon",
+            "displayName": "Moon",
+            "image": "moon"
+          },
+          {
+            "factId": "g_mars",
+            "displayName": "Mars",
+            "image": "mars"
+          },
+          {
+            "factId": "g_venus",
+            "displayName": "Venus",
+            "image": "venus"
+          },
+          {
+            "factId": "g_saturn",
+            "displayName": "Saturn",
+            "image": "saturn"
+          },
+          {
+            "factId": "g_earth",
+            "displayName": "Earth",
+            "image": "earth"
+          },
+          {
+            "factId": "g_neptune",
+            "displayName": "Neptune",
+            "image": "neptune"
+          },
+          {
+            "factId": "g_jupiter",
+            "displayName": "Jupiter",
+            "image": "jupiter"
+          }
+        ]
+      }
+    },
+    {
+      "id": "earth_vs_mars",
+      "facts": {
+        "query": "How does Mars compare with Earth?",
+        "topic": "Earth versus Mars",
+        "confidence": "high",
+        "explanation": "Mars is about half Earth's width and has only a small fraction of its mass. Its day is almost the same length as ours, but because it orbits farther from the Sun its year lasts nearly twice as long. Mars has two tiny moons instead of one large one.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "e_diam",
+            "label": "Earth diameter",
+            "sourceNote": "NASA Planetary Fact Sheet (NSSDCA, 2025)",
+            "value": 12756,
+            "unit": "km",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "m_diam",
+            "label": "Mars diameter",
+            "sourceNote": "NASA Planetary Fact Sheet (NSSDCA, 2025)",
+            "value": 6792,
+            "unit": "km",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "e_mass",
+            "label": "Earth mass",
+            "sourceNote": "NASA Planetary Fact Sheet (NSSDCA, 2025)",
+            "value": 5.97e+24,
+            "unit": "kg",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "m_mass",
+            "label": "Mars mass",
+            "sourceNote": "NASA Planetary Fact Sheet (NSSDCA, 2025)",
+            "value": 6.42e+23,
+            "unit": "kg",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "e_day",
+            "label": "Earth length of day (solar day)",
+            "sourceNote": "NASA Planetary Fact Sheet (NSSDCA, 2025)",
+            "value": 24.0,
+            "unit": "h",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "m_day",
+            "label": "Mars length of day (solar day, a sol)",
+            "sourceNote": "NASA Planetary Fact Sheet (NSSDCA, 2025)",
+            "value": 24.7,
+            "unit": "h",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "e_year",
+            "label": "Earth orbital period",
+            "sourceNote": "NASA Planetary Fact Sheet (NSSDCA, 2025)",
+            "value": 365.2,
+            "unit": "day",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "m_year",
+            "label": "Mars orbital period",
+            "sourceNote": "NASA Planetary Fact Sheet (NSSDCA, 2025)",
+            "value": 687.0,
+            "unit": "day",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "e_dist",
+            "label": "Earth mean distance from Sun",
+            "sourceNote": "NASA Planetary Fact Sheet (NSSDCA, 2025)",
+            "value": 149600000,
+            "unit": "km",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "m_dist",
+            "label": "Mars mean distance from Sun",
+            "sourceNote": "NASA Planetary Fact Sheet (NSSDCA, 2025)",
+            "value": 228000000,
+            "unit": "km",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "e_moons",
+            "label": "Earth's moons",
+            "sourceNote": "NASA Planetary Fact Sheet (NSSDCA, 2025)",
+            "value": 1,
+            "unit": "count",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "m_moons",
+            "label": "Mars's moons (Phobos and Deimos)",
+            "sourceNote": "NASA Planetary Fact Sheet (NSSDCA, 2025)",
+            "value": 2,
+            "unit": "count",
+            "approximate": false
+          }
+        ]
+      },
+      "plan": {
+        "template": "versus",
+        "title": "Earth and Mars, head to head",
+        "aName": "Earth",
+        "bName": "Mars",
+        "aImage": "earth",
+        "bImage": "mars",
+        "rows": [
+          {
+            "label": "Diameter",
+            "aFactId": "e_diam",
+            "bFactId": "m_diam"
+          },
+          {
+            "label": "Mass",
+            "aFactId": "e_mass",
+            "bFactId": "m_mass"
+          },
+          {
+            "label": "Length of a day",
+            "aFactId": "e_day",
+            "bFactId": "m_day"
+          },
+          {
+            "label": "Length of a year",
+            "aFactId": "e_year",
+            "bFactId": "m_year"
+          },
+          {
+            "label": "Distance from Sun",
+            "aFactId": "e_dist",
+            "bFactId": "m_dist"
+          },
+          {
+            "label": "Moons",
+            "aFactId": "e_moons",
+            "bFactId": "m_moons"
+          }
+        ]
+      }
+    },
+    {
+      "id": "universe_composition",
+      "facts": {
+        "query": "What is the universe made of?",
+        "topic": "Contents of the universe",
+        "confidence": "high",
+        "explanation": "Everything we can see, from stars to people, is made of ordinary matter, and it is only a small slice of the cosmos. Most matter is invisible dark matter, detected only by its gravity, and most of the total is dark energy, which drives the universe's accelerating expansion.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "dark_energy",
+            "label": "Dark energy share of the universe's energy content",
+            "sourceNote": "Planck 2018 cosmological parameters (ESA Planck Collaboration)",
+            "value": 68.5,
+            "unit": "percent",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "dark_matter",
+            "label": "Dark matter share of the universe's energy content",
+            "sourceNote": "Planck 2018 cosmological parameters (ESA Planck Collaboration)",
+            "value": 26.4,
+            "unit": "percent",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "ordinary_matter",
+            "label": "Ordinary (atomic) matter share of the universe's energy content",
+            "sourceNote": "Planck 2018 cosmological parameters (ESA Planck Collaboration)",
+            "value": 4.9,
+            "unit": "percent",
+            "approximate": true
+          }
+        ]
+      },
+      "plan": {
+        "template": "donut",
+        "title": "What the universe is made of",
+        "caption": "Shares of the universe's total energy content today; the sliver left is neutrinos and light.",
+        "items": [
+          {
+            "factId": "dark_energy",
+            "displayName": "Dark energy"
+          },
+          {
+            "factId": "dark_matter",
+            "displayName": "Dark matter"
+          },
+          {
+            "factId": "ordinary_matter",
+            "displayName": "Ordinary matter"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sun_composition",
+      "facts": {
+        "query": "What is the Sun made of?",
+        "topic": "Composition of the Sun",
+        "confidence": "high",
+        "explanation": "The Sun is a giant ball of hydrogen and helium. Every element heavier than helium, including the oxygen, carbon and iron that make up planets and people, adds up to only a tiny share of its mass. In its core the Sun slowly fuses hydrogen into helium.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "sun_h",
+            "label": "Hydrogen share of the Sun's mass",
+            "sourceNote": "Asplund et al. 2009, Annual Review of Astronomy and Astrophysics: present-day solar mass fractions",
+            "value": 73.8,
+            "unit": "percent",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "sun_he",
+            "label": "Helium share of the Sun's mass",
+            "sourceNote": "Asplund et al. 2009, Annual Review of Astronomy and Astrophysics: present-day solar mass fractions",
+            "value": 24.9,
+            "unit": "percent",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "sun_metals",
+            "label": "Share of all heavier elements in the Sun's mass",
+            "sourceNote": "Asplund et al. 2009, Annual Review of Astronomy and Astrophysics: present-day solar mass fractions",
+            "value": 1.3,
+            "unit": "percent",
+            "approximate": true
+          }
+        ]
+      },
+      "plan": {
+        "template": "stacked_bar",
+        "title": "What the Sun is made of",
+        "caption": "Share of the Sun's mass at its visible surface.",
+        "items": [
+          {
+            "factId": "sun_h",
+            "displayName": "Hydrogen"
+          },
+          {
+            "factId": "sun_he",
+            "displayName": "Helium"
+          },
+          {
+            "factId": "sun_metals",
+            "displayName": "All heavier elements"
+          }
+        ]
+      }
+    },
+    {
+      "id": "planet_year_lengths",
+      "facts": {
+        "query": "How long is a year on each planet?",
+        "topic": "Orbital periods of the planets",
+        "confidence": "high",
+        "explanation": "A planet's year is the time it takes to go once around the Sun. Worlds farther out travel a longer path at a slower speed, so their years stretch enormously: Mercury races around in a few Earth months, while Neptune has completed only about one orbit since it was discovered.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "p_pluto",
+            "label": "Orbital period of Pluto",
+            "sourceNote": "NASA Planetary Fact Sheet, sidereal orbital period",
+            "value": 90560,
+            "unit": "day",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "p_neptune",
+            "label": "Orbital period of Neptune",
+            "sourceNote": "NASA Planetary Fact Sheet, sidereal orbital period",
+            "value": 59800,
+            "unit": "day",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "p_uranus",
+            "label": "Orbital period of Uranus",
+            "sourceNote": "NASA Planetary Fact Sheet, sidereal orbital period",
+            "value": 30589,
+            "unit": "day",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "p_saturn",
+            "label": "Orbital period of Saturn",
+            "sourceNote": "NASA Planetary Fact Sheet, sidereal orbital period",
+            "value": 10747,
+            "unit": "day",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "p_jupiter",
+            "label": "Orbital period of Jupiter",
+            "sourceNote": "NASA Planetary Fact Sheet, sidereal orbital period",
+            "value": 4331,
+            "unit": "day",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "p_mars",
+            "label": "Orbital period of Mars",
+            "sourceNote": "NASA Planetary Fact Sheet, sidereal orbital period",
+            "value": 687.0,
+            "unit": "day",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "p_earth",
+            "label": "Orbital period of Earth",
+            "sourceNote": "NASA Planetary Fact Sheet, sidereal orbital period",
+            "value": 365.2,
+            "unit": "day",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "p_venus",
+            "label": "Orbital period of Venus",
+            "sourceNote": "NASA Planetary Fact Sheet, sidereal orbital period",
+            "value": 224.7,
+            "unit": "day",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "p_mercury",
+            "label": "Orbital period of Mercury",
+            "sourceNote": "NASA Planetary Fact Sheet, sidereal orbital period",
+            "value": 88.0,
+            "unit": "day",
+            "approximate": false
+          }
+        ]
+      },
+      "plan": {
+        "template": "lollipop",
+        "title": "How long a year lasts on each planet",
+        "scale": "log",
+        "caption": "One trip around the Sun, in Earth days (log scale).",
+        "items": [
+          {
+            "factId": "p_pluto",
+            "displayName": "Pluto (dwarf planet)",
+            "image": "pluto"
+          },
+          {
+            "factId": "p_neptune",
+            "displayName": "Neptune",
+            "image": "neptune"
+          },
+          {
+            "factId": "p_uranus",
+            "displayName": "Uranus",
+            "image": "uranus"
+          },
+          {
+            "factId": "p_saturn",
+            "displayName": "Saturn",
+            "image": "saturn"
+          },
+          {
+            "factId": "p_jupiter",
+            "displayName": "Jupiter",
+            "image": "jupiter"
+          },
+          {
+            "factId": "p_mars",
+            "displayName": "Mars",
+            "image": "mars"
+          },
+          {
+            "factId": "p_earth",
+            "displayName": "Earth",
+            "image": "earth"
+          },
+          {
+            "factId": "p_venus",
+            "displayName": "Venus",
+            "image": "venus"
+          },
+          {
+            "factId": "p_mercury",
+            "displayName": "Mercury",
+            "image": "mercury"
+          }
+        ]
+      }
+    },
+    {
+      "id": "how_fast_are_we_moving",
+      "facts": {
+        "query": "How fast is Earth moving through space?",
+        "topic": "Speeds in space",
+        "confidence": "high",
+        "explanation": "Even sitting still you are moving fast: Earth's spin carries the equator around every day, and the planet itself races around the Sun far faster. The space station is faster than any bullet, and Voyager 1, the most distant spacecraft, keeps coasting away from the Sun.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "spin_dist",
+            "label": "Distance a point on the equator travels per second as Earth spins",
+            "sourceNote": "Derived from Earth's equatorial radius and sidereal day (NASA Earth Fact Sheet)",
+            "value": 465,
+            "unit": "m",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "spin_period",
+            "label": "One second",
+            "sourceNote": "Unit period",
+            "value": 1,
+            "unit": "s",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "iss_dist",
+            "label": "Distance the International Space Station travels per second",
+            "sourceNote": "Circular orbital speed at the ISS's ~420 km altitude (NASA ISS facts)",
+            "value": 7.66,
+            "unit": "km",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "iss_period",
+            "label": "One second",
+            "sourceNote": "Unit period",
+            "value": 1,
+            "unit": "s",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "voyager_dist",
+            "label": "Distance Voyager 1 travels per second, relative to the Sun",
+            "sourceNote": "NASA JPL Voyager mission status",
+            "value": 17,
+            "unit": "km",
+            "approximate": true,
+            "year": 2025
+          },
+          {
+            "kind": "quantity",
+            "id": "voyager_period",
+            "label": "One second",
+            "sourceNote": "Unit period",
+            "value": 1,
+            "unit": "s",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "orbit_dist",
+            "label": "Distance Earth travels per second around the Sun",
+            "sourceNote": "NASA Earth Fact Sheet, mean orbital velocity",
+            "value": 29.78,
+            "unit": "km",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "orbit_period",
+            "label": "One second",
+            "sourceNote": "Unit period",
+            "value": 1,
+            "unit": "s",
+            "approximate": false
+          }
+        ]
+      },
+      "plan": {
+        "template": "rate_counter",
+        "title": "How far you have travelled since opening this page",
+        "rows": [
+          {
+            "label": "Earth's spin at the equator",
+            "aFactId": "spin_dist",
+            "bFactId": "spin_period"
+          },
+          {
+            "label": "Space station orbiting Earth",
+            "aFactId": "iss_dist",
+            "bFactId": "iss_period"
+          },
+          {
+            "label": "Voyager 1 leaving the Sun",
+            "aFactId": "voyager_dist",
+            "bFactId": "voyager_period"
+          },
+          {
+            "label": "Earth orbiting the Sun",
+            "aFactId": "orbit_dist",
+            "bFactId": "orbit_period"
+          }
+        ]
+      }
+    },
+    {
+      "id": "exoplanets_discovered",
+      "facts": {
+        "query": "How many planets have we found around other stars?",
+        "topic": "Known exoplanets over time",
+        "confidence": "high",
+        "explanation": "The first planets around other stars were confirmed in the nineties. Since then the count has exploded, with big jumps when NASA's Kepler mission released large batches of discoveries, and today thousands are known.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "exo_1995",
+            "label": "Confirmed exoplanets discovered by the end of 1995",
+            "sourceNote": "NASA Exoplanet Archive: confirmed planets, cumulative by discovery year (2026 query)",
+            "value": 4,
+            "unit": "count",
+            "approximate": false,
+            "year": 1995
+          },
+          {
+            "kind": "quantity",
+            "id": "exo_2000",
+            "label": "Confirmed exoplanets discovered by the end of 2000",
+            "sourceNote": "NASA Exoplanet Archive: confirmed planets, cumulative by discovery year (2026 query)",
+            "value": 46,
+            "unit": "count",
+            "approximate": false,
+            "year": 2000
+          },
+          {
+            "kind": "quantity",
+            "id": "exo_2005",
+            "label": "Confirmed exoplanets discovered by the end of 2005",
+            "sourceNote": "NASA Exoplanet Archive: confirmed planets, cumulative by discovery year (2026 query)",
+            "value": 172,
+            "unit": "count",
+            "approximate": false,
+            "year": 2005
+          },
+          {
+            "kind": "quantity",
+            "id": "exo_2010",
+            "label": "Confirmed exoplanets discovered by the end of 2010",
+            "sourceNote": "NASA Exoplanet Archive: confirmed planets, cumulative by discovery year (2026 query)",
+            "value": 498,
+            "unit": "count",
+            "approximate": false,
+            "year": 2010
+          },
+          {
+            "kind": "quantity",
+            "id": "exo_2014",
+            "label": "Confirmed exoplanets discovered by the end of 2014",
+            "sourceNote": "NASA Exoplanet Archive: confirmed planets, cumulative by discovery year (2026 query)",
+            "value": 1783,
+            "unit": "count",
+            "approximate": false,
+            "year": 2014
+          },
+          {
+            "kind": "quantity",
+            "id": "exo_2016",
+            "label": "Confirmed exoplanets discovered by the end of 2016",
+            "sourceNote": "NASA Exoplanet Archive: confirmed planets, cumulative by discovery year (2026 query)",
+            "value": 3442,
+            "unit": "count",
+            "approximate": false,
+            "year": 2016
+          },
+          {
+            "kind": "quantity",
+            "id": "exo_2020",
+            "label": "Confirmed exoplanets discovered by the end of 2020",
+            "sourceNote": "NASA Exoplanet Archive: confirmed planets, cumulative by discovery year (2026 query)",
+            "value": 4330,
+            "unit": "count",
+            "approximate": false,
+            "year": 2020
+          },
+          {
+            "kind": "quantity",
+            "id": "exo_2025",
+            "label": "Confirmed exoplanets discovered by the end of 2025",
+            "sourceNote": "NASA Exoplanet Archive: confirmed planets, cumulative by discovery year (2026 query)",
+            "value": 6090,
+            "unit": "count",
+            "approximate": false,
+            "year": 2025
+          }
+        ]
+      },
+      "plan": {
+        "template": "line_series",
+        "title": "Planets found around other stars",
+        "scale": "log",
+        "caption": "Cumulative number of confirmed exoplanets, by year of discovery.",
+        "series": [
+          {
+            "displayName": "Confirmed exoplanets",
+            "factIds": [
+              "exo_1995",
+              "exo_2000",
+              "exo_2005",
+              "exo_2010",
+              "exo_2014",
+              "exo_2016",
+              "exo_2020",
+              "exo_2025"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

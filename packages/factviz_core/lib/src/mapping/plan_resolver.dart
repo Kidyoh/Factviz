@@ -4,8 +4,11 @@ import '../facts/facts.dart';
 import '../images/image_catalog.dart';
 import '../plan/plan.dart';
 import '../templates/template_props.dart';
+import '../units/format.dart';
 import '../units/units.dart';
 import '../validation/validation.dart';
+
+part 'plan_resolver_extra.dart';
 
 /// Maps a [Plan]'s fact references onto typed [TemplateProps].
 ///
@@ -22,6 +25,7 @@ class PlanResolver {
   static const double maxScaleRange = 1e30;
   static const double maxGrowthFactor = 1000;
   static const int maxGrowthSteps = 200;
+  static const double maxPictogramCount = 10000;
 
   ValidationResult<TemplateProps> resolve(Plan plan, FactsResult facts) =>
       validate((issues) => _Resolution(facts, issues, referenceYear ?? DateTime.now().year).run(plan));
@@ -56,6 +60,7 @@ class _Resolution {
         unit: f.unit,
         approximate: f.approximate,
         sourceNote: f.sourceNote,
+        year: f.year,
       );
 
   /// All quantities must share one compatibility group; returns it.
@@ -78,6 +83,12 @@ class _Resolution {
         ComparisonBarsPlan() => _bars(plan),
         ProcessStepsPlan() => _steps(plan),
         NonePlan() => NoneProps(title: plan.title, caption: plan.caption, reason: plan.reason),
+        ItemsPlan() => _items(plan),
+        PairsPlan() => _pairs(plan),
+        PictogramPlan() => _pictogram(plan),
+        SeriesPlan() => _series(plan),
+        ClockPlan() => _clock(plan),
+        MapPlan() => _map(plan),
       };
 
   ScaleZoomProps? _scaleZoom(ScaleZoomPlan plan) {

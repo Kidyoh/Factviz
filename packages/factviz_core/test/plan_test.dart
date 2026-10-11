@@ -41,7 +41,7 @@ void main() {
 
     test('rejects unknown templates', () {
       expect(_issues({'template': 'pie_chart', 'title': 'x'}), [
-        'template: must be one of: scale_zoom, timeline, exponential_growth, comparison_bars, process_steps, none',
+        'template: must be one of: ${TemplateId.values.map((t) => t.wire).join(', ')}',
       ]);
     });
 

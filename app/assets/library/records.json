@@ -1,0 +1,1793 @@
+{
+  "category": "records",
+  "title": "Records & everyday",
+  "entries": [
+    {
+      "id": "tallest_buildings",
+      "facts": {
+        "query": "What are the tallest buildings in the world?",
+        "topic": "Tallest buildings in the world",
+        "confidence": "high",
+        "explanation": "Burj Khalifa in Dubai has been the world's tallest building since it opened, standing well clear of every rival. Most of the other giants were finished this century, many of them in China, and heights are measured to the architectural top, including spires but not antennas.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "burj_khalifa",
+            "label": "Height of Burj Khalifa, Dubai",
+            "value": 828,
+            "unit": "m",
+            "approximate": false,
+            "sourceNote": "CTBUH Skyscraper Center, height to architectural top"
+          },
+          {
+            "kind": "quantity",
+            "id": "merdeka_118",
+            "label": "Height of Merdeka 118, Kuala Lumpur",
+            "value": 678.9,
+            "unit": "m",
+            "approximate": false,
+            "sourceNote": "CTBUH Skyscraper Center, height to architectural top"
+          },
+          {
+            "kind": "quantity",
+            "id": "shanghai_tower",
+            "label": "Height of Shanghai Tower, Shanghai",
+            "value": 632,
+            "unit": "m",
+            "approximate": false,
+            "sourceNote": "CTBUH Skyscraper Center, height to architectural top"
+          },
+          {
+            "kind": "quantity",
+            "id": "makkah_clock",
+            "label": "Height of Makkah Royal Clock Tower, Mecca",
+            "value": 601,
+            "unit": "m",
+            "approximate": false,
+            "sourceNote": "CTBUH Skyscraper Center, height to architectural top"
+          },
+          {
+            "kind": "quantity",
+            "id": "ping_an",
+            "label": "Height of Ping An Finance Center, Shenzhen",
+            "value": 599.1,
+            "unit": "m",
+            "approximate": false,
+            "sourceNote": "CTBUH Skyscraper Center, height to architectural top"
+          },
+          {
+            "kind": "quantity",
+            "id": "lotte_tower",
+            "label": "Height of Lotte World Tower, Seoul",
+            "value": 554.5,
+            "unit": "m",
+            "approximate": false,
+            "sourceNote": "CTBUH Skyscraper Center, height to architectural top"
+          },
+          {
+            "kind": "quantity",
+            "id": "one_wtc",
+            "label": "Height of One World Trade Center, New York",
+            "value": 541.3,
+            "unit": "m",
+            "approximate": false,
+            "sourceNote": "CTBUH Skyscraper Center, height to architectural top"
+          },
+          {
+            "kind": "quantity",
+            "id": "guangzhou_ctf",
+            "label": "Height of Guangzhou CTF Finance Centre, Guangzhou",
+            "value": 530,
+            "unit": "m",
+            "approximate": false,
+            "sourceNote": "CTBUH Skyscraper Center, height to architectural top"
+          }
+        ]
+      },
+      "plan": {
+        "template": "comparison_bars",
+        "title": "The world's tallest buildings",
+        "orientation": "vertical",
+        "caption": "Height to architectural top, as measured by the Council on Tall Buildings and Urban Habitat.",
+        "bars": [
+          {
+            "factId": "burj_khalifa",
+            "displayName": "Burj Khalifa",
+            "image": "skyscraper"
+          },
+          {
+            "factId": "merdeka_118",
+            "displayName": "Merdeka 118",
+            "image": "skyscraper"
+          },
+          {
+            "factId": "shanghai_tower",
+            "displayName": "Shanghai Tower",
+            "image": "skyscraper"
+          },
+          {
+            "factId": "makkah_clock",
+            "displayName": "Makkah Royal Clock Tower",
+            "image": "skyscraper"
+          },
+          {
+            "factId": "ping_an",
+            "displayName": "Ping An Finance Center",
+            "image": "skyscraper"
+          },
+          {
+            "factId": "lotte_tower",
+            "displayName": "Lotte World Tower",
+            "image": "skyscraper"
+          },
+          {
+            "factId": "one_wtc",
+            "displayName": "One World Trade Center",
+            "image": "skyscraper"
+          },
+          {
+            "factId": "guangzhou_ctf",
+            "displayName": "Guangzhou CTF Centre",
+            "image": "skyscraper"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tallest_buildings_map",
+      "facts": {
+        "query": "Where are the tallest buildings in the world?",
+        "topic": "Where the tallest buildings are",
+        "confidence": "high",
+        "explanation": "The race for the sky has moved east. Of the world's tallest buildings, only one is in the Americas; the rest rise in the Middle East and East Asia, with China home to more supertall towers than any other country.",
+        "facts": [
+          {
+            "kind": "place",
+            "id": "burj_khalifa_loc",
+            "label": "Location of Burj Khalifa, Dubai",
+            "lat": 25.1972,
+            "lon": 55.2744,
+            "sourceNote": "CTBUH Skyscraper Center building location"
+          },
+          {
+            "kind": "quantity",
+            "id": "burj_khalifa_h",
+            "label": "Height of Burj Khalifa, Dubai",
+            "value": 828,
+            "unit": "m",
+            "approximate": false,
+            "sourceNote": "CTBUH Skyscraper Center, height to architectural top"
+          },
+          {
+            "kind": "place",
+            "id": "merdeka_118_loc",
+            "label": "Location of Merdeka 118, Kuala Lumpur",
+            "lat": 3.142,
+            "lon": 101.7006,
+            "sourceNote": "CTBUH Skyscraper Center building location"
+          },
+          {
+            "kind": "quantity",
+            "id": "merdeka_118_h",
+            "label": "Height of Merdeka 118, Kuala Lumpur",
+            "value": 678.9,
+            "unit": "m",
+            "approximate": false,
+            "sourceNote": "CTBUH Skyscraper Center, height to architectural top"
+          },
+          {
+            "kind": "place",
+            "id": "shanghai_tower_loc",
+            "label": "Location of Shanghai Tower, Shanghai",
+            "lat": 31.2335,
+            "lon": 121.5056,
+            "sourceNote": "CTBUH Skyscraper Center building location"
+          },
+          {
+            "kind": "quantity",
+            "id": "shanghai_tower_h",
+            "label": "Height of Shanghai Tower, Shanghai",
+            "value": 632,
+            "unit": "m",
+            "approximate": false,
+            "sourceNote": "CTBUH Skyscraper Center, height to architectural top"
+          },
+          {
+            "kind": "place",
+            "id": "makkah_clock_loc",
+            "label": "Location of Makkah Royal Clock Tower, Mecca",
+            "lat": 21.4189,
+            "lon": 39.8262,
+            "sourceNote": "CTBUH Skyscraper Center building location"
+          },
+          {
+            "kind": "quantity",
+            "id": "makkah_clock_h",
+            "label": "Height of Makkah Royal Clock Tower, Mecca",
+            "value": 601,
+            "unit": "m",
+            "approximate": false,
+            "sourceNote": "CTBUH Skyscraper Center, height to architectural top"
+          },
+          {
+            "kind": "place",
+            "id": "ping_an_loc",
+            "label": "Location of Ping An Finance Center, Shenzhen",
+            "lat": 22.5333,
+            "lon": 114.0553,
+            "sourceNote": "CTBUH Skyscraper Center building location"
+          },
+          {
+            "kind": "quantity",
+            "id": "ping_an_h",
+            "label": "Height of Ping An Finance Center, Shenzhen",
+            "value": 599.1,
+            "unit": "m",
+            "approximate": false,
+            "sourceNote": "CTBUH Skyscraper Center, height to architectural top"
+          },
+          {
+            "kind": "place",
+            "id": "lotte_tower_loc",
+            "label": "Location of Lotte World Tower, Seoul",
+            "lat": 37.5126,
+            "lon": 127.1025,
+            "sourceNote": "CTBUH Skyscraper Center building location"
+          },
+          {
+            "kind": "quantity",
+            "id": "lotte_tower_h",
+            "label": "Height of Lotte World Tower, Seoul",
+            "value": 554.5,
+            "unit": "m",
+            "approximate": false,
+            "sourceNote": "CTBUH Skyscraper Center, height to architectural top"
+          },
+          {
+            "kind": "place",
+            "id": "one_wtc_loc",
+            "label": "Location of One World Trade Center, New York",
+            "lat": 40.7127,
+            "lon": -74.0134,
+            "sourceNote": "CTBUH Skyscraper Center building location"
+          },
+          {
+            "kind": "quantity",
+            "id": "one_wtc_h",
+            "label": "Height of One World Trade Center, New York",
+            "value": 541.3,
+            "unit": "m",
+            "approximate": false,
+            "sourceNote": "CTBUH Skyscraper Center, height to architectural top"
+          },
+          {
+            "kind": "place",
+            "id": "guangzhou_ctf_loc",
+            "label": "Location of Guangzhou CTF Finance Centre, Guangzhou",
+            "lat": 23.1205,
+            "lon": 113.3217,
+            "sourceNote": "CTBUH Skyscraper Center building location"
+          },
+          {
+            "kind": "quantity",
+            "id": "guangzhou_ctf_h",
+            "label": "Height of Guangzhou CTF Finance Centre, Guangzhou",
+            "value": 530,
+            "unit": "m",
+            "approximate": false,
+            "sourceNote": "CTBUH Skyscraper Center, height to architectural top"
+          },
+          {
+            "kind": "place",
+            "id": "tianjin_ctf_loc",
+            "label": "Location of Tianjin CTF Finance Centre, Tianjin",
+            "lat": 39.0215,
+            "lon": 117.6981,
+            "sourceNote": "CTBUH Skyscraper Center building location"
+          },
+          {
+            "kind": "quantity",
+            "id": "tianjin_ctf_h",
+            "label": "Height of Tianjin CTF Finance Centre, Tianjin",
+            "value": 530,
+            "unit": "m",
+            "approximate": false,
+            "sourceNote": "CTBUH Skyscraper Center, height to architectural top"
+          },
+          {
+            "kind": "place",
+            "id": "citic_tower_loc",
+            "label": "Location of CITIC Tower, Beijing",
+            "lat": 39.9117,
+            "lon": 116.4606,
+            "sourceNote": "CTBUH Skyscraper Center building location"
+          },
+          {
+            "kind": "quantity",
+            "id": "citic_tower_h",
+            "label": "Height of CITIC Tower, Beijing",
+            "value": 528,
+            "unit": "m",
+            "approximate": false,
+            "sourceNote": "CTBUH Skyscraper Center, height to architectural top"
+          }
+        ]
+      },
+      "plan": {
+        "template": "map_points",
+        "title": "Where the tallest buildings are",
+        "caption": "The ten tallest completed buildings, dots sized by height.",
+        "points": [
+          {
+            "placeFactId": "burj_khalifa_loc",
+            "displayName": "Burj Khalifa",
+            "valueFactId": "burj_khalifa_h"
+          },
+          {
+            "placeFactId": "merdeka_118_loc",
+            "displayName": "Merdeka 118",
+            "valueFactId": "merdeka_118_h"
+          },
+          {
+            "placeFactId": "shanghai_tower_loc",
+            "displayName": "Shanghai Tower",
+            "valueFactId": "shanghai_tower_h"
+          },
+          {
+            "placeFactId": "makkah_clock_loc",
+            "displayName": "Makkah Royal Clock Tower",
+            "valueFactId": "makkah_clock_h"
+          },
+          {
+            "placeFactId": "ping_an_loc",
+            "displayName": "Ping An Finance Center",
+            "valueFactId": "ping_an_h"
+          },
+          {
+            "placeFactId": "lotte_tower_loc",
+            "displayName": "Lotte World Tower",
+            "valueFactId": "lotte_tower_h"
+          },
+          {
+            "placeFactId": "one_wtc_loc",
+            "displayName": "One World Trade Center",
+            "valueFactId": "one_wtc_h"
+          },
+          {
+            "placeFactId": "guangzhou_ctf_loc",
+            "displayName": "Guangzhou CTF Centre",
+            "valueFactId": "guangzhou_ctf_h"
+          },
+          {
+            "placeFactId": "tianjin_ctf_loc",
+            "displayName": "Tianjin CTF Centre",
+            "valueFactId": "tianjin_ctf_h"
+          },
+          {
+            "placeFactId": "citic_tower_loc",
+            "displayName": "CITIC Tower",
+            "valueFactId": "citic_tower_h"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fastest_vehicles",
+      "facts": {
+        "query": "What are the fastest vehicles ever?",
+        "topic": "Fastest vehicles ever",
+        "confidence": "high",
+        "explanation": "Speed records span an enormous range: a spacecraft diving toward the Sun moves faster than anything built for people. Among crewed craft, the Apollo astronauts returning from the Moon still hold the record, while records on land, rail and water sit far lower.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "parker_probe",
+            "label": "Parker Solar Probe at closest approach to the Sun",
+            "value": 692000,
+            "unit": "km/h",
+            "approximate": true,
+            "sourceNote": "NASA, Parker Solar Probe perihelion of 24 December 2024",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "apollo_10",
+            "label": "Apollo 10 command module (fastest humans)",
+            "value": 39897,
+            "unit": "km/h",
+            "approximate": false,
+            "sourceNote": "Guinness World Records, fastest speed by humans (Apollo 10, 1969)",
+            "year": 1969
+          },
+          {
+            "kind": "quantity",
+            "id": "x15",
+            "label": "North American X-15 rocket plane",
+            "value": 7274,
+            "unit": "km/h",
+            "approximate": false,
+            "sourceNote": "NASA Armstrong Flight Research Center, X-15 fact sheet (flight of 3 October 1967)",
+            "year": 1967
+          },
+          {
+            "kind": "quantity",
+            "id": "sr71",
+            "label": "Lockheed SR-71 Blackbird (jet aircraft record)",
+            "value": 3529.56,
+            "unit": "km/h",
+            "approximate": false,
+            "sourceNote": "FAI absolute speed record, 28 July 1976",
+            "year": 1976
+          },
+          {
+            "kind": "quantity",
+            "id": "thrust_ssc",
+            "label": "ThrustSSC (land speed record)",
+            "value": 1227.985,
+            "unit": "km/h",
+            "approximate": false,
+            "sourceNote": "FIA land speed record; Guinness World Records (Black Rock Desert, 1997)",
+            "year": 1997
+          },
+          {
+            "kind": "quantity",
+            "id": "l0_maglev",
+            "label": "JR Central L0 maglev (fastest train)",
+            "value": 603,
+            "unit": "km/h",
+            "approximate": false,
+            "sourceNote": "Guinness World Records, fastest maglev train (Yamanashi test line, 2015)",
+            "year": 2015
+          },
+          {
+            "kind": "quantity",
+            "id": "tgv_v150",
+            "label": "TGV V150 (fastest wheeled train)",
+            "value": 574.8,
+            "unit": "km/h",
+            "approximate": false,
+            "sourceNote": "SNCF and Alstom; Guinness World Records, fastest wheeled train (2007)",
+            "year": 2007
+          },
+          {
+            "kind": "quantity",
+            "id": "spirit_aus",
+            "label": "Spirit of Australia (water speed record)",
+            "value": 511.11,
+            "unit": "km/h",
+            "approximate": false,
+            "sourceNote": "Guinness World Records, water speed record (Ken Warby, 1978)",
+            "year": 1978
+          }
+        ]
+      },
+      "plan": {
+        "template": "lollipop",
+        "title": "The fastest vehicles ever",
+        "scale": "log",
+        "caption": "Record speeds on a log scale; each step is ten times faster.",
+        "items": [
+          {
+            "factId": "parker_probe",
+            "displayName": "Parker Solar Probe"
+          },
+          {
+            "factId": "apollo_10",
+            "displayName": "Apollo 10"
+          },
+          {
+            "factId": "x15",
+            "displayName": "X-15 rocket plane"
+          },
+          {
+            "factId": "sr71",
+            "displayName": "SR-71 Blackbird"
+          },
+          {
+            "factId": "thrust_ssc",
+            "displayName": "ThrustSSC car"
+          },
+          {
+            "factId": "l0_maglev",
+            "displayName": "L0 maglev train"
+          },
+          {
+            "factId": "tgv_v150",
+            "displayName": "TGV V150 train"
+          },
+          {
+            "factId": "spirit_aus",
+            "displayName": "Spirit of Australia boat"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sprint_100m_records",
+      "facts": {
+        "query": "How has the 100 m sprint world record changed over time?",
+        "topic": "100 m world records over time",
+        "confidence": "high",
+        "explanation": "The sprint world record has fallen again and again for generations, helped by better training, tracks, shoes and starting blocks. Early records were timed by hand; electronic timing later made the clocks stricter. Usain Bolt and Florence Griffith Joyner still hold the records.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "men_1912",
+            "label": "Men's 100 m world record, 1912 (Donald Lippincott)",
+            "value": 10.6,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "World Athletics world record progression (hand-timed)",
+            "year": 1912
+          },
+          {
+            "kind": "quantity",
+            "id": "men_1921",
+            "label": "Men's 100 m world record, 1921 (Charley Paddock)",
+            "value": 10.4,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "World Athletics world record progression (hand-timed)",
+            "year": 1921
+          },
+          {
+            "kind": "quantity",
+            "id": "men_1930",
+            "label": "Men's 100 m world record, 1930 (Percy Williams)",
+            "value": 10.3,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "World Athletics world record progression (hand-timed)",
+            "year": 1930
+          },
+          {
+            "kind": "quantity",
+            "id": "men_1936",
+            "label": "Men's 100 m world record, 1936 (Jesse Owens)",
+            "value": 10.2,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "World Athletics world record progression (hand-timed)",
+            "year": 1936
+          },
+          {
+            "kind": "quantity",
+            "id": "men_1956",
+            "label": "Men's 100 m world record, 1956 (Willie Williams)",
+            "value": 10.1,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "World Athletics world record progression (hand-timed)",
+            "year": 1956
+          },
+          {
+            "kind": "quantity",
+            "id": "men_1960",
+            "label": "Men's 100 m world record, 1960 (Armin Hary)",
+            "value": 10.0,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "World Athletics world record progression (hand-timed)",
+            "year": 1960
+          },
+          {
+            "kind": "quantity",
+            "id": "men_1968",
+            "label": "Men's 100 m world record, 1968 (Jim Hines)",
+            "value": 9.95,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "World Athletics world record progression (electronic timing)",
+            "year": 1968
+          },
+          {
+            "kind": "quantity",
+            "id": "men_1983",
+            "label": "Men's 100 m world record, 1983 (Calvin Smith)",
+            "value": 9.93,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "World Athletics world record progression (electronic timing)",
+            "year": 1983
+          },
+          {
+            "kind": "quantity",
+            "id": "men_1988",
+            "label": "Men's 100 m world record, 1988 (Carl Lewis)",
+            "value": 9.92,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "World Athletics world record progression (electronic timing)",
+            "year": 1988
+          },
+          {
+            "kind": "quantity",
+            "id": "men_1991",
+            "label": "Men's 100 m world record, 1991 (Carl Lewis)",
+            "value": 9.86,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "World Athletics world record progression (electronic timing)",
+            "year": 1991
+          },
+          {
+            "kind": "quantity",
+            "id": "men_1996",
+            "label": "Men's 100 m world record, 1996 (Donovan Bailey)",
+            "value": 9.84,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "World Athletics world record progression (electronic timing)",
+            "year": 1996
+          },
+          {
+            "kind": "quantity",
+            "id": "men_1999",
+            "label": "Men's 100 m world record, 1999 (Maurice Greene)",
+            "value": 9.79,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "World Athletics world record progression (electronic timing)",
+            "year": 1999
+          },
+          {
+            "kind": "quantity",
+            "id": "men_2005",
+            "label": "Men's 100 m world record, 2005 (Asafa Powell)",
+            "value": 9.77,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "World Athletics world record progression (electronic timing)",
+            "year": 2005
+          },
+          {
+            "kind": "quantity",
+            "id": "men_2007",
+            "label": "Men's 100 m world record, 2007 (Asafa Powell)",
+            "value": 9.74,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "World Athletics world record progression (electronic timing)",
+            "year": 2007
+          },
+          {
+            "kind": "quantity",
+            "id": "men_2008",
+            "label": "Men's 100 m world record, 2008 (Usain Bolt)",
+            "value": 9.69,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "World Athletics world record progression (electronic timing)",
+            "year": 2008
+          },
+          {
+            "kind": "quantity",
+            "id": "men_2009",
+            "label": "Men's 100 m world record, 2009 (Usain Bolt)",
+            "value": 9.58,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "World Athletics world record progression (electronic timing)",
+            "year": 2009
+          },
+          {
+            "kind": "quantity",
+            "id": "women_1922",
+            "label": "Women's 100 m world record, 1922 (Mary Lines)",
+            "value": 12.8,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "World Athletics world record progression (hand-timed)",
+            "year": 1922
+          },
+          {
+            "kind": "quantity",
+            "id": "women_1928",
+            "label": "Women's 100 m world record, 1928 (Betty Robinson)",
+            "value": 12.0,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "World Athletics world record progression (hand-timed)",
+            "year": 1928
+          },
+          {
+            "kind": "quantity",
+            "id": "women_1932",
+            "label": "Women's 100 m world record, 1932 (Hilda Strike)",
+            "value": 11.8,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "World Athletics world record progression (hand-timed)",
+            "year": 1932
+          },
+          {
+            "kind": "quantity",
+            "id": "women_1934",
+            "label": "Women's 100 m world record, 1934 (Stanisława Walasiewicz)",
+            "value": 11.7,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "World Athletics world record progression (hand-timed)",
+            "year": 1934
+          },
+          {
+            "kind": "quantity",
+            "id": "women_1935",
+            "label": "Women's 100 m world record, 1935 (Helen Stephens)",
+            "value": 11.5,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "World Athletics world record progression (hand-timed)",
+            "year": 1935
+          },
+          {
+            "kind": "quantity",
+            "id": "women_1952",
+            "label": "Women's 100 m world record, 1952 (Marjorie Jackson)",
+            "value": 11.4,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "World Athletics world record progression (hand-timed)",
+            "year": 1952
+          },
+          {
+            "kind": "quantity",
+            "id": "women_1955",
+            "label": "Women's 100 m world record, 1955 (Shirley Strickland)",
+            "value": 11.3,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "World Athletics world record progression (hand-timed)",
+            "year": 1955
+          },
+          {
+            "kind": "quantity",
+            "id": "women_1960",
+            "label": "Women's 100 m world record, 1960 (Wilma Rudolph)",
+            "value": 11.2,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "World Athletics world record progression (hand-timed)",
+            "year": 1960
+          },
+          {
+            "kind": "quantity",
+            "id": "women_1965",
+            "label": "Women's 100 m world record, 1965 (Irena Kirszenstein)",
+            "value": 11.1,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "World Athletics world record progression (hand-timed)",
+            "year": 1965
+          },
+          {
+            "kind": "quantity",
+            "id": "women_1968",
+            "label": "Women's 100 m world record, 1968 (Wyomia Tyus)",
+            "value": 11.0,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "World Athletics world record progression (hand-timed)",
+            "year": 1968
+          },
+          {
+            "kind": "quantity",
+            "id": "women_1977",
+            "label": "Women's 100 m world record, 1977 (Marlies Oelsner)",
+            "value": 10.88,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "World Athletics world record progression (electronic timing)",
+            "year": 1977
+          },
+          {
+            "kind": "quantity",
+            "id": "women_1983",
+            "label": "Women's 100 m world record, 1983 (Evelyn Ashford)",
+            "value": 10.79,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "World Athletics world record progression (electronic timing)",
+            "year": 1983
+          },
+          {
+            "kind": "quantity",
+            "id": "women_1984",
+            "label": "Women's 100 m world record, 1984 (Evelyn Ashford)",
+            "value": 10.76,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "World Athletics world record progression (electronic timing)",
+            "year": 1984
+          },
+          {
+            "kind": "quantity",
+            "id": "women_1988",
+            "label": "Women's 100 m world record, 1988 (Florence Griffith Joyner)",
+            "value": 10.49,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "World Athletics world record progression (electronic timing)",
+            "year": 1988
+          }
+        ]
+      },
+      "plan": {
+        "template": "line_series",
+        "title": "The sprint world record over time",
+        "caption": "Ratified world records; early marks were hand-timed.",
+        "series": [
+          {
+            "displayName": "Men",
+            "factIds": [
+              "men_1912",
+              "men_1921",
+              "men_1930",
+              "men_1936",
+              "men_1956",
+              "men_1960",
+              "men_1968",
+              "men_1983",
+              "men_1988",
+              "men_1991",
+              "men_1996",
+              "men_1999",
+              "men_2005",
+              "men_2007",
+              "men_2008",
+              "men_2009"
+            ]
+          },
+          {
+            "displayName": "Women",
+            "factIds": [
+              "women_1922",
+              "women_1928",
+              "women_1932",
+              "women_1934",
+              "women_1935",
+              "women_1952",
+              "women_1955",
+              "women_1960",
+              "women_1965",
+              "women_1968",
+              "women_1977",
+              "women_1983",
+              "women_1984",
+              "women_1988"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "olympic_sprints_then_now",
+      "facts": {
+        "query": "How much faster are Olympic sprint champions today than at the first Games?",
+        "topic": "Olympic sprint winners, then and now",
+        "confidence": "high",
+        "explanation": "Every Olympic sprint champion today is far quicker than the winner of the first final in the same event. Women's events joined the Games decades after the men's, and the longest sprint shows the biggest gap, since there is more distance over which to gain time.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "m100_first",
+            "label": "Men's 100 m winning time, first Olympic final (Thomas Burke, 1896)",
+            "value": 12.0,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "International Olympic Committee official results, 1896 Games",
+            "year": 1896
+          },
+          {
+            "kind": "quantity",
+            "id": "m100_2024",
+            "label": "Men's 100 m winning time, Paris 2024 (Noah Lyles)",
+            "value": 9.79,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "International Olympic Committee official results, Paris 2024",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "w100_first",
+            "label": "Women's 100 m winning time, first Olympic final (Betty Robinson, 1928)",
+            "value": 12.2,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "International Olympic Committee official results, 1928 Games",
+            "year": 1928
+          },
+          {
+            "kind": "quantity",
+            "id": "w100_2024",
+            "label": "Women's 100 m winning time, Paris 2024 (Julien Alfred)",
+            "value": 10.72,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "International Olympic Committee official results, Paris 2024",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "m200_first",
+            "label": "Men's 200 m winning time, first Olympic final (Walter Tewksbury, 1900)",
+            "value": 22.2,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "International Olympic Committee official results, 1900 Games",
+            "year": 1900
+          },
+          {
+            "kind": "quantity",
+            "id": "m200_2024",
+            "label": "Men's 200 m winning time, Paris 2024 (Letsile Tebogo)",
+            "value": 19.46,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "International Olympic Committee official results, Paris 2024",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "w200_first",
+            "label": "Women's 200 m winning time, first Olympic final (Fanny Blankers-Koen, 1948)",
+            "value": 24.4,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "International Olympic Committee official results, 1948 Games",
+            "year": 1948
+          },
+          {
+            "kind": "quantity",
+            "id": "w200_2024",
+            "label": "Women's 200 m winning time, Paris 2024 (Gabby Thomas)",
+            "value": 21.83,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "International Olympic Committee official results, Paris 2024",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "m400_first",
+            "label": "Men's 400 m winning time, first Olympic final (Thomas Burke, 1896)",
+            "value": 54.2,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "International Olympic Committee official results, 1896 Games",
+            "year": 1896
+          },
+          {
+            "kind": "quantity",
+            "id": "m400_2024",
+            "label": "Men's 400 m winning time, Paris 2024 (Quincy Hall)",
+            "value": 43.4,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "International Olympic Committee official results, Paris 2024",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "w400_first",
+            "label": "Women's 400 m winning time, first Olympic final (Betty Cuthbert, 1964)",
+            "value": 52.0,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "International Olympic Committee official results, 1964 Games",
+            "year": 1964
+          },
+          {
+            "kind": "quantity",
+            "id": "w400_2024",
+            "label": "Women's 400 m winning time, Paris 2024 (Marileidy Paulino)",
+            "value": 48.17,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "International Olympic Committee official results, Paris 2024",
+            "year": 2024
+          }
+        ]
+      },
+      "plan": {
+        "template": "slope",
+        "title": "Olympic sprint winners, then and now",
+        "aName": "First Olympic final",
+        "bName": "Paris Olympics",
+        "rows": [
+          {
+            "label": "Men's 100 m",
+            "aFactId": "m100_first",
+            "bFactId": "m100_2024"
+          },
+          {
+            "label": "Women's 100 m",
+            "aFactId": "w100_first",
+            "bFactId": "w100_2024"
+          },
+          {
+            "label": "Men's 200 m",
+            "aFactId": "m200_first",
+            "bFactId": "m200_2024"
+          },
+          {
+            "label": "Women's 200 m",
+            "aFactId": "w200_first",
+            "bFactId": "w200_2024"
+          },
+          {
+            "label": "Men's 400 m",
+            "aFactId": "m400_first",
+            "bFactId": "m400_2024"
+          },
+          {
+            "label": "Women's 400 m",
+            "aFactId": "w400_first",
+            "bFactId": "w400_2024"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sleep_by_age",
+      "facts": {
+        "query": "How much sleep do people need at different ages?",
+        "topic": "Recommended sleep by age",
+        "confidence": "high",
+        "explanation": "How much sleep we need shrinks as we grow up. Newborns sleep for most of the day, school children still need a long night, and adults of every age are advised to get a solid night's rest. These are ranges recommended by an expert panel, not strict rules.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "newborn_min",
+            "label": "Newborns (0-3 months): recommended minimum sleep per day",
+            "value": 14,
+            "unit": "h",
+            "approximate": false,
+            "sourceNote": "National Sleep Foundation recommended sleep durations (Sleep Health journal, 2015)"
+          },
+          {
+            "kind": "quantity",
+            "id": "newborn_max",
+            "label": "Newborns (0-3 months): recommended maximum sleep per day",
+            "value": 17,
+            "unit": "h",
+            "approximate": false,
+            "sourceNote": "National Sleep Foundation recommended sleep durations (Sleep Health journal, 2015)"
+          },
+          {
+            "kind": "quantity",
+            "id": "infant_min",
+            "label": "Infants (4-11 months): recommended minimum sleep per day",
+            "value": 12,
+            "unit": "h",
+            "approximate": false,
+            "sourceNote": "National Sleep Foundation recommended sleep durations (Sleep Health journal, 2015)"
+          },
+          {
+            "kind": "quantity",
+            "id": "infant_max",
+            "label": "Infants (4-11 months): recommended maximum sleep per day",
+            "value": 15,
+            "unit": "h",
+            "approximate": false,
+            "sourceNote": "National Sleep Foundation recommended sleep durations (Sleep Health journal, 2015)"
+          },
+          {
+            "kind": "quantity",
+            "id": "toddler_min",
+            "label": "Toddlers (1-2 years): recommended minimum sleep per day",
+            "value": 11,
+            "unit": "h",
+            "approximate": false,
+            "sourceNote": "National Sleep Foundation recommended sleep durations (Sleep Health journal, 2015)"
+          },
+          {
+            "kind": "quantity",
+            "id": "toddler_max",
+            "label": "Toddlers (1-2 years): recommended maximum sleep per day",
+            "value": 14,
+            "unit": "h",
+            "approximate": false,
+            "sourceNote": "National Sleep Foundation recommended sleep durations (Sleep Health journal, 2015)"
+          },
+          {
+            "kind": "quantity",
+            "id": "preschool_min",
+            "label": "Preschoolers (3-5 years): recommended minimum sleep per day",
+            "value": 10,
+            "unit": "h",
+            "approximate": false,
+            "sourceNote": "National Sleep Foundation recommended sleep durations (Sleep Health journal, 2015)"
+          },
+          {
+            "kind": "quantity",
+            "id": "preschool_max",
+            "label": "Preschoolers (3-5 years): recommended maximum sleep per day",
+            "value": 13,
+            "unit": "h",
+            "approximate": false,
+            "sourceNote": "National Sleep Foundation recommended sleep durations (Sleep Health journal, 2015)"
+          },
+          {
+            "kind": "quantity",
+            "id": "school_min",
+            "label": "School-age (6-13 years): recommended minimum sleep per day",
+            "value": 9,
+            "unit": "h",
+            "approximate": false,
+            "sourceNote": "National Sleep Foundation recommended sleep durations (Sleep Health journal, 2015)"
+          },
+          {
+            "kind": "quantity",
+            "id": "school_max",
+            "label": "School-age (6-13 years): recommended maximum sleep per day",
+            "value": 11,
+            "unit": "h",
+            "approximate": false,
+            "sourceNote": "National Sleep Foundation recommended sleep durations (Sleep Health journal, 2015)"
+          },
+          {
+            "kind": "quantity",
+            "id": "teen_min",
+            "label": "Teenagers (14-17 years): recommended minimum sleep per day",
+            "value": 8,
+            "unit": "h",
+            "approximate": false,
+            "sourceNote": "National Sleep Foundation recommended sleep durations (Sleep Health journal, 2015)"
+          },
+          {
+            "kind": "quantity",
+            "id": "teen_max",
+            "label": "Teenagers (14-17 years): recommended maximum sleep per day",
+            "value": 10,
+            "unit": "h",
+            "approximate": false,
+            "sourceNote": "National Sleep Foundation recommended sleep durations (Sleep Health journal, 2015)"
+          },
+          {
+            "kind": "quantity",
+            "id": "young_adult_min",
+            "label": "Young adults (18-25 years): recommended minimum sleep per day",
+            "value": 7,
+            "unit": "h",
+            "approximate": false,
+            "sourceNote": "National Sleep Foundation recommended sleep durations (Sleep Health journal, 2015)"
+          },
+          {
+            "kind": "quantity",
+            "id": "young_adult_max",
+            "label": "Young adults (18-25 years): recommended maximum sleep per day",
+            "value": 9,
+            "unit": "h",
+            "approximate": false,
+            "sourceNote": "National Sleep Foundation recommended sleep durations (Sleep Health journal, 2015)"
+          },
+          {
+            "kind": "quantity",
+            "id": "adult_min",
+            "label": "Adults (26-64 years): recommended minimum sleep per day",
+            "value": 7,
+            "unit": "h",
+            "approximate": false,
+            "sourceNote": "National Sleep Foundation recommended sleep durations (Sleep Health journal, 2015)"
+          },
+          {
+            "kind": "quantity",
+            "id": "adult_max",
+            "label": "Adults (26-64 years): recommended maximum sleep per day",
+            "value": 9,
+            "unit": "h",
+            "approximate": false,
+            "sourceNote": "National Sleep Foundation recommended sleep durations (Sleep Health journal, 2015)"
+          },
+          {
+            "kind": "quantity",
+            "id": "older_adult_min",
+            "label": "Older adults (65+): recommended minimum sleep per day",
+            "value": 7,
+            "unit": "h",
+            "approximate": false,
+            "sourceNote": "National Sleep Foundation recommended sleep durations (Sleep Health journal, 2015)"
+          },
+          {
+            "kind": "quantity",
+            "id": "older_adult_max",
+            "label": "Older adults (65+): recommended maximum sleep per day",
+            "value": 8,
+            "unit": "h",
+            "approximate": false,
+            "sourceNote": "National Sleep Foundation recommended sleep durations (Sleep Health journal, 2015)"
+          }
+        ]
+      },
+      "plan": {
+        "template": "range_bars",
+        "title": "How much sleep we need at each age",
+        "caption": "Recommended hours of sleep per day, including naps for young children.",
+        "rows": [
+          {
+            "label": "Newborns",
+            "aFactId": "newborn_min",
+            "bFactId": "newborn_max"
+          },
+          {
+            "label": "Infants",
+            "aFactId": "infant_min",
+            "bFactId": "infant_max"
+          },
+          {
+            "label": "Toddlers",
+            "aFactId": "toddler_min",
+            "bFactId": "toddler_max"
+          },
+          {
+            "label": "Preschoolers",
+            "aFactId": "preschool_min",
+            "bFactId": "preschool_max"
+          },
+          {
+            "label": "School-age",
+            "aFactId": "school_min",
+            "bFactId": "school_max"
+          },
+          {
+            "label": "Teenagers",
+            "aFactId": "teen_min",
+            "bFactId": "teen_max"
+          },
+          {
+            "label": "Young adults",
+            "aFactId": "young_adult_min",
+            "bFactId": "young_adult_max"
+          },
+          {
+            "label": "Adults",
+            "aFactId": "adult_min",
+            "bFactId": "adult_max"
+          },
+          {
+            "label": "Older adults",
+            "aFactId": "older_adult_min",
+            "bFactId": "older_adult_max"
+          }
+        ]
+      }
+    },
+    {
+      "id": "famous_firsts",
+      "facts": {
+        "query": "When did people first fly, reach the poles, climb Everest and walk on the Moon?",
+        "topic": "Great firsts of exploration and speed",
+        "confidence": "high",
+        "explanation": "Within a single lifetime, people went from the first powered aeroplane hop to walking on the Moon. Along the way they reached the South Pole, crossed the Atlantic alone by air, broke the sound barrier, climbed Everest, broke the famous barrier in the mile and touched the deepest point of the ocean.",
+        "facts": [
+          {
+            "kind": "event",
+            "id": "first_flight",
+            "label": "First powered flight",
+            "year": 1903,
+            "description": "Orville Wright makes the first controlled, powered aeroplane flight at Kitty Hawk, North Carolina.",
+            "sourceNote": "Smithsonian National Air and Space Museum",
+            "month": 12,
+            "day": 17
+          },
+          {
+            "kind": "event",
+            "id": "south_pole",
+            "label": "South Pole reached",
+            "year": 1911,
+            "description": "Roald Amundsen's Norwegian team becomes the first to reach the South Pole.",
+            "sourceNote": "Royal Geographical Society; Norwegian Polar Institute",
+            "month": 12,
+            "day": 14
+          },
+          {
+            "kind": "event",
+            "id": "lindbergh",
+            "label": "First solo transatlantic flight",
+            "year": 1927,
+            "description": "Charles Lindbergh lands in Paris after flying alone non-stop from New York.",
+            "sourceNote": "Smithsonian National Air and Space Museum",
+            "month": 5,
+            "day": 21
+          },
+          {
+            "kind": "event",
+            "id": "sound_barrier",
+            "label": "Sound barrier broken",
+            "year": 1947,
+            "description": "Chuck Yeager flies the Bell X-1 faster than the speed of sound.",
+            "sourceNote": "NASA history office; Smithsonian National Air and Space Museum",
+            "month": 10,
+            "day": 14
+          },
+          {
+            "kind": "event",
+            "id": "everest",
+            "label": "Everest summit",
+            "year": 1953,
+            "description": "Edmund Hillary and Tenzing Norgay reach the summit of Mount Everest.",
+            "sourceNote": "Royal Geographical Society, Everest expedition archive",
+            "month": 5,
+            "day": 29
+          },
+          {
+            "kind": "event",
+            "id": "four_minute_mile",
+            "label": "First sub-four-minute mile",
+            "year": 1954,
+            "description": "Roger Bannister runs the first mile in under four minutes, in Oxford.",
+            "sourceNote": "World Athletics record progression; Guinness World Records",
+            "month": 5,
+            "day": 6
+          },
+          {
+            "kind": "event",
+            "id": "challenger_deep",
+            "label": "Deepest ocean dive",
+            "year": 1960,
+            "description": "Jacques Piccard and Don Walsh dive the bathyscaphe Trieste to the Challenger Deep.",
+            "sourceNote": "NOAA Ocean Exploration; US Navy history",
+            "month": 1,
+            "day": 23
+          },
+          {
+            "kind": "event",
+            "id": "gagarin",
+            "label": "First human in space",
+            "year": 1961,
+            "description": "Yuri Gagarin orbits the Earth aboard Vostok 1.",
+            "sourceNote": "NASA history office; Roscosmos",
+            "month": 4,
+            "day": 12
+          },
+          {
+            "kind": "event",
+            "id": "moon_landing",
+            "label": "First Moon landing",
+            "year": 1969,
+            "description": "Neil Armstrong and Buzz Aldrin land on the Moon with Apollo 11.",
+            "sourceNote": "NASA, Apollo 11 mission overview",
+            "month": 7,
+            "day": 20
+          }
+        ]
+      },
+      "plan": {
+        "template": "timeline",
+        "title": "Great firsts of the twentieth century",
+        "axis": "linear",
+        "eventFactIds": [
+          "first_flight",
+          "south_pole",
+          "lindbergh",
+          "sound_barrier",
+          "everest",
+          "four_minute_mile",
+          "challenger_deep",
+          "gagarin",
+          "moon_landing"
+        ]
+      }
+    },
+    {
+      "id": "busiest_airports",
+      "facts": {
+        "query": "What are the busiest airports in the world?",
+        "topic": "World's busiest airports",
+        "confidence": "high",
+        "explanation": "Atlanta has been the world's busiest passenger airport for decades, thanks to its role as a giant connecting hub. Dubai, the busiest for international travellers, comes next, and the rest of the top group is spread across the United States, Asia and Europe.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "atl_pax",
+            "label": "Passengers at Atlanta Hartsfield-Jackson, 2024",
+            "value": 108067766,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "Airports Council International (ACI World) airport traffic rankings, 2024",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "dxb_pax",
+            "label": "Passengers at Dubai International, 2024",
+            "value": 92331506,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "Airports Council International (ACI World) airport traffic rankings, 2024",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "dfw_pax",
+            "label": "Passengers at Dallas Fort Worth, 2024",
+            "value": 87817864,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "Airports Council International (ACI World) airport traffic rankings, 2024",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "hnd_pax",
+            "label": "Passengers at Tokyo Haneda, 2024",
+            "value": 85900167,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "Airports Council International (ACI World) airport traffic rankings, 2024",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "lhr_pax",
+            "label": "Passengers at London Heathrow, 2024",
+            "value": 83884572,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "Airports Council International (ACI World) airport traffic rankings, 2024",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "den_pax",
+            "label": "Passengers at Denver International, 2024",
+            "value": 82358744,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "Airports Council International (ACI World) airport traffic rankings, 2024",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "ist_pax",
+            "label": "Passengers at Istanbul Airport, 2024",
+            "value": 80073252,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "Airports Council International (ACI World) airport traffic rankings, 2024",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "ord_pax",
+            "label": "Passengers at Chicago O'Hare, 2024",
+            "value": 80043050,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "Airports Council International (ACI World) airport traffic rankings, 2024",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "del_pax",
+            "label": "Passengers at Delhi Indira Gandhi International, 2024",
+            "value": 77820834,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "Airports Council International (ACI World) airport traffic rankings, 2024",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "pvg_pax",
+            "label": "Passengers at Shanghai Pudong, 2024",
+            "value": 76787039,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "Airports Council International (ACI World) airport traffic rankings, 2024",
+            "year": 2024
+          }
+        ]
+      },
+      "plan": {
+        "template": "bubble_pack",
+        "title": "The world's busiest airports",
+        "caption": "Total passengers handled in a year, arriving and departing.",
+        "items": [
+          {
+            "factId": "atl_pax",
+            "displayName": "Atlanta"
+          },
+          {
+            "factId": "dxb_pax",
+            "displayName": "Dubai"
+          },
+          {
+            "factId": "dfw_pax",
+            "displayName": "Dallas Fort Worth"
+          },
+          {
+            "factId": "hnd_pax",
+            "displayName": "Tokyo Haneda"
+          },
+          {
+            "factId": "lhr_pax",
+            "displayName": "London Heathrow"
+          },
+          {
+            "factId": "den_pax",
+            "displayName": "Denver"
+          },
+          {
+            "factId": "ist_pax",
+            "displayName": "Istanbul"
+          },
+          {
+            "factId": "ord_pax",
+            "displayName": "Chicago O'Hare"
+          },
+          {
+            "factId": "del_pax",
+            "displayName": "Delhi"
+          },
+          {
+            "factId": "pvg_pax",
+            "displayName": "Shanghai Pudong"
+          }
+        ]
+      }
+    },
+    {
+      "id": "everyday_wavelengths",
+      "facts": {
+        "query": "How long are the waves used by radio, Wi-Fi, GPS and Blu-ray?",
+        "topic": "Wavelengths around you every day",
+        "confidence": "high",
+        "explanation": "Radio, Wi-Fi, phone networks and disc players all use electromagnetic waves, differing mainly in wavelength. Long radio waves can be as big as a football stadium, Wi-Fi waves are about the size of a hand, and the lasers in disc players and fibre optic cables use light waves far smaller than a hair.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "am_radio",
+            "label": "AM radio wave at the middle of the band",
+            "value": 300,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "ITU Radio Regulations broadcast band; wavelength from frequency (c/f)"
+          },
+          {
+            "kind": "quantity",
+            "id": "fm_radio",
+            "label": "FM radio wave",
+            "value": 3,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "ITU Radio Regulations FM broadcast band; wavelength from frequency (c/f)"
+          },
+          {
+            "kind": "quantity",
+            "id": "gps_l1",
+            "label": "GPS L1 satellite signal",
+            "value": 19,
+            "unit": "cm",
+            "approximate": true,
+            "sourceNote": "US GPS interface specification IS-GPS-200; wavelength from frequency (c/f)"
+          },
+          {
+            "kind": "quantity",
+            "id": "wifi_24",
+            "label": "Wi-Fi wave in the 2.4 GHz band",
+            "value": 12.5,
+            "unit": "cm",
+            "approximate": true,
+            "sourceNote": "IEEE 802.11 standard; wavelength from frequency (c/f)"
+          },
+          {
+            "kind": "quantity",
+            "id": "wifi_5",
+            "label": "Wi-Fi wave in the 5 GHz band",
+            "value": 6,
+            "unit": "cm",
+            "approximate": true,
+            "sourceNote": "IEEE 802.11 standard; wavelength from frequency (c/f)"
+          },
+          {
+            "kind": "quantity",
+            "id": "mmwave_5g",
+            "label": "5G millimetre wave at 28 GHz",
+            "value": 1.07,
+            "unit": "cm",
+            "approximate": true,
+            "sourceNote": "3GPP 5G NR band n257; wavelength from frequency (c/f)"
+          },
+          {
+            "kind": "quantity",
+            "id": "fibre",
+            "label": "Light in long-distance fibre optic cables",
+            "value": 1550,
+            "unit": "nm",
+            "approximate": true,
+            "sourceNote": "ITU-T G.694.1 telecom C-band"
+          },
+          {
+            "kind": "quantity",
+            "id": "cd_laser",
+            "label": "CD player laser",
+            "value": 780,
+            "unit": "nm",
+            "approximate": false,
+            "sourceNote": "ECMA-130 compact disc standard"
+          },
+          {
+            "kind": "quantity",
+            "id": "dvd_laser",
+            "label": "DVD player laser",
+            "value": 650,
+            "unit": "nm",
+            "approximate": false,
+            "sourceNote": "DVD Forum DVD specification"
+          },
+          {
+            "kind": "quantity",
+            "id": "bluray_laser",
+            "label": "Blu-ray player laser",
+            "value": 405,
+            "unit": "nm",
+            "approximate": false,
+            "sourceNote": "Blu-ray Disc Association specification"
+          }
+        ]
+      },
+      "plan": {
+        "template": "number_line",
+        "title": "Wavelengths around you every day",
+        "scale": "log",
+        "caption": "On a log scale: each step is ten times longer.",
+        "items": [
+          {
+            "factId": "am_radio",
+            "displayName": "AM radio"
+          },
+          {
+            "factId": "fm_radio",
+            "displayName": "FM radio"
+          },
+          {
+            "factId": "gps_l1",
+            "displayName": "GPS signal"
+          },
+          {
+            "factId": "wifi_24",
+            "displayName": "Wi-Fi (2.4 GHz)"
+          },
+          {
+            "factId": "wifi_5",
+            "displayName": "Wi-Fi (5 GHz)"
+          },
+          {
+            "factId": "mmwave_5g",
+            "displayName": "5G millimetre wave"
+          },
+          {
+            "factId": "fibre",
+            "displayName": "Fibre optic light"
+          },
+          {
+            "factId": "cd_laser",
+            "displayName": "CD laser"
+          },
+          {
+            "factId": "dvd_laser",
+            "displayName": "DVD laser"
+          },
+          {
+            "factId": "bluray_laser",
+            "displayName": "Blu-ray laser"
+          }
+        ]
+      }
+    },
+    {
+      "id": "plastic_waste_fate",
+      "facts": {
+        "query": "What happens to the world's plastic waste?",
+        "topic": "What happens to plastic waste",
+        "confidence": "high",
+        "explanation": "Only a small slice of the plastic we throw away is recycled. About half ends up in landfill, a large share is burned, and much of the rest escapes waste systems altogether, dumped, burned in the open or washed into rivers and the sea.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "plastic_recycled",
+            "label": "Share of plastic waste recycled",
+            "value": 9,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "OECD Global Plastics Outlook (2022), global plastic waste in 2019",
+            "year": 2019
+          },
+          {
+            "kind": "quantity",
+            "id": "plastic_incinerated",
+            "label": "Share of plastic waste incinerated",
+            "value": 19,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "OECD Global Plastics Outlook (2022), global plastic waste in 2019",
+            "year": 2019
+          },
+          {
+            "kind": "quantity",
+            "id": "plastic_landfill",
+            "label": "Share of plastic waste sent to sanitary landfill",
+            "value": 50,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "OECD Global Plastics Outlook (2022), global plastic waste in 2019",
+            "year": 2019
+          },
+          {
+            "kind": "quantity",
+            "id": "plastic_mismanaged",
+            "label": "Share of plastic waste mismanaged (dumped, burned in the open or leaked)",
+            "value": 22,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "OECD Global Plastics Outlook (2022), global plastic waste in 2019",
+            "year": 2019
+          }
+        ]
+      },
+      "plan": {
+        "template": "donut",
+        "title": "Where the world's plastic waste ends up",
+        "items": [
+          {
+            "factId": "plastic_landfill",
+            "displayName": "Landfill"
+          },
+          {
+            "factId": "plastic_mismanaged",
+            "displayName": "Mismanaged"
+          },
+          {
+            "factId": "plastic_incinerated",
+            "displayName": "Incinerated"
+          },
+          {
+            "factId": "plastic_recycled",
+            "displayName": "Recycled"
+          }
+        ]
+      }
+    },
+    {
+      "id": "people_to_burj_khalifa",
+      "facts": {
+        "query": "How many people standing on each other's heads would it take to reach the top of the Burj Khalifa?",
+        "topic": "People stacked to the top of the Burj Khalifa",
+        "confidence": "high",
+        "explanation": "The Burj Khalifa is so tall that it is hard to picture. Stacking ordinary adults head to foot shows the scale: it would take a crowd of hundreds to reach the tip of its spire.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "adult_height",
+            "label": "Typical adult height (rounded)",
+            "value": 1.7,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Rounded global average, NCD Risk Factor Collaboration adult height study"
+          },
+          {
+            "kind": "quantity",
+            "id": "burj_height",
+            "label": "Height of Burj Khalifa",
+            "value": 828,
+            "unit": "m",
+            "approximate": false,
+            "sourceNote": "CTBUH Skyscraper Center, height to architectural top"
+          }
+        ]
+      },
+      "plan": {
+        "template": "pictogram",
+        "title": "How many people tall is the Burj Khalifa?",
+        "unitFactId": "adult_height",
+        "totalFactId": "burj_height",
+        "unitName": "people",
+        "totalName": "Burj Khalifa",
+        "image": "person"
+      }
+    }
+  ]
+}

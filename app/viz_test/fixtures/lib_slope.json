@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "template": "slope",
+  "title": "Endangered animals bouncing back",
+  "annotations": [
+    {
+      "text": "Iberian lynx (adults): 10×",
+      "anchor": "item",
+      "index": 3
+    }
+  ],
+  "aName": "Earlier count",
+  "bName": "Later count",
+  "units": {
+    "dimension": "count",
+    "preferred": {
+      "symbol": "",
+      "toSi": 1.0
+    },
+    "ladder": [
+      {
+        "symbol": "",
+        "toSi": 1.0
+      }
+    ]
+  },
+  "rows": [
+    {
+      "label": "Giant panda",
+      "a": {
+        "valueSi": 1596.0,
+        "display": "1,596",
+        "source": "WWF / China State Forestry Administration, third national survey",
+        "year": 2003
+      },
+      "b": {
+        "valueSi": 1864.0,
+        "display": "1,864",
+        "source": "WWF / China State Forestry Administration, fourth national survey",
+        "year": 2014
+      },
+      "change": "+17%"
+    },
+    {
+      "label": "Tigers in India",
+      "a": {
+        "valueSi": 1411.0,
+        "display": "~1,411",
+        "source": "National Tiger Conservation Authority, India tiger estimate 2006",
+        "year": 2006
+      },
+      "b": {
+        "valueSi": 3682.0,
+        "display": "~3,682",
+        "source": "National Tiger Conservation Authority, India tiger estimate 2022",
+        "year": 2022
+      },
+      "change": "2.6×"
+    },
+    {
+      "label": "Mountain gorilla",
+      "a": {
+        "valueSi": 680.0,
+        "display": "~680",
+        "source": "Census estimate reported by Smithsonian Magazine",
+        "year": 2008
+      },
+      "b": {
+        "valueSi": 1063.0,
+        "display": "1,063",
+        "source": "Virunga (2016) and Bwindi-Sarambwe (2018) censuses, IUCN",
+        "year": 2018
+      },
+      "change": "+56%"
+    },
+    {
+      "label": "Iberian lynx (adults)",
+      "a": {
+        "valueSi": 62.0,
+        "display": "62",
+        "source": "IUCN Red List update, June 2024",
+        "year": 2001
+      },
+      "b": {
+        "valueSi": 648.0,
+        "display": "648",
+        "source": "IUCN Red List update, June 2024",
+        "year": 2022
+      },
+      "change": "10×"
+    }
+  ]
+}

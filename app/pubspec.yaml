@@ -36,6 +36,7 @@ flutter:
     - assets/viz/img/
     - assets/fonts/
     - assets/lottie/
+    - assets/library/
   fonts:
     - family: SourceSerif
       fonts:

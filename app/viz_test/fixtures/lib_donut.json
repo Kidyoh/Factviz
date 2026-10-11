@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "template": "donut",
+  "title": "What the universe is made of",
+  "caption": "Shares of the universe's total energy content today; the sliver left is neutrinos and light.",
+  "annotations": [
+    {
+      "text": "Dark energy: 69% of the total",
+      "anchor": "item",
+      "index": 0
+    }
+  ],
+  "scale": "linear",
+  "units": {
+    "dimension": "percent",
+    "preferred": {
+      "symbol": "%",
+      "toSi": 1.0
+    },
+    "ladder": [
+      {
+        "symbol": "%",
+        "toSi": 1.0
+      }
+    ]
+  },
+  "items": [
+    {
+      "name": "Dark energy",
+      "valueSi": 68.5,
+      "display": "~68.5%",
+      "source": "Planck 2018 cosmological parameters (ESA Planck Collaboration)",
+      "share": 0.6863727454909819,
+      "shareDisplay": "69%"
+    },
+    {
+      "name": "Dark matter",
+      "valueSi": 26.4,
+      "display": "~26.4%",
+      "source": "Planck 2018 cosmological parameters (ESA Planck Collaboration)",
+      "share": 0.2645290581162324,
+      "shareDisplay": "26%"
+    },
+    {
+      "name": "Ordinary matter",
+      "valueSi": 4.9,
+      "display": "~4.9%",
+      "source": "Planck 2018 cosmological parameters (ESA Planck Collaboration)",
+      "share": 0.04909819639278557,
+      "shareDisplay": "4.9%"
+    }
+  ]
+}

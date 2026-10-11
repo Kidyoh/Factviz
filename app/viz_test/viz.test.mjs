@@ -167,3 +167,109 @@ test('process_steps: no autoplay with reduced motion; linear list', async () => 
   assert.equal(await page.locator('.step-list li').count(), 5);
   await page.close();
 });
+
+// ---- Extended chart library (fixtures: first library entry per template) ----
+
+test('donut: one slice per part, largest share in the centre', async () => {
+  const p = byName('lib_donut');
+  const { page } = await rendered(p, { reduce: true });
+  assert.equal(await page.locator('svg > g path[role=button]').count(), p.items.length);
+  const largest = p.items.filter((i) => !i.remainder).reduce((a, b) => (b.share > a.share ? b : a));
+  assert.equal(await page.textContent('.big-figure'), largest.shareDisplay);
+  await page.close();
+});
+
+test('treemap and bubble_pack: a mark per item; tapping shows its detail', async () => {
+  for (const name of ['lib_treemap', 'lib_bubble_pack']) {
+    const p = byName(name);
+    const { page } = await rendered(p, { reduce: true });
+    const marks = page.locator('[role=button]');
+    assert.equal(await marks.count(), p.items.length, name);
+    await marks.nth(p.items.length - 1).dispatchEvent('click');
+    const last = p.items[p.items.length - 1];
+    assert.equal(await page.textContent('.detail .title'), `${last.name}: ${last.display}`, name);
+    await page.close();
+  }
+});
+
+test('waffle: fills one cell per percent', async () => {
+  const p = byName('lib_waffle');
+  const { page } = await rendered(p, { reduce: true });
+  assert.equal(await page.locator('svg rect').count() >= 100 * p.items.length, true);
+  const figures = await page.locator('.big-figure').allTextContents();
+  assert.deepEqual(figures, p.items.map((i) => i.display));
+  await page.close();
+});
+
+test('lollipop and number_line: every item labelled with its display value', async () => {
+  for (const name of ['lib_lollipop', 'lib_number_line']) {
+    const p = byName(name);
+    const { page } = await rendered(p, { reduce: true });
+    const values = await page.locator('.label-value').allTextContents();
+    for (const i of p.items) assert.ok(values.includes(i.display), `${name}: ${i.display}`);
+    await page.close();
+  }
+});
+
+test('slope, range_bars and versus: a row per pair with both values', async () => {
+  for (const name of ['lib_slope', 'lib_range_bars', 'lib_versus']) {
+    const p = byName(name);
+    const { page } = await rendered(p, { reduce: true });
+    const text = await page.locator('svg').first().textContent();
+    for (const r of p.rows) {
+      assert.ok(text.includes(r.a.display) && text.includes(r.b.display), `${name}: ${r.label}`);
+    }
+    await page.close();
+  }
+});
+
+test('rate_counter: counts up while open', async () => {
+  const p = byName('lib_rate_counter');
+  const { page } = await rendered(p);
+  await page.waitForTimeout(300);
+  const before = await page.locator('.count').first().textContent();
+  await page.waitForTimeout(2200);
+  const after = await page.locator('.count').first().textContent();
+  assert.notEqual(before, after);
+  assert.equal(await page.locator('.counter').count(), p.rows.length);
+  assert.equal(await page.textContent('.counter .rate'), p.rows[0].rateDisplay);
+  await page.close();
+});
+
+test('pictogram: headline and icons', async () => {
+  const p = byName('lib_pictogram');
+  const { page } = await rendered(p, { reduce: true });
+  assert.equal(await page.textContent('.big-figure'), p.countDisplay);
+  await page.close();
+});
+
+test('line_series: a line per series; scrubbing reads a year', async () => {
+  const p = byName('lib_line_series');
+  const { page } = await rendered(p, { reduce: true });
+  assert.equal(await page.locator('path[stroke-width="2.4"]').count(), p.series.length);
+  const box = await page.locator('svg rect[fill=transparent]').boundingBox();
+  await page.mouse.move(box.x + box.width - 2, box.y + box.height / 2);
+  const last = p.series[0].points[p.series[0].points.length - 1];
+  await page.waitForFunction(() => document.querySelector('.detail .title'));
+  assert.match(await page.textContent('.detail .title'), new RegExp(last.display.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+  await page.close();
+});
+
+test('cosmic_clock: with reduced motion, every event is shown at its time', async () => {
+  const p = byName('lib_cosmic_clock');
+  const { page } = await rendered(p, { reduce: true });
+  const times = await page.locator('.clock-list .t').allTextContents();
+  assert.deepEqual(times, p.events.map((e) => e.clock));
+  assert.equal(await page.locator('.clock-list li.pending').count(), 0);
+  assert.equal(await page.locator('.clock-list li.active').count(), 1);
+  await page.close();
+});
+
+test('map_points: draws the land and a dot per point', async () => {
+  const p = byName('lib_map_points');
+  const { page } = await rendered(p, { reduce: true });
+  assert.ok((await page.locator('svg path').count()) >= 3, 'sphere, graticule, land');
+  const dots = await page.locator('circle[role=button]').count();
+  assert.ok(dots >= 1 && dots <= p.points.length);
+  await page.close();
+});

@@ -9,7 +9,8 @@ enum Dimension {
   volume,
   money,
   count,
-  ratio;
+  ratio,
+  percent;
 
   /// Whether quantities of this dimension can be drawn as physical sizes.
   bool get isSpatial => this == length || this == area || this == volume;
@@ -90,6 +91,7 @@ const Map<String, Unit> units = {
   // Dimensionless
   'count': Unit('count', Dimension.count, 1, '', 'count'),
   'ratio': Unit('ratio', Dimension.ratio, 1, '×', 'ratio'),
+  'percent': Unit('percent', Dimension.percent, 1, '%', 'percent (0–100)'),
 };
 
 /// Units preferred when re-expressing a base value for display, smallest

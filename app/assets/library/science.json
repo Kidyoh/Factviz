@@ -1,0 +1,1120 @@
+{
+  "category": "science",
+  "title": "Science & physics",
+  "entries": [
+    {
+      "id": "fold_paper_to_moon",
+      "facts": {
+        "query": "How many times would you have to fold a sheet of paper to reach the Moon?",
+        "topic": "Folding paper to the Moon",
+        "confidence": "high",
+        "explanation": "Every fold doubles the thickness of the stack, and doubling grows astonishingly fast. A sheet starts thinner than a fingernail, yet after a few dozen imaginary folds it would stretch past the Moon. In practice nobody can fold real paper more than a handful of times.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "paper_thickness",
+            "label": "Thickness of a typical sheet of office paper",
+            "sourceNote": "Typical office paper (80 g/m²) thickness, manufacturer specifications",
+            "value": 0.1,
+            "unit": "mm",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "fold_factor",
+            "label": "Thickness multiplier per fold",
+            "sourceNote": "Geometry: each fold doubles the number of layers",
+            "value": 2,
+            "unit": "ratio",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "fold_count",
+            "label": "Folds needed to pass the Moon",
+            "sourceNote": "Arithmetic: 0.1 mm doubled 42 times is about 440,000 km",
+            "value": 42,
+            "unit": "count",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "moon_distance",
+            "label": "Mean distance from Earth to the Moon",
+            "sourceNote": "NASA Moon Fact Sheet, mean Earth–Moon distance",
+            "value": 384400,
+            "unit": "km",
+            "approximate": false
+          }
+        ]
+      },
+      "plan": {
+        "template": "exponential_growth",
+        "title": "Folding paper all the way to the Moon",
+        "initialFactId": "paper_thickness",
+        "factorFactId": "fold_factor",
+        "stepsFactId": "fold_count",
+        "targetFactId": "moon_distance",
+        "stepLabel": "fold",
+        "defaultScale": "log"
+      }
+    },
+    {
+      "id": "nuclear_power_plant",
+      "facts": {
+        "query": "How does a nuclear power plant make electricity?",
+        "topic": "How a nuclear power plant works",
+        "confidence": "high",
+        "explanation": "A nuclear power plant is a steam engine with an unusual heat source. Splitting uranium atoms releases heat, which turns water into steam, and the steam spins a turbine connected to a generator. The water is then cooled and reused in a closed loop.",
+        "facts": [
+          {
+            "kind": "step",
+            "id": "np_1",
+            "label": "Split uranium atoms",
+            "sourceNote": "US DOE Office of Nuclear Energy, nuclear fission basics",
+            "order": 1,
+            "title": "Split uranium atoms",
+            "description": "Neutrons strike uranium-235 nuclei in the fuel rods. Each nucleus splits, releasing heat and more neutrons that split further nuclei."
+          },
+          {
+            "kind": "step",
+            "id": "np_2",
+            "label": "Control the chain reaction",
+            "sourceNote": "US Nuclear Regulatory Commission, pressurized-water reactor overview",
+            "order": 2,
+            "title": "Control the chain reaction",
+            "description": "Control rods that absorb neutrons are raised or lowered so the chain reaction stays steady instead of speeding up."
+          },
+          {
+            "kind": "step",
+            "id": "np_3",
+            "label": "Heat the water",
+            "sourceNote": "US Nuclear Regulatory Commission, pressurized-water reactor overview",
+            "order": 3,
+            "title": "Heat the water",
+            "description": "Water pumped through the reactor core absorbs the heat. It is kept under high pressure so it stays liquid."
+          },
+          {
+            "kind": "step",
+            "id": "np_4",
+            "label": "Make steam",
+            "sourceNote": "US Nuclear Regulatory Commission, pressurized-water reactor overview",
+            "order": 4,
+            "title": "Make steam",
+            "description": "In the steam generator, the hot pressurized water boils water in a separate loop into high-pressure steam."
+          },
+          {
+            "kind": "step",
+            "id": "np_5",
+            "label": "Spin the turbine",
+            "sourceNote": "US Nuclear Regulatory Commission, pressurized-water reactor overview",
+            "order": 5,
+            "title": "Spin the turbine",
+            "description": "The steam rushes through a turbine and spins its blades."
+          },
+          {
+            "kind": "step",
+            "id": "np_6",
+            "label": "Generate electricity",
+            "sourceNote": "US Energy Information Administration, how electricity is generated",
+            "order": 6,
+            "title": "Generate electricity",
+            "description": "The turbine turns a generator, where spinning magnets and coils produce electric current for the grid."
+          },
+          {
+            "kind": "step",
+            "id": "np_7",
+            "label": "Cool and recycle",
+            "sourceNote": "US Nuclear Regulatory Commission, pressurized-water reactor overview",
+            "order": 7,
+            "title": "Cool and recycle",
+            "description": "A condenser cools the spent steam back into water using water from a river, sea or cooling tower, and the water returns to the steam generator."
+          }
+        ]
+      },
+      "plan": {
+        "template": "process_steps",
+        "title": "From splitting atoms to electricity",
+        "autoplayMs": 3500,
+        "loop": true,
+        "stepFactIds": [
+          "np_1",
+          "np_2",
+          "np_3",
+          "np_4",
+          "np_5",
+          "np_6",
+          "np_7"
+        ]
+      }
+    },
+    {
+      "id": "proton_vs_electron_mass",
+      "facts": {
+        "query": "How much heavier is a proton than an electron?",
+        "topic": "Proton versus electron mass",
+        "confidence": "high",
+        "explanation": "Protons and electrons carry equal and opposite electric charges, but they are wildly different in mass. It takes well over a thousand electrons to match one proton, which is why almost all of an atom's mass sits in its tiny nucleus.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "electron_mass",
+            "label": "Mass of an electron",
+            "sourceNote": "CODATA 2022 recommended value (NIST)",
+            "value": 9.1093837139e-31,
+            "unit": "kg",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "proton_mass",
+            "label": "Mass of a proton",
+            "sourceNote": "CODATA 2022 recommended value (NIST)",
+            "value": 1.67262192595e-27,
+            "unit": "kg",
+            "approximate": false
+          }
+        ]
+      },
+      "plan": {
+        "template": "pictogram",
+        "title": "How many electrons weigh as much as a proton",
+        "unitFactId": "electron_mass",
+        "totalFactId": "proton_mass",
+        "unitName": "electrons",
+        "totalName": "one proton"
+      }
+    },
+    {
+      "id": "air_composition",
+      "facts": {
+        "query": "What is the air we breathe made of?",
+        "topic": "Composition of dry air",
+        "confidence": "high",
+        "explanation": "Air is mostly nitrogen, with oxygen making up most of the rest. Argon, an unreactive noble gas, is a distant third. Carbon dioxide is only a trace gas, yet it traps enough heat to shape Earth's climate.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "air_n2",
+            "label": "Nitrogen share of dry air, by volume",
+            "sourceNote": "NASA Earth Fact Sheet, atmospheric composition",
+            "value": 78.08,
+            "unit": "percent",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "air_o2",
+            "label": "Oxygen share of dry air, by volume",
+            "sourceNote": "NASA Earth Fact Sheet, atmospheric composition",
+            "value": 20.95,
+            "unit": "percent",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "air_ar",
+            "label": "Argon share of dry air, by volume",
+            "sourceNote": "NASA Earth Fact Sheet, atmospheric composition",
+            "value": 0.934,
+            "unit": "percent",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "air_co2",
+            "label": "Carbon dioxide share of dry air, by volume",
+            "sourceNote": "NOAA Global Monitoring Laboratory, global annual mean CO2 (about 423 ppm)",
+            "value": 0.042,
+            "unit": "percent",
+            "approximate": true,
+            "year": 2024
+          }
+        ]
+      },
+      "plan": {
+        "template": "waffle",
+        "title": "What is in a breath of air",
+        "items": [
+          {
+            "factId": "air_n2",
+            "displayName": "Nitrogen"
+          },
+          {
+            "factId": "air_o2",
+            "displayName": "Oxygen"
+          },
+          {
+            "factId": "air_ar",
+            "displayName": "Argon"
+          },
+          {
+            "factId": "air_co2",
+            "displayName": "Carbon dioxide"
+          }
+        ]
+      }
+    },
+    {
+      "id": "earth_crust_elements",
+      "facts": {
+        "query": "What is Earth's crust made of?",
+        "topic": "Elements in Earth's crust",
+        "confidence": "high",
+        "explanation": "The ground beneath us is mostly oxygen and silicon, bound together in silicate minerals such as quartz and feldspar. Aluminium, iron and calcium come next, and a handful of other elements make up nearly all the rest.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "crust_oxygen",
+            "label": "Oxygen share of Earth's crust, by mass",
+            "sourceNote": "CRC Handbook of Chemistry and Physics (97th ed.), abundance of elements in Earth's crust by mass",
+            "value": 46.1,
+            "unit": "percent",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "crust_silicon",
+            "label": "Silicon share of Earth's crust, by mass",
+            "sourceNote": "CRC Handbook of Chemistry and Physics (97th ed.), abundance of elements in Earth's crust by mass",
+            "value": 28.2,
+            "unit": "percent",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "crust_aluminium",
+            "label": "Aluminium share of Earth's crust, by mass",
+            "sourceNote": "CRC Handbook of Chemistry and Physics (97th ed.), abundance of elements in Earth's crust by mass",
+            "value": 8.23,
+            "unit": "percent",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "crust_iron",
+            "label": "Iron share of Earth's crust, by mass",
+            "sourceNote": "CRC Handbook of Chemistry and Physics (97th ed.), abundance of elements in Earth's crust by mass",
+            "value": 5.63,
+            "unit": "percent",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "crust_calcium",
+            "label": "Calcium share of Earth's crust, by mass",
+            "sourceNote": "CRC Handbook of Chemistry and Physics (97th ed.), abundance of elements in Earth's crust by mass",
+            "value": 4.15,
+            "unit": "percent",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "crust_sodium",
+            "label": "Sodium share of Earth's crust, by mass",
+            "sourceNote": "CRC Handbook of Chemistry and Physics (97th ed.), abundance of elements in Earth's crust by mass",
+            "value": 2.36,
+            "unit": "percent",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "crust_magnesium",
+            "label": "Magnesium share of Earth's crust, by mass",
+            "sourceNote": "CRC Handbook of Chemistry and Physics (97th ed.), abundance of elements in Earth's crust by mass",
+            "value": 2.33,
+            "unit": "percent",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "crust_potassium",
+            "label": "Potassium share of Earth's crust, by mass",
+            "sourceNote": "CRC Handbook of Chemistry and Physics (97th ed.), abundance of elements in Earth's crust by mass",
+            "value": 2.09,
+            "unit": "percent",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "crust_titanium",
+            "label": "Titanium share of Earth's crust, by mass",
+            "sourceNote": "CRC Handbook of Chemistry and Physics (97th ed.), abundance of elements in Earth's crust by mass",
+            "value": 0.565,
+            "unit": "percent",
+            "approximate": true
+          }
+        ]
+      },
+      "plan": {
+        "template": "treemap",
+        "title": "The elements in Earth's crust",
+        "items": [
+          {
+            "factId": "crust_oxygen",
+            "displayName": "Oxygen"
+          },
+          {
+            "factId": "crust_silicon",
+            "displayName": "Silicon"
+          },
+          {
+            "factId": "crust_aluminium",
+            "displayName": "Aluminium"
+          },
+          {
+            "factId": "crust_iron",
+            "displayName": "Iron"
+          },
+          {
+            "factId": "crust_calcium",
+            "displayName": "Calcium"
+          },
+          {
+            "factId": "crust_sodium",
+            "displayName": "Sodium"
+          },
+          {
+            "factId": "crust_magnesium",
+            "displayName": "Magnesium"
+          },
+          {
+            "factId": "crust_potassium",
+            "displayName": "Potassium"
+          },
+          {
+            "factId": "crust_titanium",
+            "displayName": "Titanium"
+          }
+        ]
+      }
+    },
+    {
+      "id": "where_is_earths_water",
+      "facts": {
+        "query": "Where is all of Earth's water?",
+        "topic": "Distribution of Earth's water",
+        "confidence": "high",
+        "explanation": "Almost all of Earth's water is salty ocean. Most of the fresh water is locked in ice or hidden underground, so the lakes and rivers we rely on hold only a tiny fraction of the total.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "water_oceans",
+            "label": "Volume of water in oceans, seas and bays",
+            "sourceNote": "USGS Water Science School, from Gleick (1996) world water distribution",
+            "value": 1.338e+18,
+            "unit": "m3",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "water_ice",
+            "label": "Volume of water in ice caps, glaciers and permanent snow",
+            "sourceNote": "USGS Water Science School, from Gleick (1996) world water distribution",
+            "value": 2.4064e+16,
+            "unit": "m3",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "water_ground",
+            "label": "Volume of water in groundwater",
+            "sourceNote": "USGS Water Science School, from Gleick (1996) world water distribution",
+            "value": 2.34e+16,
+            "unit": "m3",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "water_permafrost",
+            "label": "Volume of water in ground ice and permafrost",
+            "sourceNote": "USGS Water Science School, from Gleick (1996) world water distribution",
+            "value": 300000000000000.0,
+            "unit": "m3",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "water_lakes",
+            "label": "Volume of water in lakes",
+            "sourceNote": "USGS Water Science School, from Gleick (1996) world water distribution",
+            "value": 176400000000000.0,
+            "unit": "m3",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "water_soil",
+            "label": "Volume of water in soil moisture",
+            "sourceNote": "USGS Water Science School, from Gleick (1996) world water distribution",
+            "value": 16500000000000.0,
+            "unit": "m3",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "water_air",
+            "label": "Volume of water in atmosphere",
+            "sourceNote": "USGS Water Science School, from Gleick (1996) world water distribution",
+            "value": 12900000000000.0,
+            "unit": "m3",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "water_swamp",
+            "label": "Volume of water in swamp water",
+            "sourceNote": "USGS Water Science School, from Gleick (1996) world water distribution",
+            "value": 11470000000000.0,
+            "unit": "m3",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "water_rivers",
+            "label": "Volume of water in rivers",
+            "sourceNote": "USGS Water Science School, from Gleick (1996) world water distribution",
+            "value": 2120000000000.0,
+            "unit": "m3",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "water_bio",
+            "label": "Volume of water in living things",
+            "sourceNote": "USGS Water Science School, from Gleick (1996) world water distribution",
+            "value": 1120000000000.0,
+            "unit": "m3",
+            "approximate": true
+          }
+        ]
+      },
+      "plan": {
+        "template": "bubble_pack",
+        "title": "Where Earth's water is",
+        "caption": "Bubble area is proportional to volume.",
+        "items": [
+          {
+            "factId": "water_oceans",
+            "displayName": "Oceans and seas"
+          },
+          {
+            "factId": "water_ice",
+            "displayName": "Ice caps and glaciers"
+          },
+          {
+            "factId": "water_ground",
+            "displayName": "Groundwater"
+          },
+          {
+            "factId": "water_permafrost",
+            "displayName": "Ground ice and permafrost"
+          },
+          {
+            "factId": "water_lakes",
+            "displayName": "Lakes"
+          },
+          {
+            "factId": "water_soil",
+            "displayName": "Soil moisture"
+          },
+          {
+            "factId": "water_air",
+            "displayName": "Atmosphere"
+          },
+          {
+            "factId": "water_swamp",
+            "displayName": "Swamp water"
+          },
+          {
+            "factId": "water_rivers",
+            "displayName": "Rivers"
+          },
+          {
+            "factId": "water_bio",
+            "displayName": "Living things"
+          }
+        ]
+      }
+    },
+    {
+      "id": "speed_of_sound_materials",
+      "facts": {
+        "query": "How fast does sound travel through different materials?",
+        "topic": "Speed of sound in different materials",
+        "confidence": "high",
+        "explanation": "Sound is a vibration passed from particle to particle, so it travels at different speeds through different materials. It is slowest in gases like air, several times faster in water, and fastest in stiff solids such as iron and aluminium.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "snd_air",
+            "label": "Speed of sound in air (20 °C)",
+            "sourceNote": "CRC Handbook of Chemistry and Physics, speed of sound (longitudinal, bulk)",
+            "value": 343,
+            "unit": "m/s",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "snd_helium",
+            "label": "Speed of sound in helium (0 °C)",
+            "sourceNote": "CRC Handbook of Chemistry and Physics, speed of sound (longitudinal, bulk)",
+            "value": 965,
+            "unit": "m/s",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "snd_water",
+            "label": "Speed of sound in fresh water (20 °C)",
+            "sourceNote": "CRC Handbook of Chemistry and Physics, speed of sound (longitudinal, bulk)",
+            "value": 1482,
+            "unit": "m/s",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "snd_lead",
+            "label": "Speed of sound in lead",
+            "sourceNote": "CRC Handbook of Chemistry and Physics, speed of sound (longitudinal, bulk)",
+            "value": 2160,
+            "unit": "m/s",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "snd_copper",
+            "label": "Speed of sound in copper",
+            "sourceNote": "CRC Handbook of Chemistry and Physics, speed of sound (longitudinal, bulk)",
+            "value": 4760,
+            "unit": "m/s",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "snd_iron",
+            "label": "Speed of sound in iron",
+            "sourceNote": "CRC Handbook of Chemistry and Physics, speed of sound (longitudinal, bulk)",
+            "value": 5950,
+            "unit": "m/s",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "snd_aluminium",
+            "label": "Speed of sound in aluminium",
+            "sourceNote": "CRC Handbook of Chemistry and Physics, speed of sound (longitudinal, bulk)",
+            "value": 6420,
+            "unit": "m/s",
+            "approximate": true
+          }
+        ]
+      },
+      "plan": {
+        "template": "number_line",
+        "title": "How fast sound travels through different stuff",
+        "items": [
+          {
+            "factId": "snd_air",
+            "displayName": "Air (20 °C)"
+          },
+          {
+            "factId": "snd_helium",
+            "displayName": "Helium (0 °C)"
+          },
+          {
+            "factId": "snd_water",
+            "displayName": "Fresh water (20 °C)"
+          },
+          {
+            "factId": "snd_lead",
+            "displayName": "Lead"
+          },
+          {
+            "factId": "snd_copper",
+            "displayName": "Copper"
+          },
+          {
+            "factId": "snd_iron",
+            "displayName": "Iron"
+          },
+          {
+            "factId": "snd_aluminium",
+            "displayName": "Aluminium"
+          }
+        ]
+      }
+    },
+    {
+      "id": "arctic_sea_ice_decline",
+      "facts": {
+        "query": "How much Arctic sea ice has been lost?",
+        "topic": "Arctic sea ice extent, 1979 vs 2024",
+        "confidence": "high",
+        "explanation": "Satellites have tracked Arctic sea ice since the late seventies. The ice grows each winter and shrinks each summer, and both the winter peak and the summer low have fallen as the Arctic warms, with the summer low dropping the most.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "ice_mar_1979",
+            "label": "Arctic sea ice extent, March 1979 average",
+            "sourceNote": "NSIDC Sea Ice Index v4, Arctic monthly average extent",
+            "value": 16340000,
+            "unit": "km2",
+            "approximate": false,
+            "year": 1979
+          },
+          {
+            "kind": "quantity",
+            "id": "ice_mar_2024",
+            "label": "Arctic sea ice extent, March 2024 average",
+            "sourceNote": "NSIDC Sea Ice Index v4, Arctic monthly average extent",
+            "value": 14870000,
+            "unit": "km2",
+            "approximate": false,
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "ice_sep_1979",
+            "label": "Arctic sea ice extent, September 1979 average",
+            "sourceNote": "NSIDC Sea Ice Index v4, Arctic monthly average extent",
+            "value": 7050000,
+            "unit": "km2",
+            "approximate": false,
+            "year": 1979
+          },
+          {
+            "kind": "quantity",
+            "id": "ice_sep_2024",
+            "label": "Arctic sea ice extent, September 2024 average",
+            "sourceNote": "NSIDC Sea Ice Index v4, Arctic monthly average extent",
+            "value": 4350000,
+            "unit": "km2",
+            "approximate": false,
+            "year": 2024
+          }
+        ]
+      },
+      "plan": {
+        "template": "slope",
+        "title": "Shrinking Arctic sea ice",
+        "aName": "1979",
+        "bName": "2024",
+        "rows": [
+          {
+            "label": "March (winter peak)",
+            "aFactId": "ice_mar_1979",
+            "bFactId": "ice_mar_2024"
+          },
+          {
+            "label": "September (summer low)",
+            "aFactId": "ice_sep_1979",
+            "bFactId": "ice_sep_2024"
+          }
+        ]
+      }
+    },
+    {
+      "id": "earth_layers_depth",
+      "facts": {
+        "query": "How deep are the layers inside the Earth?",
+        "topic": "Depths of Earth's layers",
+        "confidence": "high",
+        "explanation": "Earth is layered like an onion. A thin rocky crust floats on a thick mantle of hot rock that flows very slowly, and below that lies an iron core: a liquid outer core whose churning makes Earth's magnetic field, and a solid inner core at the centre.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "crust_top",
+            "label": "Crust: depth of top (the surface)",
+            "sourceNote": "Definition: the crust starts at the surface",
+            "value": 0,
+            "unit": "km",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "crust_base",
+            "label": "Crust: depth of bottom",
+            "sourceNote": "USGS: continental crust averages about 35 km thick (oceanic crust is thinner)",
+            "value": 35,
+            "unit": "km",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "um_top",
+            "label": "Upper mantle: depth of top",
+            "sourceNote": "USGS: continental crust averages about 35 km thick",
+            "value": 35,
+            "unit": "km",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "um_base",
+            "label": "Upper mantle: depth of bottom",
+            "sourceNote": "Seismic discontinuity at ~660 km depth (PREM)",
+            "value": 660,
+            "unit": "km",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "lm_top",
+            "label": "Lower mantle: depth of top",
+            "sourceNote": "Seismic discontinuity at ~660 km depth (PREM)",
+            "value": 660,
+            "unit": "km",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "lm_base",
+            "label": "Lower mantle: depth of bottom",
+            "sourceNote": "Preliminary Reference Earth Model (Dziewonski & Anderson 1981)",
+            "value": 2891,
+            "unit": "km",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "oc_top",
+            "label": "Outer core: depth of top",
+            "sourceNote": "Preliminary Reference Earth Model (Dziewonski & Anderson 1981)",
+            "value": 2891,
+            "unit": "km",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "oc_base",
+            "label": "Outer core: depth of bottom",
+            "sourceNote": "Preliminary Reference Earth Model (Dziewonski & Anderson 1981)",
+            "value": 5150,
+            "unit": "km",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "ic_top",
+            "label": "Inner core: depth of top",
+            "sourceNote": "Preliminary Reference Earth Model (Dziewonski & Anderson 1981)",
+            "value": 5150,
+            "unit": "km",
+            "approximate": false
+          },
+          {
+            "kind": "quantity",
+            "id": "ic_base",
+            "label": "Inner core: depth of bottom",
+            "sourceNote": "IUGG mean Earth radius; PREM",
+            "value": 6371,
+            "unit": "km",
+            "approximate": false
+          }
+        ]
+      },
+      "plan": {
+        "template": "range_bars",
+        "title": "A journey to the centre of the Earth",
+        "caption": "Depth below the surface; crust thickness varies widely, so its boundary is an average.",
+        "rows": [
+          {
+            "label": "Crust",
+            "aFactId": "crust_top",
+            "bFactId": "crust_base"
+          },
+          {
+            "label": "Upper mantle",
+            "aFactId": "um_top",
+            "bFactId": "um_base"
+          },
+          {
+            "label": "Lower mantle",
+            "aFactId": "lm_top",
+            "bFactId": "lm_base"
+          },
+          {
+            "label": "Outer core",
+            "aFactId": "oc_top",
+            "bFactId": "oc_base"
+          },
+          {
+            "label": "Inner core",
+            "aFactId": "ic_top",
+            "bFactId": "ic_base"
+          }
+        ]
+      }
+    },
+    {
+      "id": "physics_discoveries",
+      "facts": {
+        "query": "What are the greatest discoveries in physics?",
+        "topic": "Landmark discoveries in physics",
+        "confidence": "high",
+        "explanation": "Modern physics grew from Newton's laws of motion and gravity. Electricity, magnetism and light were unified next, then discoveries inside the atom and the theories of relativity and quantum mechanics transformed our picture of nature. Giant experiments have since confirmed predictions made decades earlier.",
+        "facts": [
+          {
+            "kind": "event",
+            "id": "principia",
+            "label": "Newton publishes the Principia",
+            "sourceNote": "Royal Society; history of science references",
+            "year": 1687,
+            "month": 7,
+            "day": 5,
+            "description": "Newton's laws of motion and universal gravitation."
+          },
+          {
+            "kind": "event",
+            "id": "induction",
+            "label": "Faraday discovers electromagnetic induction",
+            "sourceNote": "Royal Institution archives",
+            "year": 1831,
+            "month": 8,
+            "day": 29,
+            "description": "A changing magnetic field makes an electric current."
+          },
+          {
+            "kind": "event",
+            "id": "maxwell",
+            "label": "Maxwell unifies electricity, magnetism and light",
+            "sourceNote": "Philosophical Transactions of the Royal Society",
+            "year": 1865,
+            "description": "His equations show light is an electromagnetic wave."
+          },
+          {
+            "kind": "event",
+            "id": "xrays",
+            "label": "Röntgen discovers X-rays",
+            "sourceNote": "Nobel Prize in Physics 1901 records",
+            "year": 1895,
+            "month": 11,
+            "day": 8,
+            "description": "Invisible rays that pass through flesh but not bone."
+          },
+          {
+            "kind": "event",
+            "id": "electron",
+            "label": "J. J. Thomson discovers the electron",
+            "sourceNote": "Nobel Prize in Physics 1906 records; Royal Institution lecture",
+            "year": 1897,
+            "month": 4,
+            "day": 30,
+            "description": "The first subatomic particle is identified."
+          },
+          {
+            "kind": "event",
+            "id": "quantum",
+            "label": "Planck proposes energy quanta",
+            "sourceNote": "German Physical Society proceedings; Nobel Prize 1918 records",
+            "year": 1900,
+            "month": 12,
+            "day": 14,
+            "description": "Energy comes in discrete packets: the birth of quantum theory."
+          },
+          {
+            "kind": "event",
+            "id": "special_rel",
+            "label": "Einstein's special relativity",
+            "sourceNote": "Annalen der Physik",
+            "year": 1905,
+            "description": "Space and time depend on motion; mass and energy are equivalent."
+          },
+          {
+            "kind": "event",
+            "id": "nucleus",
+            "label": "Rutherford discovers the atomic nucleus",
+            "sourceNote": "Philosophical Magazine; history of science references",
+            "year": 1911,
+            "description": "Atoms have a tiny, dense, positively charged core."
+          },
+          {
+            "kind": "event",
+            "id": "general_rel",
+            "label": "Einstein's general relativity",
+            "sourceNote": "Prussian Academy of Sciences proceedings",
+            "year": 1915,
+            "month": 11,
+            "day": 25,
+            "description": "Gravity is the curvature of space and time."
+          },
+          {
+            "kind": "event",
+            "id": "neutron",
+            "label": "Chadwick discovers the neutron",
+            "sourceNote": "Nature; Nobel Prize in Physics 1935 records",
+            "year": 1932,
+            "description": "The neutral particle in atomic nuclei."
+          },
+          {
+            "kind": "event",
+            "id": "chain_reaction",
+            "label": "First controlled nuclear chain reaction",
+            "sourceNote": "US Department of Energy history (Chicago Pile-1)",
+            "year": 1942,
+            "month": 12,
+            "day": 2,
+            "description": "Chicago Pile-1 sustains a fission chain reaction."
+          },
+          {
+            "kind": "event",
+            "id": "higgs",
+            "label": "Higgs boson discovery announced",
+            "sourceNote": "CERN press release",
+            "year": 2012,
+            "month": 7,
+            "day": 4,
+            "description": "ATLAS and CMS at the Large Hadron Collider find the Higgs boson."
+          },
+          {
+            "kind": "event",
+            "id": "grav_waves",
+            "label": "First gravitational waves detected",
+            "sourceNote": "LIGO Scientific Collaboration (GW150914)",
+            "year": 2015,
+            "month": 9,
+            "day": 14,
+            "description": "Ripples in spacetime from two merging black holes."
+          }
+        ]
+      },
+      "plan": {
+        "template": "timeline",
+        "title": "Landmarks of physics",
+        "axis": "linear",
+        "eventFactIds": [
+          "principia",
+          "induction",
+          "maxwell",
+          "xrays",
+          "electron",
+          "quantum",
+          "special_rel",
+          "nucleus",
+          "general_rel",
+          "neutron",
+          "chain_reaction",
+          "higgs",
+          "grav_waves"
+        ]
+      }
+    },
+    {
+      "id": "atoms_to_cells",
+      "facts": {
+        "query": "How small is an atom compared with a cell?",
+        "topic": "Sizes from atoms to cells",
+        "confidence": "high",
+        "explanation": "Atoms are so small that even the DNA double helix is only a few of them wide. Viruses are larger, bacteria larger still, and our own cells are bigger again. The human egg cell is one of the few cells just about visible to the naked eye.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "size_h_atom",
+            "label": "Diameter of a hydrogen atom",
+            "sourceNote": "Twice the Bohr radius (CODATA 2022, 0.0529 nm), rounded",
+            "value": 0.1,
+            "unit": "nm",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "size_dna",
+            "label": "Width of the DNA double helix",
+            "sourceNote": "Standard molecular biology reference for B-DNA width",
+            "value": 2,
+            "unit": "nm",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "size_flu",
+            "label": "Diameter of an influenza virus particle",
+            "sourceNote": "Virology references: influenza virions about 80–120 nm across (CDC)",
+            "value": 100,
+            "unit": "nm",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "size_ecoli",
+            "label": "Length of an E. coli bacterium",
+            "sourceNote": "Standard microbiology reference: E. coli about 1–2 µm long",
+            "value": 2,
+            "unit": "um",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "size_rbc",
+            "label": "Diameter of a human red blood cell",
+            "sourceNote": "Standard haematology reference: red blood cells about 7–8 µm across",
+            "value": 7.5,
+            "unit": "um",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "size_hair",
+            "label": "Width of a human hair",
+            "sourceNote": "Dermatology references: human hair typically about 50–100 µm wide",
+            "value": 70,
+            "unit": "um",
+            "approximate": true
+          },
+          {
+            "kind": "quantity",
+            "id": "size_egg",
+            "label": "Diameter of a human egg cell",
+            "sourceNote": "Embryology references: human oocyte about 120 µm across",
+            "value": 120,
+            "unit": "um",
+            "approximate": true
+          }
+        ]
+      },
+      "plan": {
+        "template": "scale_zoom",
+        "title": "From atoms to cells, to scale",
+        "mode": "size",
+        "items": [
+          {
+            "factId": "size_h_atom",
+            "displayName": "Hydrogen atom",
+            "shape": "circle"
+          },
+          {
+            "factId": "size_dna",
+            "displayName": "DNA double helix",
+            "shape": "circle"
+          },
+          {
+            "factId": "size_flu",
+            "displayName": "Flu virus",
+            "shape": "circle"
+          },
+          {
+            "factId": "size_ecoli",
+            "displayName": "E. coli bacterium",
+            "shape": "circle"
+          },
+          {
+            "factId": "size_rbc",
+            "displayName": "Red blood cell",
+            "shape": "circle"
+          },
+          {
+            "factId": "size_hair",
+            "displayName": "Human hair",
+            "shape": "circle"
+          },
+          {
+            "factId": "size_egg",
+            "displayName": "Human egg cell",
+            "shape": "circle"
+          }
+        ]
+      }
+    }
+  ]
+}

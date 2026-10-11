@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "template": "timeline",
+  "title": "Milestones of the space age",
+  "annotations": [
+    {
+      "text": "65 years from first to last",
+      "anchor": "event",
+      "index": 11
+    }
+  ],
+  "axis": "linear",
+  "referenceYear": 2026,
+  "events": [
+    {
+      "label": "Sputnik 1, first artificial satellite",
+      "date": "4 Oct 1957",
+      "year": 1957.7582191780823,
+      "yearsAgo": 68.2417808219177,
+      "description": "The Soviet Union launches Sputnik 1 into Earth orbit.",
+      "source": "NASA History Office"
+    },
+    {
+      "label": "Yuri Gagarin, first human in space",
+      "date": "12 Apr 1961",
+      "year": 1961.2801369863014,
+      "yearsAgo": 64.71986301369861,
+      "description": "Vostok 1 carries Yuri Gagarin once around Earth.",
+      "source": "NASA History Office; Roscosmos"
+    },
+    {
+      "label": "Apollo 11 Moon landing",
+      "date": "20 Jul 1969",
+      "year": 1969.5520547945205,
+      "yearsAgo": 56.44794520547953,
+      "description": "Neil Armstrong and Buzz Aldrin land on the Moon.",
+      "source": "NASA Apollo 11 mission overview"
+    },
+    {
+      "label": "Viking 1 lands on Mars",
+      "date": "20 Jul 1976",
+      "year": 1976.5520547945205,
+      "yearsAgo": 49.44794520547953,
+      "description": "First successful US landing on Mars, returning surface images.",
+      "source": "NASA Viking mission overview"
+    },
+    {
+      "label": "Voyager 1 launch",
+      "date": "5 Sep 1977",
+      "year": 1977.6776255707764,
+      "yearsAgo": 48.3223744292236,
+      "description": "Launched to fly past Jupiter and Saturn, then leave the Solar System.",
+      "source": "NASA JPL Voyager mission"
+    },
+    {
+      "label": "First Space Shuttle flight",
+      "date": "12 Apr 1981",
+      "year": 1981.2801369863014,
+      "yearsAgo": 44.719863013698614,
+      "description": "Columbia flies STS-1, the first reusable crewed spacecraft mission.",
+      "source": "NASA Space Shuttle program history"
+    },
+    {
+      "label": "Hubble Space Telescope launch",
+      "date": "24 Apr 1990",
+      "year": 1990.3130136986301,
+      "yearsAgo": 35.68698630136987,
+      "description": "Shuttle Discovery carries Hubble into orbit.",
+      "source": "NASA Hubble mission history"
+    },
+    {
+      "label": "First ISS module (Zarya) launched",
+      "date": "20 Nov 1998",
+      "year": 1998.8853881278537,
+      "yearsAgo": 27.11461187214627,
+      "description": "Assembly of the International Space Station begins.",
+      "source": "NASA International Space Station history"
+    },
+    {
+      "label": "Curiosity rover lands on Mars",
+      "date": "6 Aug 2012",
+      "year": 2012.5970319634703,
+      "yearsAgo": 13.402968036529728,
+      "description": "The car-sized rover lands in Gale Crater (UTC date).",
+      "source": "NASA JPL Mars Science Laboratory"
+    },
+    {
+      "label": "Voyager 1 reaches interstellar space",
+      "date": "25 Aug 2012",
+      "year": 2012.6490867579907,
+      "yearsAgo": 13.350913242009256,
+      "description": "Voyager 1 crosses the heliopause, leaving the Sun's bubble of solar wind.",
+      "source": "NASA JPL Voyager mission"
+    },
+    {
+      "label": "James Webb Space Telescope launch",
+      "date": "25 Dec 2021",
+      "year": 2021.9824200913242,
+      "yearsAgo": 4.017579908675771,
+      "description": "Webb launches on an Ariane 5 from French Guiana.",
+      "source": "NASA/ESA/CSA Webb mission"
+    },
+    {
+      "label": "Artemis I launch",
+      "date": "16 Nov 2022",
+      "year": 2022.8744292237443,
+      "yearsAgo": 3.1255707762556995,
+      "description": "Uncrewed Orion capsule flies around the Moon and back.",
+      "source": "NASA Artemis I mission overview"
+    }
+  ]
+}

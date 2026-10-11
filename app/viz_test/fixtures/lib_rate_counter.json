@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "template": "rate_counter",
+  "title": "How far you have travelled since opening this page",
+  "annotations": [],
+  "rows": [
+    {
+      "label": "Earth's spin at the equator",
+      "a": {
+        "valueSi": 465.0,
+        "display": "~465 m",
+        "source": "Derived from Earth's equatorial radius and sidereal day (NASA Earth Fact Sheet)"
+      },
+      "b": {
+        "valueSi": 1.0,
+        "display": "1 s",
+        "source": "Unit period"
+      },
+      "perSecond": 465.0,
+      "suffix": "m",
+      "rateDisplay": "≈ 465 m every second"
+    },
+    {
+      "label": "Space station orbiting Earth",
+      "a": {
+        "valueSi": 7660.0,
+        "display": "~7.66 km",
+        "source": "Circular orbital speed at the ISS's ~420 km altitude (NASA ISS facts)"
+      },
+      "b": {
+        "valueSi": 1.0,
+        "display": "1 s",
+        "source": "Unit period"
+      },
+      "perSecond": 7.66,
+      "suffix": "km",
+      "rateDisplay": "≈ 7.66 km every second"
+    },
+    {
+      "label": "Voyager 1 leaving the Sun",
+      "a": {
+        "valueSi": 17000.0,
+        "display": "~17 km",
+        "source": "NASA JPL Voyager mission status",
+        "year": 2025
+      },
+      "b": {
+        "valueSi": 1.0,
+        "display": "1 s",
+        "source": "Unit period"
+      },
+      "perSecond": 17.0,
+      "suffix": "km",
+      "rateDisplay": "≈ 17 km every second"
+    },
+    {
+      "label": "Earth orbiting the Sun",
+      "a": {
+        "valueSi": 29780.0,
+        "display": "29.8 km",
+        "source": "NASA Earth Fact Sheet, mean orbital velocity"
+      },
+      "b": {
+        "valueSi": 1.0,
+        "display": "1 s",
+        "source": "Unit period"
+      },
+      "perSecond": 29.78,
+      "suffix": "km",
+      "rateDisplay": "≈ 29.8 km every second"
+    }
+  ]
+}

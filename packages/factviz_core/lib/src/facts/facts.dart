@@ -35,6 +35,7 @@ sealed class Fact {
       'quantity': 'quantity',
       'event': 'event',
       'step': 'step',
+      'place': 'place',
     });
     final id = r.string('id', pattern: _idPattern, patternHint: 'lowercase slug [a-z0-9_], max 40 chars');
     final label = r.string('label', maxLength: 80);
@@ -50,6 +51,10 @@ sealed class Fact {
           r.issue('unknown unit "$unitCode"; allowed: ${units.keys.join(', ')}', key: 'unit');
         }
         final approximate = r.boolean('approximate', optional: true) ?? false;
+        final year = r.integer('year', optional: true, min: -maxAbsEventYear, max: 9999);
+        if (unit != null && value != null && unit.code == 'percent' && value > 100) {
+          r.issue('a percentage must be between 0 and 100 (got $value)', key: 'value');
+        }
         if (id == null || label == null || sourceNote == null || value == null || unit == null) {
           return null;
         }
@@ -60,7 +65,13 @@ sealed class Fact {
           value: value,
           unit: unit,
           approximate: approximate,
+          year: year,
         );
+      case 'place':
+        final lat = r.number('lat', min: -90, max: 90);
+        final lon = r.number('lon', min: -180, max: 180);
+        if (id == null || label == null || sourceNote == null || lat == null || lon == null) return null;
+        return PlaceFact(id: id, label: label, sourceNote: sourceNote, lat: lat, lon: lon);
       case 'event':
         final year = r.integer('year', min: -maxAbsEventYear, max: 9999);
         final month = r.integer('month', optional: true, min: 1, max: 12);
@@ -108,11 +119,15 @@ final class QuantityFact extends Fact {
     required this.value,
     required this.unit,
     this.approximate = false,
+    this.year,
   });
 
   final double value;
   final Unit unit;
   final bool approximate;
+
+  /// When the value applies (time series, before/after). Negative = BCE.
+  final int? year;
 
   @override
   String get kind => 'quantity';
@@ -127,6 +142,7 @@ final class QuantityFact extends Fact {
         'value': value,
         'unit': unit.code,
         'approximate': approximate,
+        'year': ?year,
       };
 }
 
@@ -179,6 +195,26 @@ final class EventFact extends Fact {
         if (day != null) 'day': day,
         if (description != null) 'description': description,
       };
+}
+
+/// A location on Earth, for map visualizations.
+final class PlaceFact extends Fact {
+  const PlaceFact({
+    required super.id,
+    required super.label,
+    required super.sourceNote,
+    required this.lat,
+    required this.lon,
+  });
+
+  final double lat;
+  final double lon;
+
+  @override
+  String get kind => 'place';
+
+  @override
+  Map<String, Object?> toJson() => {..._base(), 'lat': lat, 'lon': lon};
 }
 
 /// One stage of a process.

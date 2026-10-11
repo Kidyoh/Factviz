@@ -12,6 +12,10 @@
   "orientation": "vertical",
   "units": {
     "dimension": "length",
+    "preferred": {
+      "symbol": "m",
+      "toSi": 1.0
+    },
     "ladder": [
       {
         "symbol": "nm",

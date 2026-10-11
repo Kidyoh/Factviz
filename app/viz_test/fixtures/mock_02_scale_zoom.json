@@ -12,6 +12,10 @@
   "mode": "distance",
   "units": {
     "dimension": "length",
+    "preferred": {
+      "symbol": "AU",
+      "toSi": 149597870700.0
+    },
     "ladder": [
       {
         "symbol": "nm",

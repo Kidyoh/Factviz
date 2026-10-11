@@ -1,0 +1,1252 @@
+{
+  "category": "body",
+  "title": "Human body",
+  "entries": [
+    {
+      "id": "how_small_is_a_cell",
+      "facts": {
+        "query": "How small is a cell?",
+        "topic": "Cell sizes",
+        "confidence": "high",
+        "explanation": "Most of your cells are far too small to see. A red blood cell is a tiny disc, bacteria are smaller still, and viruses are smaller again. The human egg is one of the largest human cells, just about visible to the naked eye.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "dna_width",
+            "label": "Width of a DNA double helix",
+            "value": 2,
+            "unit": "nm",
+            "approximate": true,
+            "sourceNote": "Molecular Biology of the Cell (Alberts et al.), standard reference size"
+          },
+          {
+            "kind": "quantity",
+            "id": "flu_virus",
+            "label": "Influenza virus particle (diameter)",
+            "value": 100,
+            "unit": "nm",
+            "approximate": true,
+            "sourceNote": "CDC and virology textbooks: influenza virions are about 80–120 nm across"
+          },
+          {
+            "kind": "quantity",
+            "id": "e_coli",
+            "label": "E. coli bacterium (length)",
+            "value": 2,
+            "unit": "um",
+            "approximate": true,
+            "sourceNote": "Molecular Biology of the Cell (Alberts et al.), standard reference size"
+          },
+          {
+            "kind": "quantity",
+            "id": "red_blood_cell",
+            "label": "Red blood cell (diameter)",
+            "value": 7.5,
+            "unit": "um",
+            "approximate": true,
+            "sourceNote": "Medical physiology textbooks (Guyton and Hall): about 7–8 micrometres across"
+          },
+          {
+            "kind": "quantity",
+            "id": "hair_width",
+            "label": "Width of a human hair",
+            "value": 70,
+            "unit": "um",
+            "approximate": true,
+            "sourceNote": "Typical value; human hair ranges from about 17 to 180 micrometres (dermatology references)"
+          },
+          {
+            "kind": "quantity",
+            "id": "egg_cell",
+            "label": "Human egg cell (diameter)",
+            "value": 100,
+            "unit": "um",
+            "approximate": true,
+            "sourceNote": "Embryology textbooks (Langman's Medical Embryology): about 0.1 mm across"
+          }
+        ]
+      },
+      "plan": {
+        "template": "scale_zoom",
+        "title": "From DNA to the human egg cell",
+        "caption": "Typical sizes, zooming out from a strand of DNA.",
+        "mode": "size",
+        "items": [
+          {
+            "factId": "dna_width",
+            "displayName": "DNA strand width",
+            "shape": "bar"
+          },
+          {
+            "factId": "flu_virus",
+            "displayName": "Flu virus",
+            "shape": "circle"
+          },
+          {
+            "factId": "e_coli",
+            "displayName": "E. coli bacterium",
+            "shape": "bar"
+          },
+          {
+            "factId": "red_blood_cell",
+            "displayName": "Red blood cell",
+            "shape": "circle"
+          },
+          {
+            "factId": "hair_width",
+            "displayName": "Width of a hair",
+            "shape": "bar"
+          },
+          {
+            "factId": "egg_cell",
+            "displayName": "Human egg cell",
+            "shape": "circle"
+          }
+        ]
+      }
+    },
+    {
+      "id": "heartbeats_per_day",
+      "facts": {
+        "query": "How many heartbeats in a day?",
+        "topic": "Body rhythms",
+        "confidence": "high",
+        "explanation": "Your body keeps working every second without you noticing. The heart beats around the clock, you breathe without thinking, and your bone marrow constantly makes new red blood cells to replace old ones.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "heartbeats",
+            "label": "Heartbeats in a day (typical adult)",
+            "value": 100000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "American Heart Association: the heart beats about 100,000 times a day"
+          },
+          {
+            "kind": "quantity",
+            "id": "day",
+            "label": "One day",
+            "value": 1,
+            "unit": "day",
+            "approximate": false,
+            "sourceNote": "Definition"
+          },
+          {
+            "kind": "quantity",
+            "id": "breaths",
+            "label": "Breaths per minute at rest (typical adult)",
+            "value": 16,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "MedlinePlus (NIH): normal adult resting rate is 12 to 20 breaths per minute"
+          },
+          {
+            "kind": "quantity",
+            "id": "minute",
+            "label": "One minute",
+            "value": 1,
+            "unit": "min",
+            "approximate": false,
+            "sourceNote": "Definition"
+          },
+          {
+            "kind": "quantity",
+            "id": "red_cells",
+            "label": "Red blood cells made per second",
+            "value": 2000000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "Physiology textbook estimate (e.g. Cleveland Clinic): about 2 million per second"
+          },
+          {
+            "kind": "quantity",
+            "id": "second",
+            "label": "One second",
+            "value": 1,
+            "unit": "s",
+            "approximate": false,
+            "sourceNote": "Definition"
+          }
+        ]
+      },
+      "plan": {
+        "template": "rate_counter",
+        "title": "Your body since you opened this page",
+        "caption": "Typical adult rates at rest.",
+        "rows": [
+          {
+            "label": "Heartbeats",
+            "aFactId": "heartbeats",
+            "bFactId": "day"
+          },
+          {
+            "label": "Breaths",
+            "aFactId": "breaths",
+            "bFactId": "minute"
+          },
+          {
+            "label": "New red blood cells",
+            "aFactId": "red_cells",
+            "bFactId": "second"
+          }
+        ]
+      }
+    },
+    {
+      "id": "body_elements",
+      "facts": {
+        "query": "What is the human body made of?",
+        "topic": "Elements in the body",
+        "confidence": "high",
+        "explanation": "By mass, the body is mostly oxygen, largely because so much of it is water. Carbon, the backbone of proteins, fats and DNA, comes next, followed by hydrogen and nitrogen. Calcium and phosphorus are mostly in bones and teeth.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "oxygen",
+            "label": "Oxygen",
+            "value": 65.0,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "OpenStax Anatomy and Physiology, Table 2.1 (elements by percent of body mass)"
+          },
+          {
+            "kind": "quantity",
+            "id": "carbon",
+            "label": "Carbon",
+            "value": 18.5,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "OpenStax Anatomy and Physiology, Table 2.1 (elements by percent of body mass)"
+          },
+          {
+            "kind": "quantity",
+            "id": "hydrogen",
+            "label": "Hydrogen",
+            "value": 9.5,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "OpenStax Anatomy and Physiology, Table 2.1 (elements by percent of body mass)"
+          },
+          {
+            "kind": "quantity",
+            "id": "nitrogen",
+            "label": "Nitrogen",
+            "value": 3.2,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "OpenStax Anatomy and Physiology, Table 2.1 (elements by percent of body mass)"
+          },
+          {
+            "kind": "quantity",
+            "id": "calcium",
+            "label": "Calcium",
+            "value": 1.5,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "OpenStax Anatomy and Physiology, Table 2.1 (elements by percent of body mass)"
+          },
+          {
+            "kind": "quantity",
+            "id": "phosphorus",
+            "label": "Phosphorus",
+            "value": 1.0,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "OpenStax Anatomy and Physiology, Table 2.1 (elements by percent of body mass)"
+          }
+        ]
+      },
+      "plan": {
+        "template": "donut",
+        "title": "The elements that make up your body",
+        "caption": "Share of body mass; trace elements are grouped as Other.",
+        "items": [
+          {
+            "factId": "oxygen",
+            "displayName": "Oxygen"
+          },
+          {
+            "factId": "carbon",
+            "displayName": "Carbon"
+          },
+          {
+            "factId": "hydrogen",
+            "displayName": "Hydrogen"
+          },
+          {
+            "factId": "nitrogen",
+            "displayName": "Nitrogen"
+          },
+          {
+            "factId": "calcium",
+            "displayName": "Calcium"
+          },
+          {
+            "factId": "phosphorus",
+            "displayName": "Phosphorus"
+          }
+        ]
+      }
+    },
+    {
+      "id": "body_water",
+      "facts": {
+        "query": "How much of the body is water?",
+        "topic": "Water in the body",
+        "confidence": "high",
+        "explanation": "Water makes up the majority of an adult body. Soft, active organs such as the lungs, brain and heart are mostly water, while bone holds much less.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "whole_body",
+            "label": "Whole adult body",
+            "value": 60,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "USGS Water Science School: up to about 60% of the adult human body is water"
+          },
+          {
+            "kind": "quantity",
+            "id": "lungs",
+            "label": "Lungs",
+            "value": 83,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "USGS Water Science School, citing Mitchell et al. (1945) J. Biol. Chem."
+          },
+          {
+            "kind": "quantity",
+            "id": "brain_heart",
+            "label": "Brain and heart",
+            "value": 73,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "USGS Water Science School, citing Mitchell et al. (1945) J. Biol. Chem."
+          },
+          {
+            "kind": "quantity",
+            "id": "bones",
+            "label": "Bones",
+            "value": 31,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "USGS Water Science School, citing Mitchell et al. (1945) J. Biol. Chem."
+          }
+        ]
+      },
+      "plan": {
+        "template": "waffle",
+        "title": "How watery are you",
+        "caption": "Share of water by mass.",
+        "items": [
+          {
+            "factId": "whole_body",
+            "displayName": "Whole body"
+          },
+          {
+            "factId": "lungs",
+            "displayName": "Lungs"
+          },
+          {
+            "factId": "brain_heart",
+            "displayName": "Brain and heart"
+          },
+          {
+            "factId": "bones",
+            "displayName": "Bones"
+          }
+        ]
+      }
+    },
+    {
+      "id": "heaviest_organs",
+      "facts": {
+        "query": "What are the heaviest parts of the body?",
+        "topic": "Tissue and organ weights",
+        "confidence": "high",
+        "explanation": "In the reference adult used by radiation-safety scientists, muscle is by far the heaviest tissue, followed by fat and the skeleton. Skin is the heaviest single organ, ahead of the liver, brain and lungs.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "muscle",
+            "label": "Skeletal muscle",
+            "value": 29,
+            "unit": "kg",
+            "approximate": true,
+            "sourceNote": "ICRP Publication 89 (2002), reference adult male"
+          },
+          {
+            "kind": "quantity",
+            "id": "adipose",
+            "label": "Fat (adipose tissue)",
+            "value": 18.2,
+            "unit": "kg",
+            "approximate": true,
+            "sourceNote": "ICRP Publication 89 (2002), reference adult male; varies widely between people"
+          },
+          {
+            "kind": "quantity",
+            "id": "skeleton",
+            "label": "Skeleton (bone, marrow, cartilage)",
+            "value": 10.45,
+            "unit": "kg",
+            "approximate": true,
+            "sourceNote": "ICRP Publication 89 (2002), reference adult male"
+          },
+          {
+            "kind": "quantity",
+            "id": "skin",
+            "label": "Skin",
+            "value": 3.3,
+            "unit": "kg",
+            "approximate": true,
+            "sourceNote": "ICRP Publication 89 (2002), reference adult male"
+          },
+          {
+            "kind": "quantity",
+            "id": "liver",
+            "label": "Liver",
+            "value": 1.8,
+            "unit": "kg",
+            "approximate": true,
+            "sourceNote": "ICRP Publication 89 (2002), reference adult male"
+          },
+          {
+            "kind": "quantity",
+            "id": "brain",
+            "label": "Brain",
+            "value": 1.45,
+            "unit": "kg",
+            "approximate": true,
+            "sourceNote": "ICRP Publication 89 (2002), reference adult male"
+          },
+          {
+            "kind": "quantity",
+            "id": "lungs_mass",
+            "label": "Lungs (both)",
+            "value": 1.2,
+            "unit": "kg",
+            "approximate": true,
+            "sourceNote": "ICRP Publication 89 (2002), reference adult male"
+          },
+          {
+            "kind": "quantity",
+            "id": "heart",
+            "label": "Heart (tissue, without blood)",
+            "value": 0.33,
+            "unit": "kg",
+            "approximate": true,
+            "sourceNote": "ICRP Publication 89 (2002), reference adult male"
+          },
+          {
+            "kind": "quantity",
+            "id": "kidneys",
+            "label": "Kidneys (both)",
+            "value": 0.31,
+            "unit": "kg",
+            "approximate": true,
+            "sourceNote": "ICRP Publication 89 (2002), reference adult male"
+          },
+          {
+            "kind": "quantity",
+            "id": "spleen",
+            "label": "Spleen",
+            "value": 0.15,
+            "unit": "kg",
+            "approximate": true,
+            "sourceNote": "ICRP Publication 89 (2002), reference adult male"
+          },
+          {
+            "kind": "quantity",
+            "id": "pancreas",
+            "label": "Pancreas",
+            "value": 0.14,
+            "unit": "kg",
+            "approximate": true,
+            "sourceNote": "ICRP Publication 89 (2002), reference adult male"
+          }
+        ]
+      },
+      "plan": {
+        "template": "treemap",
+        "title": "What your body weight is made of",
+        "caption": "Reference adult male used by the ICRP; real people vary.",
+        "items": [
+          {
+            "factId": "muscle",
+            "displayName": "Muscle"
+          },
+          {
+            "factId": "adipose",
+            "displayName": "Fat"
+          },
+          {
+            "factId": "skeleton",
+            "displayName": "Skeleton"
+          },
+          {
+            "factId": "skin",
+            "displayName": "Skin"
+          },
+          {
+            "factId": "liver",
+            "displayName": "Liver"
+          },
+          {
+            "factId": "brain",
+            "displayName": "Brain"
+          },
+          {
+            "factId": "lungs_mass",
+            "displayName": "Lungs"
+          },
+          {
+            "factId": "heart",
+            "displayName": "Heart"
+          },
+          {
+            "factId": "kidneys",
+            "displayName": "Kidneys"
+          },
+          {
+            "factId": "spleen",
+            "displayName": "Spleen"
+          },
+          {
+            "factId": "pancreas",
+            "displayName": "Pancreas"
+          }
+        ]
+      }
+    },
+    {
+      "id": "history_of_medicine",
+      "facts": {
+        "query": "What are the biggest milestones in the history of medicine?",
+        "topic": "History of medicine",
+        "confidence": "high",
+        "explanation": "Medicine moved from careful observation in ancient Greece to anatomy, microscopes and vaccines, then to anaesthesia, X-rays and antibiotics. The twentieth century added insulin, the structure of DNA, organ transplants and the eradication of smallpox.",
+        "facts": [
+          {
+            "kind": "event",
+            "id": "hippocrates",
+            "label": "Hippocrates",
+            "year": -400,
+            "description": "Around this time the Greek physician Hippocrates and his followers treat disease as natural rather than supernatural.",
+            "sourceNote": "Encyclopaedia Britannica; date approximate (Hippocrates lived c. 460–370 BCE)"
+          },
+          {
+            "kind": "event",
+            "id": "vesalius",
+            "label": "Vesalius's anatomy",
+            "year": 1543,
+            "description": "Andreas Vesalius publishes De humani corporis fabrica, the first modern atlas of human anatomy.",
+            "sourceNote": "Encyclopaedia Britannica"
+          },
+          {
+            "kind": "event",
+            "id": "harvey",
+            "label": "Blood circulation",
+            "year": 1628,
+            "description": "William Harvey shows that the heart pumps blood around the body in a closed circuit.",
+            "sourceNote": "Encyclopaedia Britannica"
+          },
+          {
+            "kind": "event",
+            "id": "leeuwenhoek",
+            "label": "Microbes seen",
+            "year": 1676,
+            "description": "Antonie van Leeuwenhoek reports tiny living 'animalcules' seen through his microscopes.",
+            "sourceNote": "Royal Society, Philosophical Transactions archive"
+          },
+          {
+            "kind": "event",
+            "id": "jenner",
+            "label": "First vaccine",
+            "year": 1796,
+            "description": "Edward Jenner uses cowpox to protect a boy against smallpox, the first vaccine.",
+            "sourceNote": "WHO history of smallpox vaccination",
+            "month": 5,
+            "day": 14
+          },
+          {
+            "kind": "event",
+            "id": "stethoscope",
+            "label": "Stethoscope",
+            "year": 1816,
+            "description": "René Laennec invents the stethoscope.",
+            "sourceNote": "Encyclopaedia Britannica"
+          },
+          {
+            "kind": "event",
+            "id": "anaesthesia",
+            "label": "Ether anaesthesia",
+            "year": 1846,
+            "description": "First public demonstration of surgery under ether anaesthesia in Boston.",
+            "sourceNote": "Massachusetts General Hospital history",
+            "month": 10,
+            "day": 16
+          },
+          {
+            "kind": "event",
+            "id": "xrays",
+            "label": "X-rays",
+            "year": 1895,
+            "description": "Wilhelm Röntgen discovers X-rays.",
+            "sourceNote": "Nobel Prize in Physics 1901 records",
+            "month": 11,
+            "day": 8
+          },
+          {
+            "kind": "event",
+            "id": "blood_groups",
+            "label": "Blood groups",
+            "year": 1901,
+            "description": "Karl Landsteiner discovers the ABO blood groups, making safe transfusions possible.",
+            "sourceNote": "Nobel Prize in Medicine 1930 records"
+          },
+          {
+            "kind": "event",
+            "id": "insulin",
+            "label": "Insulin",
+            "year": 1922,
+            "description": "Insulin is first used to treat a person with diabetes.",
+            "sourceNote": "Nobel Prize in Medicine 1923 records",
+            "month": 1
+          },
+          {
+            "kind": "event",
+            "id": "penicillin",
+            "label": "Penicillin",
+            "year": 1928,
+            "description": "Alexander Fleming discovers penicillin, the first widely used antibiotic.",
+            "sourceNote": "Nobel Prize in Medicine 1945 records",
+            "month": 9
+          },
+          {
+            "kind": "event",
+            "id": "dna",
+            "label": "DNA structure",
+            "year": 1953,
+            "description": "Watson and Crick, using Rosalind Franklin's data, describe the double helix of DNA.",
+            "sourceNote": "Nature, 25 April 1953",
+            "month": 4,
+            "day": 25
+          },
+          {
+            "kind": "event",
+            "id": "heart_transplant",
+            "label": "Heart transplant",
+            "year": 1967,
+            "description": "Christiaan Barnard performs the first human heart transplant in Cape Town.",
+            "sourceNote": "Groote Schuur Hospital records",
+            "month": 12,
+            "day": 3
+          },
+          {
+            "kind": "event",
+            "id": "smallpox_gone",
+            "label": "Smallpox eradicated",
+            "year": 1980,
+            "description": "The World Health Assembly declares smallpox eradicated.",
+            "sourceNote": "WHO",
+            "month": 5,
+            "day": 8
+          },
+          {
+            "kind": "event",
+            "id": "genome",
+            "label": "Human genome",
+            "year": 2003,
+            "description": "The Human Genome Project completes its sequence of human DNA.",
+            "sourceNote": "NIH National Human Genome Research Institute",
+            "month": 4
+          }
+        ]
+      },
+      "plan": {
+        "template": "timeline",
+        "title": "Milestones of medicine",
+        "axis": "linear",
+        "eventFactIds": [
+          "hippocrates",
+          "vesalius",
+          "harvey",
+          "leeuwenhoek",
+          "jenner",
+          "stethoscope",
+          "anaesthesia",
+          "xrays",
+          "blood_groups",
+          "insulin",
+          "penicillin",
+          "dna",
+          "heart_transplant",
+          "smallpox_gone",
+          "genome"
+        ]
+      }
+    },
+    {
+      "id": "evolution_in_one_day",
+      "facts": {
+        "query": "If the history of life on Earth were squeezed into one day, when would humans appear?",
+        "topic": "History of life in a day",
+        "confidence": "medium",
+        "explanation": "Squeeze Earth's whole history into one day and life appears early, but complex cells take most of the day to arrive. Animals show up in the evening, dinosaurs vanish shortly before midnight, and our own species appears only in the final seconds.",
+        "facts": [
+          {
+            "kind": "event",
+            "id": "earth_forms",
+            "label": "Earth forms",
+            "year": -4540000000,
+            "description": "The Earth forms from the disc of material around the young Sun.",
+            "sourceNote": "US Geological Survey (radiometric dating: 4.54 billion years)"
+          },
+          {
+            "kind": "event",
+            "id": "first_life",
+            "label": "First life",
+            "year": -3700000000,
+            "description": "Earliest evidence of microbial life; the exact date is still debated.",
+            "sourceNote": "Peer-reviewed fossil and isotope studies (estimates 3.5–3.8 billion years ago)"
+          },
+          {
+            "kind": "event",
+            "id": "oxygen",
+            "label": "Oxygen builds up",
+            "year": -2400000000,
+            "description": "The Great Oxidation Event: oxygen from microbes starts to build up in the air.",
+            "sourceNote": "Geological studies of the Great Oxidation Event (about 2.4 billion years ago)"
+          },
+          {
+            "kind": "event",
+            "id": "complex_cells",
+            "label": "Complex cells",
+            "year": -1800000000,
+            "description": "First eukaryotes, cells with a nucleus, the kind that make up our bodies.",
+            "sourceNote": "Fossil record estimates (about 1.6–2.1 billion years ago)"
+          },
+          {
+            "kind": "event",
+            "id": "first_animals",
+            "label": "First animals",
+            "year": -600000000,
+            "description": "Simple multicellular animals appear in the oceans.",
+            "sourceNote": "Fossil and molecular estimates (about 600 million years ago)"
+          },
+          {
+            "kind": "event",
+            "id": "cambrian",
+            "label": "Cambrian explosion",
+            "year": -538000000,
+            "description": "Most major animal groups appear in a burst of evolution.",
+            "sourceNote": "International Commission on Stratigraphy (start of the Cambrian, 538.8 million years ago)"
+          },
+          {
+            "kind": "event",
+            "id": "onto_land",
+            "label": "Fish walk on land",
+            "year": -375000000,
+            "description": "Fish-like animals such as Tiktaalik begin moving onto land.",
+            "sourceNote": "Daeschler, Shubin and Jenkins (2006), Nature"
+          },
+          {
+            "kind": "event",
+            "id": "first_mammals",
+            "label": "First mammals",
+            "year": -200000000,
+            "description": "Small early mammals live alongside the dinosaurs.",
+            "sourceNote": "Fossil record estimates (about 200 million years ago)"
+          },
+          {
+            "kind": "event",
+            "id": "dinosaurs_end",
+            "label": "Dinosaurs die out",
+            "year": -66000000,
+            "description": "An asteroid impact ends the age of dinosaurs.",
+            "sourceNote": "International Commission on Stratigraphy (end of the Cretaceous)"
+          },
+          {
+            "kind": "event",
+            "id": "human_lineage",
+            "label": "Human lineage splits",
+            "year": -7000000,
+            "description": "Our ancestors split from the line leading to chimpanzees.",
+            "sourceNote": "Smithsonian Human Origins Program (about 6–7 million years ago)"
+          },
+          {
+            "kind": "event",
+            "id": "homo_sapiens",
+            "label": "Homo sapiens",
+            "year": -300000,
+            "description": "The oldest known fossils of our species, from Jebel Irhoud, Morocco.",
+            "sourceNote": "Hublin et al. (2017), Nature"
+          },
+          {
+            "kind": "event",
+            "id": "farming",
+            "label": "Farming begins",
+            "year": -10000,
+            "description": "People begin farming in the Fertile Crescent.",
+            "sourceNote": "Smithsonian Human Origins Program (about 12,000 years ago)"
+          }
+        ]
+      },
+      "plan": {
+        "template": "cosmic_clock",
+        "title": "The history of life in one day",
+        "caption": "Now is midnight. Our species arrives in the last few seconds.",
+        "eventFactIds": [
+          "earth_forms",
+          "first_life",
+          "oxygen",
+          "complex_cells",
+          "first_animals",
+          "cambrian",
+          "onto_land",
+          "first_mammals",
+          "dinosaurs_end",
+          "human_lineage",
+          "homo_sapiens",
+          "farming"
+        ]
+      }
+    },
+    {
+      "id": "blood_circulation",
+      "facts": {
+        "query": "How does blood flow through the heart?",
+        "topic": "Blood circulation",
+        "confidence": "high",
+        "explanation": "The heart is two pumps side by side. The right side sends oxygen-poor blood to the lungs, and the left side sends oxygen-rich blood out to the rest of the body, in a loop that never stops.",
+        "facts": [
+          {
+            "kind": "step",
+            "id": "s1",
+            "label": "Blood returns",
+            "order": 1,
+            "title": "Blood returns to the heart",
+            "description": "Oxygen-poor blood from the body flows through the large veins into the right atrium.",
+            "sourceNote": "NIH National Heart, Lung, and Blood Institute: How the Heart Works"
+          },
+          {
+            "kind": "step",
+            "id": "s2",
+            "label": "Right ventricle",
+            "order": 2,
+            "title": "Right ventricle pumps",
+            "description": "The blood passes into the right ventricle, which pumps it into the pulmonary artery.",
+            "sourceNote": "NIH National Heart, Lung, and Blood Institute: How the Heart Works"
+          },
+          {
+            "kind": "step",
+            "id": "s3",
+            "label": "Lungs",
+            "order": 3,
+            "title": "Blood picks up oxygen",
+            "description": "In the lungs the blood releases carbon dioxide and picks up fresh oxygen.",
+            "sourceNote": "NIH National Heart, Lung, and Blood Institute: How the Heart Works"
+          },
+          {
+            "kind": "step",
+            "id": "s4",
+            "label": "Left atrium",
+            "order": 4,
+            "title": "Back to the heart",
+            "description": "Oxygen-rich blood returns through the pulmonary veins into the left atrium.",
+            "sourceNote": "NIH National Heart, Lung, and Blood Institute: How the Heart Works"
+          },
+          {
+            "kind": "step",
+            "id": "s5",
+            "label": "Left ventricle",
+            "order": 5,
+            "title": "Left ventricle pumps",
+            "description": "The strong left ventricle pumps the blood into the aorta, the body's largest artery.",
+            "sourceNote": "NIH National Heart, Lung, and Blood Institute: How the Heart Works"
+          },
+          {
+            "kind": "step",
+            "id": "s6",
+            "label": "Body",
+            "order": 6,
+            "title": "Oxygen delivered",
+            "description": "Arteries and tiny capillaries deliver oxygen to every tissue, then veins carry the blood back.",
+            "sourceNote": "NIH National Heart, Lung, and Blood Institute: How the Heart Works"
+          }
+        ]
+      },
+      "plan": {
+        "template": "process_steps",
+        "title": "One lap of your blood",
+        "stepFactIds": [
+          "s1",
+          "s2",
+          "s3",
+          "s4",
+          "s5",
+          "s6"
+        ],
+        "autoplayMs": 3500,
+        "loop": true
+      }
+    },
+    {
+      "id": "heartbeats_to_pump_all_blood",
+      "facts": {
+        "query": "How many heartbeats does it take to pump all your blood?",
+        "topic": "Heart output",
+        "confidence": "high",
+        "explanation": "Each beat of the left ventricle pushes out a small cupful of blood. Add enough beats together and the heart moves the body's entire blood supply, which at rest takes roughly a minute.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "stroke_volume",
+            "label": "Blood pumped per heartbeat at rest (typical adult)",
+            "value": 70,
+            "unit": "mL",
+            "approximate": true,
+            "sourceNote": "Guyton and Hall Textbook of Medical Physiology: resting stroke volume about 70 mL"
+          },
+          {
+            "kind": "quantity",
+            "id": "blood_volume",
+            "label": "Total blood in an adult body",
+            "value": 5,
+            "unit": "L",
+            "approximate": true,
+            "sourceNote": "NIH MedlinePlus and physiology textbooks: about 5 litres in an average adult"
+          }
+        ]
+      },
+      "plan": {
+        "template": "pictogram",
+        "title": "Heartbeats needed to move all your blood",
+        "caption": "Typical resting adult values.",
+        "unitFactId": "stroke_volume",
+        "totalFactId": "blood_volume",
+        "unitName": "heartbeats",
+        "totalName": "all your blood"
+      }
+    },
+    {
+      "id": "top_causes_of_death",
+      "facts": {
+        "query": "What are the leading causes of death worldwide?",
+        "topic": "Leading causes of death",
+        "confidence": "high",
+        "explanation": "Heart disease and stroke cause more deaths worldwide than anything else. Lung diseases, dementia, diabetes and lung cancer follow, according to the World Health Organization's global estimates.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "ihd",
+            "label": "Ischaemic heart disease",
+            "value": 9500000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "WHO fact sheet: The top 10 causes of death (Global Health Estimates)",
+            "year": 2023
+          },
+          {
+            "kind": "quantity",
+            "id": "stroke",
+            "label": "Stroke",
+            "value": 6800000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "WHO fact sheet: The top 10 causes of death (Global Health Estimates)",
+            "year": 2023
+          },
+          {
+            "kind": "quantity",
+            "id": "copd",
+            "label": "Chronic obstructive pulmonary disease",
+            "value": 3600000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "WHO fact sheet: The top 10 causes of death (Global Health Estimates)",
+            "year": 2023
+          },
+          {
+            "kind": "quantity",
+            "id": "lri",
+            "label": "Lower respiratory infections",
+            "value": 2700000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "WHO fact sheet: The top 10 causes of death (Global Health Estimates)",
+            "year": 2023
+          },
+          {
+            "kind": "quantity",
+            "id": "dementia",
+            "label": "Alzheimer's disease and other dementias",
+            "value": 2100000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "WHO fact sheet: The top 10 causes of death (Global Health Estimates)",
+            "year": 2023
+          },
+          {
+            "kind": "quantity",
+            "id": "diabetes",
+            "label": "Diabetes",
+            "value": 2000000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "WHO fact sheet: The top 10 causes of death (Global Health Estimates)",
+            "year": 2023
+          },
+          {
+            "kind": "quantity",
+            "id": "lung_cancer",
+            "label": "Trachea, bronchus and lung cancers",
+            "value": 1800000,
+            "unit": "count",
+            "approximate": true,
+            "sourceNote": "WHO fact sheet: The top 10 causes of death (Global Health Estimates)",
+            "year": 2023
+          }
+        ]
+      },
+      "plan": {
+        "template": "lollipop",
+        "title": "Leading causes of death worldwide",
+        "caption": "Deaths per year, WHO global estimates.",
+        "items": [
+          {
+            "factId": "ihd",
+            "displayName": "Heart disease"
+          },
+          {
+            "factId": "stroke",
+            "displayName": "Stroke"
+          },
+          {
+            "factId": "copd",
+            "displayName": "COPD"
+          },
+          {
+            "factId": "lri",
+            "displayName": "Lung infections"
+          },
+          {
+            "factId": "dementia",
+            "displayName": "Dementia"
+          },
+          {
+            "factId": "diabetes",
+            "displayName": "Diabetes"
+          },
+          {
+            "factId": "lung_cancer",
+            "displayName": "Lung cancer"
+          }
+        ]
+      }
+    },
+    {
+      "id": "resting_heart_rate_by_age",
+      "facts": {
+        "query": "What is a normal resting heart rate at different ages?",
+        "topic": "Resting heart rate by age",
+        "confidence": "high",
+        "explanation": "A baby's heart beats much faster than an adult's. The normal resting range narrows and slows through childhood, and well-trained athletes often have resting rates below the usual adult range.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "newborn_low",
+            "label": "Newborns, 0–1 month: low end (beats per minute)",
+            "value": 70,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "NIH MedlinePlus: Pulse (normal resting heart rates)"
+          },
+          {
+            "kind": "quantity",
+            "id": "newborn_high",
+            "label": "Newborns, 0–1 month: high end (beats per minute)",
+            "value": 190,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "NIH MedlinePlus: Pulse (normal resting heart rates)"
+          },
+          {
+            "kind": "quantity",
+            "id": "infant_low",
+            "label": "Infants, 1–11 months: low end (beats per minute)",
+            "value": 80,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "NIH MedlinePlus: Pulse (normal resting heart rates)"
+          },
+          {
+            "kind": "quantity",
+            "id": "infant_high",
+            "label": "Infants, 1–11 months: high end (beats per minute)",
+            "value": 160,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "NIH MedlinePlus: Pulse (normal resting heart rates)"
+          },
+          {
+            "kind": "quantity",
+            "id": "age1_2_low",
+            "label": "Children, 1–2 years: low end (beats per minute)",
+            "value": 80,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "NIH MedlinePlus: Pulse (normal resting heart rates)"
+          },
+          {
+            "kind": "quantity",
+            "id": "age1_2_high",
+            "label": "Children, 1–2 years: high end (beats per minute)",
+            "value": 130,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "NIH MedlinePlus: Pulse (normal resting heart rates)"
+          },
+          {
+            "kind": "quantity",
+            "id": "age3_4_low",
+            "label": "Children, 3–4 years: low end (beats per minute)",
+            "value": 80,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "NIH MedlinePlus: Pulse (normal resting heart rates)"
+          },
+          {
+            "kind": "quantity",
+            "id": "age3_4_high",
+            "label": "Children, 3–4 years: high end (beats per minute)",
+            "value": 120,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "NIH MedlinePlus: Pulse (normal resting heart rates)"
+          },
+          {
+            "kind": "quantity",
+            "id": "age5_6_low",
+            "label": "Children, 5–6 years: low end (beats per minute)",
+            "value": 75,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "NIH MedlinePlus: Pulse (normal resting heart rates)"
+          },
+          {
+            "kind": "quantity",
+            "id": "age5_6_high",
+            "label": "Children, 5–6 years: high end (beats per minute)",
+            "value": 115,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "NIH MedlinePlus: Pulse (normal resting heart rates)"
+          },
+          {
+            "kind": "quantity",
+            "id": "age7_9_low",
+            "label": "Children, 7–9 years: low end (beats per minute)",
+            "value": 70,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "NIH MedlinePlus: Pulse (normal resting heart rates)"
+          },
+          {
+            "kind": "quantity",
+            "id": "age7_9_high",
+            "label": "Children, 7–9 years: high end (beats per minute)",
+            "value": 110,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "NIH MedlinePlus: Pulse (normal resting heart rates)"
+          },
+          {
+            "kind": "quantity",
+            "id": "adult_low",
+            "label": "Age 10 and up, including adults: low end (beats per minute)",
+            "value": 60,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "NIH MedlinePlus: Pulse (normal resting heart rates)"
+          },
+          {
+            "kind": "quantity",
+            "id": "adult_high",
+            "label": "Age 10 and up, including adults: high end (beats per minute)",
+            "value": 100,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "NIH MedlinePlus: Pulse (normal resting heart rates)"
+          },
+          {
+            "kind": "quantity",
+            "id": "athlete_low",
+            "label": "Well-trained athletes: low end (beats per minute)",
+            "value": 40,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "NIH MedlinePlus: Pulse (normal resting heart rates)"
+          },
+          {
+            "kind": "quantity",
+            "id": "athlete_high",
+            "label": "Well-trained athletes: high end (beats per minute)",
+            "value": 60,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "NIH MedlinePlus: Pulse (normal resting heart rates)"
+          }
+        ]
+      },
+      "plan": {
+        "template": "range_bars",
+        "title": "Normal resting heart rate by age",
+        "caption": "Beats per minute at rest.",
+        "rows": [
+          {
+            "label": "Newborns, 0–1 month",
+            "aFactId": "newborn_low",
+            "bFactId": "newborn_high"
+          },
+          {
+            "label": "Infants, 1–11 months",
+            "aFactId": "infant_low",
+            "bFactId": "infant_high"
+          },
+          {
+            "label": "Children, 1–2 years",
+            "aFactId": "age1_2_low",
+            "bFactId": "age1_2_high"
+          },
+          {
+            "label": "Children, 3–4 years",
+            "aFactId": "age3_4_low",
+            "bFactId": "age3_4_high"
+          },
+          {
+            "label": "Children, 5–6 years",
+            "aFactId": "age5_6_low",
+            "bFactId": "age5_6_high"
+          },
+          {
+            "label": "Children, 7–9 years",
+            "aFactId": "age7_9_low",
+            "bFactId": "age7_9_high"
+          },
+          {
+            "label": "Age 10 and up, including adults",
+            "aFactId": "adult_low",
+            "bFactId": "adult_high"
+          },
+          {
+            "label": "Well-trained athletes",
+            "aFactId": "athlete_low",
+            "bFactId": "athlete_high"
+          }
+        ]
+      }
+    }
+  ]
+}

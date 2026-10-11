@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "template": "process_steps",
+  "title": "From egg to monarch butterfly",
+  "annotations": [],
+  "loop": true,
+  "autoplayMs": 3500,
+  "steps": [
+    {
+      "order": 1,
+      "title": "Egg",
+      "description": "A female lays single eggs on the underside of milkweed leaves; each hatches after a few days.",
+      "source": "US Forest Service, Monarch butterfly life cycle"
+    },
+    {
+      "order": 2,
+      "title": "Caterpillar (larva)",
+      "description": "The caterpillar eats milkweed almost nonstop, molting its skin several times as it grows over about two weeks.",
+      "source": "US Forest Service, Monarch butterfly life cycle"
+    },
+    {
+      "order": 3,
+      "title": "Chrysalis (pupa)",
+      "description": "It hangs upside down and forms a green chrysalis, inside which its body is broken down and rebuilt.",
+      "source": "US Forest Service, Monarch butterfly life cycle"
+    },
+    {
+      "order": 4,
+      "title": "Adult butterfly",
+      "description": "The butterfly emerges, dries its wings, feeds on nectar, mates and lays eggs; the late-summer generation migrates south.",
+      "source": "US Forest Service, Monarch butterfly life cycle"
+    }
+  ]
+}

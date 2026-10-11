@@ -1,0 +1,1339 @@
+{
+  "category": "food",
+  "title": "Food & health",
+  "entries": [
+    {
+      "id": "bacteria_doubling_in_food",
+      "facts": {
+        "query": "How fast can bacteria multiply in food left out?",
+        "topic": "Bacteria growth in food",
+        "confidence": "high",
+        "explanation": "In warm conditions many food bacteria divide in two again and again. Because each doubling builds on the last, a single cell can become millions within a working day, which is why food safety agencies warn about leaving food in the danger zone.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "start",
+            "label": "Bacteria at the start",
+            "value": 1,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "Illustrative starting point"
+          },
+          {
+            "kind": "quantity",
+            "id": "factor",
+            "label": "Growth per doubling",
+            "value": 2,
+            "unit": "ratio",
+            "approximate": false,
+            "sourceNote": "Each bacterial cell divides into two"
+          },
+          {
+            "kind": "quantity",
+            "id": "doublings",
+            "label": "Doublings in 8 hours at one every 20 minutes",
+            "value": 24,
+            "unit": "count",
+            "approximate": false,
+            "sourceNote": "Calculated from USDA FSIS 'Danger Zone' guidance: bacteria can double in as little as 20 minutes"
+          }
+        ]
+      },
+      "plan": {
+        "template": "exponential_growth",
+        "title": "One bacterium left out on the counter",
+        "caption": "Best-case growth in the danger zone; real growth slows as conditions change.",
+        "initialFactId": "start",
+        "factorFactId": "factor",
+        "stepsFactId": "doublings",
+        "stepLabel": "doubling",
+        "defaultScale": "linear"
+      }
+    },
+    {
+      "id": "water_to_produce_food",
+      "facts": {
+        "query": "How much water does it take to produce our food?",
+        "topic": "Water footprint of food",
+        "confidence": "medium",
+        "explanation": "Growing food uses water for crops, animal feed and drinking water for livestock. Meat, and beef in particular, has a far larger water footprint per kilogram than grains, fruit or vegetables, because animals eat crops that themselves need water.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "beef",
+            "label": "Beef, water per kg",
+            "value": 15400,
+            "unit": "L",
+            "approximate": true,
+            "sourceNote": "Water Footprint Network, Mekonnen and Hoekstra global average estimate (2012)"
+          },
+          {
+            "kind": "quantity",
+            "id": "pork",
+            "label": "Pork, water per kg",
+            "value": 6000,
+            "unit": "L",
+            "approximate": true,
+            "sourceNote": "Water Footprint Network, Mekonnen and Hoekstra global average estimate (2012)"
+          },
+          {
+            "kind": "quantity",
+            "id": "chicken",
+            "label": "Chicken meat, water per kg",
+            "value": 4300,
+            "unit": "L",
+            "approximate": true,
+            "sourceNote": "Water Footprint Network, Mekonnen and Hoekstra global average estimate (2012)"
+          },
+          {
+            "kind": "quantity",
+            "id": "wheat",
+            "label": "Wheat, water per kg",
+            "value": 1830,
+            "unit": "L",
+            "approximate": true,
+            "sourceNote": "Water Footprint Network, Mekonnen and Hoekstra global average estimate (2011)"
+          },
+          {
+            "kind": "quantity",
+            "id": "maize",
+            "label": "Maize, water per kg",
+            "value": 1220,
+            "unit": "L",
+            "approximate": true,
+            "sourceNote": "Water Footprint Network, Mekonnen and Hoekstra global average estimate (2011)"
+          },
+          {
+            "kind": "quantity",
+            "id": "apples",
+            "label": "Apples, water per kg",
+            "value": 820,
+            "unit": "L",
+            "approximate": true,
+            "sourceNote": "Water Footprint Network, Mekonnen and Hoekstra global average estimate (2011)"
+          },
+          {
+            "kind": "quantity",
+            "id": "potatoes",
+            "label": "Potatoes, water per kg",
+            "value": 290,
+            "unit": "L",
+            "approximate": true,
+            "sourceNote": "Water Footprint Network, Mekonnen and Hoekstra global average estimate (2011)"
+          },
+          {
+            "kind": "quantity",
+            "id": "tomatoes",
+            "label": "Tomatoes, water per kg",
+            "value": 210,
+            "unit": "L",
+            "approximate": true,
+            "sourceNote": "Water Footprint Network, Mekonnen and Hoekstra global average estimate (2011)"
+          }
+        ]
+      },
+      "plan": {
+        "template": "comparison_bars",
+        "title": "Litres of water behind a kilo of food",
+        "caption": "Global averages, including rain used by crops.",
+        "orientation": "horizontal",
+        "bars": [
+          {
+            "factId": "beef",
+            "displayName": "Beef"
+          },
+          {
+            "factId": "pork",
+            "displayName": "Pork"
+          },
+          {
+            "factId": "chicken",
+            "displayName": "Chicken"
+          },
+          {
+            "factId": "wheat",
+            "displayName": "Wheat"
+          },
+          {
+            "factId": "maize",
+            "displayName": "Maize"
+          },
+          {
+            "factId": "apples",
+            "displayName": "Apples"
+          },
+          {
+            "factId": "potatoes",
+            "displayName": "Potatoes"
+          },
+          {
+            "factId": "tomatoes",
+            "displayName": "Tomatoes"
+          }
+        ]
+      }
+    },
+    {
+      "id": "whats_in_an_egg",
+      "facts": {
+        "query": "What is an egg made of?",
+        "topic": "Egg composition",
+        "confidence": "high",
+        "explanation": "Most of a raw egg is water. Protein and fat make up nearly all of the rest, and there is almost no carbohydrate. The small remainder is minerals.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "egg_total",
+            "label": "Edible part of a whole raw egg",
+            "value": 100,
+            "unit": "g",
+            "approximate": false,
+            "sourceNote": "USDA FoodData Central (SR Legacy): Egg, whole, raw, fresh"
+          },
+          {
+            "kind": "quantity",
+            "id": "egg_water",
+            "label": "Water",
+            "value": 76.15,
+            "unit": "g",
+            "approximate": false,
+            "sourceNote": "USDA FoodData Central (SR Legacy): Egg, whole, raw, fresh"
+          },
+          {
+            "kind": "quantity",
+            "id": "egg_protein",
+            "label": "Protein",
+            "value": 12.56,
+            "unit": "g",
+            "approximate": false,
+            "sourceNote": "USDA FoodData Central (SR Legacy): Egg, whole, raw, fresh"
+          },
+          {
+            "kind": "quantity",
+            "id": "egg_fat",
+            "label": "Fat",
+            "value": 9.51,
+            "unit": "g",
+            "approximate": false,
+            "sourceNote": "USDA FoodData Central (SR Legacy): Egg, whole, raw, fresh"
+          },
+          {
+            "kind": "quantity",
+            "id": "egg_carbs",
+            "label": "Carbohydrate",
+            "value": 0.72,
+            "unit": "g",
+            "approximate": false,
+            "sourceNote": "USDA FoodData Central (SR Legacy): Egg, whole, raw, fresh"
+          }
+        ]
+      },
+      "plan": {
+        "template": "stacked_bar",
+        "title": "Inside a raw egg",
+        "caption": "Per 100 g of whole egg; minerals make up the rest.",
+        "totalFactId": "egg_total",
+        "items": [
+          {
+            "factId": "egg_water",
+            "displayName": "Water"
+          },
+          {
+            "factId": "egg_protein",
+            "displayName": "Protein"
+          },
+          {
+            "factId": "egg_fat",
+            "displayName": "Fat"
+          },
+          {
+            "factId": "egg_carbs",
+            "displayName": "Carbohydrate"
+          }
+        ]
+      }
+    },
+    {
+      "id": "worlds_biggest_crops",
+      "facts": {
+        "query": "Which crops does the world grow the most of?",
+        "topic": "World crop production",
+        "confidence": "high",
+        "explanation": "By weight, sugar cane is the world's biggest crop, followed by maize, rice and wheat. These few crops dominate global harvests and supply much of the food, animal feed and sugar the world uses.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "sugarcane",
+            "label": "Sugar cane, world production",
+            "value": 1940000000,
+            "unit": "t",
+            "approximate": true,
+            "sourceNote": "FAOSTAT crop production data via Our World in Data",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "maize_t",
+            "label": "Maize (corn), world production",
+            "value": 1220000000,
+            "unit": "t",
+            "approximate": true,
+            "sourceNote": "FAOSTAT crop production data via Our World in Data",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "rice",
+            "label": "Rice (paddy), world production",
+            "value": 820000000,
+            "unit": "t",
+            "approximate": true,
+            "sourceNote": "FAOSTAT crop production data via Our World in Data",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "wheat_t",
+            "label": "Wheat, world production",
+            "value": 800000000,
+            "unit": "t",
+            "approximate": true,
+            "sourceNote": "FAOSTAT crop production data via Our World in Data",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "soybeans",
+            "label": "Soybeans, world production",
+            "value": 400000000,
+            "unit": "t",
+            "approximate": true,
+            "sourceNote": "FAOSTAT crop production data via Our World in Data",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "potatoes_t",
+            "label": "Potatoes, world production",
+            "value": 390000000,
+            "unit": "t",
+            "approximate": true,
+            "sourceNote": "FAOSTAT crop production data via Our World in Data",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "cassava",
+            "label": "Cassava, world production",
+            "value": 340000000,
+            "unit": "t",
+            "approximate": true,
+            "sourceNote": "FAOSTAT crop production data via Our World in Data",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "tomatoes_t",
+            "label": "Tomatoes, world production",
+            "value": 190000000,
+            "unit": "t",
+            "approximate": true,
+            "sourceNote": "FAOSTAT crop production data via Our World in Data",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "barley",
+            "label": "Barley, world production",
+            "value": 140000000,
+            "unit": "t",
+            "approximate": true,
+            "sourceNote": "FAOSTAT crop production data via Our World in Data",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "bananas",
+            "label": "Bananas, world production",
+            "value": 140000000,
+            "unit": "t",
+            "approximate": true,
+            "sourceNote": "FAOSTAT crop production data via Our World in Data",
+            "year": 2024
+          }
+        ]
+      },
+      "plan": {
+        "template": "bubble_pack",
+        "title": "The world's biggest crops by weight",
+        "caption": "Tonnes harvested worldwide in one year.",
+        "items": [
+          {
+            "factId": "sugarcane",
+            "displayName": "Sugar cane"
+          },
+          {
+            "factId": "maize_t",
+            "displayName": "Maize"
+          },
+          {
+            "factId": "rice",
+            "displayName": "Rice"
+          },
+          {
+            "factId": "wheat_t",
+            "displayName": "Wheat"
+          },
+          {
+            "factId": "soybeans",
+            "displayName": "Soybeans"
+          },
+          {
+            "factId": "potatoes_t",
+            "displayName": "Potatoes"
+          },
+          {
+            "factId": "cassava",
+            "displayName": "Cassava"
+          },
+          {
+            "factId": "tomatoes_t",
+            "displayName": "Tomatoes"
+          },
+          {
+            "factId": "barley",
+            "displayName": "Barley"
+          },
+          {
+            "factId": "bananas",
+            "displayName": "Bananas"
+          }
+        ]
+      }
+    },
+    {
+      "id": "caffeine_in_drinks",
+      "facts": {
+        "query": "How much caffeine is in coffee, tea and cola?",
+        "topic": "Caffeine in drinks",
+        "confidence": "high",
+        "explanation": "Brewed coffee carries more caffeine per cup than most other common drinks. An espresso is stronger per sip but comes in a much smaller serving, while tea and cola contain less, and decaf has only a trace.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "coffee",
+            "label": "Brewed coffee, 8 fl oz cup",
+            "value": 95,
+            "unit": "mg",
+            "approximate": true,
+            "sourceNote": "USDA FoodData Central (SR Legacy): coffee, brewed (40 mg per 100 g)"
+          },
+          {
+            "kind": "quantity",
+            "id": "energy_drink",
+            "label": "Red Bull energy drink, 8.4 fl oz can",
+            "value": 75,
+            "unit": "mg",
+            "approximate": true,
+            "sourceNote": "USDA FoodData Central (SR Legacy): Red Bull (29 mg per 100 g)"
+          },
+          {
+            "kind": "quantity",
+            "id": "espresso",
+            "label": "Espresso, 1 fl oz shot",
+            "value": 63,
+            "unit": "mg",
+            "approximate": true,
+            "sourceNote": "USDA FoodData Central (SR Legacy): espresso, restaurant-prepared (212 mg per 100 g)"
+          },
+          {
+            "kind": "quantity",
+            "id": "black_tea",
+            "label": "Black tea, 8 fl oz cup",
+            "value": 47,
+            "unit": "mg",
+            "approximate": true,
+            "sourceNote": "USDA FoodData Central (SR Legacy): tea, black, brewed (20 mg per 100 g)"
+          },
+          {
+            "kind": "quantity",
+            "id": "cola",
+            "label": "Regular cola, 12 fl oz can",
+            "value": 33,
+            "unit": "mg",
+            "approximate": true,
+            "sourceNote": "USDA FoodData Central (SR Legacy): cola, regular (9 mg per 100 g)"
+          },
+          {
+            "kind": "quantity",
+            "id": "green_tea",
+            "label": "Green tea, 8 fl oz cup",
+            "value": 28,
+            "unit": "mg",
+            "approximate": true,
+            "sourceNote": "USDA FoodData Central (SR Legacy): tea, green, brewed (12 mg per 100 g)"
+          },
+          {
+            "kind": "quantity",
+            "id": "decaf",
+            "label": "Decaf coffee, 8 fl oz cup",
+            "value": 2,
+            "unit": "mg",
+            "approximate": true,
+            "sourceNote": "USDA FoodData Central (SR Legacy): coffee, brewed, decaffeinated (1 mg per 100 g)"
+          }
+        ]
+      },
+      "plan": {
+        "template": "number_line",
+        "title": "Caffeine per serving",
+        "caption": "Typical amounts; real drinks vary with brand and brewing.",
+        "scale": "log",
+        "items": [
+          {
+            "factId": "decaf",
+            "displayName": "Decaf coffee"
+          },
+          {
+            "factId": "green_tea",
+            "displayName": "Green tea"
+          },
+          {
+            "factId": "cola",
+            "displayName": "Cola"
+          },
+          {
+            "factId": "black_tea",
+            "displayName": "Black tea"
+          },
+          {
+            "factId": "espresso",
+            "displayName": "Espresso shot"
+          },
+          {
+            "factId": "energy_drink",
+            "displayName": "Energy drink"
+          },
+          {
+            "factId": "coffee",
+            "displayName": "Brewed coffee"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rise_of_overweight",
+      "facts": {
+        "query": "How much has overweight and obesity increased worldwide?",
+        "topic": "Global overweight and obesity",
+        "confidence": "high",
+        "explanation": "The share of people living with overweight has risen sharply around the world since the start of the nineties. The increase among children and teenagers has been especially steep, with obesity among young people several times more common than before.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "adult_ow_1990",
+            "label": "Adults 18+ with overweight (incl. obesity)",
+            "value": 25,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "WHO fact sheet: Obesity and overweight",
+            "year": 1990
+          },
+          {
+            "kind": "quantity",
+            "id": "adult_ow_2024",
+            "label": "Adults 18+ with overweight (incl. obesity)",
+            "value": 45,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "WHO fact sheet: Obesity and overweight",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "kid_ow_1990",
+            "label": "Ages 5–19 with overweight (incl. obesity)",
+            "value": 8,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "WHO fact sheet: Obesity and overweight",
+            "year": 1990
+          },
+          {
+            "kind": "quantity",
+            "id": "kid_ow_2024",
+            "label": "Ages 5–19 with overweight (incl. obesity)",
+            "value": 20,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "WHO fact sheet: Obesity and overweight",
+            "year": 2024
+          },
+          {
+            "kind": "quantity",
+            "id": "kid_ob_1990",
+            "label": "Ages 5–19 with obesity",
+            "value": 2,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "WHO fact sheet: Obesity and overweight",
+            "year": 1990
+          },
+          {
+            "kind": "quantity",
+            "id": "kid_ob_2024",
+            "label": "Ages 5–19 with obesity",
+            "value": 8,
+            "unit": "percent",
+            "approximate": true,
+            "sourceNote": "WHO fact sheet: Obesity and overweight",
+            "year": 2024
+          }
+        ]
+      },
+      "plan": {
+        "template": "slope",
+        "title": "Overweight and obesity then and now",
+        "caption": "Share of the world's population in each group.",
+        "aName": "1990",
+        "bName": "2024",
+        "rows": [
+          {
+            "label": "Adults with overweight",
+            "aFactId": "adult_ow_1990",
+            "bFactId": "adult_ow_2024"
+          },
+          {
+            "label": "Ages 5–19 with overweight",
+            "aFactId": "kid_ow_1990",
+            "bFactId": "kid_ow_2024"
+          },
+          {
+            "label": "Ages 5–19 with obesity",
+            "aFactId": "kid_ob_1990",
+            "bFactId": "kid_ob_2024"
+          }
+        ]
+      }
+    },
+    {
+      "id": "banana_vs_apple",
+      "facts": {
+        "query": "Which is more nutritious, a banana or an apple?",
+        "topic": "Banana vs apple",
+        "confidence": "high",
+        "explanation": "Gram for gram, an apple is juicier while a banana is denser, with more sugar, protein and potassium. Both provide a similar amount of fibre, and the banana has more vitamin C.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "ban_water",
+            "label": "Banana: water",
+            "value": 74.91,
+            "unit": "g",
+            "approximate": false,
+            "sourceNote": "USDA FoodData Central (SR Legacy): Bananas, raw (per 100 g)"
+          },
+          {
+            "kind": "quantity",
+            "id": "app_water",
+            "label": "Apple: water",
+            "value": 85.56,
+            "unit": "g",
+            "approximate": false,
+            "sourceNote": "USDA FoodData Central (SR Legacy): Apples, raw, with skin (per 100 g)"
+          },
+          {
+            "kind": "quantity",
+            "id": "ban_sugar",
+            "label": "Banana: sugars",
+            "value": 12.23,
+            "unit": "g",
+            "approximate": false,
+            "sourceNote": "USDA FoodData Central (SR Legacy): Bananas, raw (per 100 g)"
+          },
+          {
+            "kind": "quantity",
+            "id": "app_sugar",
+            "label": "Apple: sugars",
+            "value": 10.39,
+            "unit": "g",
+            "approximate": false,
+            "sourceNote": "USDA FoodData Central (SR Legacy): Apples, raw, with skin (per 100 g)"
+          },
+          {
+            "kind": "quantity",
+            "id": "ban_fiber",
+            "label": "Banana: fibre",
+            "value": 2.6,
+            "unit": "g",
+            "approximate": false,
+            "sourceNote": "USDA FoodData Central (SR Legacy): Bananas, raw (per 100 g)"
+          },
+          {
+            "kind": "quantity",
+            "id": "app_fiber",
+            "label": "Apple: fibre",
+            "value": 2.4,
+            "unit": "g",
+            "approximate": false,
+            "sourceNote": "USDA FoodData Central (SR Legacy): Apples, raw, with skin (per 100 g)"
+          },
+          {
+            "kind": "quantity",
+            "id": "ban_protein",
+            "label": "Banana: protein",
+            "value": 1.09,
+            "unit": "g",
+            "approximate": false,
+            "sourceNote": "USDA FoodData Central (SR Legacy): Bananas, raw (per 100 g)"
+          },
+          {
+            "kind": "quantity",
+            "id": "app_protein",
+            "label": "Apple: protein",
+            "value": 0.26,
+            "unit": "g",
+            "approximate": false,
+            "sourceNote": "USDA FoodData Central (SR Legacy): Apples, raw, with skin (per 100 g)"
+          },
+          {
+            "kind": "quantity",
+            "id": "ban_potassium",
+            "label": "Banana: potassium",
+            "value": 358,
+            "unit": "mg",
+            "approximate": false,
+            "sourceNote": "USDA FoodData Central (SR Legacy): Bananas, raw (per 100 g)"
+          },
+          {
+            "kind": "quantity",
+            "id": "app_potassium",
+            "label": "Apple: potassium",
+            "value": 107,
+            "unit": "mg",
+            "approximate": false,
+            "sourceNote": "USDA FoodData Central (SR Legacy): Apples, raw, with skin (per 100 g)"
+          },
+          {
+            "kind": "quantity",
+            "id": "ban_vitc",
+            "label": "Banana: vitamin C",
+            "value": 8.7,
+            "unit": "mg",
+            "approximate": false,
+            "sourceNote": "USDA FoodData Central (SR Legacy): Bananas, raw (per 100 g)"
+          },
+          {
+            "kind": "quantity",
+            "id": "app_vitc",
+            "label": "Apple: vitamin C",
+            "value": 4.6,
+            "unit": "mg",
+            "approximate": false,
+            "sourceNote": "USDA FoodData Central (SR Legacy): Apples, raw, with skin (per 100 g)"
+          }
+        ]
+      },
+      "plan": {
+        "template": "versus",
+        "title": "Banana versus apple",
+        "caption": "Per 100 g of raw fruit.",
+        "aName": "Banana",
+        "bName": "Apple",
+        "rows": [
+          {
+            "label": "Water",
+            "aFactId": "ban_water",
+            "bFactId": "app_water"
+          },
+          {
+            "label": "Sugars",
+            "aFactId": "ban_sugar",
+            "bFactId": "app_sugar"
+          },
+          {
+            "label": "Fibre",
+            "aFactId": "ban_fiber",
+            "bFactId": "app_fiber"
+          },
+          {
+            "label": "Protein",
+            "aFactId": "ban_protein",
+            "bFactId": "app_protein"
+          },
+          {
+            "label": "Potassium",
+            "aFactId": "ban_potassium",
+            "bFactId": "app_potassium"
+          },
+          {
+            "label": "Vitamin C",
+            "aFactId": "ban_vitc",
+            "bFactId": "app_vitc"
+          }
+        ]
+      }
+    },
+    {
+      "id": "life_expectancy_over_time",
+      "facts": {
+        "query": "How has life expectancy changed over time?",
+        "topic": "Life expectancy over time",
+        "confidence": "high",
+        "explanation": "Life expectancy at birth has risen around the world since the middle of the twentieth century, thanks to fewer child deaths, vaccines, clean water and better medicine. Big gaps remain between countries such as Japan and Nigeria.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "world_1950",
+            "label": "World: life expectancy at birth (years)",
+            "value": 46.4,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "UN World Population Prospects 2024, via Our World in Data",
+            "year": 1950
+          },
+          {
+            "kind": "quantity",
+            "id": "world_1960",
+            "label": "World: life expectancy at birth (years)",
+            "value": 47.8,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "UN World Population Prospects 2024, via Our World in Data",
+            "year": 1960
+          },
+          {
+            "kind": "quantity",
+            "id": "world_1970",
+            "label": "World: life expectancy at birth (years)",
+            "value": 56.3,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "UN World Population Prospects 2024, via Our World in Data",
+            "year": 1970
+          },
+          {
+            "kind": "quantity",
+            "id": "world_1980",
+            "label": "World: life expectancy at birth (years)",
+            "value": 60.5,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "UN World Population Prospects 2024, via Our World in Data",
+            "year": 1980
+          },
+          {
+            "kind": "quantity",
+            "id": "world_1990",
+            "label": "World: life expectancy at birth (years)",
+            "value": 64.0,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "UN World Population Prospects 2024, via Our World in Data",
+            "year": 1990
+          },
+          {
+            "kind": "quantity",
+            "id": "world_2000",
+            "label": "World: life expectancy at birth (years)",
+            "value": 66.4,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "UN World Population Prospects 2024, via Our World in Data",
+            "year": 2000
+          },
+          {
+            "kind": "quantity",
+            "id": "world_2010",
+            "label": "World: life expectancy at birth (years)",
+            "value": 70.1,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "UN World Population Prospects 2024, via Our World in Data",
+            "year": 2010
+          },
+          {
+            "kind": "quantity",
+            "id": "world_2020",
+            "label": "World: life expectancy at birth (years)",
+            "value": 71.9,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "UN World Population Prospects 2024, via Our World in Data",
+            "year": 2020
+          },
+          {
+            "kind": "quantity",
+            "id": "world_2023",
+            "label": "World: life expectancy at birth (years)",
+            "value": 73.2,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "UN World Population Prospects 2024, via Our World in Data",
+            "year": 2023
+          },
+          {
+            "kind": "quantity",
+            "id": "japan_1950",
+            "label": "Japan: life expectancy at birth (years)",
+            "value": 59.3,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "UN World Population Prospects 2024, via Our World in Data",
+            "year": 1950
+          },
+          {
+            "kind": "quantity",
+            "id": "japan_1960",
+            "label": "Japan: life expectancy at birth (years)",
+            "value": 67.7,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "UN World Population Prospects 2024, via Our World in Data",
+            "year": 1960
+          },
+          {
+            "kind": "quantity",
+            "id": "japan_1970",
+            "label": "Japan: life expectancy at birth (years)",
+            "value": 72.0,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "UN World Population Prospects 2024, via Our World in Data",
+            "year": 1970
+          },
+          {
+            "kind": "quantity",
+            "id": "japan_1980",
+            "label": "Japan: life expectancy at birth (years)",
+            "value": 76.1,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "UN World Population Prospects 2024, via Our World in Data",
+            "year": 1980
+          },
+          {
+            "kind": "quantity",
+            "id": "japan_1990",
+            "label": "Japan: life expectancy at birth (years)",
+            "value": 79.0,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "UN World Population Prospects 2024, via Our World in Data",
+            "year": 1990
+          },
+          {
+            "kind": "quantity",
+            "id": "japan_2000",
+            "label": "Japan: life expectancy at birth (years)",
+            "value": 81.2,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "UN World Population Prospects 2024, via Our World in Data",
+            "year": 2000
+          },
+          {
+            "kind": "quantity",
+            "id": "japan_2010",
+            "label": "Japan: life expectancy at birth (years)",
+            "value": 82.9,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "UN World Population Prospects 2024, via Our World in Data",
+            "year": 2010
+          },
+          {
+            "kind": "quantity",
+            "id": "japan_2020",
+            "label": "Japan: life expectancy at birth (years)",
+            "value": 84.7,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "UN World Population Prospects 2024, via Our World in Data",
+            "year": 2020
+          },
+          {
+            "kind": "quantity",
+            "id": "japan_2023",
+            "label": "Japan: life expectancy at birth (years)",
+            "value": 84.7,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "UN World Population Prospects 2024, via Our World in Data",
+            "year": 2023
+          },
+          {
+            "kind": "quantity",
+            "id": "nigeria_1950",
+            "label": "Nigeria: life expectancy at birth (years)",
+            "value": 35.5,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "UN World Population Prospects 2024, via Our World in Data",
+            "year": 1950
+          },
+          {
+            "kind": "quantity",
+            "id": "nigeria_1960",
+            "label": "Nigeria: life expectancy at birth (years)",
+            "value": 37.2,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "UN World Population Prospects 2024, via Our World in Data",
+            "year": 1960
+          },
+          {
+            "kind": "quantity",
+            "id": "nigeria_1970",
+            "label": "Nigeria: life expectancy at birth (years)",
+            "value": 40.0,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "UN World Population Prospects 2024, via Our World in Data",
+            "year": 1970
+          },
+          {
+            "kind": "quantity",
+            "id": "nigeria_1980",
+            "label": "Nigeria: life expectancy at birth (years)",
+            "value": 46.0,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "UN World Population Prospects 2024, via Our World in Data",
+            "year": 1980
+          },
+          {
+            "kind": "quantity",
+            "id": "nigeria_1990",
+            "label": "Nigeria: life expectancy at birth (years)",
+            "value": 45.7,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "UN World Population Prospects 2024, via Our World in Data",
+            "year": 1990
+          },
+          {
+            "kind": "quantity",
+            "id": "nigeria_2000",
+            "label": "Nigeria: life expectancy at birth (years)",
+            "value": 47.1,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "UN World Population Prospects 2024, via Our World in Data",
+            "year": 2000
+          },
+          {
+            "kind": "quantity",
+            "id": "nigeria_2010",
+            "label": "Nigeria: life expectancy at birth (years)",
+            "value": 51.3,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "UN World Population Prospects 2024, via Our World in Data",
+            "year": 2010
+          },
+          {
+            "kind": "quantity",
+            "id": "nigeria_2020",
+            "label": "Nigeria: life expectancy at birth (years)",
+            "value": 53.1,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "UN World Population Prospects 2024, via Our World in Data",
+            "year": 2020
+          },
+          {
+            "kind": "quantity",
+            "id": "nigeria_2023",
+            "label": "Nigeria: life expectancy at birth (years)",
+            "value": 54.5,
+            "unit": "yr",
+            "approximate": false,
+            "sourceNote": "UN World Population Prospects 2024, via Our World in Data",
+            "year": 2023
+          }
+        ]
+      },
+      "plan": {
+        "template": "line_series",
+        "title": "Life expectancy at birth",
+        "caption": "Average years a newborn would live at that year's death rates.",
+        "series": [
+          {
+            "displayName": "World",
+            "factIds": [
+              "world_1950",
+              "world_1960",
+              "world_1970",
+              "world_1980",
+              "world_1990",
+              "world_2000",
+              "world_2010",
+              "world_2020",
+              "world_2023"
+            ]
+          },
+          {
+            "displayName": "Japan",
+            "factIds": [
+              "japan_1950",
+              "japan_1960",
+              "japan_1970",
+              "japan_1980",
+              "japan_1990",
+              "japan_2000",
+              "japan_2010",
+              "japan_2020",
+              "japan_2023"
+            ]
+          },
+          {
+            "displayName": "Nigeria",
+            "factIds": [
+              "nigeria_1950",
+              "nigeria_1960",
+              "nigeria_1970",
+              "nigeria_1980",
+              "nigeria_1990",
+              "nigeria_2000",
+              "nigeria_2010",
+              "nigeria_2020",
+              "nigeria_2023"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "where_crops_were_domesticated",
+      "facts": {
+        "query": "Where were staple crops first domesticated?",
+        "topic": "Origins of staple crops",
+        "confidence": "medium",
+        "explanation": "Farming began independently in several parts of the world. Wheat came from the Fertile Crescent, rice from China's Yangtze valley, maize from southern Mexico and potatoes from the Andes, while bananas, cassava, sorghum and cacao were tamed in other regions.",
+        "facts": [
+          {
+            "kind": "place",
+            "id": "wheat_origin",
+            "label": "Einkorn wheat: Karacadağ mountains, southeast Turkey",
+            "lat": 37.75,
+            "lon": 39.83,
+            "sourceNote": "Heun et al. (1997), Science; Fertile Crescent, about 10,500 years ago"
+          },
+          {
+            "kind": "place",
+            "id": "rice_origin",
+            "label": "Asian rice: lower Yangtze valley, China",
+            "lat": 30.0,
+            "lon": 119.9,
+            "sourceNote": "Fuller et al. (2009), Science; region approximate"
+          },
+          {
+            "kind": "place",
+            "id": "maize_origin",
+            "label": "Maize: Balsas River valley, Mexico",
+            "lat": 18.2,
+            "lon": -99.5,
+            "sourceNote": "Matsuoka et al. (2002), PNAS; Piperno et al. (2009), PNAS"
+          },
+          {
+            "kind": "place",
+            "id": "potato_origin",
+            "label": "Potato: Andes near Lake Titicaca, Peru",
+            "lat": -15.8,
+            "lon": -69.4,
+            "sourceNote": "Spooner et al. (2005), PNAS; region approximate"
+          },
+          {
+            "kind": "place",
+            "id": "banana_origin",
+            "label": "Banana: Kuk Swamp, New Guinea highlands",
+            "lat": -5.78,
+            "lon": 144.33,
+            "sourceNote": "Denham et al. (2003), Science"
+          },
+          {
+            "kind": "place",
+            "id": "cassava_origin",
+            "label": "Cassava: southwestern Amazon, Brazil",
+            "lat": -11.0,
+            "lon": -62.0,
+            "sourceNote": "Olsen and Schaal (1999), PNAS; region approximate"
+          },
+          {
+            "kind": "place",
+            "id": "sorghum_origin",
+            "label": "Sorghum: eastern Sudan",
+            "lat": 15.4,
+            "lon": 36.4,
+            "sourceNote": "Winchell et al. (2017), Current Anthropology; region approximate"
+          },
+          {
+            "kind": "place",
+            "id": "cacao_origin",
+            "label": "Cacao: upper Amazon, southeast Ecuador",
+            "lat": -4.8,
+            "lon": -79.1,
+            "sourceNote": "Zarrillo et al. (2018), Nature Ecology & Evolution"
+          }
+        ]
+      },
+      "plan": {
+        "template": "map_points",
+        "title": "Where our staple crops come from",
+        "caption": "Approximate regions of first domestication.",
+        "points": [
+          {
+            "placeFactId": "wheat_origin",
+            "displayName": "Wheat"
+          },
+          {
+            "placeFactId": "rice_origin",
+            "displayName": "Rice"
+          },
+          {
+            "placeFactId": "maize_origin",
+            "displayName": "Maize"
+          },
+          {
+            "placeFactId": "potato_origin",
+            "displayName": "Potato"
+          },
+          {
+            "placeFactId": "banana_origin",
+            "displayName": "Banana"
+          },
+          {
+            "placeFactId": "cassava_origin",
+            "displayName": "Cassava"
+          },
+          {
+            "placeFactId": "sorghum_origin",
+            "displayName": "Sorghum"
+          },
+          {
+            "placeFactId": "cacao_origin",
+            "displayName": "Cacao"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sugar_in_a_soda",
+      "facts": {
+        "query": "How much sugar is in a can of soda?",
+        "topic": "Sugar in soda",
+        "confidence": "high",
+        "explanation": "A regular can of cola contains a surprising amount of sugar. Measured out in teaspoons of table sugar, it adds up to a small pile.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "teaspoon",
+            "label": "One teaspoon of granulated sugar",
+            "value": 4.2,
+            "unit": "g",
+            "approximate": true,
+            "sourceNote": "USDA FoodData Central (SR Legacy): Sugars, granulated (1 tsp)"
+          },
+          {
+            "kind": "quantity",
+            "id": "can_sugar",
+            "label": "Sugars in a 12 fl oz can of regular cola",
+            "value": 37,
+            "unit": "g",
+            "approximate": true,
+            "sourceNote": "USDA FoodData Central (SR Legacy): cola, regular (9.94 g per 100 g; 370 g can)"
+          }
+        ]
+      },
+      "plan": {
+        "template": "pictogram",
+        "title": "Teaspoons of sugar in a can of cola",
+        "caption": "Regular cola, standard can.",
+        "unitFactId": "teaspoon",
+        "totalFactId": "can_sugar",
+        "unitName": "teaspoons of sugar",
+        "totalName": "one can of cola"
+      }
+    },
+    {
+      "id": "how_digestion_works",
+      "facts": {
+        "query": "How does digestion work?",
+        "topic": "Digestion",
+        "confidence": "high",
+        "explanation": "Digestion breaks food into nutrients small enough to pass into the blood. It starts with chewing and saliva, continues with acid in the stomach and enzymes in the small intestine, and ends with the large intestine absorbing water.",
+        "facts": [
+          {
+            "kind": "step",
+            "id": "d1",
+            "label": "Mouth",
+            "order": 1,
+            "title": "Mouth",
+            "description": "Teeth break food into pieces and saliva begins breaking down starches.",
+            "sourceNote": "NIH NIDDK: Your Digestive System and How It Works"
+          },
+          {
+            "kind": "step",
+            "id": "d2",
+            "label": "Oesophagus",
+            "order": 2,
+            "title": "Oesophagus",
+            "description": "Swallowed food is pushed down to the stomach by waves of muscle contractions.",
+            "sourceNote": "NIH NIDDK: Your Digestive System and How It Works"
+          },
+          {
+            "kind": "step",
+            "id": "d3",
+            "label": "Stomach",
+            "order": 3,
+            "title": "Stomach",
+            "description": "Muscles mix food with acid and enzymes that start breaking down proteins.",
+            "sourceNote": "NIH NIDDK: Your Digestive System and How It Works"
+          },
+          {
+            "kind": "step",
+            "id": "d4",
+            "label": "Small intestine",
+            "order": 4,
+            "title": "Small intestine",
+            "description": "Bile and pancreatic enzymes finish digestion, and nutrients are absorbed into the blood.",
+            "sourceNote": "NIH NIDDK: Your Digestive System and How It Works"
+          },
+          {
+            "kind": "step",
+            "id": "d5",
+            "label": "Large intestine",
+            "order": 5,
+            "title": "Large intestine",
+            "description": "Water is absorbed and gut bacteria break down some leftover fibre.",
+            "sourceNote": "NIH NIDDK: Your Digestive System and How It Works"
+          },
+          {
+            "kind": "step",
+            "id": "d6",
+            "label": "Rectum",
+            "order": 6,
+            "title": "Rectum",
+            "description": "What remains is stored as stool until it leaves the body.",
+            "sourceNote": "NIH NIDDK: Your Digestive System and How It Works"
+          }
+        ]
+      },
+      "plan": {
+        "template": "process_steps",
+        "title": "The journey of a meal",
+        "stepFactIds": [
+          "d1",
+          "d2",
+          "d3",
+          "d4",
+          "d5",
+          "d6"
+        ],
+        "autoplayMs": 3500,
+        "loop": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "template": "cosmic_clock",
+  "title": "The universe in a single day",
+  "caption": "The Big Bang at midnight, today at the next midnight.",
+  "annotations": [
+    {
+      "text": "Invention of writing: 23:59:59, less than a second before midnight",
+      "anchor": "event",
+      "index": 9
+    }
+  ],
+  "referenceYear": 2026,
+  "scaleNote": "Each second on this clock is about 159,722 years.",
+  "events": [
+    {
+      "label": "Big Bang",
+      "date": "13.8 billion years ago",
+      "dayFraction": 0.0,
+      "clock": "00:00:00",
+      "before": "24 h before midnight",
+      "description": "The universe begins hot and dense and starts expanding.",
+      "source": "Planck 2018 cosmological results (age 13.79 billion years)"
+    },
+    {
+      "label": "First stars and galaxies",
+      "date": "13.5 billion years ago",
+      "dayFraction": 0.021739127243226682,
+      "clock": "00:31:18",
+      "before": "23 h before midnight",
+      "description": "The first stars ignite within a few hundred million years of the Big Bang.",
+      "source": "Estimate from JWST and Hubble deep-field observations (NASA); timing still debated"
+    },
+    {
+      "label": "Sun and Solar System form",
+      "date": "4.57 billion years ago",
+      "dayFraction": 0.6689854090315625,
+      "clock": "16:03:20",
+      "before": "7 h before midnight",
+      "description": "A collapsing gas cloud forms the Sun and its disk of planets.",
+      "source": "Meteorite (CAI) radiometric ages, e.g. Connelly et al. 2012, Science"
+    },
+    {
+      "label": "Earth forms",
+      "date": "4.54 billion years ago",
+      "dayFraction": 0.6710143942409302,
+      "clock": "16:06:15",
+      "before": "7 h before midnight",
+      "description": "Earth assembles from colliding rocky bodies.",
+      "source": "US Geological Survey, age of the Earth"
+    },
+    {
+      "label": "Earliest evidence of life",
+      "date": "3.7 billion years ago",
+      "dayFraction": 0.731883950521965,
+      "clock": "17:33:54",
+      "before": "6 h before midnight",
+      "description": "Earliest traces of microbial life in ancient rocks.",
+      "source": "Peer-reviewed fossil and isotope evidence (e.g. Nutman et al. 2016, Nature); still debated"
+    },
+    {
+      "label": "Great Oxidation Event",
+      "date": "2.4 billion years ago",
+      "dayFraction": 0.826086835242614,
+      "clock": "19:49:33",
+      "before": "4 h before midnight",
+      "description": "Microbes start filling the atmosphere with oxygen.",
+      "source": "Geological record of atmospheric oxygen (peer-reviewed estimate)"
+    },
+    {
+      "label": "Cambrian explosion of animal life",
+      "date": "539 million years ago",
+      "dayFraction": 0.9609563806595922,
+      "clock": "23:03:46",
+      "before": "56 min before midnight",
+      "description": "Complex animals appear rapidly in the fossil record.",
+      "source": "International Commission on Stratigraphy, base of the Cambrian"
+    },
+    {
+      "label": "Non-bird dinosaurs die out",
+      "date": "66 million years ago",
+      "dayFraction": 0.9952172451949175,
+      "clock": "23:53:06",
+      "before": "6 min before midnight",
+      "description": "An asteroid impact ends the age of dinosaurs.",
+      "source": "International Commission on Stratigraphy, end of the Cretaceous"
+    },
+    {
+      "label": "First Homo sapiens",
+      "date": "300,000 years ago",
+      "dayFraction": 0.9999781140611841,
+      "clock": "23:59:58",
+      "before": "1 s before midnight",
+      "description": "The oldest known fossils of our species.",
+      "source": "Jebel Irhoud fossils, Hublin et al. 2017, Nature"
+    },
+    {
+      "label": "Invention of writing",
+      "date": "3200 BCE",
+      "dayFraction": 0.9999996213044035,
+      "clock": "23:59:59",
+      "before": "less than a second before midnight",
+      "description": "Recorded history begins.",
+      "source": "Archaeological record of Mesopotamian cuneiform"
+    }
+  ]
+}
