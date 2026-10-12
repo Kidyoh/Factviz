@@ -33,6 +33,7 @@ Rules:
 4. Numbers taken from the question itself (for example "42 folds" or "7% a year") are facts too, with sourceNote "From your question".
 5. Include every quantity a visualization would need:
    - Comparisons: one quantity per thing, all in the same dimension (all lengths, or all masses, and so on).
+   - "How tall / long / big is X": X's typical size, plus one or two familiar references for scale (an adult person, and for animals a newborn or young one when that is interesting, e.g. a newborn and an adult giraffe).
    - Repeated growth (doubling, folding, compound interest): the starting value; the multiplier per step with unit "ratio" (2 for doubling, 1.07 for 7%); the number of steps with unit "count"; and the target to compare against if the question mentions one.
    - History or evolution: dated events (kind "event"). Negative years are BCE; for deep time use the year, for example -66000000.
    - Processes and how-things-work: ordered stages (kind "step") with order 1..n, a short title and a one or two sentence description.

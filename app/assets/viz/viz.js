@@ -260,6 +260,9 @@
   // scale_zoom: things side by side (or distances from a start) to scale,
   // with a log-space camera that zooms out item by item.
 
+  /** Springy growth: overshoots a little, then settles at full size. */
+  const growEase = (t) => (t <= 0 ? 0 : t >= 1 ? 1 : d3.easeBackOut.overshoot(1.4)(t));
+
   function drawnSize(item) {
     const s = item.linearSi;
     const img = item.image;
@@ -312,6 +315,27 @@
       return Math.exp(Math.log(stops[i]) * (1 - t) + Math.log(stops[i + 1]) * t);
     };
 
+    // The scene: a starfield for planets and moons, a sky and ground for
+    // things on Earth, so the comparison reads as a place, not a chart.
+    const space = !distance && items.every((d) => d.image && d.image.kind === 'photo');
+    const heights = !distance && items.some((d) => d.shape === 'tower');
+    const defs = svg.append('defs');
+    if (space) {
+      svg.classed('dark-scene', true);
+      svg.append('rect').attr('width', W).attr('height', H).attr('fill', '#0E1320');
+      const rnd = d3.randomLcg(7);
+      svg.append('g').selectAll('circle').data(d3.range(Math.round(W * H / 2600))).join('circle')
+        .attr('cx', () => rnd() * W).attr('cy', () => rnd() * H).attr('r', () => 0.3 + rnd() * 0.9)
+        .attr('fill', '#fff').attr('opacity', () => 0.25 + rnd() * 0.6);
+    } else if (!distance) {
+      const sky = defs.append('linearGradient').attr('id', 'sky').attr('x1', 0).attr('x2', 0).attr('y1', 0).attr('y2', 1);
+      sky.append('stop').attr('offset', 0).attr('stop-color', '#E4EDF1');
+      sky.append('stop').attr('offset', 1).attr('stop-color', PAPER);
+      svg.append('rect').attr('width', W).attr('height', baseY).attr('fill', 'url(#sky)');
+      svg.append('rect').attr('y', baseY).attr('width', W).attr('height', H - baseY).attr('fill', '#ECE5D7');
+    }
+    const gGrid = svg.append('g').attr('class', 'lineup');
+    const gShadows = svg.append('g');
     const gGround = svg.append('g');
     gGround.append('line').attr('class', 'baseline').attr('x1', 0).attr('x2', W).attr('y1', baseY).attr('y2', baseY);
     if (distance) {
@@ -322,6 +346,14 @@
     const gLabels = svg.append('g');
     const gScale = svg.append('g').attr('transform', `translate(${m.l},${H - 18})`);
     const gNote = svg.append('g').attr('class', 'annotation-group');
+
+    const shadows = gShadows.selectAll('ellipse').data(distance ? [] : items).join('ellipse')
+      .attr('fill', space ? '#000' : INK).attr('opacity', space ? 0 : 0.1);
+    // Measuring tape beside the focused figure (heights only).
+    const tape = svg.append('g').attr('class', 'tape').attr('opacity', 0);
+    tape.append('line').attr('stroke', ACCENT).attr('stroke-width', 1.5);
+    tape.append('path').attr('class', 'cap-top').attr('fill', ACCENT).attr('d', 'M-4,5L0,0L4,5Z');
+    tape.append('path').attr('class', 'cap-bottom').attr('fill', ACCENT).attr('d', 'M-4,-5L0,0L4,-5Z');
 
     // Item marks.
     const marks = gItems.selectAll('g.item').data(items).join('g').attr('class', 'item');
@@ -367,13 +399,16 @@
       const focus = Math.round(clamp(pr, 0, n - 1));
       const placed = [];
       items.forEach((d) => {
-        d.op = d.i === 0 ? 1 : clamp(pr - (d.i - 1), 0, 1);
+        // Each item arrives as the camera moves toward it (item 0 during the
+        // intro, from progress -1 to 0) and grows up out of the ground.
+        d.op = clamp(pr - (d.i - 1), 0, 1);
+        d.gr = distance ? 1 : growEase(d.op);
         d.px = m.l + d.x * k;
         d.pw = d.w * k;
         d.ph = d.h * k;
       });
 
-      marks.attr('opacity', (d) => d.op).each(function (d) {
+      marks.attr('opacity', (d) => Math.min(1, d.op * 3)).each(function (d) {
         const g = d3.select(this);
         if (distance) {
           g.select('.stem').attr('x1', d.px).attr('x2', d.px).attr('y1', baseY).attr('y2', baseY - 26);
@@ -386,13 +421,36 @@
         const off = d.px > W + 20 || d.pw > W * 40 || d.ph > H * 40;
         g.attr('display', off ? 'none' : null);
         if (off) return;
-        const x = d.px, y = baseY - d.ph;
-        g.select('image').attr('x', x).attr('y', y).attr('width', Math.max(d.pw, 0.5)).attr('height', Math.max(d.ph, 0.5));
-        if (d.sil) placeSilhouette(d.sil.g.node(), d.sil.box, x, y, Math.max(d.pw, 0.5), Math.max(d.ph, 0.5));
-        g.select('circle').attr('cx', x + d.pw / 2).attr('cy', baseY - d.pw / 2).attr('r', Math.max(d.pw / 2, 0.4));
-        g.select('rect').attr('x', x).attr('y', y).attr('width', Math.max(d.pw, 0.5)).attr('height', Math.max(d.ph, 0.5));
-        g.select('.tick').attr('transform', `translate(${x + d.pw / 2},${baseY + 3})`).attr('opacity', d.pw < 6 ? 1 : 0);
+        // Grow from the ground, centred on the item's final footprint.
+        const gw = Math.max(d.pw * d.gr, 0.5), gh = Math.max(d.ph * d.gr, 0.5);
+        const x = d.px + (d.pw - gw) / 2, y = baseY - gh;
+        g.select('image').attr('x', x).attr('y', y).attr('width', gw).attr('height', gh);
+        if (d.sil) placeSilhouette(d.sil.g.node(), d.sil.box, x, y, gw, gh);
+        g.select('circle').attr('cx', d.px + d.pw / 2).attr('cy', baseY - gw / 2).attr('r', Math.max(gw / 2, 0.4));
+        g.select('rect').attr('x', x).attr('y', y).attr('width', gw).attr('height', gh).attr('rx', Math.min(3, gw * 0.08));
+        g.select('.tick').attr('transform', `translate(${d.px + d.pw / 2},${baseY + 3})`).attr('opacity', d.pw < 6 ? 1 : 0);
       });
+
+      shadows.attr('display', (d) => (d.px > W + 20 || d.pw > W * 40 ? 'none' : null))
+        .attr('cx', (d) => d.px + d.pw / 2).attr('cy', baseY + 1)
+        .attr('rx', (d) => Math.max(0, d.pw * 0.48 * d.gr)).attr('ry', (d) => clamp(d.pw * 0.05, 1, 5) * d.gr);
+
+      // Height lineup: round heights in the facts' unit, like a police lineup.
+      if (heights) {
+        const visible = (ih - 10) / k;
+        const u = pickUnit(p.units, visible / 4);
+        const step = niceNum(visible / 4 / u.toSi) * u.toSi;
+        const levels = d3.range(step, visible, step).slice(0, 8);
+        const rows = gGrid.selectAll('g').data(levels).join((e) => {
+          const g = e.append('g');
+          g.append('line').attr('stroke', '#C9D3D6').attr('stroke-dasharray', '3 4');
+          g.append('text').attr('class', 'label-faint halo').attr('dy', '-0.3em');
+          return g;
+        });
+        rows.attr('transform', (v) => `translate(0,${baseY - v * k})`);
+        rows.select('line').attr('x1', 0).attr('x2', W);
+        rows.select('text').attr('x', 6).text((v) => unitFmt(u)(v));
+      }
 
       // Greedy labelling: focused item first, then largest to smallest.
       const order = [focus].concat(items.map((d) => d.i).filter((i) => i !== focus).reverse());
@@ -420,6 +478,8 @@
           if (!shown.has(d.i)) return;
           const g = d3.select(this);
           g.selectAll('text').attr('x', d.lx).attr('y', d.ly);
+          // The figure counts up as it grows; the fact's own string at rest.
+          g.select('.label-value').text(d.gr >= 0.999 || distance ? d.display : fmtSi(d.valueSi * Math.min(1, d.gr), p.units));
           const anchorX = distance ? d.px : d.px + d.pw / 2;
           const leaderTop = d.ly + d.lh - 8;
           const leaderBottom = distance ? baseY - 26 : baseY - d.ph - 2;
@@ -427,6 +487,17 @@
             .attr('opacity', d.tiny || leaderBottom - leaderTop > 14 ? 1 : 0)
             .attr('x1', anchorX).attr('x2', anchorX).attr('y1', leaderTop).attr('y2', leaderBottom);
         });
+
+      const fd = items[focus];
+      if (heights && fd.shape === 'tower' && fd.op > 0 && fd.ph > 24 && fd.px + fd.pw + 14 < W) {
+        const tx = fd.px + fd.pw + 7, top = baseY - fd.ph * fd.gr;
+        tape.attr('opacity', 1);
+        tape.select('line').attr('x1', tx).attr('x2', tx).attr('y1', top).attr('y2', baseY);
+        tape.select('.cap-top').attr('transform', `translate(${tx},${top})`);
+        tape.select('.cap-bottom').attr('transform', `translate(${tx},${baseY})`);
+      } else {
+        tape.attr('opacity', 0);
+      }
 
       // Scale bar in the most readable unit.
       const unit = p.units.ladder.reduce((best, u) => (world * 0.25 / u.toSi >= 1 ? u : best), p.units.ladder[0]);
@@ -454,7 +525,7 @@
       }
 
       status.text(`${focus + 1} of ${n} · ${items[focus].name}`);
-      range.property('value', pr);
+      range.property('value', Math.max(0, pr));
       prevBtn.property('disabled', focus <= 0);
       nextBtn.property('disabled', focus >= n - 1);
     }
@@ -473,10 +544,17 @@
       .attr('min', 0).attr('max', n - 1).attr('step', 0.01)
       .on('input', function () { svg.interrupt(); draw(+this.value); });
 
-    draw(0);
     if (reduce()) draw(n - 1);
-    else svg.transition().delay(500).duration(Math.min(1300, 6500 / Math.max(1, n - 1)) * (n - 1)).ease(d3.easeLinear)
-      .tween('camera', () => (t) => draw(t * (n - 1)));
+    else {
+      // Intro: the first item grows in, then the camera tours the rest.
+      draw(-1);
+      const per = Math.min(1300, 6500 / Math.max(1, n - 1));
+      svg.transition().delay(250).duration(700 + per * (n - 1)).ease(d3.easeLinear)
+        .tween('camera', () => (t) => {
+          const ms = t * (700 + per * (n - 1));
+          draw(ms < 700 ? ms / 700 - 1 : (ms - 700) / per);
+        });
+    }
   }
 
   // ---------------------------------------------------------------------

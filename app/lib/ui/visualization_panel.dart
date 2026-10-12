@@ -10,15 +10,8 @@ import 'confidence_badge.dart';
 import 'editorial.dart';
 import 'fact_card.dart';
 import 'key_numbers.dart';
+import 'template_labels.dart';
 
-const _templateTags = {
-  TemplateId.scaleZoom: 'To scale',
-  TemplateId.timeline: 'Timeline',
-  TemplateId.exponentialGrowth: 'Growth',
-  TemplateId.comparisonBars: 'Comparison',
-  TemplateId.processSteps: 'How it works',
-  TemplateId.none: 'Answer',
-};
 
 /// A full result laid out like a newspaper graphic: kicker, headline, dek,
 /// the chart, a plain-language explanation and the numbers with sources.
@@ -46,7 +39,7 @@ class VisualizationPanel extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        reveal(Kicker(_templateTags[props.template]!), 0),
+        reveal(Kicker(templateLabel(props.template)), 0),
         const SizedBox(height: 8),
         reveal(Text(props.title, style: Txt.headline), 1),
         if (props.caption != null) ...[

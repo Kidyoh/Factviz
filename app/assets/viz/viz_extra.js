@@ -709,13 +709,21 @@
       const cell = g.append('g').attr('opacity', 0);
       if (part < 1) {
         const id = `clip-${k}`;
-        svg.append('clipPath').attr('id', id).append('rect').attr('x', 16 + x).attr('y', headH + y - 2).attr('width', iw * part).attr('height', ih + 4);
+        // Clip coordinates are in the icon's own space (inside the grid group).
+        svg.append('clipPath').attr('id', id).append('rect').attr('x', x).attr('y', y - 2).attr('width', iw * part).attr('height', ih + 4);
         cell.attr('clip-path', `url(#${id})`);
         // Ghost outline of the whole icon.
         drawIcon(g.append('g').attr('opacity', 0.18), sil, p.image, x, y, iw, ih);
       }
       drawIcon(cell, sil, p.image, x, y, iw, ih);
-      cell.transition().delay(dur(150 + k * step)).duration(dur(220)).attr('opacity', 1);
+      // Each icon pops up from its own base with a little spring.
+      const cx = x + iw / 2, by = y + ih;
+      const at = (sc) => `translate(${cx},${by}) scale(${sc}) translate(${-cx},${-by})`;
+      if (reduce()) cell.attr('opacity', 1);
+      else {
+        cell.attr('transform', at(0.01)).transition().delay(150 + k * step).duration(420)
+          .ease(d3.easeBackOut.overshoot(1.8)).attr('opacity', 1).attr('transform', at(1));
+      }
     }
     const foot = svg.append('g').attr('transform', `translate(16,${H - footH + 14})`);
     if (per > 1) foot.append('text').attr('class', 'label-faint').attr('y', 0).text(`Each icon = ${per} ${p.unit.name}`);

@@ -56,7 +56,7 @@ Rules:
 4. title: short, no numbers. caption: optional, one short line. displayName: 1–3 words.
 5. Prefer the template that shows the surprising part of the question. Example: "fold a paper to reach the Moon" → exponential_growth with the Earth–Moon distance as the target.
 6. Only include the fields of the template you choose, plus template, title and optional caption.
-7. Pictures: for scale_zoom items, comparison_bars bars, item lists, pictogram and versus you may set "image" to one of the bundled pictures below when it shows exactly that object. Never use a picture of a different object. In scale_zoom, planet and Moon/Sun photos need shape "circle"; animal and vehicle silhouettes measured lengthwise need "bar"; people and buildings measured in height need "tower".
+7. Pictures make the answer: whenever a bundled picture below shows exactly the thing (or the same kind of thing), set "image" on that item. Prefer scale_zoom with pictures for any question about how tall, long or big physical things are, so the answer shows a real giraffe or bus rather than a bar. The same picture may be used for several items (a baby giraffe and an adult giraffe both use "giraffe"). Never use a picture of a different kind of thing. In scale_zoom, shape "tower" means measured by height (people, giraffes, buildings), "bar" by length (whales, buses, snakes), "circle" by diameter (planets, balls); if you omit shape, the picture's natural orientation is used.
 Available pictures: $_imageList
 
 JSON Schema:

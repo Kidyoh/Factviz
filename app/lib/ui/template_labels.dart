@@ -6,7 +6,7 @@ String templateLabel(TemplateId t) => switch (t) {
       TemplateId.timeline => 'Timeline',
       TemplateId.exponentialGrowth => 'Growth',
       TemplateId.comparisonBars => 'Comparison',
-      TemplateId.processSteps => 'Process',
+      TemplateId.processSteps => 'How it works',
       TemplateId.pictogram => 'Pictogram',
       TemplateId.donut => 'Shares',
       TemplateId.stackedBar => 'Breakdown',
@@ -22,5 +22,5 @@ String templateLabel(TemplateId t) => switch (t) {
       TemplateId.lineSeries => 'Over time',
       TemplateId.cosmicClock => 'In one day',
       TemplateId.mapPoints => 'Map',
-      TemplateId.none => 'Facts',
+      TemplateId.none => 'Answer',
     };

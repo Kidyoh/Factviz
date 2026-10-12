@@ -176,3 +176,16 @@ input[type=range] { flex: 1; min-width: 60px; accent-color: var(--ink); height: 
 .clock-list li.active .t { color: var(--accent); }
 .clock-list .l { display: block; font: 600 14.5px/1.3 var(--serif); }
 .clock-list .d { display: block; font: 400 12px/1.35 var(--sans); color: var(--ink-3); margin-top: 1px; }
+
+/* scale_zoom scenes */
+.dark-scene .label-name { fill: #F3EFE6; }
+.dark-scene .label-value { fill: #C9C3B6; }
+.dark-scene .label-faint { fill: #8D96A8; }
+.dark-scene .halo { stroke: #0E1320; }
+.dark-scene .baseline { stroke: #5B6478; }
+.dark-scene .leader { stroke: #5B6478; }
+.dark-scene path[fill="none"] { stroke: #8D96A8; }
+.dark-scene .annotation-note-label { fill: #F3EFE6; }
+.dark-scene .annotation path { stroke: #C9C3B6; }
+.dark-scene .annotation-note-bg { fill: #0E1320; }
+.lineup .label-faint { font-size: 10px; }

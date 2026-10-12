@@ -6,6 +6,7 @@ import 'package:factviz/main.dart';
 import 'package:factviz/state/library.dart';
 import 'package:factviz/state/visualize_controller.dart';
 import 'package:factviz/templates/common/motion.dart';
+import 'package:factviz/ui/visualization_panel.dart';
 import 'package:factviz_core/factviz_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -57,6 +58,16 @@ void main() {
         expect(decoded.isValid, isTrue, reason: '${e.category}/${e.id}');
       }
     });
+  });
+
+  testWidgets('every library entry lays out in the result panel without errors', (tester) async {
+    ambientMotionEnabled = false;
+    for (final e in library.entries) {
+      await pumpPhone(tester, ListView(children: [VisualizationPanel(visualization: e.visualization)]), reduceMotion: true);
+      await tester.pump(const Duration(milliseconds: 100));
+      expect(tester.takeException(), isNull, reason: '${e.category}/${e.id}');
+      expect(find.textContaining('viz:${e.template.wire}#'), findsOneWidget, reason: '${e.category}/${e.id}');
+    }
   });
 
   group('library screens', () {

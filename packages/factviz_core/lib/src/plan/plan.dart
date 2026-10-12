@@ -187,8 +187,11 @@ class ScaleItemRef {
   static ScaleItemRef? _read(JsonReader r) {
     final factId = _factId(r, 'factId');
     final displayName = r.string('displayName', maxLength: 40);
-    final shape = r.choice('shape', ItemShape.byWire, optional: true) ?? ItemShape.circle;
+    final explicitShape = r.choice('shape', ItemShape.byWire, optional: true);
     final image = _image(r);
+    // Without a shape, a picture decides how the item is measured (a giraffe
+    // by height, a whale by length); otherwise items are circles.
+    final shape = explicitShape ?? (image == null ? ItemShape.circle : imageCatalog[image]!.shapes.first);
     if (image != null && !imageCatalog[image]!.shapes.contains(shape)) {
       r.issue('image "$image" can only be drawn as: ${imageCatalog[image]!.shapes.map((s) => s.name).join(', ')}',
           key: 'shape');
