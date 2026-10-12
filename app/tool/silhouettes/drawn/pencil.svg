@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <!-- Wooden pencil, 19 cm long and 0.75 cm thick (units: cm). -->
+  <path fill-rule="evenodd" d="M0.3 0H1.2V0.75H0.3A0.3 0.3 0 0 1 0 0.45V0.3A0.3 0.3 0 0 1 0.3 0Z"/>
+  <path fill-rule="evenodd" d="M1.15 0 L2.2 0 L2.2 0.75 L1.15 0.75ZM1.45 0.08 L1.52 0.08 L1.52 0.67 L1.45 0.67ZM1.85 0.08 L1.92 0.08 L1.92 0.67 L1.85 0.67Z"/>
+  <path fill-rule="evenodd" d="M2.15 0 L17.4 0 L19 0.33 L19 0.42 L17.4 0.75 L2.15 0.75Z"/>
+</svg>

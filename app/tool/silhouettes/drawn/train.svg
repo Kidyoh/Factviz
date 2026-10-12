@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <!-- Electric locomotive, side view: about 19 m long and 4.3 m tall (units: m). -->
+  <path fill-rule="evenodd" d="M0.4 3.35 L0.4 1.7 L1.6 0.55 L17.4 0.55 L18.6 1.7 L18.6 3.35ZM1 1.75 L1.85 0.95 L3.1 0.95 L3.1 1.75ZM18 1.75 L17.15 0.95 L15.9 0.95 L15.9 1.75ZM5 1 L6 1 L6 1.7 L5 1.7ZM6.6 1 L7.6 1 L7.6 1.7 L6.6 1.7ZM8.2 1 L9.2 1 L9.2 1.7 L8.2 1.7ZM9.8 1 L10.8 1 L10.8 1.7 L9.8 1.7ZM11.4 1 L12.4 1 L12.4 1.7 L11.4 1.7ZM13 1 L14 1 L14 1.7 L13 1.7Z"/>
+  <path fill-rule="evenodd" d="M4.5 0.3 L14.5 0.3 L14.5 0.6 L4.5 0.6Z"/>
+  <path fill-rule="evenodd" d="M0.2 3.25 L18.8 3.25 L18.8 3.6 L0.2 3.6Z"/>
+  <path fill-rule="evenodd" d="M2.15 3.45H7.25A0.15 0.15 0 0 1 7.4 3.6V3.7A0.15 0.15 0 0 1 7.25 3.85H2.15A0.15 0.15 0 0 1 2 3.7V3.6A0.15 0.15 0 0 1 2.15 3.45Z"/>
+  <path fill-rule="evenodd" d="M11.75 3.45H16.85A0.15 0.15 0 0 1 17 3.6V3.7A0.15 0.15 0 0 1 16.85 3.85H11.75A0.15 0.15 0 0 1 11.6 3.7V3.6A0.15 0.15 0 0 1 11.75 3.45Z"/>
+  <path fill-rule="evenodd" d="M2.7 3.8A0.5 0.5 0 1 0 3.7 3.8A0.5 0.5 0 1 0 2.7 3.8Z"/>
+  <path fill-rule="evenodd" d="M5.7 3.8A0.5 0.5 0 1 0 6.7 3.8A0.5 0.5 0 1 0 5.7 3.8Z"/>
+  <path fill-rule="evenodd" d="M12.3 3.8A0.5 0.5 0 1 0 13.3 3.8A0.5 0.5 0 1 0 12.3 3.8Z"/>
+  <path fill-rule="evenodd" d="M15.3 3.8A0.5 0.5 0 1 0 16.3 3.8A0.5 0.5 0 1 0 15.3 3.8Z"/>
+</svg>

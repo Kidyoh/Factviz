@@ -66,7 +66,10 @@
         "src": "img/mercury.webp",
         "aspect": 1.0,
         "disc": 1.0,
-        "stretch": false
+        "stretch": false,
+        "shapes": [
+          "circle"
+        ]
       }
     },
     {
@@ -82,7 +85,10 @@
         "src": "img/mars.webp",
         "aspect": 1.0,
         "disc": 1.0,
-        "stretch": false
+        "stretch": false,
+        "shapes": [
+          "circle"
+        ]
       }
     },
     {
@@ -98,7 +104,10 @@
         "src": "img/venus.webp",
         "aspect": 1.0,
         "disc": 1.0,
-        "stretch": false
+        "stretch": false,
+        "shapes": [
+          "circle"
+        ]
       }
     },
     {
@@ -114,7 +123,10 @@
         "src": "img/earth.webp",
         "aspect": 1.0,
         "disc": 1.0,
-        "stretch": false
+        "stretch": false,
+        "shapes": [
+          "circle"
+        ]
       }
     },
     {
@@ -130,7 +142,10 @@
         "src": "img/neptune.webp",
         "aspect": 1.0,
         "disc": 1.0,
-        "stretch": false
+        "stretch": false,
+        "shapes": [
+          "circle"
+        ]
       }
     },
     {
@@ -146,7 +161,10 @@
         "src": "img/uranus.webp",
         "aspect": 1.0,
         "disc": 1.0,
-        "stretch": false
+        "stretch": false,
+        "shapes": [
+          "circle"
+        ]
       }
     },
     {
@@ -162,7 +180,10 @@
         "src": "img/saturn.webp",
         "aspect": 2.45,
         "disc": 0.441,
-        "stretch": false
+        "stretch": false,
+        "shapes": [
+          "circle"
+        ]
       }
     },
     {
@@ -178,7 +199,10 @@
         "src": "img/jupiter.webp",
         "aspect": 1.0,
         "disc": 1.0,
-        "stretch": false
+        "stretch": false,
+        "shapes": [
+          "circle"
+        ]
       }
     }
   ]

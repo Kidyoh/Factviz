@@ -11,7 +11,10 @@
     "src": "img/earth.webp",
     "aspect": 1.0,
     "disc": 1.0,
-    "stretch": false
+    "stretch": false,
+    "shapes": [
+      "circle"
+    ]
   },
   "bImage": {
     "key": "mars",
@@ -19,7 +22,10 @@
     "src": "img/mars.webp",
     "aspect": 1.0,
     "disc": 1.0,
-    "stretch": false
+    "stretch": false,
+    "shapes": [
+      "circle"
+    ]
   },
   "rows": [
     {

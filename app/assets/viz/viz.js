@@ -292,7 +292,9 @@
     const items = p.items.map((it, i) => {
       const size = drawnSize(it);
       const x = distance ? it.linearSi : cursor;
-      if (!distance) cursor += size.w + 0.22 * Math.max(size.w, size.h);
+      // A lineup: modest gaps, scaled to the item (tall things don't need
+      // tall gaps).
+      if (!distance) cursor += size.w + 0.14 * size.w + 0.1 * Math.min(size.h, size.w * 3);
       return Object.assign({}, it, size, { i, x, color: PALETTE[i % PALETTE.length] });
     });
 
@@ -881,7 +883,34 @@
   // ---------------------------------------------------------------------
   // comparison_bars: direct-labelled bars that grow in turn.
 
+  /**
+   * Lengths or heights of pictured things read better as a scene than as
+   * bars: the same lineup scale_zoom draws, with the planner's pictures.
+   */
+  function barsAsScene(p) {
+    const bars = p.bars;
+    if (p.units.dimension !== 'length' || bars.length > 8) return null;
+    if (!bars.every((b) => b.image && b.image.kind === 'silhouette' && Array.isArray(b.image.shapes))) return null;
+    const vertical = p.orientation === 'vertical';
+    const shapeOf = (b) => {
+      const sh = b.image.shapes;
+      if (sh.includes('tower') && (vertical || !sh.includes('bar'))) return 'tower';
+      return sh.includes('bar') ? 'bar' : null;
+    };
+    if (!bars.every(shapeOf)) return null;
+    const order = bars.map((b, i) => i).sort((a, b) => bars[a].valueSi - bars[b].valueSi);
+    const at = new Map(order.map((orig, k) => [orig, k]));
+    return Object.assign({}, p, {
+      template: 'scale_zoom',
+      mode: 'size',
+      items: order.map((i) => Object.assign({}, bars[i], { shape: shapeOf(bars[i]), linearSi: bars[i].valueSi })),
+      annotations: p.annotations.map((a) => Object.assign({}, a, { index: at.get(a.index) })),
+    });
+  }
+
   function renderBars(p) {
+    const scene = barsAsScene(p);
+    if (scene) return renderScale(scene);
     const bars = p.bars;
     const n = bars.length;
     const { svg, w: W, h: H } = layout();

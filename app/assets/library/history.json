@@ -87,20 +87,131 @@
           {
             "factId": "colosseum",
             "displayName": "Colosseum",
-            "shape": "tower"
+            "shape": "tower",
+            "image": "colosseum"
           },
           {
             "factId": "great_pyramid",
             "displayName": "Great Pyramid",
-            "shape": "tower"
+            "shape": "tower",
+            "image": "great_pyramid"
           },
           {
             "factId": "cologne_cathedral",
             "displayName": "Cologne Cathedral",
-            "shape": "tower"
+            "shape": "tower",
+            "image": "church"
           },
           {
             "factId": "eiffel_tower",
+            "displayName": "Eiffel Tower",
+            "shape": "tower",
+            "image": "eiffel_tower"
+          }
+        ]
+      }
+    },
+    {
+      "id": "famous_landmarks",
+      "facts": {
+        "query": "How tall are the world's most famous landmarks?",
+        "topic": "Landmark heights",
+        "confidence": "high",
+        "explanation": "Famous landmarks look similar on postcards but are very different sizes. The Leaning Tower of Pisa is less than half as tall as the Great Pyramid, and the Eiffel Tower is taller than all of them together with room to spare.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "adult_person",
+            "label": "Average adult person",
+            "value": 1.7,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Typical adult height; world averages are about 1.6–1.75 m (NCD-RisC)"
+          },
+          {
+            "kind": "quantity",
+            "id": "pisa_height",
+            "label": "Leaning Tower of Pisa",
+            "value": 56,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Opera della Primaziale Pisana: about 56 m (55.9 m on the low side)"
+          },
+          {
+            "kind": "quantity",
+            "id": "liberty_height",
+            "label": "Statue of Liberty, ground to torch",
+            "value": 93,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "US National Park Service: 305 ft 1 in (93 m) including the pedestal"
+          },
+          {
+            "kind": "quantity",
+            "id": "bigben_height",
+            "label": "Big Ben (Elizabeth Tower)",
+            "value": 96,
+            "unit": "m",
+            "approximate": false,
+            "sourceNote": "UK Parliament: the Elizabeth Tower is 96 m tall"
+          },
+          {
+            "kind": "quantity",
+            "id": "pyramid_height",
+            "label": "Great Pyramid of Giza, original height",
+            "value": 146.6,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Encyclopaedia Britannica: originally about 146.6 m; now about 138 m"
+          },
+          {
+            "kind": "quantity",
+            "id": "eiffel_height",
+            "label": "Eiffel Tower, with antennas",
+            "value": 330,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Société d'Exploitation de la Tour Eiffel: 330 m since 2022"
+          }
+        ]
+      },
+      "plan": {
+        "template": "scale_zoom",
+        "title": "Famous landmarks, side by side",
+        "mode": "size",
+        "items": [
+          {
+            "factId": "adult_person",
+            "displayName": "Person",
+            "shape": "tower",
+            "image": "person"
+          },
+          {
+            "factId": "pisa_height",
+            "displayName": "Leaning Tower of Pisa",
+            "shape": "tower",
+            "image": "leaning_tower_of_pisa"
+          },
+          {
+            "factId": "liberty_height",
+            "displayName": "Statue of Liberty",
+            "shape": "tower",
+            "image": "statue_of_liberty"
+          },
+          {
+            "factId": "bigben_height",
+            "displayName": "Big Ben",
+            "shape": "tower",
+            "image": "big_ben"
+          },
+          {
+            "factId": "pyramid_height",
+            "displayName": "Great Pyramid",
+            "shape": "tower",
+            "image": "great_pyramid"
+          },
+          {
+            "factId": "eiffel_height",
             "displayName": "Eiffel Tower",
             "shape": "tower",
             "image": "eiffel_tower"
@@ -894,7 +1005,9 @@
             "aFactId": "titanic_speed",
             "bFactId": "icon_speed"
           }
-        ]
+        ],
+        "aImage": "cruise_ship",
+        "bImage": "cruise_ship"
       }
     },
     {

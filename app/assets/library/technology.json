@@ -687,7 +687,9 @@
             "aFactId": "concorde_mtow",
             "bFactId": "b747_mtow"
           }
-        ]
+        ],
+        "aImage": "airplane",
+        "bImage": "airplane"
       }
     },
     {

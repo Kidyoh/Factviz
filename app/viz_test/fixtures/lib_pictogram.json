@@ -28,6 +28,9 @@
     "src": "eiffel_tower",
     "aspect": 0.38,
     "disc": 1.0,
-    "stretch": true
+    "stretch": true,
+    "shapes": [
+      "tower"
+    ]
   }
 }

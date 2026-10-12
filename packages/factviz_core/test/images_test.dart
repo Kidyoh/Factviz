@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:factviz_core/factviz_core.dart';
 import 'package:test/test.dart';
 
@@ -10,6 +13,47 @@ void main() {
       expect(a.aspect, greaterThan(0));
       if (a.kind == ImageKind.photo) expect(a.src, 'img/${a.key}.webp');
     }
+  });
+
+  group('silhouettes', () {
+    final js = File('../../app/assets/viz/silhouettes.js').readAsStringSync();
+    final bundled = jsonDecode(js.substring(js.indexOf('{'), js.lastIndexOf('}') + 1)) as Map<String, dynamic>;
+    final silhouettes = imageCatalog.values.where((a) => a.kind == ImageKind.silhouette).toList();
+
+    test('the catalog and silhouettes.js list the same pictures', () {
+      expect(silhouettes, hasLength(greaterThanOrEqualTo(100)));
+      expect(bundled.keys.toSet(), silhouettes.map((a) => a.key).toSet());
+    });
+
+    test('keep the original keys', () {
+      for (final key in [
+        'blue_whale', 'sperm_whale', 'elephant', 't_rex', 'dog', 'person', //
+        'school_bus', 'car', 'eiffel_tower', 'skyscraper', 'rocket',
+      ]) {
+        expect(imageCatalog[key]?.kind, ImageKind.silhouette, reason: key);
+      }
+    });
+
+    test('have markup, a box and an aspect that matches it unless stretched', () {
+      for (final a in silhouettes) {
+        final s = bundled[a.key] as Map<String, dynamic>;
+        expect(s['markup'], startsWith('<path'), reason: a.key);
+        final box = (s['box'] as List).cast<num>();
+        expect(box, hasLength(4), reason: a.key);
+        expect(box[2] > 0 && box[3] > 0, isTrue, reason: a.key);
+        if (!a.stretch) expect(a.aspect, closeTo(box[2] / box[3], 0.002), reason: a.key);
+        expect(a.shapes, isNotEmpty, reason: a.key);
+        expect(a.shapes.difference({ItemShape.bar, ItemShape.tower}), isEmpty, reason: a.key);
+        expect(a.src, a.key);
+      }
+    });
+
+    test('are credited', () {
+      final credits = File('../../app/assets/viz/img/CREDITS.md').readAsStringSync();
+      for (final a in silhouettes) {
+        expect(credits, contains(a.key), reason: a.key);
+      }
+    });
   });
 
   test('plans may attach catalog images', () {

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <!-- Empire State Building: 381 m roof, 443 m to the antenna tip (units: m). -->
+  <path fill-rule="evenodd" d="M-65 418 L65 418 L65 443 L-65 443Z"/>
+  <path fill-rule="evenodd" d="M-48 363 L48 363 L48 419 L-48 419Z"/>
+  <path fill-rule="evenodd" d="M-34 123 L34 123 L34 364 L-34 364ZM-28 125 L-25.8 125 L-25.8 359 L-28 359ZM-20 125 L-17.8 125 L-17.8 359 L-20 359ZM-12 125 L-9.8 125 L-9.8 359 L-12 359ZM-4 125 L-1.8 125 L-1.8 359 L-4 359ZM4 125 L6.2 125 L6.2 359 L4 359ZM12 125 L14.2 125 L14.2 359 L12 359ZM20 125 L22.2 125 L22.2 359 L20 359Z"/>
+  <path fill-rule="evenodd" d="M-26 111 L26 111 L26 124 L-26 124Z"/>
+  <path fill-rule="evenodd" d="M-19 99 L19 99 L19 112 L-19 112Z"/>
+  <path fill-rule="evenodd" d="M-13 77 L13 77 L13 100 L-13 100Z"/>
+  <path fill-rule="evenodd" d="M-8 62 L8 62 L8 78 L-8 78Z"/>
+  <path fill-rule="evenodd" d="M-4.5 63 L-3.5 39 L-1.2 33 L-0.4 0 L0.4 0 L1.2 33 L3.5 39 L4.5 63Z"/>
+</svg>

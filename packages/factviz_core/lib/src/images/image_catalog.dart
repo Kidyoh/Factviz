@@ -1,5 +1,7 @@
 import '../plan/plan.dart';
 
+part 'silhouette_catalog.g.dart';
+
 enum ImageKind { photo, silhouette }
 
 /// A bundled picture the planner may attach to an item. Pictures never carry
@@ -46,17 +48,17 @@ class ImageAsset {
         'aspect': aspect,
         'disc': disc,
         'stretch': stretch,
+        'shapes': [for (final s in shapes) s.name],
       };
 }
 
 const _circle = {ItemShape.circle};
-const _bar = {ItemShape.bar};
-const _tower = {ItemShape.tower};
 
 ImageAsset _photo(String key, String label, {double aspect = 1, double disc = 1}) =>
     ImageAsset(key: key, label: label, kind: ImageKind.photo, shapes: _circle, aspect: aspect, disc: disc);
 
-/// Every picture bundled with the app. Sources are listed in
+/// Every picture bundled with the app: planet photos plus the generated
+/// [silhouetteAssets] (see `app/tool/silhouettes/`). Sources are listed in
 /// `app/assets/viz/img/CREDITS.md`.
 final Map<String, ImageAsset> imageCatalog = {
   for (final a in <ImageAsset>[
@@ -71,43 +73,7 @@ final Map<String, ImageAsset> imageCatalog = {
     _photo('uranus', 'Uranus'),
     _photo('neptune', 'Neptune'),
     _photo('pluto', 'Pluto'),
-    const ImageAsset(key: 'blue_whale', label: 'blue whale', kind: ImageKind.silhouette, shapes: _bar, aspect: 3.3),
-    const ImageAsset(key: 'sperm_whale', label: 'sperm whale', kind: ImageKind.silhouette, shapes: _bar, aspect: 2.33),
-    const ImageAsset(
-      key: 'elephant',
-      label: 'elephant',
-      kind: ImageKind.silhouette,
-      shapes: {ItemShape.bar, ItemShape.tower},
-      aspect: 1.55,
-    ),
-    const ImageAsset(key: 't_rex', label: 'Tyrannosaurus rex', kind: ImageKind.silhouette, shapes: _bar, aspect: 2.02),
-    const ImageAsset(
-      key: 'dog',
-      label: 'dog',
-      kind: ImageKind.silhouette,
-      shapes: {ItemShape.bar, ItemShape.tower},
-      aspect: 0.99,
-    ),
-    const ImageAsset(key: 'person', label: 'adult person', kind: ImageKind.silhouette, shapes: _tower, aspect: 0.36),
-    const ImageAsset(key: 'school_bus', label: 'school bus', kind: ImageKind.silhouette, shapes: _bar, aspect: 3.86),
-    const ImageAsset(key: 'car', label: 'car', kind: ImageKind.silhouette, shapes: _bar, aspect: 2.7, stretch: true),
-    const ImageAsset(
-      key: 'eiffel_tower',
-      label: 'Eiffel Tower',
-      kind: ImageKind.silhouette,
-      shapes: _tower,
-      aspect: 0.38,
-      stretch: true,
-    ),
-    const ImageAsset(
-      key: 'skyscraper',
-      label: 'skyscraper',
-      kind: ImageKind.silhouette,
-      shapes: _tower,
-      aspect: 0.3,
-      stretch: true,
-    ),
-    const ImageAsset(key: 'rocket', label: 'rocket', kind: ImageKind.silhouette, shapes: _tower, aspect: 0.3, stretch: true),
+    ...silhouetteAssets,
   ])
     a.key: a,
 };

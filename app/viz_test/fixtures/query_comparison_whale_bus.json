@@ -46,9 +46,12 @@
         "key": "blue_whale",
         "kind": "silhouette",
         "src": "blue_whale",
-        "aspect": 3.3,
+        "aspect": 3.305,
         "disc": 1.0,
-        "stretch": false
+        "stretch": false,
+        "shapes": [
+          "bar"
+        ]
       }
     },
     {
@@ -60,9 +63,12 @@
         "key": "school_bus",
         "kind": "silhouette",
         "src": "school_bus",
-        "aspect": 3.86,
+        "aspect": 3.857,
         "disc": 1.0,
-        "stretch": false
+        "stretch": false,
+        "shapes": [
+          "bar"
+        ]
       }
     },
     {
@@ -74,9 +80,13 @@
         "key": "elephant",
         "kind": "silhouette",
         "src": "elephant",
-        "aspect": 1.55,
+        "aspect": 1.552,
         "disc": 1.0,
-        "stretch": false
+        "stretch": false,
+        "shapes": [
+          "bar",
+          "tower"
+        ]
       }
     }
   ]

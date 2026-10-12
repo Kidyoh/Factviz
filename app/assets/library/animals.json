@@ -3,6 +3,272 @@
   "title": "Animals",
   "entries": [
     {
+      "id": "giraffe_height",
+      "facts": {
+        "query": "How tall is a giraffe?",
+        "topic": "Giraffe height",
+        "confidence": "high",
+        "explanation": "Giraffes are the tallest animals alive. A calf is already taller than most adults on the day it is born, and a full-grown male can look into a second-floor window. Much of that height is legs and an extraordinarily long neck.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "adult_person",
+            "label": "Average adult person",
+            "value": 1.7,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Typical adult height; world averages are about 1.6–1.75 m (NCD-RisC)"
+          },
+          {
+            "kind": "quantity",
+            "id": "newborn_giraffe",
+            "label": "Newborn giraffe calf",
+            "value": 1.8,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "San Diego Zoo Wildlife Alliance: calves are about 6 ft (1.8 m) tall at birth"
+          },
+          {
+            "kind": "quantity",
+            "id": "female_giraffe",
+            "label": "Adult female giraffe",
+            "value": 4.3,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Smithsonian's National Zoo: females reach about 14 ft (4.3 m)"
+          },
+          {
+            "kind": "quantity",
+            "id": "male_giraffe",
+            "label": "Adult male giraffe",
+            "value": 5.5,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Smithsonian's National Zoo: males reach about 18 ft (5.5 m)"
+          }
+        ]
+      },
+      "plan": {
+        "template": "scale_zoom",
+        "title": "How tall is a giraffe?",
+        "caption": "A person, a newborn calf and two adults, to scale",
+        "mode": "size",
+        "items": [
+          {
+            "factId": "adult_person",
+            "displayName": "Person",
+            "shape": "tower",
+            "image": "person"
+          },
+          {
+            "factId": "newborn_giraffe",
+            "displayName": "Newborn calf",
+            "shape": "tower",
+            "image": "giraffe"
+          },
+          {
+            "factId": "female_giraffe",
+            "displayName": "Adult female",
+            "shape": "tower",
+            "image": "giraffe"
+          },
+          {
+            "factId": "male_giraffe",
+            "displayName": "Adult male",
+            "shape": "tower",
+            "image": "giraffe"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tallest_animals",
+      "facts": {
+        "query": "What are the tallest animals?",
+        "topic": "Tallest living animals",
+        "confidence": "medium",
+        "explanation": "Standing next to each other, the tallest land animals tower over a person. Giraffes are tallest by far; elephants are measured at the shoulder, and ostriches are the tallest birds. Sizes vary between individuals, so these are typical large adults.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "adult_person",
+            "label": "Average adult person",
+            "value": 1.7,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Typical adult height; world averages are about 1.6–1.75 m (NCD-RisC)"
+          },
+          {
+            "kind": "quantity",
+            "id": "moose_height",
+            "label": "Moose (bull), height at the shoulder",
+            "value": 1.9,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "US National Park Service: about 6 ft (1.8–2.1 m) at the shoulder"
+          },
+          {
+            "kind": "quantity",
+            "id": "ostrich_height",
+            "label": "Ostrich (male), standing height",
+            "value": 2.7,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "San Diego Zoo Wildlife Alliance: males up to about 9 ft (2.7 m)"
+          },
+          {
+            "kind": "quantity",
+            "id": "elephant_height",
+            "label": "African elephant (bull), height at the shoulder",
+            "value": 3.3,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Smithsonian's National Zoo: about 10–13 ft (3–4 m) at the shoulder"
+          },
+          {
+            "kind": "quantity",
+            "id": "giraffe_height",
+            "label": "Giraffe (male), standing height",
+            "value": 5.5,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Smithsonian's National Zoo: males reach about 18 ft (5.5 m)"
+          }
+        ]
+      },
+      "plan": {
+        "template": "scale_zoom",
+        "title": "The tallest animals, side by side",
+        "mode": "size",
+        "items": [
+          {
+            "factId": "adult_person",
+            "displayName": "Person",
+            "shape": "tower",
+            "image": "person"
+          },
+          {
+            "factId": "moose_height",
+            "displayName": "Moose",
+            "shape": "tower",
+            "image": "moose"
+          },
+          {
+            "factId": "ostrich_height",
+            "displayName": "Ostrich",
+            "shape": "tower",
+            "image": "ostrich"
+          },
+          {
+            "factId": "elephant_height",
+            "displayName": "African elephant",
+            "shape": "tower",
+            "image": "elephant"
+          },
+          {
+            "factId": "giraffe_height",
+            "displayName": "Giraffe",
+            "shape": "tower",
+            "image": "giraffe"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dinosaur_sizes",
+      "facts": {
+        "query": "How big were the dinosaurs?",
+        "topic": "Dinosaur sizes",
+        "confidence": "medium",
+        "explanation": "Dinosaurs ranged from the size of a turkey to longer than a tennis court. Velociraptor was far smaller than films suggest, while long-necked sauropods like Diplodocus stretched longer than a bus and a half. Lengths come from famous museum skeletons.",
+        "facts": [
+          {
+            "kind": "quantity",
+            "id": "adult_person",
+            "label": "Average adult person",
+            "value": 1.7,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Typical adult height; world averages are about 1.6–1.75 m (NCD-RisC)"
+          },
+          {
+            "kind": "quantity",
+            "id": "velociraptor_length",
+            "label": "Velociraptor, length",
+            "value": 2,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "American Museum of Natural History: about 6.8 ft (2 m) long"
+          },
+          {
+            "kind": "quantity",
+            "id": "stegosaurus_length",
+            "label": "Stegosaurus, length",
+            "value": 9,
+            "unit": "m",
+            "approximate": true,
+            "sourceNote": "Natural History Museum, London: up to about 9 m long"
+          },
+          {
+            "kind": "quantity",
+            "id": "trex_length",
+            "label": "T. rex (Sue), length",
+            "value": 12.3,
+            "unit": "m",
+            "approximate": false,
+            "sourceNote": "Field Museum, Chicago: Sue is 40.5 ft (12.3 m) long"
+          },
+          {
+            "kind": "quantity",
+            "id": "diplodocus_length",
+            "label": "Diplodocus (Dippy), length",
+            "value": 21.3,
+            "unit": "m",
+            "approximate": false,
+            "sourceNote": "Natural History Museum, London: the Dippy cast is 21.3 m long"
+          }
+        ]
+      },
+      "plan": {
+        "template": "scale_zoom",
+        "title": "Dinosaurs next to a person",
+        "caption": "Lengths of famous skeletons, to scale",
+        "mode": "size",
+        "items": [
+          {
+            "factId": "adult_person",
+            "displayName": "Person",
+            "shape": "tower",
+            "image": "person"
+          },
+          {
+            "factId": "velociraptor_length",
+            "displayName": "Velociraptor",
+            "shape": "bar",
+            "image": "velociraptor"
+          },
+          {
+            "factId": "stegosaurus_length",
+            "displayName": "Stegosaurus",
+            "shape": "bar",
+            "image": "stegosaurus"
+          },
+          {
+            "factId": "trex_length",
+            "displayName": "T. rex",
+            "shape": "bar",
+            "image": "t_rex"
+          },
+          {
+            "factId": "diplodocus_length",
+            "displayName": "Diplodocus",
+            "shape": "bar",
+            "image": "diplodocus"
+          }
+        ]
+      }
+    },
+    {
       "id": "longest_animals",
       "facts": {
         "query": "How long are the biggest animals?",
@@ -78,7 +344,8 @@
           },
           {
             "factId": "whale_shark",
-            "displayName": "Whale shark"
+            "displayName": "Whale shark",
+            "image": "whale_shark"
           },
           {
             "factId": "sperm_whale",
@@ -92,7 +359,8 @@
           },
           {
             "factId": "crocodile",
-            "displayName": "Saltwater crocodile"
+            "displayName": "Saltwater crocodile",
+            "image": "crocodile"
           },
           {
             "factId": "human",

@@ -273,3 +273,25 @@ test('map_points: draws the land and a dot per point', async () => {
   assert.ok(dots >= 1 && dots <= p.points.length);
   await page.close();
 });
+
+test('heights of pictured things become a lineup scene, even when planned as bars', async () => {
+  const units = { dimension: 'length', preferred: { symbol: 'm', toSi: 1 }, ladder: [{ symbol: 'cm', toSi: 0.01 }, { symbol: 'm', toSi: 1 }, { symbol: 'km', toSi: 1000 }] };
+  const sil = (key, aspect, shapes) => ({ key, kind: 'silhouette', src: key, aspect, disc: 1, stretch: false, shapes });
+  const payload = {
+    version: 1, template: 'comparison_bars', title: 'How tall is a giraffe?', orientation: 'vertical', units,
+    annotations: [{ text: 'Adult giraffe is 3.2× as tall as Person', anchor: 'item', index: 0 }],
+    bars: [
+      { name: 'Adult giraffe', valueSi: 5.5, display: '~5.5 m', source: 's', image: sil('giraffe', 0.95, ['tower', 'bar']) },
+      { name: 'Person', valueSi: 1.7, display: '~1.7 m', source: 's', image: sil('person', 0.36, ['tower']) },
+      { name: 'Newborn giraffe', valueSi: 1.8, display: '~1.8 m', source: 's', image: sil('giraffe', 0.95, ['tower', 'bar']) },
+    ],
+  };
+  const { page, errors } = await rendered(payload, { reduce: true });
+  assert.deepEqual(errors, []);
+  assert.equal(await page.locator('g.item').count(), 3, 'one figure per bar');
+  assert.equal(await page.locator('g.item .sil-inner').count(), 3, 'all drawn as pictures');
+  assert.ok(await page.locator('.lineup g').count() >= 2, 'height lineup');
+  assert.equal(await page.textContent('.status'), '3 of 3 · Adult giraffe');
+  assert.match(await notes(page), /3\.2× as tall as Person/);
+  await page.close();
+});

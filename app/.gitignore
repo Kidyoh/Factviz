@@ -49,3 +49,6 @@ app.*.map.json
 test_screens/
 viz_test/out/
 viz_test/node_modules/
+
+# Silhouette build cache (app/tool/silhouettes/build.py)
+tool/silhouettes/cache/
