@@ -1,10 +1,15 @@
 name: Release
 
-# Push a tag like v1.0.0 to test, build and publish the Android APKs.
+# Push a tag like v1.0.0, or run this workflow by hand with a version, to
+# test, build and publish the Android APKs as a GitHub release.
 on:
   push:
     tags: ['v*']
   workflow_dispatch:
+    inputs:
+      version:
+        description: Release tag to create, e.g. v1.0.0 (needs docs/releases/<version>.md)
+        required: true
 
 permissions:
   contents: write
@@ -15,6 +20,7 @@ jobs:
     timeout-minutes: 45
     env:
       HAS_KEYSTORE: ${{ secrets.ANDROID_KEYSTORE_BASE64 != '' }}
+      VERSION: ${{ github.event_name == 'workflow_dispatch' && inputs.version || github.ref_name }}
     steps:
       - uses: actions/checkout@v4
 
@@ -28,6 +34,9 @@ jobs:
           channel: stable
           flutter-version: 3.47.7
           cache: true
+
+      - name: Check release notes exist
+        run: test -f "docs/releases/$VERSION.md"
 
       - name: Get dependencies
         run: flutter pub get
@@ -69,21 +78,23 @@ jobs:
         working-directory: app
         run: |
           flutter build apk --release
-          cp build/app/outputs/flutter-apk/app-release.apk "$RUNNER_TEMP/factviz-${GITHUB_REF_NAME}-universal.apk"
+          cp build/app/outputs/flutter-apk/app-release.apk "$RUNNER_TEMP/factviz-${VERSION}-universal.apk"
           flutter build apk --release --split-per-abi
           for abi in arm64-v8a armeabi-v7a x86_64; do
-            cp "build/app/outputs/flutter-apk/app-$abi-release.apk" "$RUNNER_TEMP/factviz-${GITHUB_REF_NAME}-$abi.apk"
+            cp "build/app/outputs/flutter-apk/app-$abi-release.apk" "$RUNNER_TEMP/factviz-${VERSION}-$abi.apk"
           done
 
+      # Creates the tag at this commit when run by hand.
       - name: Publish release
-        if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
-          name: Explain It Visually ${{ github.ref_name }}
-          body_path: docs/releases/${{ github.ref_name }}.md
+          tag_name: ${{ env.VERSION }}
+          target_commitish: ${{ github.sha }}
+          name: Explain It Visually ${{ env.VERSION }}
+          body_path: docs/releases/${{ env.VERSION }}.md
           fail_on_unmatched_files: true
           files: |
-            ${{ runner.temp }}/factviz-${{ github.ref_name }}-universal.apk
-            ${{ runner.temp }}/factviz-${{ github.ref_name }}-arm64-v8a.apk
-            ${{ runner.temp }}/factviz-${{ github.ref_name }}-armeabi-v7a.apk
-            ${{ runner.temp }}/factviz-${{ github.ref_name }}-x86_64.apk
+            ${{ runner.temp }}/factviz-${{ env.VERSION }}-universal.apk
+            ${{ runner.temp }}/factviz-${{ env.VERSION }}-arm64-v8a.apk
+            ${{ runner.temp }}/factviz-${{ env.VERSION }}-armeabi-v7a.apk
+            ${{ runner.temp }}/factviz-${{ env.VERSION }}-x86_64.apk

@@ -158,6 +158,9 @@ Pushing a version tag publishes a GitHub release with the APKs:
 git tag v1.0.0 && git push origin v1.0.0
 ```
 
+or run the **Release** workflow by hand (Actions tab → Release → Run
+workflow) with a version such as `v1.0.1`; it creates the tag itself.
+
 `.github/workflows/release.yml` runs the Dart and Flutter tests, builds a
 universal APK and per-ABI APKs, and attaches them to the release, using
 `docs/releases/<tag>.md` as the release notes. To sign releases with your own
