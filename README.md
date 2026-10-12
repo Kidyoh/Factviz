@@ -150,6 +150,22 @@ In debug builds the home screen has a **template gallery** button (top
 right), which previews every template with mock data, with replay and
 reduced-motion toggles.
 
+## Releases
+
+Pushing a version tag publishes a GitHub release with the APKs:
+
+```sh
+git tag v1.0.0 && git push origin v1.0.0
+```
+
+`.github/workflows/release.yml` runs the Dart and Flutter tests, builds a
+universal APK and per-ABI APKs, and attaches them to the release, using
+`docs/releases/<tag>.md` as the release notes. To sign releases with your own
+upload key (so updates install over each other), add the repository secrets
+`ANDROID_KEYSTORE_BASE64`, `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS` and
+`ANDROID_KEY_PASSWORD`; locally, put the same values in `app/android/key.properties`
+(git-ignored). Without a key, release builds use a debug key.
+
 ## Sharing
 
 The Share button sends `factviz://app/v/<payload>`. The payload is the
